@@ -1,0 +1,1388 @@
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Oracle.DataAccess.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.resources.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.WebHost.resources.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.resources.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.WebHost.resources.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.resources.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.WebHost.resources.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.resources.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.WebHost.resources.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Http.WebHost.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\bin\pt-br\System.Web.Http.WebHost.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojResolveAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Oracle.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Oracle.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\Ocorrencias_novo\ocorrencia_novo\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Oracle.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencias\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\cleverson.bello\Downloads\oco\Ocor-master-700010ba4df573183f60262ca93b65ec76aa32a2\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\Users\cleverson.bello\Downloads\ocor\Ocorrencia-master-a6039c1c4b648daf5d96e8c0e524b091d853e9b5\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencias\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb

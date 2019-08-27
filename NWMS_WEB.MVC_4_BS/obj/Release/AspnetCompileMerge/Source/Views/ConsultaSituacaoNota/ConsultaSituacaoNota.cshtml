@@ -1,0 +1,163 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.ConsultaSituacaoNotaViewModel
+@{
+    ViewBag.Title = "Situacão da NF";
+}
+
+@Styles.Render("~/Content/situacao")
+
+@section scripts{
+    <script type="text/javascript">
+
+        function PesquisarNotaFiscalSituacao() {
+            numeroNota = $("#NumNotaTextBox").val();
+            var codFilial = $("#campoFilial option:selected").val();
+            if ($("#NumNotaTextBox").val() != "") {
+                $.ajaxSetup({ cache: false });
+                $.getJSON("@Url.Action("PesquisarNotaFiscalSituacao")", { numeroNota: numeroNota, codFilial: codFilial }, function (data) {
+
+                    if (data.Logado || data.ErroExcecao) {
+                        window.location.href = data.redirectUrl;
+                        return;
+                    }
+                    else if (data.listaNotas.length > 0) {
+                        $("#campoDev").val(data.listaNotas[0].devolucaoMercadoria);
+                        $("#campoTroca").val(data.listaNotas[0].trocaMercadoria);
+                        $("#campoMot").val(data.listaNotas[0].nomeMotorista);
+                        $("#campoPlaca").val(data.listaNotas[0].PlacaVeiculo);
+                        $("#campoDate").val(data.listaNotas[0].DataEmissao);
+                        
+                        $("#NumNotaTextBox").focus();
+                    } else {
+                        limparObjetos();
+                        DialogPadrao("warning", "Aviso!", "warning", "Nenhum Registro Encontrado!", "btnOkNenhumRegEncontrado", "OK", true);
+                    }
+                });
+            } else {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe o Número da Nota Fiscal", "btnOkNenhumRegEncontrado", "OK", true);
+            }
+        }
+
+       
+        function limparObjetos() {
+            $("#campoDev").val("");
+            $("#campoTroca").val("");
+            $("#campoMot").val("");
+            $("#campoPlaca").val("");
+            $("#campoDate").val("");
+            $("#NumNotaTextBox").focus();
+        }
+        $('#NumNotaTextBox').mask("9?99999", { placeholder: "" });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        $("#NumNotaTextBox").focus();
+        $("#NumNotaTextBox").val("");
+        $("#NumNotaTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                numeroNota = $("#NumNotaTextBox").val();
+                PesquisarNotaFiscalSituacao()
+            }
+        });
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+            $('dataTables_scrollHead ui-state-default').removeAttr('style');
+            $('dataTables_scrollHead ui-state-default').attr('style', 'overflow: hidden', 'width: : 100%;');
+        }
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="Relatórios/" onclick="return false">Situação NF</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<div class="panel panel-default">
+
+</div>
+<div class="form-horizontal">
+    <div class="panel panel-default">
+
+        <div class="form-group">
+            <p></p>
+            <p></p>
+            @Html.LabelFor(m => m.campoFilial, new { @class = "col-md-2 control-label" })
+            <div class="row">
+                <div class="col-md-1">
+                    @Html.DropDownListFor(m => m.campoFilial,
+                                    new List<SelectListItem> {
+
+                                          new SelectListItem { Value = "1" , Text = "1",Selected = true}}, new { @class = "form-control input-smgroup", @id = "campoFilial" })
+                </div>
+                <div class="col-sm-2">
+                    @Html.TextBoxFor(m => m.NumNota, new { @class = "form-control input-sm", @id = "NumNotaTextBox" })
+
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" onclick="PesquisarNotaFiscalSituacao()" id="PesquisarButton" style="margin-top: 0px" class="btn btn-primary btn-sm">Pesquisar</button>
+                </div>
+                @Html.ValidationMessageFor(m => m.NumNota)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <form class="form-horizontal">
+            <fieldset>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    <label for="campoDev" class="control-label col-sm-2">Devolução</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="campoDev" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="campoTroca" class="control-label col-sm-2">Troca</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="campoTroca" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="campoMot" class="control-label col-sm-2">Motorista</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="campoMot" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="campoPlaca" class="control-label col-sm-2">Placa</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="campoPlaca" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="campoDate" class="control-label col-sm-2">Data do Faturamento</label>
+                    <div class="col-sm-8">
+                        <input type="datetime" class="form-control" id="campoDate" placeholder="">
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+            </fieldset>
+        </form>
+    </div>
+</div>

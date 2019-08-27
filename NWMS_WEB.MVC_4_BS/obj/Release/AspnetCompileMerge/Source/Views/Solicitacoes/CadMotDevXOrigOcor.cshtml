@@ -1,0 +1,294 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.CadMotDevXOrigOcorViewModel
+
+@{
+    ViewBag.Title = "Motivo de Devolução X Origem da Ocorrência";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        $("#MotivoDevolucaoDropDownList").change(MudarMotivo);
+
+        function MudarMotivo() {
+            var codigoMotivo = $("#MotivoDevolucaoDropDownList option:selected").val();
+            if (codigoMotivo == "0") {
+                $("#PanelTableOrigemOcorrencia").hide();
+            }
+            else {
+                $("#PanelTableOrigemOcorrencia").show();
+                PesquisaMotivoDevXOrigemOcorrencia(codigoMotivo);
+            }
+        }
+
+        $('#TableOrigemOcorrencia').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "03%", "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "05%", "sClass": "center", "title": "Código" },
+                        { "sWidth": "25%", "sClass": "center", "title": "Descrição" },
+                        { "sWidth": "67%", "bSortable": false, "bSearchable": false }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página&nbsp&nbsp",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        $("#PanelTableOrigemOcorrencia").hide();
+        MostraBotaoSalvar();
+
+        function MostraBotaoSalvar() {
+
+            $('<button id="SalvarButtonBtn" class="btn btn-primary btn-sm" type="button" aria-disabled="false"><span class="ui-button-text">Salvar</span></button>').appendTo('div.dataTables_length');
+
+            // Botão Salvar
+            $('#SalvarButtonBtn').click(function () {
+                OrigensSelecionadas();
+            });
+        }
+
+        var idColuna;
+        $('#TableOrigemOcorrencia tbody').on('click', 'td', function () {
+            idColuna = $(this).index();
+        });
+
+        // Recupera o ID da linha clicada -- tr ==> linha
+        $('#TableOrigemOcorrencia tbody').on('click', 'tr', function () {
+
+            // Coluna Selecionar
+            if (idColuna == 0) {
+
+                var table = $('#TableOrigemOcorrencia').DataTable();
+
+                // Recupera os dados da linha clicada para carregar os campos abaixo
+                var dadosLinha = table.row(this).data();
+                var codigoOrigem = dadosLinha[1];
+
+                // id do checkbox da coluna que foi clicada
+                var idCheckBox = "checkBoxSelecionarOrigem" + codigoOrigem;
+
+                if ($(this).hasClass('selected')) {
+                    $("#" + idCheckBox).prop("checked", false);
+                    $(this).removeClass('selected');
+                }
+                else {
+                    $("#" + idCheckBox).prop("checked", true);
+                    $(this).addClass('selected');
+                }
+            }
+
+        });
+
+        var temRelacionamento = false;
+        function PesquisaMotivoDevXOrigemOcorrencia(codigoMotivo) {
+
+            $('#progressBar').show();
+            $("#gridTableOrigemOcorrencia").hide();
+            $.ajaxSetup({ cache: false });
+            temRelacionamento = false;
+            $.getJSON("@Url.Action("PesquisaMotivoDevXOrigemOcorrencia")", { codigoMotivo: codigoMotivo }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.PesquisaSucesso) {
+
+                    var arrayTable = new Array();
+                    var arrayRow = new Array();
+                    $('#TableOrigemOcorrencia').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaMotivoOrigem.length; i++) {
+
+                        var codigo = data.listaMotivoOrigem[i].Codigo;
+                        var descricao = data.listaMotivoOrigem[i].Descricao;
+                        var marcar = data.listaMotivoOrigem[i].Marcar;
+
+                        var selecionar = "";
+                        if (!marcar) {
+                            selecionar = "<input type='checkbox' id='checkBoxSelecionarOrigem" + codigo + "' tabindex='-1' alt=\"\" title=\"Selecionar Origem da Ocorrência\">";
+                        }
+                        else {
+                            selecionar = "<input type='checkbox' checked='" + marcar + "'" + " id='checkBoxSelecionarOrigem" + codigo + "' tabindex='-1' alt=\"\" title=\"Selecionar Origem da Ocorrência\">";
+                            temRelacionamento = true;
+                        }
+
+                        arrayRow[i] = new Array(selecionar, codigo, descricao, "");
+                    }
+
+                    $('#TableOrigemOcorrencia').dataTable().fnAddData(arrayRow);
+                    $('#TableOrigemOcorrencia').dataTable().fnPageChange('first');
+                    $("#gridTableOrigemOcorrencia").slideToggle('fast');
+
+                    SelecinaLinhasMarcadas();
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+
+        function SelecinaLinhasMarcadas() {
+
+            var table = $('#TableOrigemOcorrencia').dataTable();
+
+            $(table.fnSettings().aoData).each(function () {
+
+                var dadosLinha = table.fnGetData(this.nTr);
+                var codigoOrigem = dadosLinha[1];
+                var idCheckBox = "checkBoxSelecionarOrigem" + codigoOrigem;
+
+                if ($("#" + idCheckBox).is(":checked")) {
+                    $(this.nTr).addClass('selected');
+                }
+            });
+        }
+
+        function OrigensSelecionadas() {
+
+            var tabelaOrigem = $('#TableOrigemOcorrencia').DataTable();
+            var data = tabelaOrigem.rows('.selected').data();
+            var listaOrigemOcorrencia = "";
+            var msgErro = "Para salvar, selecione ao menos uma origem da ocorrência."
+
+            if (!temRelacionamento && data.length == 0) {
+                DialogPadrao("warning", "Aviso!", "warning", msgErro, "btnOkOrigemErro", "OK", true);
+                return false;
+            }
+
+            for (var i = 0; i < data.length; i++) {
+                listaOrigemOcorrencia = listaOrigemOcorrencia + "-" + data[i][1];
+            }
+
+            listaOrigemOcorrencia = listaOrigemOcorrencia.substring(1, listaOrigemOcorrencia.length);
+
+            var codigoMotivo = $("#MotivoDevolucaoDropDownList option:selected").val();
+            SalvarMotivoDevXOrigemOcorrencia(codigoMotivo, listaOrigemOcorrencia);
+        }
+
+        function SalvarMotivoDevXOrigemOcorrencia(codigoMotivo, listaOrigemOcorrencia) {
+
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("SalvarMotivoDevXOrigemOcorrencia")", { codigoMotivo: codigoMotivo, listaOrigemOcorrencia: listaOrigemOcorrencia }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.GravadoSucesso) {
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkOrigOcorGravadoSucesso", "OK", true);
+                    PesquisaMotivoDevXOrigemOcorrencia(codigoMotivo);
+                }
+                else {
+                    DialogPadrao("danger", "Aviso!", "danger", data.msgRetorno, "btnOkOrigOcorGravadoErro", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        // =================================== INÍCIO DIALOG PADRAO  ========================================= //
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+        }
+
+        // =================================== FIM DIALOG PADRAO  ========================================= //
+
+        var keyCodeAnterior = 0;
+        $(window).keydown(function (event) {
+            // F5 ou CTRL + R
+            if (event.keyCode == 116 || keyCodeAnterior == 17 && event.keyCode == 82) {
+                window.location = '@Url.Action("CadMotDevXOrigOcor", "Solicitacoes")';
+                return false;
+            }
+            keyCodeAnterior = event.keyCode;
+        });
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Solicitações</a></li>
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Cadastros</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("CadMotDevXOrigOcor", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadMotDevXOrigOcorForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(m => m.MotivoDevolucao, new { @class = "col-md-2 control-label" })
+            <div class="col-md-5">
+                @Html.DropDownListFor(m => m.ListaMotivoDevolucao, new SelectList(Model.ListaMotivoDevolucao.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao", Model.ListaMotivoDevolucao), new { @class = "form-control input-sm", @id = "MotivoDevolucaoDropDownList" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="panel panel-default" id="PanelTableOrigemOcorrencia">
+            <legend>&nbsp;&nbsp;Lista de Origem das Ocorrências Cadastradas para o Motivo de Devolução Selecionado</legend>
+            <div id="gridTableOrigemOcorrencia">
+                <table id="TableOrigemOcorrencia" class="display compact" cellspacing="0"></table>
+            </div>
+            <br />
+        </div>
+    </div>
+
+}
+

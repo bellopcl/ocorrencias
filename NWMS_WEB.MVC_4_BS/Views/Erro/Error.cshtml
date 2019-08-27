@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Erro de acesso. Você não possuí acesso a essa página ou permissão para a operação selecionada. Cliquei no botão Login para efetuar o login novamente";
+    Layout = null;
+}
+
+@Styles.Render("~/Content/bootstrap")
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Login", "Login", "Login", null, new { @class = "navbar-brand" })
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <br />
+    <h4 style="color: #FA4148">@ViewBag.Title.</h4>
+</div>

@@ -1,0 +1,1095 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.RelatorioSinteticoViewModel
+@{
+    ViewBag.Title = "Relatório Sintético de Ocorrência";
+}
+@section scripts{
+
+    @Scripts.Render("~/bundles/datepicker")
+    <script type="text/javascript">
+
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $("#PesquisarTramitesButton").click(function () {
+            var numreg = $("#campoNumeroRegistro").val();
+            if (numreg == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe um protocolo", "btnOkNenhumRegTraEncontrado", "OK", true);
+            } else {
+                PesquisaTramites(numreg);
+            }
+        });
+        $('#TableCliente').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },
+                        { "sClass": "right", "title": "CNPJ/CPF" + espaco.substring(0, 55) },
+                        { "sClass": "right", "title": "Inscrição&nbspEstadual" },
+                        { "sClass": "left", "title": "Endereço" + espaco },
+                        { "sClass": "left", "title": "Cidade" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Estado" }, ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            "scrollX": true,
+        });
+        function PesquisaTodosCliente(codigoCliente) {
+            $('#progressBar').show();
+            $("#gridTableCliente").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaCliente", "Solicitacoes")", { codigoCliente: codigoCliente }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+
+                else if (data.listaClientes) {
+                    var arrayRow = new Array();
+                    $('#TableCliente').dataTable().fnClearTable();
+                    for (var i = 0; i < data.listaClientes.length; i++) {
+                        var codigo = data.listaClientes[i].CodigoCliente;
+                        var nome = data.listaClientes[i].NomeFantasia;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaClientes[i].RazaoSocial;
+                        var cpf = data.listaClientes[i].CnpjCpf;
+                        var ie = data.listaClientes[i].InscricaoEstadual;
+                        var endereco = data.listaClientes[i].Endereco;
+                        var cidade = data.listaClientes[i].Cidade;
+                        var estado = data.listaClientes[i].Estado;
+                        arrayRow[i] = new Array(selecionar, codigo, nome, razaoSocial, cpf, ie, endereco, cidade, estado);
+                    }
+                    $('#TableCliente').dataTable().fnAddData(arrayRow);
+                    $('#TableCliente').dataTable().fnPageChange('first');
+                    $("#gridTableCliente").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#ClienteDialog').modal('show');
+            });
+        }
+        function SelecionarCliente(codigo, nome) {
+            if (valor == 2) {
+                $("#CodigoClienteConferenciaItem").val("");
+                $("#CodigoClienteConferenciaItem").focus();
+                $("#ClienteDialog").modal("hide");
+                setTimeout(function () {
+                    $("#CodigoClienteConferenciaItem").val(codigo);
+                    $("#NomeclienteConferenciaItem").val(nome);
+                    $("#CodigoClienteConferenciaItem").focus();
+                }, 50);
+            }
+            else if (valor == 6) {
+                $("#CodClienteConferenciaOcorrencia").val("");
+                $("#CodClienteConferenciaOcorrencia").focus();
+                $("#ClienteDialog").modal("hide");
+                setTimeout(function () {
+                    $("#CodClienteConferenciaOcorrencia").val(codigo);
+                    $("#NomeClienteConferenciaOcorrencia").val(nome);
+                    $("#CodClienteConferenciaOcorrencia").focus;
+                }, 50);
+            }
+            else {
+                $('#CodClienteTextBox').val("");
+                $("#CodClienteTextBox").focus();
+                $('#ClienteDialog').modal('hide');
+                setTimeout(function () {
+                    $('#CodClienteTextBox').val(codigo);
+                    $('#NomeClienteTextBox').val(nome);
+                    $("#CodClienteTextBox").focus();
+                }, 50);
+            }
+        }
+
+        $("#PesquisarClienteButton").click(function () {
+            var codigoCliente = $("#CodClienteTextBox").val();
+            PesquisaTodosCliente(codigoCliente);
+        });
+
+        $("#PesquisarClienteButtonOco").click(function () {
+            var codigoCliente = $("CodClienteConferenciaOcorrencia").val();
+            PesquisaTodosCliente(codigoCliente);
+        });
+
+        $("#PesquisarClienteButtonItens").click(function () {
+            var codigoCliente = $("CodigoClienteConferenciaItem").val();
+            PesquisaTodosCliente(codigoCliente);
+        });
+
+        //PESQUISAR TRAMITES
+        $('#TableTramites').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "bInfo": false,
+            "lengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Nº&nbspReg." },
+                        { "sClass": "center", "title": "Seq.&nbspTram." },
+                        { "sClass": "left", "title": "Descrição&nbspdo&nbspTramite" + espaco.substring(0, 225) },
+                        { "sClass": "left", "title": "Usuário&nbspdo&nbspTramite" + espaco.substring(0, 250) },
+                        { "sClass": "center", "title": "Data&nbspdo&nbspTramite" + espaco.substring(0, 50) },
+                        { "sClass": "left", "title": "Observação&nbspdo&nbspTramite" + espaco + espaco + espaco }
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            "scrollX": true,
+        });
+
+        function ValidaCliente() {
+            var valorPlaca = $("#CodPlacaDatFatTextBox").val();
+            if (valorPlaca == "aaa-2222") {
+                document.getElementById("ConferenciaItem").style.display = "block";
+            } else {
+                document.getElementById("ConferenciaItem").style.display = "none";
+            }
+        }
+
+        function ValidaClienteOcorrencia() {
+            var valorPlaca = $("#CodPlacaDatFatTextBoxTroca").val();
+            if (valorPlaca == "aaa-2222") {
+                document.getElementById("ClienteOcorrencia").style.display = "block";
+            } else {
+                document.getElementById("ClienteOcorrencia").style.display = "none";
+            }
+        }
+
+        function PesquisaTramites(codigoRegistro) {
+            $("#gridTableTramites").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaTramites", "Solicitacoes")", { codigoRegistro: codigoRegistro }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaN0203TRAPesquisa.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableTramites').dataTable().fnClearTable();
+                    for (var i = 0; i < data.ListaN0203TRAPesquisa.length; i++) {
+                        var numReg = data.ListaN0203TRAPesquisa[i].NUMREG;
+                        var seqTra = data.ListaN0203TRAPesquisa[i].SEQTRA;
+                        var desTra = data.ListaN0203TRAPesquisa[i].DESTRA;
+                        var usuTra = data.ListaN0203TRAPesquisa[i].USUTRA;
+                        var nomeUsuTra = data.ListaN0203TRAPesquisa[i].NOMEUSUTRA;
+                        var usuTraAux = usuTra + " - " + nomeUsuTra;
+                        var datTra = data.ListaN0203TRAPesquisa[i].DATTRA;
+                        var obstra = data.ListaN0203TRAPesquisa[i].OBSTRA;
+                        arrayRow[i] = new Array(numReg, seqTra, desTra, usuTraAux, datTra, obstra);
+                    }
+                    $('#TableTramites').dataTable().fnAddData(arrayRow);
+                    $('#TableTramites').dataTable().fnPageChange('first');
+                    $("#gridTableTramites").slideToggle('fast');
+                    $('#TramitesDialog').modal('show');
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Nenhum registro encontrado", "btnOkNenhumRegTraEncontrado", "OK", true);
+                    $('#TramitesDialog').modal('hide');
+                }
+            });
+        }
+
+        var valor = 6;
+        function setValor(valor) {
+            this.valor = valor;
+        }
+
+        var mensagemErro = "";
+        $("#ProcessarButton").click(function () {
+            TipoPesquisa(valor);
+        });
+
+        function RelatorioSinteticoConferencia(codFilial, analiseEmbarque, codPlaca, dataInicial, dataFinal, tipoPesquisa, dataFaturamento, codigoCliente) {
+            $('#myModalLoading').modal('show');
+            $.post("RelatorioSinteticoConferencia", { codFilial: codFilial, analiseEmbarque: analiseEmbarque, codPlaca: codPlaca, dataInicial: dataInicial, dataFinal: dataFinal, tipoPesquisa: tipoPesquisa, dataFaturamento: dataFaturamento, codigoCliente: codigoCliente }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                if (data.Campos && data.Campos != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Preencha ambos os campos", "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                    return;
+                }
+                else if (data.listaVazia && data.listaVazia != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else if (data.ExisteProtocoloFechado && data.ExisteProtocoloFechado != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                } else if (!data.placa && data.placa != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Placa inválida", "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else {
+                    window.open(data);
+                    $('#myModalLoading').modal('hide');
+                }
+            }, "json");
+        }
+
+        function RelatorioSintetico(codFilial, analiseEmbarque, codPlaca, dataInicial, dataFinal, tipoPesquisa, dataFaturamento, codigoCliente) {
+            $('#myModalLoading').modal('show');
+            $.post("RelatorioSintetico", { codFilial: codFilial, analiseEmbarque: analiseEmbarque, codPlaca: codPlaca, dataInicial: dataInicial, dataFinal: dataFinal, tipoPesquisa: tipoPesquisa, dataFaturamento: dataFaturamento, codigoCliente: codigoCliente }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                if (data.Campos) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Preencha ambos os campos", "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                    return;
+                }
+                else if (data.listaVazia && data.listaVazia != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else if (data.ExisteProtocoloFechado && data.ExisteProtocoloFechado != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                } else if (!data.placa && data.placa != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Placa inválida", "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else {
+                    window.open(data);
+                    $('#myModalLoading').modal('hide');
+                }
+            }, "json");
+        }
+
+        function TipoPesquisa(valor) {
+            if (valor == 1) {
+                limparCampos2()
+                limparCampos3();
+                if (validarCampos1()) {
+                    var codFilial = $("#FilialAneDropDownList option:selected").val();
+                    var analiseEmbarque = $("#NumAnaliseEmbarqueTextBox").val();
+                    RelatorioSintetico(codFilial, analiseEmbarque, "", "", "", 2, "", "");
+                }
+            } else if (valor == 2) {
+                limparCampos1()
+                limparCampos3();
+                var codPlaca = $("#CodPlacaDatFatTextBox").val().replace("-", "");
+                var dtFat = $("#DataFaturamentoTextBox").val();
+                var codigoCliente = $("#CodigoClienteConferenciaItem").val();
+                
+                RelatorioSintetico("", "1", codPlaca, "", "", 10, dtFat, codigoCliente);
+            } else if (valor == 6) {
+                limparCampos1()
+                limparCampos3();
+                var codPlaca = $("#CodPlacaDatFatTextBoxTroca").val().replace("-", "");
+                var dtFat = $("#DataFaturamentoTextBoxTroca").val();
+                var codigoCliente = $("#CodClienteConferenciaOcorrencia").val();
+                RelatorioSinteticoConferencia("", "", codPlaca, "", "", 10, dtFat, codigoCliente);
+            } else if (valor == 3) {
+                limparCampos1();
+                limparCampos2();
+                if (validarCampos3()) {
+                    var codPlaca = $("#CodPlacaPerTextBox").val().replace("-", "");
+                    var datIni = $("#DataInicialTextBox").val();
+                    var datFim = $("#DataFinalTextBox").val();
+                    RelatorioSintetico("", "", codPlaca, datIni, datFim, 11, "");
+                }
+            } else if (valor == 4) {
+                for (var i = 0; i < document.body.getElementsByClassName("form-control input-smgroup").length; i++) {
+                    var campo = "#" + document.body.getElementsByClassName("form-control input-smgroup")[i].id;
+                    $(campo).rules("remove", "required");
+                    $(campo).rules("remove", "range");
+                    $(campo).valid();
+                }
+                var codPlaca = $("#CodPlacaPerTextBox").val().replace("-", "");
+                var filial = $("#campoFilial option:selected").val();
+                var numeroNotaFiscal = $("#campoNumeroRegistro").val;
+                var codCliente = $("#CodClienteTextBox").val();
+                var embarque = $("#campoEmbarque").val();
+                var dataInicial = $("#campoPeriodoInicial").val();
+                var dataFinal = $("#campoPeriodoFinal").val();
+                var motivo = $("#campoMotivo option:selected").val();
+                var situacao = $("#campoSituacao option:selected").val();
+                var origem = $("#campoOrigem option:selected").val();
+                var tipo = $("#campoTipo option:selected").val();
+                var dataInicialOCR = $("#campoPeriodoInicialOCR").val();
+                var dataFinalOCR = $("#campoPeriodoFinalOCR").val();
+                var transportadora = $("#campoTransportadora").val();
+                RelatorioSinteticoOcorrencia(filial == 0 ? "" : filial,
+                    numeroNotaFiscal == "" ? "" : numeroNotaFiscal,
+                    codCliente == "" ? "" : codCliente,
+                    dataInicial == "" ? "" : dataInicial,
+                    dataFinal == "" ? "" : dataFinal,
+                    embarque == "" ? "" : embarque,
+                    motivo == "0" ? "" : motivo,
+                    situacao == "0" ? "" : situacao,
+                    origem == "0" ? "" : origem,
+                    tipo == "0" ? "" : tipo,
+                    dataInicialOCR == "" ? "" : dataInicialOCR,
+                    dataFinalOCR == "" ? "" : dataFinalOCR,
+                    codPlaca == "" ? "" : codPlaca,
+                    transportadora == "" ? "" : transportadora);
+            } else if (valor == 7) {
+                for (var i = 0; i < document.body.getElementsByClassName("form-control input-smgroup").length; i++) {
+                    var campo = "#" + document.body.getElementsByClassName("form-control input-smgroup")[i].id;
+                    $(campo).rules("remove", "required");
+                    $(campo).rules("remove", "range");
+                    $(campo).valid();
+                }
+                var codPlaca = $("#CodPlacaPerTextBox").val().replace("-", "");
+                var filial = $("#campoFilial option:selected").val();
+                var numeroNotaFiscal = $("#campoNumeroRegistro").val;
+                var codCliente = $("#CodClienteTextBox").val();
+                var embarque = $("#campoEmbarque").val();
+                var dataInicial = $("#campoPeriodoInicial").val();
+                var dataFinal = $("#campoPeriodoFinal").val();
+                var motivo = $("#campoMotivo option:selected").val();
+                var situacao = $("#campoSituacao option:selected").val();
+                var origem = $("#campoOrigem option:selected").val();
+                var tipo = $("#campoTipo option:selected").val();
+                var dataInicialOCR = $("#campoPeriodoFianlOCR").val();
+                var dataFinalOCR = $("#campoPeriodoFinalOCR").val();
+                var transportadora = $("#campoTransportadora").val();
+                RelatorioTempoCarga(filial == 0 ? "" : filial,
+                    numeroNotaFiscal == "" ? "" : numeroNotaFiscal,
+                    codCliente == "" ? "" : codCliente,
+                    dataInicial == "" ? "" : dataInicial,
+                    dataFinal == "" ? "" : dataFinal,
+                    embarque == "" ? "" : embarque,
+                    motivo == "0" ? "" : motivo,
+                    situacao == "0" ? "" : situacao,
+                    origem == "0" ? "" : origem,
+                    dataInicialOCR == "" ? "" : dataInicialOCR,
+                    dataFinalOCR == "" ? "" : dataFinalOCR,
+                    codPlaca == "" ? "" : codPlaca,
+                    transportadora == "" ? "" : transportadora
+                    );
+            }
+        }
+
+        function RelatorioTempoCarga(filial, numeroNotaFiscal, codCliente, dataInicial, dataFinal, embarque, motivo, situacao, origem, dataInicialOCR, dataFinalOCR, codPlaca, transportadora) {
+            $('#myModalLoading').modal('show');
+            $.post("RelatorioTempoCarga", { filial: filial, numeroNotaFiscal: numeroNotaFiscal, codCliente: codCliente, dataInicial: dataInicial, dataFinal: dataFinal, embarque: embarque, motivo: motivo, situacao: situacao, origem: origem, dataInicialOCR: dataInicialOCR, dataFinalOCR: dataFinalOCR, codPlaca: codPlaca, transpotadora: transportadora }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaVazia) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else if (data.ExisteProtocoloFechado) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else {
+                    window.open(data);
+                    $('#myModalLoading').modal('hide');
+                }
+            }, "json");
+        }
+
+        function RelatorioSinteticoOcorrencia(filial, numeroNotaFiscal, codCliente, dataInicial, dataFinal, embarque, motivo, situacao, origem, tipo, dataInicialOCR, dataFinalOCR, codPlaca, transportadora) {
+            $('#myModalLoading').modal('show');
+            $.post("RelatorioSinteticoOcorrencia", { filial: filial, numeroNotaFiscal: numeroNotaFiscal, codCliente: codCliente, dataInicial: dataInicial, dataFinal: dataFinal, embarque: embarque, motivo: motivo, situacao: situacao, origem: origem, tipo: tipo, dataInicialOCR: dataInicialOCR, dataFinalOCR: dataFinalOCR, codPlaca: codPlaca, transportadora: transportadora }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaVazia) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else if (data.ExisteProtocoloFechado) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#myModalLoading').modal('hide');
+                }
+                else {
+                    window.open(data);
+                    $('#myModalLoading').modal('hide');
+                }
+            }, "json");
+        }
+
+        function validarCampos1() {
+            var retorno = true;
+            for (var i = 0; i < document.body.getElementsByClassName("form-control input-sm").length; i++) {
+                var campo = "#" + document.body.getElementsByClassName("form-control input-sm")[i].id;
+                $(campo).rules("add", "required");
+                if ($(campo).val() == "0") {
+                    $(campo).rules("add", "range");
+                }
+                if ($(campo).valid()) {
+                    $(campo).valid();
+                } else {
+                    retorno = false;
+                }
+            }
+            return retorno;
+        }
+
+        function limparCampos1() {
+            for (var i = 0; i < document.body.getElementsByClassName("form-control input-sm").length; i++) {
+                var campo = "#" + document.body.getElementsByClassName("form-control input-sm")[i].id;
+                $(campo).rules("remove", "required");
+                $(campo).rules("remove", "range");
+                $(campo).valid();
+            }
+        }
+
+        function dataAtualFormatada(data) {
+            var dia = data.getDate();
+            if (dia.toString().length == 1)
+                dia = "0" + dia;
+            var mes = data.getMonth() + 1;
+            if (mes.toString().length == 1)
+                mes = "0" + mes;
+            var ano = data.getFullYear();
+            return dia + "/" + mes + "/" + ano;
+        }
+
+        function validarCampos2() {
+            var retorno = true;
+            for (var i = 0; i < document.body.getElementsByClassName("form-control input-smgroup").length; i++) {
+                var campo = "#" + document.body.getElementsByClassName("form-control input-smgroup")[i].id;
+                $(campo).rules("add", "required");
+                if ($(campo).val() == "0") {
+                    $(campo).rules("add", "range");
+                }
+                if ($(campo).valid()) {
+                    $(campo).valid();
+                } else {
+                    retorno = false;
+                }
+            }
+            return retorno;
+        }
+
+        function limparCampos2() {
+            for (var i = 0; i < document.body.getElementsByClassName("form-control input-smgroup").length; i++) {
+                var campo = "#" + document.body.getElementsByClassName("form-control input-smgroup")[i].id;
+                $(campo).rules("remove", "required");
+                $(campo).rules("remove", "range");
+                $(campo).valid();
+            }
+        }
+
+        function validarCampos3() {
+            var retorno = true;
+            for (var i = 0; i < document.body.getElementsByClassName("form-control input-smgroup2").length; i++) {
+                var campo = "#" + document.body.getElementsByClassName("form-control input-smgroup2")[i].id;
+                $(campo).rules("add", "required");
+                if ($(campo).val() == "0") {
+                    $(campo).rules("add", "range");
+                }
+                if ($(campo).valid()) {
+                    $(campo).valid();
+                } else {
+                    retorno = false;
+                }
+            }
+            return retorno;
+        }
+        function limparCampos3() {
+            for (var i = 0; i < document.body.getElementsByClassName("form-control input-smgroup2").length; i++) {
+                var campo = "#" + document.body.getElementsByClassName("form-control input-smgroup2")[i].id;
+                $(campo).rules("remove", "required");
+                $(campo).rules("remove", "range");
+                $(campo).valid();
+            }
+        }
+
+        $('#NumAnaliseEmbarqueTextBox').mask("9?9999", { placeholder: "" });
+        //$('#CodPlacaDatFatTextBox').mask("aaa-9999", { placeholder: "" });
+        //$('#CodPlacaDatFatTextBoxTroca').mask("aaa-9999", { placeholder: "" });
+        //$('#CodPlacaPerTextBox').mask("aaa-9999", { placeholder: "" });
+        $('#DataInicialTextBox').mask("99/99/9999");
+        $('#DataFinalTextBox').mask("99/99/9999");
+        $('#DataFaturamentoTextBox').mask("99/99/9999");
+        $('#DataFaturamentoTextBoxTroca').mask("99/99/9999");
+        $('#DataInicialTextBox').datepicker({
+            dateFormat: "dd/mm/yy"
+        });
+        $('#DataFinalTextBox').datepicker({
+            dateFormat: "dd/mm/yy",
+        });
+        $('#DataFaturamentoTextBox').datepicker({
+            dateFormat: "dd/mm/yy",
+        });
+        $('#DataFaturamentoTextBoxTroca').datepicker({
+            dateFormat: "dd/mm/yy",
+        });
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+        }
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+
+        function AbrirAnexo() {
+            var codigoRegistro = $("#campoNumeroRegistro").val();
+            $.post("anexosOcorrencia", { codigoRegistro: codigoRegistro }, function (data) {
+                if (data.Logado || data.ErroExcecao || data.MensagemRetorno) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Não existem anexos.", "btnOkProtocoloNaoAprovado", "OK", true);
+                    return;
+                }
+                else {
+                    if (data.TipoAnexo.substring(0, 5) == "image"){
+                        var iframe = "<iframe width='100%' height='100%' src='" + data.Anexo + "'></iframe>"
+                        var x = window.open();
+                        x.document.open();
+                        x.document.write(iframe);
+                        x.document.close();
+                    }
+                    if (data.TipoAnexo == "application/pdf" || data.TipoAnexo == "text/plain") {
+                        window.open(data.Anexo);
+                    }
+                    else {
+                        window.location = data.Anexo;
+                    }
+                }
+            }, "json");
+        }
+
+    </script>
+}
+<style>
+    #ConferenciaItem {
+        display:none;
+    }
+
+    #ClienteOcorrencia{
+        display:none;
+    }
+</style>
+<div class="modal fade" id="myModalLoading" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="preloader" id="preloader">
+            <img src="http://forum.cinemaemcena.com.br/public/style_images/master/ajax_loading.gif" class="img-responsive center-block">
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="TramitesDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Tramites</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableTramites" style="display: none;">
+                        <table id="TableTramites" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="ClienteDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Cliente</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableCliente" style="display: none;">
+                        <table id="TableCliente" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" role="dialog" data-backdrop="static"></div>
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Relatórios</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("RelatorioSintetico", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "RelatorioSinteticoForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li onclick="setValor(6)" class="active"><a href="#TipoPesq6" data-toggle="tab" aria-expanded="true">Conferência por Ocorrência</a></li>
+        <li onclick="setValor(2)"><a href="#TipoPesq2" data-toggle="tab" aria-expanded="true">Conferência por Item</a></li>
+        <li onclick="setValor(4)"><a href="#TipoPesq4" data-toggle="tab" aria-expanded="true">Situação</a></li>
+        <li onclick="setValor(5)"><a href="#TipoPesq5" data-toggle="tab" aria-expanded="true">Anexos</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade " id="TipoPesq2">
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.CodPlacaDatFat, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.CodPlacaDatFat, new { @class = "form-control input-smgroup", @id = "CodPlacaDatFatTextBox", @style = "text-transform: uppercase", @onblur = "ValidaCliente()" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-4">
+                        @Html.ValidationMessageFor(m => m.CodPlacaDatFat)
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.LabelFor(m => m.DataFaturamento, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.DataFaturamento, new { @class = "form-control input-smgroup", @id = "DataFaturamentoTextBox" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-7" id="DivValidationDataFat">
+                        @Html.ValidationMessageFor(m => m.DataFaturamento)
+                        <span id="fieldErrorDivValidationDataFat" class="field-validation-valid"><span class=""></span></span>
+                        <p></p>
+                    </div>
+                </div>
+                <div id="ConferenciaItem" class="form-group">
+                    @Html.LabelFor(m => m.CodCliente, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.CodCliente, new { @class = "form-control input-smgroup", @id = "CodigoClienteConferenciaItem" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButtonItens"><span class="glyphicon glyphicon-search" title="Pesquisar cliente"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextBoxFor(m => m.NomeCliente, new { @class = "form-control input-smgroup", @id = "NomeclienteConferenciaItem", @readonly = "true" })
+                        @Html.ValidationMessageFor(m => m.NomeCliente)
+                        @Html.ValidationMessageFor(m => m.CodCliente)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade active in" id="TipoPesq6">
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.CodPlacaDatFatTroca, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.CodPlacaDatFatTroca, new { @class = "form-control input-smgroup", @id = "CodPlacaDatFatTextBoxTroca", @style = "text-transform: uppercase", @onblur = "ValidaClienteOcorrencia()" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-4">
+                        @Html.ValidationMessageFor(m => m.CodPlacaDatFatTroca)
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.LabelFor(m => m.DataFaturamentoTroca, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.DataFaturamentoTroca, new { @class = "form-control input-smgroup", @id = "DataFaturamentoTextBoxTroca" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-7" id="DivValidationDataFat">
+                        @Html.ValidationMessageFor(m => m.DataFaturamentoTroca)
+                        <span id="fieldErrorDivValidationDataFat" class="field-validation-valid"><span class=""></span></span>
+                        <p></p>
+                    </div>
+                </div>
+                <div id="ClienteOcorrencia" class="form-group">
+                    @Html.LabelFor(m => m.CodCliente, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.CodCliente, new { @class = "form-control input-smgroup", @id = "CodClienteConferenciaOcorrencia" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButtonOco"><span class="glyphicon glyphicon-search" title="Pesquisar cliente"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextBoxFor(m => m.NomeCliente, new { @class = "form-control input-smgroup", @id = "NomeClienteConferenciaOcorrencia", @readonly = "true" })
+                        @Html.ValidationMessageFor(m => m.NomeCliente)
+                        @Html.ValidationMessageFor(m => m.CodCliente)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="TipoPesq4">
+            <p></p>
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.campoOrigem, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.campoOrigem, new SelectList(Model.listaOrigemOcorrencia.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao", Model.listaOrigemOcorrencia), new { @class = "form-control input-smgroup", @id = "campoOrigem" })
+                        @Html.ValidationMessageFor(m => m.campoOrigem)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.campoTipo, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.campoTipo, new SelectList(Model.listaTipoAtendimento.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao", Model.listaTipoAtendimento), new { @class = "form-control input-smgroup", @id = "campoTipo" })
+                        @Html.ValidationMessageFor(m => m.campoTipo)
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.campoMotivo, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.campoMotivo, new SelectList(Model.listaMotivoDevolucao.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao", Model.listaMotivoDevolucao), new { @class = "form-control input-smgroup", @id = "campoMotivo" })
+                        @Html.ValidationMessageFor(m => m.campoMotivo)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoSituacao, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-md-2">
+                            @Html.DropDownListFor(m => m.campoSituacao,
+                                    new List<SelectListItem> {
+                                    new SelectListItem { Value = "0" , Text = "Selecione...", Selected = true},
+                                    new SelectListItem { Value = "1" , Text = "Rascunho"},
+                                    new SelectListItem { Value = "2" , Text = "Aguardando Aprovação"},
+                                    new SelectListItem { Value = "4" , Text = "Aprovado"},
+                                    new SelectListItem { Value = "3" , Text = "Integrado"},
+                                    new SelectListItem { Value = "5" , Text = "Reprovado"},
+                                    new SelectListItem { Value = "6" , Text = "Reabilitado"},
+                                    new SelectListItem { Value = "8" , Text = "Coleta"},
+                                    new SelectListItem { Value = "9" , Text = "Conferido"},
+                                    new SelectListItem { Value = "10" , Text = "Faturado"},
+                                    new SelectListItem { Value = "7" , Text = "Cancelado" } }, new { @class = "form-control input-sm", @id = "campoSituacao" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.campoSituacao)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoFilial, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-md-2">
+                            @Html.DropDownListFor(m => m.campoFilial,
+                                    new List<SelectListItem> {
+                                    new SelectListItem { Value = "" , Text = "Selecione..", Selected = true},
+                                    new SelectListItem { Value = "1" , Text = "1"},
+                                    new SelectListItem { Value = "101" , Text = "101"}}, new { @class = "form-control input-smgroup", @id = "campoFilial" })
+                        </div>
+                        <div class="col-xs-2">
+                            @Html.TextBoxFor(m => m.campoEmbarque, new { @class = "form-control input-smgroup", @id = "campoEmbarque" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.campoEmbarque)
+                        @Html.ValidationMessageFor(m => m.campoFilial)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CodCliente, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.CodCliente, new { @class = "form-control input-smgroup", @id = "CodClienteTextBox" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButton"><span class="glyphicon glyphicon-search" title="Pesquisar cliente"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextBoxFor(m => m.NomeCliente, new { @class = "form-control input-smgroup", @id = "NomeClienteTextBox", @readonly = "true" })
+                        @Html.ValidationMessageFor(m => m.NomeCliente)
+                        @Html.ValidationMessageFor(m => m.CodCliente)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoTransportadora, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-md-2">
+                            @Html.DropDownListFor(m => m.campoTransportadora,
+                                    new List<SelectListItem> {
+                                    new SelectListItem { Value = "" , Text = "Selecione..", Selected = true},
+                                    new SelectListItem { Value = "SIM" , Text = "SIM"},
+                                    new SelectListItem { Value = "" , Text = "NÃO"}}, new { @class = "form-control input-smgroup", @id = "campoTransportadora" })
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.CodPlacaPer, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.CodPlacaPer, new { @class = "form-control input-smgroup2", @id = "CodPlacaPerTextBox", @style = "text-transform: uppercase" })
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoDataInicialOCR, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataInicialOCR, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoInicialOCR", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataFinalOCR, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoFinalOCR", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.ValidationMessageFor(m => m.campoDataInicialOCR)
+                            @Html.ValidationMessageFor(m => m.campoDataFinalOCR)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoDataInicial, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataInicial, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoInicial", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataFinal, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoFinal", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.ValidationMessageFor(m => m.campoDataInicial)
+                            @Html.ValidationMessageFor(m => m.campoDataFinal)
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="TipoPesq5">
+            <p></p>
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoNumeroRegistro, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoNumeroRegistro, new { @class = "form-control input-smgroup", @id = "campoNumeroRegistro" })
+                        </div>
+                        <div class="col-sm-2">
+                            <i class="glyphicon glyphicon-folder-open" style="font-size:24px;" onclick="AbrirAnexo()"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="TipoPesq7">
+            <p></p>
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.campoOrigem, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.campoOrigem, new SelectList(Model.listaOrigemOcorrencia.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao", Model.listaOrigemOcorrencia), new { @class = "form-control input-smgroup", @id = "campoOrigem" })
+                        @Html.ValidationMessageFor(m => m.campoOrigem)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.campoTipo, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.campoTipo, new SelectList(Model.listaTipoAtendimento.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao", Model.listaTipoAtendimento), new { @class = "form-control input-smgroup", @id = "campoTipo" })
+                        @Html.ValidationMessageFor(m => m.campoTipo)
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.campoMotivo, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.campoMotivo, new SelectList(Model.listaMotivoDevolucao.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao", Model.listaMotivoDevolucao), new { @class = "form-control input-smgroup", @id = "campoMotivo" })
+                        @Html.ValidationMessageFor(m => m.campoMotivo)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoSituacao, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-md-2">
+                            @Html.DropDownListFor(m => m.campoSituacao,
+                                    new List<SelectListItem> {
+                                    new SelectListItem { Value = "0" , Text = "Selecione...", Selected = true},
+                                    new SelectListItem { Value = "1" , Text = "Rascunho"},
+                                    new SelectListItem { Value = "2" , Text = "Aguardando Aprovação"},
+                                    new SelectListItem { Value = "4" , Text = "Aprovado"},
+                                    new SelectListItem { Value = "3" , Text = "Integrado"},
+                                    new SelectListItem { Value = "5" , Text = "Reprovado"},
+                                    new SelectListItem { Value = "6" , Text = "Reabilitado"},
+                                    new SelectListItem { Value = "8" , Text = "Coleta"},
+                                    new SelectListItem { Value = "9" , Text = "Conferido"},
+                                    new SelectListItem { Value = "10" , Text = "Faturado"},
+                                    new SelectListItem { Value = "7" , Text = "Cancelado" } }, new { @class = "form-control input-sm", @id = "campoSituacao" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.campoSituacao)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoFilial, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-md-2">
+                            @Html.DropDownListFor(m => m.campoFilial,
+                                    new List<SelectListItem> {
+                                    new SelectListItem { Value = "" , Text = "Selecione..", Selected = true},
+                                    new SelectListItem { Value = "1" , Text = "1"},
+                                    new SelectListItem { Value = "101" , Text = "101"}}, new { @class = "form-control input-smgroup", @id = "campoFilial" })
+                        </div>
+                        <div class="col-xs-2">
+                            @Html.TextBoxFor(m => m.campoEmbarque, new { @class = "form-control input-smgroup", @id = "campoEmbarque" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.campoEmbarque)
+                        @Html.ValidationMessageFor(m => m.campoFilial)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CodCliente, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.CodCliente, new { @class = "form-control input-smgroup", @id = "CodClienteTextBox" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButton"><span class="glyphicon glyphicon-search" title="Pesquisar cliente"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextBoxFor(m => m.NomeCliente, new { @class = "form-control input-smgroup", @id = "NomeClienteTextBox", @readonly = "true" })
+                        @Html.ValidationMessageFor(m => m.NomeCliente)
+                        @Html.ValidationMessageFor(m => m.CodCliente)
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoTransportadora, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-md-2">
+                            @Html.DropDownListFor(m => m.campoTransportadora,
+                                    new List<SelectListItem> {
+                                    new SelectListItem { Value = "" , Text = "Selecione..", Selected = true},
+                                    new SelectListItem { Value = "SIM" , Text = "SIM"},
+                                    new SelectListItem { Value = "" , Text = "NÃO"}}, new { @class = "form-control input-smgroup", @id = "campoTransportadora" })
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="row">
+                    @Html.LabelFor(m => m.CodPlacaPer, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.CodPlacaPer, new { @class = "form-control input-smgroup2", @id = "CodPlacaPerTextBox", @style = "text-transform: uppercase" })
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoDataInicialOCR, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataInicialOCR, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoInicialOCR", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataFinalOCR, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoFinalOCR", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.ValidationMessageFor(m => m.campoDataInicialOCR)
+                            @Html.ValidationMessageFor(m => m.campoDataFinalOCR)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.campoDataInicial, new { @class = "col-md-2 control-label" })
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataInicial, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoInicial", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(m => m.campoDataFinal, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "campoPeriodoFinal", @type = "date" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.ValidationMessageFor(m => m.campoDataInicial)
+                            @Html.ValidationMessageFor(m => m.campoDataFinal)
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 control-label">
+        </div>
+        <div class="col-sm-1">
+            <button type="button" id="ProcessarButton" class="btn btn-primary btn-sm">Processar</button>
+        </div>
+    </div>
+}

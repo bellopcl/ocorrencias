@@ -1,0 +1,479 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.AprovarRegistroOcorrenciaViewModel
+
+@{
+    ViewBag.Title = "Análise e Aprovação de Ocorrência";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
+        $('#TableRegistro').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "center", "title": "Nº&nbsp;Registro" },
+                        { "sClass": "right", "title": "Valor&nbsp;Devolução" },
+                        { "sClass": "left", "title": "Usuário&nbsp;Geração" + espaco.substring(0, 275) },
+                        { "sClass": "left", "title": "Data&nbsp;Geração" + espaco.substring(0, 50) },
+                        { "sClass": "left", "title": "Situação" + espaco.substring(0, 60) },
+                        { "sClass": "left", "title": "Tipo&nbsp;de&nbsp;Atendimento" + espaco.substring(0, 20) },
+                        { "sClass": "left", "title": "Origem&nbsp;da&nbsp;Ocorrência" },
+                        { "sClass": "center", "title": "Cód.&nbsp;Cliente" },
+                        { "sClass": "left", "title": "Nome&nbsp;Cliente" + espaco.substring(0, 400) },
+                        { "sClass": "center", "title": "Cód.&nbsp;Motorista" },
+                        { "sClass": "left", "title": "Nome&nbsp;Motorista" + espaco.substring(0, 250) },
+                        { "sClass": "left", "title": "Placa" + espaco.substring(0, 20) },
+                        { "sClass": "left", "title": "Data&nbsp;Última&nbsp;Alt." + espaco.substring(0, 40) },
+                        { "sClass": "left", "title": "Usuário&nbsp;Última&nbsp;Alteração" + espaco.substring(0, 230) },
+                        { "sClass": "left", "title": "Data&nbsp;Fechamento" + espaco.substring(0, 25) },
+                        { "sClass": "left", "title": "Usuário&nbsp;Fechamento" + espaco.substring(0, 275) },
+                        { "sClass": "left", "title": "Centros&nbsp;de&nbsp;Custos" + espaco.substring(0, 225) },
+                        { "sClass": "dpass" },
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página&nbsp&nbsp",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            "scrollY": 150,
+            "scrollX": true,
+            "jQueryUI": true,
+
+        });
+
+        function PesquisaProtocolosPendentesAprovacao() {
+            $('#progressBar').show();
+            $("#gridTableRegistro").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaProtocolosPendentesAprovacao")", {}, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaAprovacao.length > 0) {
+
+                    var arrayRow = new Array();
+                    $('#TableRegistro').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaAprovacao.length; i++) {
+
+                        var registro = data.listaAprovacao[i].CodigoRegistro;
+                        var valorDev = "R$ "+ data.listaAprovacao[i].ValorDevolucao;
+                        var tipoAtendimento = data.listaAprovacao[i].DescTipoAtendimento;
+                        var origemOcorrencia = data.listaAprovacao[i].DescOrigemOcorrencia;
+                        var codigoCliente = data.listaAprovacao[i].CodCliente;
+                        var nomeCliente = data.listaAprovacao[i].NomeCliente;
+                        var codigoMotorista = data.listaAprovacao[i].CodMotorista;
+                        var nomeMotorista = data.listaAprovacao[i].NomeMotorista;
+                        var codPlaca = data.listaAprovacao[i].CodPlaca;
+                        var dtHrGer = data.listaAprovacao[i].DataHrGeracao;
+                        var userGer = data.listaAprovacao[i].UsuarioGeracao + " - " + data.listaAprovacao[i].NomeUsuarioGeracao;
+                        var sitRegistro = data.listaAprovacao[i].CodSituacaoRegistro + " - " + data.listaAprovacao[i].DescSituacaoRegistro;
+                        var ultimaAlt = data.listaAprovacao[i].UltimaAlteracao;
+                        var usuarioUltAlt = data.listaAprovacao[i].UsuarioUltimaAlteracao + " - " + data.listaAprovacao[i].NomeUsuarioUltimaAlteracao;
+                        var dtAprovacao = data.listaAprovacao[i].DataFechamento;
+                        var usuariAprovacao = data.listaAprovacao[i].UsuarioFechamento + " - " + data.listaAprovacao[i].NomeUsuarioFechamento;
+                        var observacao = data.listaAprovacao[i].Observacao;
+                        var centrosCustos = data.listaAprovacao[i].CentrosCustos;
+                        var selecionar = "<input type='radio' name='fruit' id='radioSelecionarRegistro" + registro + "' tabindex='-1' alt=\"\" title=\"Selecionar Registro de Ocorrência\">";
+
+                        arrayRow[i] = new Array(selecionar, registro, valorDev, userGer, dtHrGer, sitRegistro, tipoAtendimento, origemOcorrencia, codigoCliente, nomeCliente, codigoMotorista, nomeMotorista, codPlaca, ultimaAlt, usuarioUltAlt, dtAprovacao, usuariAprovacao, centrosCustos, observacao);
+                    }
+
+                    $('#TableRegistro').dataTable().fnAddData(arrayRow);
+                    $('#TableRegistro').dataTable().fnPageChange('first');
+                    $("#gridTableRegistro").slideToggle('fast');
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Não existem registros de ocorrência aguardando pré aprovação.", "btnOkNenhumRegistroPendente", "OK", true);
+                }
+
+                $('#progressBar').hide();
+            });
+        }
+
+        var idColunaTableRegistro;
+        $('#TableRegistro tbody').on('click', 'td', function () {
+            idColunaTableRegistro = $(this).index();
+        });
+
+        var Numregistro = "";
+        $('#TableRegistro tbody').on('click', 'tr', function () {
+
+            // Coluna Sel.
+            if (idColunaTableRegistro == 0) {
+
+                var table = $('#TableRegistro').DataTable();
+
+                // Se a linha que está sendo clicada não estiver selecionada, realiza as atividades abaixo...
+                if (!$(this).hasClass('selected')) {
+
+                    // Remove as linhas que já estevam selecionadas
+                    table.$('tr.selected').removeClass('selected');
+
+                    // Seleciona a linha que está sendo clicada
+                    $(this).addClass('selected');
+
+                    // Recupera os dados da linha clicada para carregar os campos abaixo
+                    var dadosLinha = table.row(this).data();
+                    Numregistro = dadosLinha[1];
+                    var Observacao = dadosLinha[18];
+
+                    // id do Radiobox da coluna que foi clicada
+                    var idRadio = "radioSelecionarRegistro" + Numregistro;
+                    $("#" + idRadio).prop("checked", true);
+
+                    $('#ObservacoesTextBox').val(Observacao);
+                    $("#ObservacaoAprovacaoTextBox").val(".");
+                    $("#ObservacaoAprovacaoTextBox").valid();
+                    $("#DivObservacaoAprovacao").removeClass("col-lg-5 has-error").addClass("col-lg-5");
+                    $("#ObservacaoAprovacaoTextBox").val("");
+                    PesquisarItensDevolucao(Numregistro);
+                }
+            }
+        });
+
+        $('#TableItensNotasFiscaisDevolucao').dataTable({
+            "paging": false,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "bAutoWidth": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Emp." },
+                        { "sClass": "center", "title": "Origem&nbsp;Ocorrência" },
+                        { "sClass": "center", "title": "Série" },
+                        { "sClass": "center", "title": "Nº&nbsp;NF" },
+                        { "sClass": "center", "title": "Seq." },
+                        { "sClass": "center", "title": "TNS" },
+                        { "sClass": "center", "title": "Prod." },
+                        { "sClass": "left", "title": "Der." },
+                        { "sClass": "left", "title": "Descrição" + espaco.substring(0, 460) },
+                        { "sClass": "center", "title": "Qtde.&nbsp;Fat." },
+                        { "sClass": "center", "title": "Qtde.&nbsp;Dev." },
+                        { "sClass": "center", "title": "Fil." },
+                        { "sClass": "left", "title": "Motivo&nbsp;de&nbsp;Devolução" + espaco.substring(0, 110) },
+                        { "sClass": "center", "title": "Preço&nbsp;Unitário" },
+                        { "sClass": "center", "title": "%&nbsp;Desc.UN" },
+                        { "sClass": "center", "title": "%&nbsp;IPI" },
+                        { "sClass": "center", "title": "Valor&nbsp;IPI" },
+                        { "sClass": "center", "title": "Valor&nbsp;Líquido" },
+                        { "sClass": "center", "title": "Valor&nbsp;ST" },
+                        { "sClass": "center", "title": "Dep." },
+                        { "sClass": "center", "title": "Data&nbsp;Última&nbsp;Alteração" },
+                        { "sClass": "left", "title": "Usuário" + espaco.substring(0, 300) }, ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página&nbsp&nbsp",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros&nbsp&nbsp",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                }
+            },
+            "scrollY": 330,
+            "scrollX": true,
+            "jQueryUI": true,
+        });
+
+        function PesquisarItensDevolucao(codigoRegistro) {
+
+            $('#progressBar').show();
+            $("#gridTableItensNotasFiscaisDevolucao").hide();
+            $('#TableItensNotasFiscaisDevolucao').dataTable().fnFilter('');
+            $("#DivPanelItens").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarItensDevolucao", "Solicitacoes")", { codigoRegistro: codigoRegistro }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.PesquisaSucesso) {
+                    var arrayRow = new Array();
+                    $('#TableItensNotasFiscaisDevolucao').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.ListaN0203IPVPesquisa.length; i++) {
+
+                        var empresa = data.ListaN0203IPVPesquisa[i].Empresa;
+                        var filial = data.ListaN0203IPVPesquisa[i].Filial;
+                        var serieNota = data.ListaN0203IPVPesquisa[i].SerieNota;
+                        var numeroNota = data.ListaN0203IPVPesquisa[i].NumeroNota;
+                        var seqNota = data.ListaN0203IPVPesquisa[i].SeqNota;
+                        var tipoTransacao = data.ListaN0203IPVPesquisa[i].TipoTransacao;
+                        var codPro = data.ListaN0203IPVPesquisa[i].CodPro;
+                        var codDer = data.ListaN0203IPVPesquisa[i].CodDer;
+                        var descPro = data.ListaN0203IPVPesquisa[i].DescPro;
+                        var qtdeFat = data.ListaN0203IPVPesquisa[i].QtdeFat;
+                        var qtdeDevolucao = data.ListaN0203IPVPesquisa[i].QtdeDevolucao;
+                        var descOrigemOcorrencia = data.ListaN0203IPVPesquisa[i].DescOrigemOcorrencia;
+                        var descMotivoDevolucao = data.ListaN0203IPVPesquisa[i].DescMotivoDevolucao;
+                        //var precoUnitario = "R$ " + data.ListaN0203IPVPesquisa[i].PrecoUnitario.toString().replaPermissões de Acessoce(".", ",");
+                        var precoUnitario = "R$ " + data.ListaN0203IPVPesquisa[i].PrecoUnitarioS;
+                        var percDesconto = data.ListaN0203IPVPesquisa[i].PercDesconto.toString().replace(".", ",") + " %";
+                        var percIpi = data.ListaN0203IPVPesquisa[i].PercIpi.toString().replace(".", ",") + " %";
+                        //var valorIpi = data.ListaN0203IPVPesquisa[i].ValorIpi.toString().replace(".", ",");
+                        var valorIpi = data.ListaN0203IPVPesquisa[i].ValorIpiS;
+                        //var valorLiquido = "R$ " + data.ListaN0203IPVPesquisa[i].ValorLiquido.toString().replace(".", ",");
+                        var valorLiquido = "R$ " + data.ListaN0203IPVPesquisa[i].ValorLiquidoS;
+                        var valorSt = "R$ " + data.ListaN0203IPVPesquisa[i].ValorStS;
+                        var codDepartamento = data.ListaN0203IPVPesquisa[i].CodDepartamento;
+                        var dataUltimaAlteracao = data.ListaN0203IPVPesquisa[i].DataUltimaAlteracao;
+                        var usuarioUltimaAlteracao = data.ListaN0203IPVPesquisa[i].UsuarioUltimaAlteracao + " - " + data.ListaN0203IPVPesquisa[i].NomeUsuarioUltimaAlteracao;
+
+                        arrayRow[i] = new Array(empresa, descOrigemOcorrencia, serieNota, numeroNota, seqNota, tipoTransacao, codPro, codDer, descPro, qtdeFat, qtdeDevolucao, filial, descMotivoDevolucao, precoUnitario, percDesconto, percIpi, valorIpi, valorLiquido, valorSt, codDepartamento, dataUltimaAlteracao, usuarioUltimaAlteracao);
+                    }
+
+                    $('#TableItensNotasFiscaisDevolucao').dataTable().fnAddData(arrayRow);
+                    $('#TableItensNotasFiscaisDevolucao').dataTable().fnPageChange('first');
+                    $("#gridTableItensNotasFiscaisDevolucao").slideToggle('fast');
+                    $("#DivPanelItens").show();
+                    MostraBotoesAprovacao();
+                    focusFinalPagina();
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function dataAtualFormatada() {
+            var data = new Date();
+            var dia = data.getDate();
+            if (dia.toString().length == 1)
+                dia = "0" + dia;
+            var mes = data.getMonth() + 1;
+            if (mes.toString().length == 1)
+                mes = "0" + mes;
+            var ano = data.getFullYear();
+            return dia + "/" + mes + "/" + ano;
+        }
+        $("#TableItensNotasFiscaisDevolucao_wrapper div.ui-corner-tl").append('');
+
+        function MostraBotoesAprovacao() {
+
+            var classe = document.getElementById('AprovarButton');
+
+            if (classe == null) {
+
+                $("#TableItensNotasFiscaisDevolucao_wrapper div.ui-corner-tl").append($('<div style="text-align:left"><button id="AprovarButton" class="btn btn-primary btn-sm" type="button" aria-disabled="false"><span class="ui-button-text">Aprovar</span></button>&nbsp&nbsp<button id="ReprovarButton" class="btn btn-primary btn-sm" type="button" aria-disabled="false"><span class="ui-button-text">Reprovar</span></button></div>'));
+                
+                $('#AprovarButton').click(function () {
+
+                    ValidaObs();
+
+                    if ($("#ObservacaoAprovacaoTextBox").valid()) {
+                        AprovarRegistrosOcorrenciaNivel1();
+                    }
+                });
+
+                $('#ReprovarButton').click(function () {
+
+                    ValidaObs()
+
+                    if ($("#ObservacaoAprovacaoTextBox").valid()) {
+                        ReprovarRegistrosOcorrenciaNivel1();
+                    }
+                });
+            }
+        }
+
+        function AprovarRegistrosOcorrenciaNivel1() {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("AprovarRegistrosOcorrenciaNivel1")", { codigoRegistro: Numregistro, observacaoAprovacao: $("#ObservacaoAprovacaoTextBox").val() }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.AprovadoSucesso) {
+                    DialogPadrao("success", "Sucesso!", "success", "Registro de devolução Nº " + Numregistro + " pré aprovado com sucesso.", "btnOkProtocoloAprovadoSucesso", "OK", true);
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Erro aprovação.", "btnOkProtocoloNaoAprovado", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function ReprovarRegistrosOcorrenciaNivel1() {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ReprovarRegistrosOcorrenciaNivel1")", { codigoRegistro: Numregistro, observacaoReprovacao: $("#ObservacaoAprovacaoTextBox").val() }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ReprovadoSucesso) {
+                    DialogPadrao("success", "Sucesso!", "success", "Protocolo de devolução Nº " + Numregistro + " reprovado com sucesso.", "btnOkProtocoloReprovadoSucesso", "OK", true);
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Erro reprovação.", "btnOkProtocoloNaoReprovado", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        //$("#ObservacaoAprovacaoTextBox").rules("add", { required: false, maxlength: 500 });
+
+        $('#ObservacaoAprovacaoTextBox').bind('paste', null, function (e) {
+            if (!e.keyCode) {
+                ValidaObs();
+            }
+        });
+
+        $("#ObservacaoAprovacaoTextBox").keypress(function (e) {
+            ValidaObs();
+        });
+
+        var keyCodeAnt = 0;
+        $("#ObservacaoAprovacaoTextBox").keydown(function (event) {
+            // BackSpace
+            if (event.keyCode == 8) {
+                ValidaObs();
+            }
+            else if (keyCodeAnt == 17 && event.keyCode == 86) {
+                // CTRL + V
+                return false;
+            }
+            keyCodeAnt = event.keyCode;
+        });
+
+        function ValidaObs() {
+            setTimeout(function () {
+                if ($("#ObservacaoAprovacaoTextBox").valid()) {
+                    $("#DivObservacaoAprovacao").removeClass("col-lg-5 has-error").addClass("col-lg-5");
+                    return true;
+                }
+                else {
+                    $("#DivObservacaoAprovacao").removeClass("col-lg-5").addClass("col-lg-5 has-error");
+                    return false;
+                }
+            }, 50);
+        }
+
+        // Direciona o foco para a parte inferior da página
+        function focusFinalPagina() {
+            setTimeout(function () {
+                //window.location.hash = '#AdicionarItenButton';
+                scrollTo(0, 444);
+
+            }, 800);
+        }
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+
+            $('#btnOkProtocoloAprovadoSucesso').click(function () {
+                window.location = '@Url.Action("AnaliseAprovacao", "Aprovacoes")';
+            });
+
+            $('#btnOkProtocoloReprovadoSucesso').click(function () {
+                window.location = '@Url.Action("AnaliseAprovacao", "Aprovacoes")';
+            });
+        }
+
+        PesquisaProtocolosPendentesAprovacao();
+
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Aprovações</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("AnaliseAprovacao", "Aprovacoes", FormMethod.Post, new { @class = "form-horizontal", id = "AprovarRegistroForm", role = "form" }))
+{
+    <hr />
+    <div class="row" style="margin-left:auto">
+        <div class="panel panel-default">
+            <legend>&nbsp;&nbsp;Ocorrência 
+            </legend>
+            <div id="gridTableRegistro" style="display:none">
+                <table id="TableRegistro" class="display compact" cellspacing="0"></table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left:auto">
+        <div class="panel panel-default" id="DivPanelItens" style="display:none">
+            <p></p>
+            @Html.LabelFor(m => m.Observacoes, new { @class = "col-md-1 control-label" })
+            <div class="col-lg-5">
+                @Html.TextAreaFor(m => m.Observacoes, new { @class = "form-control", @style = "max-width:100%", @id = "ObservacoesTextBox", @rows = "3", onKeyPress = "return ( this.value.length < 400 );", @readonly = "true" })
+                @Html.ValidationMessageFor(m => m.Observacoes)
+                <p></p>
+            </div>
+            @Html.LabelFor(m => m.ObservacaoAprovacao, new { @class = "col-md-1 control-label" })
+            <div class="col-lg-5" id="DivObservacaoAprovacao">
+                @Html.TextAreaFor(m => m.ObservacaoAprovacao, new { @class = "form-control", @style = "max-width:100%", @id = "ObservacaoAprovacaoTextBox", @rows = "3", onKeyPress = "return ( this.value.length < 500 );" })
+                @Html.ValidationMessageFor(m => m.ObservacaoAprovacao)
+                <p></p>
+            </div>
+            <legend>&nbsp;&nbsp;Itens do Registro de Ocorrência Selecionado</legend>
+            <div id="gridTableItensNotasFiscaisDevolucao" style="display:none">
+                <table id="TableItensNotasFiscaisDevolucao" class="display compact" cellspacing="0"></table>
+            </div>
+        </div>
+    </div>
+}

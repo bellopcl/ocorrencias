@@ -1,0 +1,386 @@
+﻿﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.PermissaoAcessoViewModel
+
+@{
+    ViewBag.Title = "Usuário X Operações";
+}
+
+@section scripts{
+    <script type="text/javascript">
+        $("#LoginUsuarioTextBox").keypress(function (e) {
+
+       
+            limparTela();
+
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#LoginUsuarioTextBox").val() == "") {
+                    DialogPadrao("warning", "Aviso!", "warning", "Informe um usuário válido.", "btnOkItensNaoEncontrados", "OK", true);
+                    limparTela();
+                    return;
+                }
+
+                $("#NomeUsuarioTextBox").focus();
+                PesquisarUmUsuario($("#LoginUsuarioTextBox").val());
+            }
+        });
+
+        $("#PesquisarButton").click(function () {
+
+            if ($("#LoginUsuarioTextBox").val() == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe um usuário válido.", "btnOkItensNaoEncontrados", "OK", true);
+                limparTela();
+                return;
+            }
+            $("#NomeUsuarioTextBox").focus();
+            PesquisarUmUsuario($("#LoginUsuarioTextBox").val());
+        });
+
+        // ======================================================================= //
+
+        $("#LoginUsuarioTextBox").focusin(function () {
+            $("#NomeUsuarioTextBox").val("");
+            $('#DivSalvarButton').hide();
+            $('#tree').hide();
+        });
+        $("#PesquisarUsuarioButton").click(function () {
+            PesquisarTodosUsuarios();
+        });
+
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#TableUsuario').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Nome&nbsp;Completo&nbsp;Usuário" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Login&nbspdo&nbspUsuário" + espaco.substring(0, 385) },
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        function PesquisarUmUsuario(loginUsuario) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios")", { loginUsuario: loginUsuario }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    $("#LoginUsuarioTextBox").val(data.listaUsuariosAD[0].Login);
+                    $("#NomeUsuarioTextBox").val(data.listaUsuariosAD[0].Nome);
+                    var loginUsuario = $("#LoginUsuarioTextBox").val();
+                 
+                    consultarVinculo(loginUsuario);
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Usuário não encontrado.", "btnOkUserNaoEncontrado", "OK", true);
+                }
+
+                $('#progressBar').hide();
+            });
+        }
+
+        function PesquisarTodosUsuarios() {
+            $('#progressBar').show();
+            $("#gridTableUsuario").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios")", { loginUsuario: "" }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableUsuario').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaUsuariosAD.length; i++) {
+
+                        var login = data.listaUsuariosAD[i].Login;
+                        var nome = data.listaUsuariosAD[i].Nome;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarUsuario('" + login + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Usuário'></span></a>";
+
+                        arrayRow[i] = new Array(selecionar, nome, login);
+                    }
+
+                    $('#TableUsuario').dataTable().fnAddData(arrayRow);
+                    $('#TableUsuario').dataTable().fnPageChange('first');
+                    $("#gridTableUsuario").slideToggle('fast');
+
+                    setTimeout(function () {
+                        $('#TableUsuario_filter input').focus();
+                    }, 500);
+                }
+                $('#progressBar').hide();
+                $('#UsuarioDialog').modal('show');
+            });
+        }
+        function pesquisarAcesso() {
+            $('#progressBar').show();
+            $("#gridTableUsuario").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios")", { loginUsuario: "" }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableUsuario').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaUsuariosAD.length; i++) {
+
+                        var login = data.listaUsuariosAD[i].Login;
+                        var nome = data.listaUsuariosAD[i].Nome;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarUsuario('" + login + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Usuário'></span></a>";
+
+                        arrayRow[i] = new Array(selecionar, nome, login);
+                    }
+
+                    $('#TableUsuario').dataTable().fnAddData(arrayRow);
+                    $('#TableUsuario').dataTable().fnPageChange('first');
+                    $("#gridTableUsuario").slideToggle('fast');
+
+                    setTimeout(function () {
+                        $('#TableUsuario_filter input').focus();
+                    }, 500);
+                }
+                $('#progressBar').hide();
+                $('#UsuarioDialog').modal('show');
+            });
+        }
+
+        function SelecionarUsuario(login, nome) {
+            $('#LoginUsuarioTextBox').val(login);
+            $('#NomeUsuarioTextBox').val(nome);
+            $('#UsuarioDialog').modal('hide');
+            var loginUsuario = $("#LoginUsuarioTextBox").val();
+            consultarVinculo(loginUsuario);
+            consultarVinculo();
+        }
+        // ==================================== Dialog Padrao =========================================
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+
+            $("#btnOkUserNaoEncontrado").click(function () {
+                $("#LoginUsuarioTextBox").focus();
+            });
+
+            $("#BtnOkDialogUserLogadoTrue").click(function () {
+                window.location = '@Url.Action("Login", "Login")';
+            });
+        }
+
+        function consultarVinculo(loginUsuario) {
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ConsultarVinculo")", { loginUsuario: loginUsuario }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+
+                var aChk = document.getElementsByName("checkbox");
+                for (var i = 0; i < aChk.length ; i++) {
+                    if (data.retorno.search(aChk[i].value) > -1) {
+                        aChk[i].checked = true;
+                    }
+                }
+            });
+        }
+
+        function limparTela() {
+            var aChk = document.getElementsByName("checkbox");
+            for (var i = 0; i < aChk.length ; i++) {
+                if (aChk[i].checked == true) {
+                    aChk[i].checked = false;
+                }
+            }
+        }
+
+        function inserirVinculo() {
+
+            var loginUsuario = $("#LoginUsuarioTextBox").val();
+            var acesso;
+            var operacao = "";
+
+            if ($("#NomeUsuarioTextBox").val() == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe um usuário válido.", "btnOkItensNaoEncontrados", "OK", true);
+                limparTela();
+                return;
+            }
+
+            if (loginUsuario == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe um usuário.", "btnOkItensNaoEncontrados", "OK", true);
+                var aChk = document.getElementsByName("checkbox");
+                for (var i = 0; i < aChk.length ; i++) {
+                    if (aChk[i].checked == true) {
+                        aChk[i].checked = false;
+                    }
+                }
+                return;
+            }
+
+            $.ajaxSetup({ cache: false });
+         
+
+            var aChk = document.getElementsByName("checkbox");
+            for (var i = 0; i < aChk.length ; i++) {
+                if (aChk[i].checked == true) {
+                    operacao == "" ? operacao = aChk[i].value : operacao += ',' + aChk[i].value;
+                }
+            }
+
+            $.getJSON("@Url.Action("InserirVinculo")", { loginUsuario: loginUsuario, acesso: acesso, operacao: operacao }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+
+                if (data.retorno) {
+                    DialogPadrao("success", "Sucesso!", "success", "Operação efetuada com sucesso!", "btnOkDialogItensAddSucesso", "OK", true);
+                    $('#checkboxjustificar').prop('checked', true);
+                } else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Ocorreu um erro ao adicionar parametrização!.", "btnOkUserNaoEncontrado", "OK", true);
+                }
+
+            });
+        }
+
+    </script>
+
+}
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>Solicitações</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<div class="modal fade bs-example-modal-lg" id="UsuarioDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Usuários no AD</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableUsuario" style="display: none;">
+                        <table id="TableUsuario" class="display compact" cellspacing="0" width="99.9%"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default" style="margin-bottom:5px">
+    <p></p>
+    <p></p>
+    <div class="row" style="margin-left:5px">
+        @Html.LabelFor(m => m.LoginUsuario, new { @class = "col-md-2 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.LoginUsuario, new { @class = "form-control input-sm", @id = "LoginUsuarioTextBox" })
+                <span class="input-group-addon" style="padding: 3px 10px">
+                    <a style='color:#333333' href="#" id="PesquisarUsuarioButton"><span class="glyphicon glyphicon-search" title="Pesquisar usuário"></span></a>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            @Html.TextBoxFor(m => m.NomeUsuario, new { @class = "form-control input-sm", @id = "NomeUsuarioTextBox", @readonly = "true" })
+        </div>
+        <div class="col-md-1" id="DivSalvarButton" style="display: none;">
+            <input type="button" value="Salvar" id="SalvarButton" style="margin-top:0px" class="btn btn-primary btn-sm" />
+        </div>
+    </div>
+    <p></p>
+</div>
+<div class="panel panel-default" style="margin-bottom:5px">
+    <div class="row" style="margin-left:20px">
+
+        <label for="checkbox">
+        </label><div class="checkbox-group">
+            <div class="checkbox">
+                <input name="checkbox" id="1" value="1" type="checkbox">
+                <label for="checkboxjustificar-0">Permissão para efetuar nova vinculação de placa para coleta com justificativa.</label>
+            </div>
+        </div>
+        <div class="checkbox">
+            <input name="checkbox" id="2" value="2" type="checkbox" >
+            <label for="checkboxjustificar-0">Permissão para efetuar mais de 1 ocorrência na mesma data e com a mesma nota fiscal de origem.</label>
+        </div>
+        <div class="checkbox">
+            <input name="checkbox" id="3" value="3" type="checkbox">
+            <label for="checkboxjustificar-0">Permissão para efetuar mais de 1 ocorrência com a mesma nota fiscal de origem.</label>
+        </div>
+    </div>
+
+</div>
+<div class="form-group">
+    <div class="col-md-1 control-label">
+    </div>
+        <div class="row">
+            <button type="button" id="CadastrarButton" onclick="inserirVinculo()" class="btn btn-primary btn-sm">Cadastrar</button>
+            <button type="button" id="PesquisarButton" class="btn btn-primary btn-sm">Pesquisar</button>
+        </div>
+</div>
+<p></p>
+

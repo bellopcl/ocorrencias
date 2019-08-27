@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<script>
+
+</script>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://www.nutriplan.com.br/app/webroot/img/favicon2.png" type="image/x-icon" rel="shortcut icon" />
+    <title>OCORRÊNCIA</title>
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/styleside.css")
+    @Styles.Render("~/Content/headerside.css")
+    @Styles.Render("~/Content/novoMenu.css")
+    @Styles.Render("~/Content/jqueryui")
+    @Styles.Render("~/Content/dataTables")
+
+</head>
+<body>
+
+    <div class="barraNavegacao">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                @{ List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> permissoesDeAcesso = (List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>)@Session[NWORKFLOW_WEB.MVC_4_BS.Views.Util.SessionKeys.PermissoesDeAcesso];
+                <div>
+                    <ul class="nav navbar-top-links navbar-right"></ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                               <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-user"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-messages">
+                                <li>
+                                    @Html.ActionLink("SAIR", "Login", "Login")
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 17%; height: 100%; margin-left: 0px; float: left; margin-bottom: 0px; position: relative;">
+
+    </div>
+    <nav class="navbar navbar-default sidebar" id="menuLateral" role="navigation">
+        <div class="sidebar-header header-cover" style="background-image: url(/Content/images/imagemSuperior.jpg); ">
+            <!-- Top bar -->
+            <div class="top-bar"></div>
+            <!-- Sidebar brand image -->
+            <div class="sidebar-image">
+                <img src="/Content/images/loginHome.png" style=" width:90%" />
+            </div>
+            <!-- Sidebar brand name -->
+            <div class="bottom-bar">
+                <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+                    <a style="color:#ffffff">@Session[NWORKFLOW_WEB.MVC_4_BS.Views.Util.SessionKeys.NomeUsuarioLogado]</a>
+                </a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            @{ List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> permissoesDeAcessoTodosMenus = (List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>)@Session[NWORKFLOW_WEB.MVC_4_BS.Views.Util.SessionKeys.PermissoesDeAcesso];
+            <div id='cssmenu'>
+                <ul>
+                    <li class="active"><a href="/InformacoesProtocolo/InformacoesProtocolo">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel menu in permissoesDeAcesso.Where(p => p.MENPAI == null).OrderBy(c => c.CODMEN))
+                    {
+                        string urlNull = null;
+                        <li class="dropdown">
+                            <a href="#" class="dropdown open" data-toggle="dropdown">@menu.DESMEN<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon @menu.ICOMEN"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                @*Verifica os submenus do menu principal*@
+                                @{ List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen01 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+
+                                @*Lista os submenus no menu principal *@
+                                 ListSubMen01 = permissoesDeAcesso.Where(p => p.MENPAI == menu.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+
+                                 foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen01 in ListSubMen01)
+                                 {
+                                    @* Verifica se o submenu tem submenus no nível 02 *@
+                                     List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen02 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                    @*Lista os submenus no menu principal no nível 02*@
+                                     ListSubMen02 = permissoesDeAcesso.Where(p => p.MENPAI == submen01.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+
+                                    @* Verifica se o menu tem submenu *@
+                                     if (ListSubMen02.Count == 0)
+                                     {
+                                         if (submen01.DESMEN == "-")
+                                         {
+                                            <li class="divider"></li>
+                                         }
+
+                                         else
+                                         {
+                                             string url = (submen01.ENDPAG == null) ? submen01.ENDPAG : @Url.Content("~/" + submen01.ENDPAG);
+                                            <li><a href="@url">@submen01.DESMEN</a></li>
+                                         }
+                                     }
+                                     else
+                                     {
+                                        <li class="dropdown-submenu">
+                                            <a tabindex="-1" href="@urlNull">@submen01.DESMEN</a>
+                                            <ul class="dropdown-menu">
+
+                                                @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen02 in ListSubMen02)
+                                                {
+                                                    @* Verifica se o submenu tem submenus no nível 03 *@
+                                                    List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen03 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                                    @*Lista os submenus no menu principal no nível 03*@
+                                                    ListSubMen03 = permissoesDeAcesso.Where(p => p.MENPAI == submen02.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+
+                                                    @* Verifica se o menu tem submenu *@
+                                                    if (ListSubMen03.Count == 0)
+                                                    {
+                                                        if (submen02.DESMEN == "-")
+                                                        {
+                                                            <li class="divider"></li>
+                                                        }
+
+                                                        else
+                                                        {
+                                                            string url = (submen02.ENDPAG == null) ? submen02.ENDPAG : @Url.Content("~/" + submen02.ENDPAG);
+
+                                                            <li><a href="@url"> - @submen02.DESMEN</a></li>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <li class="dropdown-submenu">
+                                                            <a tabindex="-1" href="@urlNull">@submen02.DESMEN</a>
+                                                            <ul class="dropdown-menu">
+
+                                                                @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen03 in ListSubMen03)
+                                                                {
+                                                                    @* Verifica se o submenu tem submenus no nível 04 *@
+                                                                    List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen04 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                                                    @*Lista os submenus no menu principal no nível 04*@
+                                                                    ListSubMen04 = permissoesDeAcesso.Where(p => p.MENPAI == submen03.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+
+                                                                    @* Verifica se o menu tem submenu *@
+                                                                    if (ListSubMen04.Count == 0)
+                                                                    {
+                                                                        if (submen03.DESMEN == "-")
+                                                                        {
+                                                                            <li class="divider"></li>
+                                                                        }
+
+                                                                        else
+                                                                        {
+                                                                            string url = (submen03.ENDPAG == null) ? submen03.ENDPAG : @Url.Content("~/" + submen03.ENDPAG);
+
+                                                                            <li><a href="@url">@submen03.DESMEN</a></li>
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <li class="dropdown-submenu">
+                                                                            <a tabindex="-1" href="@urlNull">@submen03.DESMEN</a>
+                                                                            <ul class="dropdown-menu">
+                                                                                @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen04 in ListSubMen04)
+                                                                                {
+                                                                                    @* Verifica se o submenu tem submenus no nível 05 *@
+                                                                                    List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen05 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                                                                    @*Lista os submenus no menu principal no nível 05*@
+                                                                                    ListSubMen05 = permissoesDeAcesso.Where(p => p.MENPAI == submen04.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+
+                                                                                    @* Verifica se o menu tem submenu *@
+                                                                                    if (ListSubMen05.Count == 0)
+                                                                                    {
+                                                                                        if (submen04.DESMEN == "-")
+                                                                                        {
+                                                                                            <li class="divider"></li>
+                                                                                        }
+
+                                                                                        else
+                                                                                        {
+                                                                                            string url = (submen04.ENDPAG == null) ? submen04.ENDPAG : @Url.Content("~/" + submen04.ENDPAG);
+
+                                                                                            <li><a href="@url">@submen04.DESMEN</a></li>
+                                                                                        }
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <li class="dropdown-submenu">
+                                                                                            <a tabindex="-1" href="@urlNull">@submen04.DESMEN</a>
+                                                                                            <ul class="dropdown-menu">
+
+                                                                                                @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen05 in ListSubMen05)
+                                                                                                {
+                                                                                                    if (submen05.DESMEN == "-")
+                                                                                                    {
+                                                                                                        <li class="divider"></li>
+                                                                                                    }
+
+                                                                                                    else
+                                                                                                    {
+                                                                                                        string url = (submen05.ENDPAG == null) ? submen05.ENDPAG : @Url.Content("~/" + submen05.ENDPAG);
+
+                                                                                                        <li><a href="@url">@submen05.DESMEN</a></li>
+                                                                                                    }
+                                                                                                }
+                                                                                            </ul>
+                                                                                        </li>
+                                                                                    }
+                                                                                }
+                                                                            </ul>
+                                                                        </li>
+                                                                    }
+                                                                }
+                                                            </ul>
+                                                        </li>
+                                                    }
+                                                }
+                                            </ul>
+                                        </li>
+                                     }
+                                 }
+                                @*Verifica os submenus do menu principal*@
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+            }
+
+       
+        </div>
+    </nav>
+    <div class="conteudoBody">
+        <div class="container" style="">
+            @RenderBody()
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/validate")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/maskedinput")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/dataTables")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

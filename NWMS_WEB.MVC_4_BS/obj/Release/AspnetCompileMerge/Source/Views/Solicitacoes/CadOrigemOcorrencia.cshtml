@@ -1,0 +1,342 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.CadOrigemOcorrenciaViewModel
+
+@{
+    ViewBag.Title = "Origem da Ocorrência";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        $('#TableOrigemOcorrencia').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "05%", "sClass": "center", "title": "Código" },
+                        { "sWidth": "25%", "sClass": "center", "title": "Descrição" },
+                        { "sWidth": "05%", "sClass": "center", "title": "Alterar", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "05%", "sClass": "center", "title": "Excluir", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "60%", "bSortable": false, "bSearchable": false }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        PesquisaOrigemOcorrencia();
+
+        function PesquisaOrigemOcorrencia() {
+
+            $('#progressBar').show();
+            $("#gridTableOrigemOcorrencia").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaOrigemOcorrencia")", {}, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaN0204ORIPesquisa.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableOrigemOcorrencia').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.ListaN0204ORIPesquisa.length; i++) {
+
+                        var codigo = data.ListaN0204ORIPesquisa[i].Codigo;
+                        var descricao = data.ListaN0204ORIPesquisa[i].Descricao;
+                        var alterar = "<a style='color:#333333' href=\"#\" onClick=\"AlterarOrigemOcorrencia('" + codigo + "','" + descricao + "')\"><span class='glyphicon glyphicon-edit' title='Alterar Origem da Ocorrência'></span></a>";
+                        var excluir = "<a style='color:#333333' href=\"#\" onClick=\"ExcluirOrigemOcorrencia('" + codigo + "','" + descricao + "')\"><span class='glyphicon glyphicon-trash' title='Excluir Origem da Ocorrência'></span></a>";
+
+                        arrayRow[i] = new Array(codigo, descricao, alterar, excluir, "");
+                    }
+
+                    $('#TableOrigemOcorrencia').dataTable().fnAddData(arrayRow);
+                    $('#TableOrigemOcorrencia').dataTable().fnPageChange('first');
+
+                    $("#gridTableOrigemOcorrencia").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        var codigoOrigemOcorrencia = "";
+        var descricaoOrigemOcorrencia = "";
+        function AlterarOrigemOcorrencia(codigo, descricao) {
+            codigoOrigemOcorrencia = codigo;
+            $("#DescOrigemOcorrenciaAlteracaoTextBox").val(descricao);
+            $('#AlterarOrigemOcorrenciaDialog').modal('show');
+            $("#DescOrigemOcorrenciaAlteracaoTextBox").focus();
+        }
+
+        function ExcluirOrigemOcorrencia(codigo, descricao) {
+            codigoOrigemOcorrencia = codigo;
+            descricaoOrigemOcorrencia = descricao;
+            var msg = "Deseja excluir a origem da ocorrência " + codigo + " - " + descricao + " ?";
+            $('#ExcluirOrigemOcorrenciaDialog strong').html(msg);
+            $('#ExcluirOrigemOcorrenciaDialog').modal('show');
+            $("#ExcluirOrigOcorBtn").focus();
+        }
+
+        $("#CadastrarButton").click(function () {
+            if ($("#DescOrigemOcorrenciaTextBox").valid()) {
+                var descricao = $("#DescOrigemOcorrenciaTextBox").val();
+                InserirOrigemOcorrencia(descricao);
+            }
+        });
+
+        $("#SalvarAlteracaoBtn").click(function () {
+            if ($("#DescOrigemOcorrenciaAlteracaoTextBox").valid()) {
+                var descricao = $("#DescOrigemOcorrenciaAlteracaoTextBox").val();
+                $('#AlterarOrigemOcorrenciaDialog').modal('hide');
+                GravarAlteracaoOrigemOcorrencia(codigoOrigemOcorrencia, descricao);
+            }
+        });
+
+        $("#ExcluirOrigOcorBtn").click(function () {
+            $('#ExcluirOrigemOcorrenciaDialog').modal('hide');
+            GravarExclusaoOrigemOcorrencia(codigoOrigemOcorrencia, descricaoOrigemOcorrencia);
+        });
+
+        $("#DescOrigemOcorrenciaTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#DescOrigemOcorrenciaTextBox").valid()) {
+                    var descricao = $("#DescOrigemOcorrenciaTextBox").val();
+                    InserirOrigemOcorrencia(descricao);
+                }
+                return false;
+            }
+        });
+
+        $("#DescOrigemOcorrenciaAlteracaoTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#DescOrigemOcorrenciaAlteracaoTextBox").valid()) {
+                    var descricao = $("#DescOrigemOcorrenciaAlteracaoTextBox").val();
+                    $('#AlterarOrigemOcorrenciaDialog').modal('hide');
+                    GravarAlteracaoOrigemOcorrencia(codigoOrigemOcorrencia, descricao);
+                }
+                return false;
+            }
+        });
+
+        $("#DescOrigemOcorrenciaTextBox").focusin(function () {
+            $("#DescOrigemOcorrenciaTextBox").val("");
+        });
+
+        function InserirOrigemOcorrencia(descricao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("InserirOrigemOcorrencia")", { descricao: descricao },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.GravadoSucesso) {
+                    PesquisaOrigemOcorrencia();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkOrigOcorGravadoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function GravarAlteracaoOrigemOcorrencia(codigoOrigemOcorrencia, descricao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("AlterarOrigemOcorrencia")", { codigo: codigoOrigemOcorrencia, descricao: descricao },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.AlteradoSucesso) {
+                    PesquisaOrigemOcorrencia();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkOrigOcorAlteradoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function GravarExclusaoOrigemOcorrencia(codigoOrigemOcorrencia, descricaoOrigemOcorrencia) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ExcluirOrigemOcorrencia")", { codigo: codigoOrigemOcorrencia, descricao: descricaoOrigemOcorrencia },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ExcluidoSucesso) {
+                    PesquisaOrigemOcorrencia();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkOrigOcorExcluidoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+        }
+
+        var keyCodeAnterior = 0;
+        $(window).keydown(function (event) {
+            // F5 ou CTRL + R
+            if (event.keyCode == 116 || keyCodeAnterior == 17 && event.keyCode == 82) {
+                window.location = '@Url.Action("CadOrigemOcorrencia", "Solicitacoes")';
+                return false;
+            }
+            keyCodeAnterior = event.keyCode;
+        });
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Solicitações</a></li>
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Cadastros</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("CadOrigemOcorrencia", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadOrigemOcorrenciaForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="modal" id="AlterarOrigemOcorrenciaDialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Alterar Origem da Ocorrência</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        @Html.LabelFor(m => m.DescOrigemOcorrenciaAlteracao, new { @class = "col-md-4 control-label" })
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(m => m.DescOrigemOcorrenciaAlteracao, new { @class = "form-control input-sm", @id = "DescOrigemOcorrenciaAlteracaoTextBox", onKeyPress = "return ( this.value.length < 50 );" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 control-label">
+                        </div>
+                        <div class="col-md-7">
+                            @Html.ValidationMessageFor(m => m.DescOrigemOcorrenciaAlteracao)
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="row">
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="button" id="SalvarAlteracaoBtn" class="btn btn-primary" style="margin-top:0px">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="ExcluirOrigemOcorrenciaDialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Excluir Origem da Ocorrência</h3>
+                </div>
+                <div class="panel-body">
+                    <strong></strong>
+                    <div class="row">
+                        <br />
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                            <button type="button" id="ExcluirOrigOcorBtn" class="btn btn-primary" style="margin-top:0px">Sim</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @Html.LabelFor(m => m.DescOrigemOcorrencia, new { @class = "col-md-2 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.DescOrigemOcorrencia, new { @class = "form-control input-sm", @id = "DescOrigemOcorrenciaTextBox", onKeyPress = "return ( this.value.length < 50 );" })
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-sm" type="button" id="CadastrarButton">Cadastrar</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.DescOrigemOcorrencia)
+        </div>
+    </div>
+    <br />
+    <div class="panel panel-default">
+        <legend>&nbsp;&nbsp;Lista de Origem das Ocorrências Cadastradas</legend>
+        <div id="gridTableOrigemOcorrencia">
+            <table id="TableOrigemOcorrencia" class="display compact" cellspacing="0"></table>
+        </div>
+        <br />
+    </div>
+}

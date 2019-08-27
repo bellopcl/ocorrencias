@@ -1,0 +1,453 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.CadUsuarioOperFatViewModel
+
+@{
+    ViewBag.Title = "Usuário Aprovador X Operação Aprovação Fat.";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+        $("#PesquisarUsuarioButton").click(function () {
+            PesquisarTodosUsuarios();
+        });
+
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#TableUsuario').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Nome&nbsp;Completo&nbsp;Usuário" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Login&nbspdo&nbspUsuário" + espaco.substring(0, 385) },
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        function PesquisarUmUsuario(loginUsuario) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios","PermissaoAcesso")", { loginUsuario: loginUsuario }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    $("#LoginUsuarioTextBox").val(data.listaUsuariosAD[0].Login);
+                    $("#NomeUsuarioTextBox").val(data.listaUsuariosAD[0].Nome);
+                    
+                    $("#PanelTableOperacoes").show();
+                    PesquisaUsuarioAprovadorXOperacaoFat(data.listaUsuariosAD[0].Login);
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Usuário não encontrado.", "btnOkUserNaoEncontrado", "OK", true);
+                }
+
+                $('#progressBar').hide();
+            });
+        }
+
+        function PesquisarTodosUsuarios() {
+            $('#progressBar').show();
+            $("#gridTableUsuario").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios", "PermissaoAcesso")", { loginUsuario: "" }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableUsuario').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaUsuariosAD.length; i++) {
+
+                        var login = data.listaUsuariosAD[i].Login;
+                        var nome = data.listaUsuariosAD[i].Nome;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarUsuario('" + login + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Usuário'></span></a>";
+
+                        arrayRow[i] = new Array(selecionar, nome, login);
+                    }
+
+                    $('#TableUsuario').dataTable().fnAddData(arrayRow);
+                    $('#TableUsuario').dataTable().fnPageChange('first');
+                    $("#gridTableUsuario").slideToggle('fast');
+
+                    setTimeout(function () {
+                        $('#TableUsuario_filter input').focus();
+                    }, 500);
+                }
+                $('#progressBar').hide();
+                $('#UsuarioDialog').modal('show');
+            });
+        }
+
+        function SelecionarUsuario(login, nome) {
+            $('#LoginUsuarioTextBox').val(login);
+            $('#NomeUsuarioTextBox').val(nome);
+            $('#UsuarioDialog').modal('hide');
+            
+            $("#PanelTableOperacoes").show();
+            PesquisaUsuarioAprovadorXOperacaoFat(login);
+
+            setTimeout(function () {
+                $('#LoginUsuarioTextBox').val(login);
+                $('#NomeUsuarioTextBox').val(nome);
+                $('#LoginUsuarioTextBox').valid();
+                $('#NomeUsuarioTextBox').valid();
+            }, 50);
+        }
+
+        //==============================
+        $("#LoginUsuarioTextBox").focusin(function () {
+            $("#NomeUsuarioTextBox").val("");
+            $("#PanelTableOperacoes").hide();
+        });
+
+        $("#LoginUsuarioTextBox").keypress(function (e) {
+
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#LoginUsuarioTextBox").valid()) {
+                    $("#NomeUsuarioTextBox").focus();
+                    PesquisarUmUsuario($("#LoginUsuarioTextBox").val());
+                }
+                return false;
+            }
+        });
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+
+            $("#btnOkUsuarioNaoEncontrado").click(function () {
+                $("#LoginUsuarioTextBox").focus();
+            });
+        }
+
+        $('#TableOperacoes').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "03%", "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "05%", "sClass": "center", "title": "Código" },
+                        { "sWidth": "25%", "sClass": "center", "title": "Descrição" },
+                        { "sWidth": "67%", "bSortable": false, "bSearchable": false }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página&nbsp&nbsp",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        $("#PanelTableOperacoes").hide();
+        MostraBotaoSalvar();
+
+        function MostraBotaoSalvar() {
+
+            $('<button id="SalvarButtonBtn" class="btn btn-primary btn-sm" type="button" aria-disabled="false"><span class="ui-button-text">Salvar</span></button>').appendTo('div.dataTables_length');
+
+            // Botão Salvar
+            $('#SalvarButtonBtn').click(function () {
+                if ($("#TipoAtendimentoDropDownList").valid()) {
+                    OperacoesSelecionadas();
+                }
+            });
+        }
+
+        var idColuna;
+        $('#TableOperacoes tbody').on('click', 'td', function () {
+            idColuna = $(this).index();
+        });
+
+        // Recupera o ID da linha clicada -- tr ==> linha
+        $('#TableOperacoes tbody').on('click', 'tr', function () {
+
+            // Coluna Selecionar
+            if (idColuna == 0) {
+
+                var table = $('#TableOperacoes').DataTable();
+
+                // Recupera os dados da linha clicada para carregar os campos abaixo
+                var dadosLinha = table.row(this).data();
+                var codigoOrigem = dadosLinha[1];
+
+                // id do checkbox da coluna que foi clicada
+                var idCheckBox = "checkBoxSelecionarOperacao" + codigoOrigem;
+
+                if ($(this).hasClass('selected')) {
+                    $("#" + idCheckBox).prop("checked", false);
+                    $(this).removeClass('selected');
+                }
+                else {
+                    $("#" + idCheckBox).prop("checked", true);
+                    $(this).addClass('selected');
+                }
+            }
+
+        });
+
+        function OperacoesSelecionadas() {
+
+            var tabela = $('#TableOperacoes').DataTable();
+            var data = tabela.rows('.selected').data();
+            var listaOperacoes = "";
+            var msgErro = "Para salvar, selecione ao menos uma operação."
+
+            if (!temRelacionamento && data.length == 0) {
+                DialogPadrao("warning", "Aviso!", "warning", msgErro, "btnOkOperErro", "OK", true);
+                return false;
+            }
+
+            for (var i = 0; i < data.length; i++) {
+                listaOperacoes = listaOperacoes + "-" + data[i][1];
+            }
+
+            listaOperacoes = listaOperacoes.substring(1, listaOperacoes.length);
+
+            var tipAtd = $("#TipoAtendimentoDropDownList option:selected").val();
+            SalvarUsuarioAprovadorXOperacaoFat(tipAtd, $("#LoginUsuarioTextBox").val(), listaOperacoes);
+        }
+
+        var temRelacionamento = false;
+        function PesquisaUsuarioAprovadorXOperacaoFat(loginUsuario) {
+
+            //$('#progressBar').show();
+            $('#TableOperacoes').dataTable().fnFilter('');
+            var atendimento = $("#TipoAtendimentoDropDownList").val();
+            $("#gridTableOperacoes").hide();
+            $.ajaxSetup({ cache: false });
+            temRelacionamento = false;
+            $.getJSON("@Url.Action("PesquisaUsuarioAprovadorXOperacaoFat")", { loginUsuario: loginUsuario, tipoAtendimento: atendimento }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaOperacoes.length > 0) {
+
+                    var arrayTable = new Array();
+                    var arrayRow = new Array();
+                    $('#TableOperacoes').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaOperacoes.length; i++) {
+
+                        var codigo = data.listaOperacoes[i].CodigoOperacao;
+                        var descricao = data.listaOperacoes[i].DescricaoOperacao;
+                        var marcar = data.listaOperacoes[i].Marcar;
+
+                        var selecionar = "";
+                        if (!marcar) {
+                            selecionar = "<input type='checkbox' id='checkBoxSelecionarOperacao" + codigo + "' tabindex='-1' alt=\"\" title=\"Selecionar Operação\">";
+                        }
+                        else {
+                            selecionar = "<input type='checkbox' checked='" + marcar + "'" + " id='checkBoxSelecionarOperacao" + codigo + "' tabindex='-1' alt=\"\" title=\"Selecionar Operação\">";
+                            temRelacionamento = true;
+                        }
+
+                        arrayRow[i] = new Array(selecionar, codigo, descricao, "");
+                    }
+
+                    $('#TableOperacoes').dataTable().fnAddData(arrayRow);
+                    $('#TableOperacoes').dataTable().fnPageChange('first');
+                    $("#gridTableOperacoes").slideToggle('fast');
+
+                    SelecinaLinhasMarcadas();
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function SelecinaLinhasMarcadas() {
+
+            var table = $('#TableOperacoes').dataTable();
+
+            $(table.fnSettings().aoData).each(function () {
+
+                var dadosLinha = table.fnGetData(this.nTr);
+                var codigoOrigem = dadosLinha[1];
+                var idCheckBox = "checkBoxSelecionarOperacao" + codigoOrigem;
+
+                if ($("#" + idCheckBox).is(":checked")) {
+                    $(this.nTr).addClass('selected');
+                }
+            });
+        }
+
+        function SalvarUsuarioAprovadorXOperacaoFat(tipAtendimento, loginUsuario, listaOperacoes) {
+
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("GravarUsuarioAprovadorXOperacaoFat")", { tipAtendimento: tipAtendimento, loginUsuario: loginUsuario, listaOperacoes: listaOperacoes }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.GravadoSucesso) {
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkOperGravadoSucesso", "OK", true);
+                    PesquisaUsuarioAprovadorXOperacaoFat(loginUsuario);
+                }
+                else {
+                    DialogPadrao("danger", "Aviso!", "danger", data.msgRetorno, "btnOkOperGravadoErro", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+    </script>
+
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Aprovações</a></li>
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Cadastros</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+@*<div class="modal fade bs-example-modal-lg" id="UsuarioDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharUsuarioDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Usuários</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableUsuario" style="display: none;">
+                        <table id="TableUsuario" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="modal fade bs-example-modal-lg" id="UsuarioDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Usuários no AD</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableUsuario" style="display: none;">
+                        <table id="TableUsuario" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("CadUsuarioOperFat", "Aprovacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadUsuarioOperFatForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="row">
+        @Html.LabelFor(m => m.TipoAtendimento, new { @class = "col-md-2 control-label" })
+        <div class="col-md-5">
+            @Html.DropDownListFor(m => m.TipoAtendimento, new SelectList(Model.ListaTipoAtendimento.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao"), new { @class = "form-control input-sm", @id = "TipoAtendimentoDropDownList" })
+            @Html.ValidationMessageFor(m => m.TipoAtendimento)
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        @Html.LabelFor(m => m.LoginUsuario, new { @class = "col-md-2 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.LoginUsuario, new { @class = "form-control input-sm", @id = "LoginUsuarioTextBox" })
+                <span class="input-group-addon" style="padding: 3px 10px">
+                    <a style='color:#333333' href="#" id="PesquisarUsuarioButton"><span class="glyphicon glyphicon-search" title="Pesquisar usuário"></span></a>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            @Html.TextBoxFor(m => m.NomeUsuario, new { @class = "form-control input-sm", @id = "NomeUsuarioTextBox", @readonly = "true" })
+            @Html.ValidationMessageFor(m => m.NomeUsuario)
+            @Html.ValidationMessageFor(m => m.LoginUsuario)
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="panel panel-default" id="PanelTableOperacoes">
+            <legend>&nbsp;&nbsp;Lista de Operações Cadastradas para o Usuário Aprovador Selecionado</legend>
+            <div id="gridTableOperacoes">
+                <table id="TableOperacoes" class="display compact" cellspacing="0"></table>
+            </div>
+            <br />
+        </div>
+    </div>
+}

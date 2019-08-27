@@ -1,0 +1,457 @@
+﻿﻿﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.PermissaoAcessoViewModel
+@{
+    ViewBag.Title = "Permissões de Acesso";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    @Styles.Render("~/Content/tree")
+    @Scripts.Render("~/bundles/tree")
+    <script type="text/javascript">
+        $('#tree').tree({
+            collapseUiIcon: 'ui-icon-plus',
+            expandUiIcon: 'ui-icon-minus',
+            leafUiIcon: 'ui-icon-bullet'
+        });
+        var menusOperacaoUser = '@Model.menusOperacaoUser';
+        if (menusOperacaoUser != "") {
+            var idSCheckBox = menusOperacaoUser.split("-");
+            for (var i = 0; i < idSCheckBox.length; i++) {
+                var idCheckBox = idSCheckBox[i];
+                $('#tree').tree('check', $(idCheckBox));
+            }
+            $('#DivSalvarButton').show();
+        }
+        if (menusOperacaoUser != "" || $("#NomeUsuarioTextBox").val() != "") {
+            $('#DivSalvarButton').show();
+        }
+        function MarcarCheckBox(codMenu, operacao) {
+            var idPesquisar = '@(((char)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Pesquisar).ToString())';
+            var idInserir = '@(((char)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Inserir).ToString())';
+            var idAlterar = '@(((char)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Alterar).ToString())';
+            var idExcluir = '@(((char)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Excluir).ToString())';
+            var idCheckBox = "#" + codMenu + operacao;
+            if ($(idCheckBox).is(":checked")) {
+                // Cadastrar, Excluir e Alterar --> Seleciona Pesquisar
+                if (operacao == idInserir || operacao == idAlterar || operacao == idExcluir) {
+                    idCheckBox = "#" + codMenu + idPesquisar;
+                    $('#tree').tree('check', $(idCheckBox));
+                }
+            }
+            else {
+                if (operacao == idPesquisar) {
+                    idCheckBox = "#" + codMenu + idInserir;
+                    $(idCheckBox).parent().find("input:checkbox").removeAttr('checked');
+                    idCheckBox = "#" + codMenu + idAlterar;
+                    $(idCheckBox).parent().find("input:checkbox").removeAttr('checked');
+                    idCheckBox = "#" + codMenu + idExcluir;
+                    $(idCheckBox).parent().find("input:checkbox").removeAttr('checked');
+                }
+            }
+        }
+        // ======================================================================= //
+        $("#LoginUsuarioTextBox").focusin(function () {
+            $("#NomeUsuarioTextBox").val("");
+            $('#DivSalvarButton').hide();
+            $('#tree').hide();
+        });
+        $("#LoginUsuarioTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#LoginUsuarioTextBox").valid()) {
+                    $("#NomeUsuarioTextBox").focus();
+                    PesquisarUmUsuario($("#LoginUsuarioTextBox").val());
+                }
+                return false;
+            }
+        });
+        $("#PesquisarUsuarioButton").click(function () {
+            PesquisarTodosUsuarios();
+        });
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#TableUsuario').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Nome&nbsp;Completo&nbsp;Usuário" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Login&nbspdo&nbspUsuário" + espaco.substring(0, 385) },
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+        function PesquisarUmUsuario(loginUsuario) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios")", { loginUsuario: loginUsuario }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    $("#LoginUsuarioTextBox").val(data.listaUsuariosAD[0].Login);
+                    $("#NomeUsuarioTextBox").val(data.listaUsuariosAD[0].Nome);
+                    document.forms["PermissaoAcessoForm"].submit();
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Usuário não encontrado.", "btnOkUserNaoEncontrado", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+        function PesquisarTodosUsuarios() {
+            $('#progressBar').show();
+            $("#gridTableUsuario").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios")", { loginUsuario: "" }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableUsuario').dataTable().fnClearTable();
+                    for (var i = 0; i < data.listaUsuariosAD.length; i++) {
+                        var login = data.listaUsuariosAD[i].Login;
+                        var nome = data.listaUsuariosAD[i].Nome;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarUsuario('" + login + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Usuário'></span></a>";
+                        arrayRow[i] = new Array(selecionar, nome, login);
+                    }
+                    $('#TableUsuario').dataTable().fnAddData(arrayRow);
+                    $('#TableUsuario').dataTable().fnPageChange('first');
+                    $("#gridTableUsuario").slideToggle('fast');
+                    setTimeout(function () {
+                        $('#TableUsuario_filter input').focus();
+                    }, 500);
+                }
+                $('#progressBar').hide();
+                $('#UsuarioDialog').modal('show');
+            });
+        }
+        function SelecionarUsuario(login, nome) {
+            $('#LoginUsuarioTextBox').val(login);
+            $('#NomeUsuarioTextBox').val(nome);
+            $('#UsuarioDialog').modal('hide');
+            document.forms["PermissaoAcessoForm"].submit();
+        }
+        // ==============================  Gravar Permissoes do Usuário ============================================
+        $("#SalvarButton").click(function () {
+            if ($("#NomeUsuarioTextBox").valid()) {
+                var operacoesSelecionadas = "";
+                //var erro = true;
+                var idPesquisar = '@(((char)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Pesquisar))';
+                $('#tree input[type=checkbox]:checked').each(function () {
+                    //if ($(this).val().indexOf(idPesquisar) > -1 == true) {
+                    //    erro = false;
+                    //}
+                    if ($(this).val() != "") {
+                        operacoesSelecionadas = operacoesSelecionadas + "-" + $(this).val()
+                    }
+                });
+                if (operacoesSelecionadas != "") {
+                    operacoesSelecionadas = operacoesSelecionadas.substring(1, operacoesSelecionadas.length);
+                }
+                var loginUsuario = $("#LoginUsuarioTextBox").val();
+                GravarPermissoesUsuario(operacoesSelecionadas, loginUsuario);
+            }
+        });
+        function GravarPermissoesUsuario(operacoesSelecionadas, loginUsuario) {
+            $('#progressBar').show();
+            $.post("GravarPermissoesUsuario", { operacoesSelecionadas: operacoesSelecionadas, loginUsuario: loginUsuario }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.RetornoOk) {
+                    // Se o usuário logado for o mesmo que está sofrendo alterações de permissões de acesso, seta logado para false para que o usuário efetue o login novamente
+                    var loginUsuarioLogado = '@Session[NWORKFLOW_WEB.MVC_4_BS.Views.Util.SessionKeys.LoginUsuario]';
+                    if (loginUsuarioLogado == loginUsuario.toLowerCase()) {
+                        DialogPadrao("success", "Sucesso!", "success", data.msgRetorno + " Efetue um novo login para aplicar as alterações.", "BtnOkDialogUserLogadoTrue", "OK", true);
+                    }
+                    else {
+                        DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "BtnOkDialogUserLogadoFalse", "OK", true);
+                    }
+                }
+                else {
+                    $('#tree').hide();
+                    DialogPadrao("danger", "Aviso!", "danger", data.msgRetorno, "BtnErroGravUsuario", "OK", true);
+                }
+                $('#progressBar').hide();
+            }, "json");
+        }
+        // ==================================== Dialog Padrao =========================================
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+            $("#btnOkUserNaoEncontrado").click(function () {
+                $("#LoginUsuarioTextBox").focus();
+            });
+            $("#BtnOkDialogUserLogadoTrue").click(function () {
+                window.location = '@Url.Action("Login", "Login")';
+            });
+        }
+        $('.daredevel-tree-label').removeAttr('style');
+
+    </script>
+}
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Cadastros</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<div class="modal fade bs-example-modal-lg" id="UsuarioDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Usuários no AD</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableUsuario" style="display: none;">
+                        <table id="TableUsuario" class="display compact" cellspacing="0" width="99.9%"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm("Permissao", "PermissaoAcesso", FormMethod.Post, new { @class = "form-horizontal", id = "PermissaoAcessoForm", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="row">
+        @Html.LabelFor(m => m.LoginUsuario, new { @class = "col-md-2 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.LoginUsuario, new { @class = "form-control input-sm", @id = "LoginUsuarioTextBox" })
+                <span class="input-group-addon" style="padding: 3px 10px">
+                    <a style='color:#333333' href="#" id="PesquisarUsuarioButton"><span class="glyphicon glyphicon-search" title="Pesquisar usuário"></span></a>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            @Html.TextBoxFor(m => m.NomeUsuario, new { @class = "form-control input-sm", @id = "NomeUsuarioTextBox", @readonly = "true" })
+            @Html.ValidationMessageFor(m => m.NomeUsuario)
+            @Html.ValidationMessageFor(m => m.LoginUsuario)
+        </div>
+        <div class="col-md-1" id="DivSalvarButton" style="display: none;">
+            <input type="button" value="Salvar" id="SalvarButton" style="margin-top:0px" class="btn btn-primary btn-sm" />
+        </div>
+    </div>
+    <br />
+    <div>
+        @{ List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> PermissoesDeAcessoGerenciamento = (List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>)@Session[NWORKFLOW_WEB.MVC_4_BS.Views.Util.SessionKeys.PermissoesDeAcessoGerenciamento];
+        <div>
+            @if (PermissoesDeAcessoGerenciamento != null)
+            {
+                string idPesquisar = ((NUTRIPLAN_WEB.MVC_4_BS.Model.OperacaoModel)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Pesquisar).Id.ToString();
+                string idInserir = ((NUTRIPLAN_WEB.MVC_4_BS.Model.OperacaoModel)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Inserir).Id.ToString();
+                string idAlterar = ((NUTRIPLAN_WEB.MVC_4_BS.Model.OperacaoModel)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Alterar).Id.ToString();
+                string idExcluir = ((NUTRIPLAN_WEB.MVC_4_BS.Model.OperacaoModel)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.Operacao.Excluir).Id.ToString();
+                // Variável usada para identificar que o item possuí filhos no menu
+                string idItemMenu = "M";
+                <div id="tree">
+                    @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel menu in PermissoesDeAcessoGerenciamento.Where(p => p.MENPAI == null).OrderBy(c => c.CODMEN))
+                    {
+                        <ul>
+                            <li class="collapsed">
+                                <input value="@menu.CODMEN.ToString()@idItemMenu" type="checkbox"><span>@menu.DESMEN</span>
+                                @{ List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen01 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                @*Lista os submenus no menu principal *@
+                                 ListSubMen01 = PermissoesDeAcessoGerenciamento.Where(p => p.MENPAI == menu.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+                                 foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen01 in ListSubMen01)
+                                 {
+                                    @* Verifica se o submenu tem submenus no nível 02 *@
+                                     List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen02 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                    @*Lista os submenus no menu principal no nível 02*@
+                                     ListSubMen02 = PermissoesDeAcessoGerenciamento.Where(p => p.MENPAI == submen01.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+                                    @* Verifica se o menu tem submenu *@
+                                     if (ListSubMen02.Count == 0)
+                                     {
+                                         if (submen01.DESMEN == "-")
+                                         {
+                                             continue;
+                                         }
+                                         else
+                                         {
+                                            <ul>
+                                                <li>
+                                                    <input value="" type="checkbox"><span>@submen01.DESMEN</span>
+                                                    <ul>
+                                                        <li><input id="@submen01.CODMEN.ToString()@idPesquisar" value="@submen01.CODMEN.ToString()@idPesquisar" onclick="MarcarCheckBox('@submen01.CODMEN','@idPesquisar')" type="checkbox"><span>Pesquisar</span>
+                                                        <li><input id="@submen01.CODMEN.ToString()@idInserir" value="@submen01.CODMEN.ToString()@idInserir" onclick="MarcarCheckBox('@submen01.CODMEN','@idInserir')" type="checkbox"><span>Cadastrar</span>
+                                                        <li><input id="@submen01.CODMEN.ToString()@idAlterar" value="@submen01.CODMEN.ToString()@idAlterar" onclick="MarcarCheckBox('@submen01.CODMEN','@idAlterar')" type="checkbox"><span>Alterar</span>
+                                                        <li><input id="@submen01.CODMEN.ToString()@idExcluir" value="@submen01.CODMEN.ToString()@idExcluir" onclick="MarcarCheckBox('@submen01.CODMEN','@idExcluir')" type="checkbox"><span>Excluir</span>
+                                                    </ul>
+                                            </ul>
+                                         }
+                                     }
+                                     else
+                                     {
+                                        <ul>
+                                            <li>
+                                                <input value="@submen01.CODMEN.ToString()@idItemMenu" type="checkbox"><span>@submen01.DESMEN</span>
+                                                @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen02 in ListSubMen02)
+                                                {
+                                                    @* Verifica se o submenu tem submenus no nível 03 *@
+                                                    List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen03 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                                    @*Lista os submenus no menu principal no nível 03*@
+                                                    ListSubMen03 = PermissoesDeAcessoGerenciamento.Where(p => p.MENPAI == submen02.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+                                                    @* Verifica se o menu tem submenu *@
+                                                    if (ListSubMen03.Count == 0)
+                                                    {
+                                                        if (submen02.DESMEN == "-")
+                                                        {
+                                                            continue;
+                                                        }
+                                                        else
+                                                        {
+                                                            <ul>
+                                                                <li>
+                                                                    <input value="" type="checkbox"><span>@submen02.DESMEN</span>
+                                                                    <ul>
+                                                                        <li><input id="@submen02.CODMEN.ToString()@idPesquisar" value="@submen02.CODMEN.ToString()@idPesquisar" onclick="MarcarCheckBox('@submen02.CODMEN','@idPesquisar')" type="checkbox"><span>Pesquisar</span>
+                                                                        <li><input id="@submen02.CODMEN.ToString()@idInserir" value="@submen02.CODMEN.ToString()@idInserir" onclick="MarcarCheckBox('@submen02.CODMEN','@idInserir')" type="checkbox"><span>Cadastrar</span>
+                                                                        <li><input id="@submen02.CODMEN.ToString()@idAlterar" value="@submen02.CODMEN.ToString()@idAlterar" onclick="MarcarCheckBox('@submen02.CODMEN','@idAlterar')" type="checkbox"><span>Alterar</span>
+                                                                        <li><input id="@submen02.CODMEN.ToString()@idExcluir" value="@submen02.CODMEN.ToString()@idExcluir" onclick="MarcarCheckBox('@submen02.CODMEN','@idExcluir')" type="checkbox"><span>Excluir</span>
+                                                                    </ul>
+                                                            </ul>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <ul>
+                                                            <li>
+                                                                <input value="@submen02.CODMEN.ToString()@idItemMenu" type="checkbox"><span>@submen02.DESMEN</span>
+                                                                @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen03 in ListSubMen03)
+                                                                {
+                                                                    @* Verifica se o submenu tem submenus no nível 04 *@
+                                                                    List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen04 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                                                    @*Lista os submenus no menu principal no nível 04*@
+                                                                    ListSubMen04 = PermissoesDeAcessoGerenciamento.Where(p => p.MENPAI == submen03.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+                                                                    @* Verifica se o menu tem submenu *@
+                                                                    if (ListSubMen04.Count == 0)
+                                                                    {
+                                                                        if (submen03.DESMEN == "-")
+                                                                        {
+                                                                            continue;
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <input value="" type="checkbox"><span>@submen03.DESMEN</span>
+                                                                                    <ul>
+                                                                                        <li><input id="@submen03.CODMEN.ToString()@idPesquisar" value="@submen03.CODMEN.ToString()@idPesquisar" onclick="MarcarCheckBox('@submen03.CODMEN','@idPesquisar')" type="checkbox"><span>Pesquisar</span>
+                                                                                        <li><input id="@submen03.CODMEN.ToString()@idInserir" value="@submen03.CODMEN.ToString()@idInserir" onclick="MarcarCheckBox('@submen03.CODMEN','@idInserir')" type="checkbox"><span>Cadastrar</span>
+                                                                                        <li><input id="@submen03.CODMEN.ToString()@idAlterar" value="@submen03.CODMEN.ToString()@idAlterar" onclick="MarcarCheckBox('@submen03.CODMEN','@idAlterar')" type="checkbox"><span>Alterar</span>
+                                                                                        <li><input id="@submen03.CODMEN.ToString()@idExcluir" value="@submen03.CODMEN.ToString()@idExcluir" onclick="MarcarCheckBox('@submen03.CODMEN','@idExcluir')" type="checkbox"><span>Excluir</span>
+                                                                                    </ul>
+                                                                            </ul>
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <ul>
+                                                                            <li>
+                                                                                <input value="@submen03.CODMEN.ToString()@idItemMenu" type="checkbox"><span>@submen03.DESMEN</span>
+                                                                                @foreach (NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel submen04 in ListSubMen04)
+                                                                                {
+                                                                                    @* Verifica se o submenu tem submenus no nível 05 *@
+                                                                                    List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel> ListSubMen05 = new List<NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel>();
+                                                                                    @*Lista os submenus no menu principal no nível 05*@
+                                                                                    ListSubMen05 = PermissoesDeAcessoGerenciamento.Where(p => p.MENPAI == submen04.CODMEN).OrderBy(c => c.ORDMEN).ToList();
+                                                                                    @* Verifica se o menu tem submenu *@
+                                                                                    if (ListSubMen05.Count == 0)
+                                                                                    {
+                                                                                        if (submen04.DESMEN == "-")
+                                                                                        {
+                                                                                            continue;
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <ul>
+                                                                                                <li>
+                                                                                                    <input value="" type="checkbox"><span>@submen04.DESMEN</span>
+                                                                                                    <ul>
+                                                                                                        <li><input id="@submen04.CODMEN.ToString()@idPesquisar" value="@submen04.CODMEN.ToString()@idPesquisar" onclick="MarcarCheckBox('@submen04.CODMEN','@idPesquisar')" type="checkbox"><span>Pesquisar</span>
+                                                                                                        <li><input id="@submen04.CODMEN.ToString()@idInserir" value="@submen04.CODMEN.ToString()@idInserir" onclick="MarcarCheckBox('@submen04.CODMEN','@idInserir')" type="checkbox"><span>Cadastrar</span>
+                                                                                                        <li><input id="@submen04.CODMEN.ToString()@idAlterar" value="@submen04.CODMEN.ToString()@idAlterar" onclick="MarcarCheckBox('@submen04.CODMEN','@idAlterar')" type="checkbox"><span>Alterar</span>
+                                                                                                        <li><input id="@submen04.CODMEN.ToString()@idExcluir" value="@submen04.CODMEN.ToString()@idExcluir" onclick="MarcarCheckBox('@submen04.CODMEN','@idExcluir')" type="checkbox"><span>Excluir</span>
+                                                                                                    </ul>
+                                                                                            </ul>
+                                                                                        }
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        // To do
+                                                                                    }
+                                                                                }
+                                                                        </ul>
+                                                                    }
+                                                                }
+                                                        </ul>
+                                                    }
+                                                }
+                                        </ul>
+                                     }
+                                 }
+                                }
+                        </ul>
+                    }
+                </div>
+            }
+        </div>
+        }
+    </div>
+}

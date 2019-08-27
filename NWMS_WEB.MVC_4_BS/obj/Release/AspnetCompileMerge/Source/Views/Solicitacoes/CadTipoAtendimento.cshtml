@@ -1,0 +1,343 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.CadTipoAtendimentoViewModel
+
+@{
+    ViewBag.Title = "Tipo de Atendimento";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    
+    <script type="text/javascript">
+
+        $('#TableTipoAtendimento').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": false,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "05%", "sClass": "center", "title": "Código" },
+                        { "sWidth": "25%", "sClass": "center", "title": "Descrição" },
+                        { "sWidth": "05%", "sClass": "center", "title": "Alterar", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "05%", "sClass": "center", "title": "Excluir", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "60%", "bSortable": false, "bSearchable": false }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+       
+        PesquisaTipoAtendimento();
+
+        function PesquisaTipoAtendimento() {
+
+            $('#progressBar').show();
+            $("#gridTableTipoAtendimento").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaTipoAtendimento")", {}, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaN0204ATDPesquisa.length > 0) {
+
+                    var arrayRow = new Array();
+                    $('#TableTipoAtendimento').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.ListaN0204ATDPesquisa.length; i++) {
+
+                        var codigo = data.ListaN0204ATDPesquisa[i].Codigo;
+                        var descricao = data.ListaN0204ATDPesquisa[i].Descricao;
+                        var alterar = "<a style='color:#333333' href=\"#\" onClick=\"AlterarTipoAtendimento('" + codigo + "','" + descricao + "')\"><span class='glyphicon glyphicon-edit' title='Alterar Tipo de Atendimento'></span></a>";
+                        var excluir = "<a style='color:#333333' href=\"#\" onClick=\"ExcluirTipoAtendimento('" + codigo + "','" + descricao + "')\"><span class='glyphicon glyphicon-trash' title='Excluir Tipo de Atendimento'></span></a>";
+
+                        arrayRow[i] = new Array(codigo, descricao, alterar, excluir, "");
+                    }
+
+                    $('#TableTipoAtendimento').dataTable().fnAddData(arrayRow);
+                    $('#TableTipoAtendimento').dataTable().fnPageChange('first');
+                    $("#gridTableTipoAtendimento").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        var codigoTipoAtendimento = "";
+        var descricaoOrigemOcorrencia = "";
+        function AlterarTipoAtendimento(codigo, descricao) {
+            codigoTipoAtendimento = codigo;
+            $("#DescTipAtendAlteraracaoTextBox").val(descricao);
+            $('#AlterarTipoAtendimentoDialog').modal('show');
+            $("#DescTipAtendAlteraracaoTextBox").focus();
+        }
+
+        function ExcluirTipoAtendimento(codigo, descricao) {
+            codigoTipoAtendimento = codigo;
+            descricaoOrigemOcorrencia = descricao;
+            var msg = "Deseja excluir o tipo de atendimendo " + codigo + " - " + descricao + " ?";
+            $('#ExcluirTipoAtendimentoDialog strong').html(msg);
+            $('#ExcluirTipoAtendimentoDialog').modal('show');
+            $("#ExcluirTipoAtendBtn").focus();
+        }
+
+        $("#CadastrarButton").click(function () {
+            if ($("#DescTipoAtendimentoTextBox").valid()) {
+                var descricao = $("#DescTipoAtendimentoTextBox").val();
+                InserirTipoAtendimento(descricao);
+            }
+        });
+
+        $("#SalvarAlteracaoBtn").click(function () {
+            if ($("#DescTipAtendAlteraracaoTextBox").valid()) {
+                var descricao = $("#DescTipAtendAlteraracaoTextBox").val();
+                $('#AlterarTipoAtendimentoDialog').modal('hide');
+                GravarAlteracaoTipoAtendimento(codigoTipoAtendimento, descricao);
+            }
+        });
+
+        $("#ExcluirTipoAtendBtn").click(function () {
+            $('#ExcluirTipoAtendimentoDialog').modal('hide');
+            GravarExclusaoTipoAtendimento(codigoTipoAtendimento, descricaoOrigemOcorrencia);
+        });
+
+        $("#DescTipoAtendimentoTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#DescTipoAtendimentoTextBox").valid()) {
+                    var descricao = $("#DescTipoAtendimentoTextBox").val();
+                    InserirTipoAtendimento(descricao);
+                }
+                return false;
+            }
+        });
+
+        $("#DescTipAtendAlteraracaoTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#DescTipAtendAlteraracaoTextBox").valid()) {
+                    var descricao = $("#DescTipAtendAlteraracaoTextBox").val();
+                    $('#AlterarTipoAtendimentoDialog').modal('hide');
+                    GravarAlteracaoTipoAtendimento(codigoTipoAtendimento, descricao);
+                }
+                return false;
+            }
+        });
+
+        $("#DescTipoAtendimentoTextBox").focusin(function () {
+            $("#DescTipoAtendimentoTextBox").val("");
+        });
+
+        function InserirTipoAtendimento(descricao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("InserirTipoAtendimento")", { descricao: descricao },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.GravadoSucesso) {
+                    PesquisaTipoAtendimento();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkTipoAtendGravadoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function GravarAlteracaoTipoAtendimento(codigoTipoAtendimento, descricao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("AlterarTipoAtendimento")", { codigo: codigoTipoAtendimento, descricao: descricao },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.AlteradoSucesso) {
+                    PesquisaTipoAtendimento();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkTipoAtendAlteradoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function GravarExclusaoTipoAtendimento(codigoTipoAtendimento, descricaoOrigemOcorrencia) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ExcluirTipoAtendimento")", { codigo: codigoTipoAtendimento, descricao: descricaoOrigemOcorrencia },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ExcluidoSucesso) {
+                    PesquisaTipoAtendimento();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkTipoAtendExcluidoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+        }
+
+        var keyCodeAnterior = 0;
+        $(window).keydown(function (event) {
+            // F5 ou CTRL + R
+            if (event.keyCode == 116 || keyCodeAnterior == 17 && event.keyCode == 82) {
+                window.location = '@Url.Action("CadTipoAtendimento", "Solicitacoes")';
+                return false;
+            }
+            keyCodeAnterior = event.keyCode;
+        });
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Solicitações</a></li>
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Cadastros</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("CadTipoAtendimento", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadTipoAtendimento", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="modal" id="AlterarTipoAtendimentoDialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Alterar Tipo de Atendimento</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        @Html.LabelFor(m => m.DescTipoAtendimentoAlteracao, new { @class = "col-md-4 control-label" })
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(m => m.DescTipoAtendimentoAlteracao, new { @class = "form-control input-sm", @id = "DescTipAtendAlteraracaoTextBox", onKeyPress = "return ( this.value.length < 50 );" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 control-label">
+                        </div>
+                        <div class="col-md-7">
+                            @Html.ValidationMessageFor(m => m.DescTipoAtendimentoAlteracao)
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="row">
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="button" id="SalvarAlteracaoBtn" class="btn btn-primary" style="margin-top:0px">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="ExcluirTipoAtendimentoDialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Excluir Tipo de Atendimento</h3>
+                </div>
+                <div class="panel-body">
+                    <strong></strong>
+                    <div class="row">
+                        <br />
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                            <button type="button" id="ExcluirTipoAtendBtn" class="btn btn-primary" style="margin-top:0px">Sim</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @Html.LabelFor(m => m.DescTipoAtendimento, new { @class = "col-md-2 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.DescTipoAtendimento, new { @class = "form-control input-sm", @id = "DescTipoAtendimentoTextBox", onKeyPress = "return ( this.value.length < 50 );" })
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-sm" type="button" id="CadastrarButton">Cadastrar</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.DescTipoAtendimento)
+        </div>
+    </div>
+    <br />
+    <div class="panel panel-default">
+        <legend>&nbsp;&nbsp;Lista de Tipos de Atendimento Cadastrados</legend>
+        <div id="gridTableTipoAtendimento">
+            <table id="TableTipoAtendimento" class="table table-striped table-hover" cellspacing="0"></table>
+        </div>
+        <br />
+    </div>
+}

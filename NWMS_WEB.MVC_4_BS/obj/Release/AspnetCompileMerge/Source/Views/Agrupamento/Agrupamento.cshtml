@@ -1,0 +1,658 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.AgrupamentoViewModel
+@{
+    ViewBag.Title = "Agrupamento";
+}
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+@section scripts{
+    <script type="text/javascript">
+
+        var quantidadeAgrupada = 0;
+        var codigoAgrupamento = 0;
+
+        var codigoAgrupamento;
+        var codigoRegistro;
+        var dataGeracao;
+        var usuarioGeracao;
+        var filtro = 0;
+        var excluirAgrupamentoSelecionado = 0;
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+
+        $('#tabelaAgrupamento').DataTable({
+            paging: true,
+            bInfo: true,
+            bFilter: false,
+            bSort: false,
+            bAutoWidth: true,
+            searching: false,
+            aoColumns: [
+                 { "sWidth": "0%", "sClass": "center", "title": "Selecionar" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Nº Ocorrência" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Nota Fiscal" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Valor Líquido" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Valor Bruto" },
+                 { "sWidth": "0%", "sClass": "center", "title": "IPI" },
+                 { "sWidth": "0%", "sClass": "center", "title": "ICMS" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Frete" }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext": "Próximo",
+                    "sLast": "Último"
+                }
+            },
+            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                $('td', nRow).attr('nowrap', 'nowrap');
+                return nRow;
+            },
+            "infoCallback": function (settings, start, end, max, total, pre) {
+                var api = this.api();
+                var pageInfo = api.page.info();
+                return 'Mostrando ' + (pageInfo.end > 0 ? 1 : 0) + ' até ' + (pageInfo.recordsTotal - 1 == -1 ? 0 : pageInfo.recordsTotal - 1) + ' registros';
+            },
+            bLengthChange: false
+        });
+
+
+        $('#tabelaAgrupar').DataTable({
+            paging: false,
+            bInfo: false,
+            bFilter: false,
+            bSort: false,
+            bAutoWidth: true,
+            searching: false,
+            aoColumns: [
+
+                 { "sWidth": "0%", "sClass": "center", "title": "Cod. Agrupador" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Qtd. Agrupada" }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext": "Próximo",
+                    "sLast": "Último"
+                }
+            },
+            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                $('td', nRow).attr('nowrap', 'nowrap');
+                return nRow;
+            },
+            "infoCallback": function (settings, start, end, max, total, pre) {
+                var api = this.api();
+                var pageInfo = api.page.info();
+                return 'Mostrando ' + (pageInfo.end > 0 ? 1 : 0) + ' até ' + (pageInfo.recordsTotal - 1 == -1 ? 0 : pageInfo.recordsTotal - 1) + ' registros';
+            },
+            bLengthChange: false
+        });
+
+
+        $('#tabelaAgrupada').DataTable({
+            paging: false,
+            bInfo: false,
+            bFilter: false,
+            bSort: false,
+            bAutoWidth: true,
+            searching: false,
+            aoColumns: [
+                 { "sWidth": "0%", "sClass": "center", "title": "Selecionar" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Código Agrupador" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Quantidade Agrupada" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Valor Total Líquido" },
+                 { "sWidth": "0%", "sClass": "center", "title": "Status do Agrupamento" }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext": "Próximo",
+                    "sLast": "Último"
+                }
+            },
+            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                $('td', nRow).attr('nowrap', 'nowrap');
+                return nRow;
+            },
+            "infoCallback": function (settings, start, end, max, total, pre) {
+                var api = this.api();
+                var pageInfo = api.page.info();
+                return 'Mostrando ' + (pageInfo.end > 0 ? 1 : 0) + ' até ' + (pageInfo.recordsTotal - 1 == -1 ? 0 : pageInfo.recordsTotal - 1) + ' registros';
+            },
+            bLengthChange: false
+        });
+
+
+        function excluirAgrupamento() {
+
+            checkboxes = document.getElementsByName('fruita');
+            var agrupamento = "";
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
+                if (checkboxes[i].checked) {
+                    agrupamento += agrupamento == "" ? checkboxes[i].id.replace('radioSelecionaAgrupamento', '') : "," + checkboxes[i].id.replace('radioSelecionaAgrupamento', '');
+                }
+            }
+
+            if (agrupamento == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Selecione um código agrupador", "btnOkClienteNaoEncontrado", "OK", true);
+                return;
+            }
+
+            $.getJSON("@Url.Action("excluirAgrupamento")", { agrupamento: agrupamento }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                if (data.dados != "") {
+                    DialogPadrao("warning", "Aviso!", "warning", data.dados, "btnOkClienteNaoEncontrado", "OK", true);
+                    return;
+                }
+                DialogPadrao("success", "Sucesso!", "success", "Agrupamento Excluído", "btnOkDialogItensAddSucesso", "OK", true);
+                $('#tabelaAgrupada').dataTable().fnClearTable();
+                $('#tabelaAgrupamento').dataTable().fnClearTable();
+            });
+        }
+
+        function pesquisarPorOcorrenciaAGP() {
+
+            if ($("#campoNumeroRegistro").val() == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe o cliente!", "btnOkClienteNaoEncontrado", "OK", true);
+            }
+            $('#tabelaAgrupamento').dataTable().fnClearTable();
+            $('#tabelaAgrupada').dataTable().fnClearTable();
+            Numregistro = "";
+            quantidadeAgrupada = 0;
+            codigoAgrupamento = 0;
+            var numreg = $("#campoNumeroRegistro").val();
+            $.getJSON("@Url.Action("PesquisarPorOcorrenciaAGP")", { numreg: numreg }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.AGP.length > 0) {
+                    var arrayRow = new Array();
+                    $('#tabelaAgrupamento').dataTable().fnClearTable();
+                    for (var i = 0; i < data.AGP.length; i++) {
+                        var NUMREG = data.AGP[i].NUMREG;
+                        var NUMNFV = data.AGP[i].NUMNFV;
+                        var VLRLIQ = data.AGP[i].VLRLIQ;
+                        var VLRBRT = data.AGP[i].VLRBRT;
+                        var PERIPI = data.AGP[i].PERIPI;
+                        var ICMS = 0;
+                        var VLRFRE = data.AGP[i].VLRFRE;
+                        var selecionar = "<input type='checkbox' name='fruit' id='radioSelecionarRegistro" + NUMREG + "' tabindex='-1' alt=\"\" title=\"Selecionar Registro de Ocorrência\">";
+                        arrayRow[i] = new Array(selecionar, NUMREG, NUMNFV, VLRLIQ, VLRBRT, PERIPI, ICMS, VLRFRE);
+                    }
+                    $('#tabelaAgrupamento').dataTable().fnAddData(arrayRow);
+                    $('#tabelaAgrupamento').dataTable().fnPageChange('first');
+                } else {
+                    $('#tabelaAgrupamento').dataTable().fnClearTable();
+                    DialogPadrao("warning", "Aviso!", "warning", "Aviso não há ocorrências para agrupar!", "btnOkClienteNaoEncontrado", "OK", true);
+                }
+            });
+            pesquisarAgrupamento(numreg);
+        }
+
+        function pesquisarAgrupamento(codCliente) {
+
+            $.getJSON("@Url.Action("pesquisarAgrupamento")", { codigoCliente: codCliente, filtro: filtro }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.AGP.length > 0) {
+                    var arrayRow = new Array();
+                    for (var i = 0; i < data.AGP.length; i++) {
+                        var AGRREG = data.AGP[i].AGRREG;
+                        var QTDAGRREG = data.AGP[i].QTDAGRREG;
+                        var VLRTOTAL = data.AGP[i].VLRLIQ;
+                        var STATUS = data.AGP[i].STATUS;
+                        var selecionar = "<input type='checkbox' name='fruita' id='radioSelecionaAgrupamento" + AGRREG + "' tabindex='-1' alt=\"\" title=\"Selecionar Registro de Ocorrência\">";
+                        arrayRow[i] = new Array(selecionar, AGRREG, QTDAGRREG, VLRTOTAL, STATUS);
+                    }
+                    $('#tabelaAgrupada').dataTable().fnAddData(arrayRow);
+                    $('#tabelaAgrupada').dataTable().fnPageChange('first');
+                }
+            });
+        }
+
+        var idColunaTableRegistro
+        var Numregistro = "";
+
+        $('#tabelaAgrupamento tbody').on('click', 'td', function () {
+            idColunaTableRegistro = $(this).index();
+        });
+
+        $('#tabelaAgrupada tbody').on('click', 'tr', function () {
+            var idCheck = "";
+            var table = $('#tabelaAgrupada').DataTable();
+            var dadosLinha = table.row(this).data();
+
+
+            excluirAgrupamentoSelecionado = dadosLinha[1];
+        });
+
+
+        function gerarAgrupamento() {
+
+            checkboxes = document.getElementsByName('fruit');
+            var ocorrencia = "";
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
+                if (checkboxes[i].checked) {
+                    ocorrencia += ocorrencia == "" ? checkboxes[i].id.replace('radioSelecionarRegistro', '') : "," + checkboxes[i].id.replace('radioSelecionarRegistro', '');
+                }
+            }
+
+            if (ocorrencia.search(',') != -1) {
+                gravarAgrupamento(ocorrencia, dataAtualFormatada);
+
+            } else {
+                DialogPadrao("warning", "Aviso!", "warning", "Selecione pelo menos duas ocorrências!", "btnOkClienteNaoEncontrado", "OK", true);
+                return;
+            }
+        }
+
+        function cancelarAgrupamentoAgrupada() {
+            $('#tabelaAgrupada').dataTable().fnClearTable();
+            $('#tabelaAgrupamento').dataTable().fnClearTable();
+
+            Numregistro = "";
+            quantidadeAgrupada = 0;
+            $("#campoNumeroRegistro").val('');
+        }
+
+        function cancelarAgrupamento() {
+            $('#tabelaAgrupar').dataTable().fnClearTable();
+            Numregistro = "";
+        }
+
+        function dataAtualFormatada() {
+            var data = new Date();
+            var dia = data.getDate();
+            if (dia.toString().length == 1)
+                dia = "0" + dia;
+            var mes = data.getMonth() + 1;
+            if (mes.toString().length == 1)
+                mes = "0" + mes;
+            var ano = data.getFullYear();
+            return dia + "/" + mes + "/" + ano;
+        }
+
+        function get() {
+            var refTab = document.getElementById("tabelaAgrupar")
+            var ttl;
+
+            codigoAgrupamento = refTab.rows[2].cells[0].firstChild.nodeValue
+            dataGeracao = dataAtualFormatada();
+            codigoRegistro = Numregistro;
+            usuarioGeracao = "";
+        }
+
+        function gravarAgrupamento(ocorrencias, dataAtual) {
+            if ($("#campoNumeroRegistro").val() == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe o cliente!", "btnOkClienteNaoEncontrado", "OK", true);
+                return;
+            }
+            $.getJSON("@Url.Action("gravarAgrupamento")", { ocorrencias: ocorrencias, dataGeracao: dataGeracao }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                var arrayRow = new Array();
+                if (data.retorno == "Ocorreu um errro ao agrupar as ocorrências") {
+
+                    DialogPadrao("warning", "Aviso!", "warning", data.retorno, "btnOkClienteNaoEncontrado", "OK", true);
+                } else {
+                    DialogPadrao("success", "Sucesso!", "success", data.retorno, "btnOkDialogItensAddSucesso", "OK", true);
+                }
+
+                $('#tabelaAgrupamento').dataTable().fnClearTable();
+                $('#tabelaAgrupar').dataTable().fnClearTable();
+            });
+        }
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+        }
+
+        $('#TableCliente').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },
+                        { "sClass": "right", "title": "CNPJ/CPF" + espaco.substring(0, 55) },
+                        { "sClass": "right", "title": "Inscrição&nbspEstadual" },
+                        { "sClass": "left", "title": "Endereço" + espaco },
+                        { "sClass": "left", "title": "Cidade" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Estado" }, ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+        function PesquisaTodosCliente(codigoCliente) {
+            $('#progressBar').show();
+            $("#gridTableCliente").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaCliente", "Solicitacoes")", { codigoCliente: codigoCliente }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaClientes) {
+                    var arrayRow = new Array();
+                    $('#TableCliente').dataTable().fnClearTable();
+                    for (var i = 0; i < data.listaClientes.length; i++) {
+                        var codigo = data.listaClientes[i].CodigoCliente;
+                        var nome = data.listaClientes[i].NomeFantasia;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaClientes[i].RazaoSocial;
+                        var cpf = data.listaClientes[i].CnpjCpf;
+                        var ie = data.listaClientes[i].InscricaoEstadual;
+                        var endereco = data.listaClientes[i].Endereco;
+                        var cidade = data.listaClientes[i].Cidade;
+                        var estado = data.listaClientes[i].Estado;
+                        arrayRow[i] = new Array(selecionar, codigo, nome, razaoSocial, cpf, ie, endereco, cidade, estado);
+                    }
+                    $('#TableCliente').dataTable().fnAddData(arrayRow);
+                    $('#TableCliente').dataTable().fnPageChange('first');
+                    $("#gridTableCliente").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#ClienteDialog').modal('show');
+            });
+        }
+        function SelecionarCliente(codigo, nome) {
+            $('#campoNumeroRegistro').val("");
+            $("#campoNumeroRegistro").focus();
+            $('#ClienteDialog').modal('hide');
+            setTimeout(function () {
+                $('#campoNumeroRegistro').val(codigo);
+                $("#campoNumeroRegistro").focus();
+            }, 50);
+        }
+
+        $("#PesquisarClienteButton").click(function () {
+            var codigoCliente = $("#campoNumeroRegistro").val();
+            PesquisaTodosCliente(codigoCliente);
+        });
+
+
+        $("#PesquisarClienteButton1").click(function () {
+            var codigoCliente = $("#campoNumeroRegistro").val();
+            PesquisaTodosCliente1(codigoCliente);
+        });
+
+
+
+
+
+
+
+        $('#TableCliente1').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },
+                        { "sClass": "right", "title": "CNPJ/CPF" + espaco.substring(0, 55) },
+                        { "sClass": "right", "title": "Inscrição&nbspEstadual" },
+                        { "sClass": "left", "title": "Endereço" + espaco },
+                        { "sClass": "left", "title": "Cidade" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Estado" }, ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+        function PesquisaTodosCliente1(codigoCliente) {
+            $('#progressBar').show();
+            $("#gridTableCliente1").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaCliente", "Solicitacoes")", { codigoCliente: codigoCliente }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaClientes) {
+                    var arrayRow = new Array();
+                    $('#TableCliente1').dataTable().fnClearTable();
+                    for (var i = 0; i < data.listaClientes.length; i++) {
+                        var codigo = data.listaClientes[i].CodigoCliente;
+                        var nome = data.listaClientes[i].NomeFantasia;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente1('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaClientes[i].RazaoSocial;
+                        var cpf = data.listaClientes[i].CnpjCpf;
+                        var ie = data.listaClientes[i].InscricaoEstadual;
+                        var endereco = data.listaClientes[i].Endereco;
+                        var cidade = data.listaClientes[i].Cidade;
+                        var estado = data.listaClientes[i].Estado;
+                        arrayRow[i] = new Array(selecionar, codigo, nome, razaoSocial, cpf, ie, endereco, cidade, estado);
+                    }
+                    $('#TableCliente1').dataTable().fnAddData(arrayRow);
+                    $('#TableCliente1').dataTable().fnPageChange('first');
+                    $("#gridTableCliente1").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#ClienteDialog1').modal('show');
+            });
+        }
+        function SelecionarCliente1(codigo, nome) {
+            $('#campoCodigoCliente').val("");
+            $("#campoCodigoCliente").focus();
+            $('#ClienteDialog1').modal('hide');
+            setTimeout(function () {
+                $('#campoCodigoCliente').val(codigo);
+                $("#campoCodigoCliente").focus();
+            }, 50);
+        }
+
+        $("#campoNumeroRegistro").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                pesquisarPorOcorrenciaAGP();
+            }
+        });
+
+
+
+        $('#myform').on('change', ':checkbox', function () {
+            if ($(this).is(':checked')) {
+                filtro = 1;
+            } else {
+                filtro = 2;
+            }
+        });
+
+    </script>
+}
+
+<div class="modal fade bs-example-modal-lg" id="ClienteDialog1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Cliente</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableCliente1" style="display: none;">
+                        <table id="TableCliente1" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="ClienteDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Cliente</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableCliente" style="display: none;">
+                        <table id="TableCliente" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<div class="row">
+    @Html.LabelFor(m => m.campoNumeroRegistro, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        <div class="input-group">
+            @Html.TextBoxFor(m => m.campoNumeroRegistro, new { @class = "form-control input-sm", @id = "campoNumeroRegistro" })
+            <span class="input-group-addon" style="padding: 3px 6px">
+                <a style="color:#333333" id="PesquisarClienteButton"><span class="glyphicon glyphicon-search" title="Pesquisar cliente"></span></a>
+            </span>
+            <div class="col-sm-12">
+                <input type="button" onclick="pesquisarPorOcorrenciaAGP()" value="Pesquisar" id="PesquisarTramitesButton" style="margin-top:0px" class="btn btn-primary btn-sm" />
+                <input type="button" onclick="gerarAgrupamento()" value="Agrupar" id="agrupar" style="margin-top:0px" class="btn btn-primary btn-sm" />
+                <input type="button" onclick="cancelarAgrupamentoAgrupada()" value="Cancelar" id="cancelarAgrupamento" style="margin-top:0px" class="btn btn-primary btn-sm" />
+
+            </div>
+        </div>
+    </div>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Agrupador
+    </div>
+    <div class="row">
+        <div class="panel-body">
+            <table width="100%" class="table table-striped table-hover" id="tabelaAgrupamento">
+                <thead>
+                    <tr id="coluna"></tr>
+                </thead>
+                <tbody id="myTablePendentes"></tbody>
+            </table>
+        </div>
+
+    </div><!-- /.col-lg-12 -->
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Agrupada
+    </div>
+    <div class="panel-body">
+        <form id="myform">
+            <div class="pull-right">
+                <input type="checkbox" class="form-check-input" id="mostrarTodos">
+                <label class="form-check-label" for="exampleCheck1">Mostrar Todos</label>
+            </div>
+        </form>
+        <table width="100%" class="table table-striped table-hover" id="tabelaAgrupada">
+            <thead>
+                <tr id="coluna"></tr>
+            </thead>
+            <tbody id="myTablePendentes"></tbody>
+        </table>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <input type="button" onclick="excluirAgrupamento()" value="Excluir" id="excluirAgrupamento" style="margin-top:0px" class="btn btn-primary btn-sm" />
+    </div>
+</div>
+
+

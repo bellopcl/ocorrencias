@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="NWORKFLOW_1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="NWORKFLOW" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TipoAtendimentoSet" EntityType="NWORKFLOW_1.TipoAtendimento" />
+  </EntityContainer>
+  <EntityType Name="TipoAtendimento">
+    <Key>
+      <PropertyRef Name="COD" />
+    </Key>
+    <Property Name="COD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESC" Type="String" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>

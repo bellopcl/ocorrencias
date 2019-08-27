@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Ocorreu um erro inesperado durante o processamento. Favor comunicar e enviar o erro abaixo para o setor de TI.";
+    Layout = null;
+}
+
+@Styles.Render("~/Content/bootstrap")
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Login", "Login", "Login", null, new { @class = "navbar-brand" })
+        </div>
+    </div>
+</div>
+<div class="container">
+    <br />
+    <h4>@ViewBag.Title</h4>
+    <div class="alert alert-dismissable alert-danger">
+        <strong>'@Session["ExceptionErro"]'</strong>
+    </div>
+</div>

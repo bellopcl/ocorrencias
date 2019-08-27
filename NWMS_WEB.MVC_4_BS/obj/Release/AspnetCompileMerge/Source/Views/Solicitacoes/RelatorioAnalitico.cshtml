@@ -1,0 +1,992 @@
+﻿﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.RelatorioAnaliticoViewModel
+@{
+    ViewBag.Title = "Relatório Analítico de Ocorrência";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    @Scripts.Render("~/bundles/datepicker")
+    @*<script src="~/Scripts/dataTables.tableTools.js"></script>
+        <script src="~/Scripts/dataTables.jqueryui.js"></script>*@
+    <script type="text/javascript">
+        var mensagemErro = "";
+        $("#ProcessarButton").click(function () {
+            Processar();
+        });
+        var tipoPesq = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.NumeroRegistro).ToString())';
+        function Processar() {
+            if (tipoPesq == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.NumeroRegistro).ToString())') {
+                if ($("#RelatorioAnaliticoForm").valid()) {
+                    $('#progressBar').show();
+                    var codigoRegistro = $("#NumRegistroTextBox").val();
+                    var tipoPesquisa = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.NumeroRegistro).ToString())';
+                    RelatorioRegistrosOcorrencia(codigoRegistro, "", "", "", "", "", "", "", "", tipoPesquisa);
+                }
+                else if (!$("#NumRegistroTextBox").valid()) {
+                    $("#NumRegistroTextBox").focus();
+                }
+            }
+            else if (tipoPesq == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.AnaliseEmbarque).ToString())') {
+                if ($("#RelatorioAnaliticoForm").valid()) {
+                    $('#progressBar').show();
+                    var codFilial = $("#FilialAneDropDownList option:selected").val();
+                    var analiseEmbarque = $("#NumAnaliseEmbarqueTextBox").val();
+                    var tipoPesquisa = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.AnaliseEmbarque).ToString())';
+                    RelatorioRegistrosOcorrencia("", codFilial, analiseEmbarque, "", "", "", "", "", "", tipoPesquisa);
+                }
+                else if (!$("#NumAnaliseEmbarqueTextBox").valid()) {
+                    $("#NumAnaliseEmbarqueTextBox").focus();
+                }
+            }
+            else if (tipoPesq == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Placa_Data_Faturamento).ToString())') {
+                if ($("#RelatorioAnaliticoForm").valid()) {
+                    mensagemErro = "";
+                    TratarFieldErroDataFat(false);
+                    var dataFat = ValidaData("DataFaturamentoTextBox", "Data de Faturamento");
+                    if (dataFat) {
+                        $('#progressBar').show();
+                        var codPlaca = $("#CodPlacaTextBox").val().replace("-", "");
+                        var dtFat = $("#DataFaturamentoTextBox").val();
+                        var tipoPesquisa = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Placa_Data_Faturamento).ToString())';
+                        RelatorioRegistrosOcorrencia("", "", "", "", "", "", "", codPlaca, dtFat, tipoPesquisa);
+                    }
+                    else {
+                        TratarFieldErroDataFat(true);
+                        setTimeout(function () {
+                            $("#DataFaturamentoTextBox").focus();
+                        }, 1000);
+                    }
+                }
+                else if (!$("#CodPlacaTextBox").valid()) {
+                    setTimeout(function () {
+                        $("#CodPlacaTextBox").focus();
+                    }, 100);
+                }
+                else if (!$("#DataFaturamentoTextBox").valid()) {
+                    setTimeout(function () {
+                        $("#DataFaturamentoTextBox").focus();
+                    }, 1000);
+                }
+            }
+            else if (tipoPesq == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Periodo_Situacao_Cliente).ToString())') {
+                if ($("#RelatorioAnaliticoForm").valid()) {
+                    mensagemErro = "";
+                    TratarFieldErroDataInicial(false);
+                    var dataIni = ValidaData("DataInicialTextBox", "Data Inicial");
+                    if (!dataIni) {
+                        TratarFieldErroDataInicial(true);
+                        $("#DataInicialTextBox").focus();
+                    }
+                    mensagemErro = "";
+                    TratarFieldErroDataFinal(false);
+                    var dataFim = ValidaData("DataFinalTextBox", "Data Final");
+                    if (!dataFim) {
+                        TratarFieldErroDataFinal(true);
+                        setTimeout(function () {
+                            $("#DataFinalTextBox").focus();
+                        }, 1000);
+                    }
+                    if (dataIni && dataFim) {
+                        mensagemErro = "";
+                        var fimMaiorInicial = ValidaDataFimMaiorInicial("DataInicialTextBox", "DataFinalTextBox");
+                        if (fimMaiorInicial) {
+                            $('#progressBar').show();
+                            var dtIni = $("#DataInicialTextBox").val();
+                            var dtFim = $("#DataFinalTextBox").val();
+                            var sitReg = $("#ListaSitRegOcorDropDownList option:selected").val();
+                            var codCli = $("#CodClienteTextBox").val();
+                            if (sitReg == "0") {
+                                var tipoPesquisa = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Periodo_Cliente).ToString())';
+                                RelatorioRegistrosOcorrencia("", "", "", dtIni, dtFim, "", codCli, "", "", tipoPesquisa);
+                            }
+                            if (sitReg != "0") {
+                                var tipoPesquisa = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Periodo_Situacao_Cliente).ToString())';
+                                RelatorioRegistrosOcorrencia("", "", "", dtIni, dtFim, sitReg, codCli, "", "", tipoPesquisa);
+                            }
+                        }
+                        else {
+                            TratarFieldErroDataFinal(true);
+                            setTimeout(function () {
+                                $("#DataFinalTextBox").focus();
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                    else {
+                        return false;
+                    }
+                }
+                else if (!$("#CodClienteTextBox").valid()) {
+                    $("#CodClienteTextBox").focus();
+                }
+                else if (!$("#DataInicialTextBox").valid()) {
+                    setTimeout(function () {
+                        $("#DataInicialTextBox").focus();
+                    }, 1000);
+                }
+                else if (!$("#DataFinalTextBox").valid()) {
+                    setTimeout(function () {
+                        $("#DataFinalTextBox").focus();
+                    }, 1000);
+                }
+            }
+        }
+        $("#NumRegistroTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                $("#ProcessarButton").focus();
+                Processar();
+            }
+        });
+        $("#NumAnaliseEmbarqueTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                $("#ProcessarButton").focus();
+                Processar();
+            }
+        });
+        $("#CodPlacaTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                $("#ProcessarButton").focus();
+                Processar();
+            }
+        });
+        $("#DataFaturamentoTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                $("#ProcessarButton").focus();
+                Processar();
+            }
+        });
+        $("#CodClienteTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                $("#ProcessarButton").focus();
+                Processar();
+            }
+        });
+        $("#DataInicialTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                $("#ProcessarButton").focus();
+                Processar();
+            }
+        });
+        $("#DataFinalTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                $("#ProcessarButton").focus();
+                Processar();
+            }
+        });
+        function SelectTipoPesquisaRegRadio(valor) {
+            if (valor == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.NumeroRegistro).ToString())') {
+                tipoPesq = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.NumeroRegistro).ToString())';
+                TratarNumeroRegistro(true);
+                TratarAnaliseEmbarque(false)
+                TratarPlaca(false);
+                TratarDataFaturamento(false);
+                TratarCodCliente(false);
+                TratarSituacaoRegistroOcorrencia(false);
+                TratarFieldErroDataInicial(false);
+                TratarFieldErroDataFinal(false);
+                TratarDataInicial(false);
+                TratarDataFinal(false);
+                setTimeout(function () {
+                    $("#NumRegistroTextBox").focus();
+                }, 500);
+            }
+            else if (valor == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.AnaliseEmbarque).ToString())') {
+                tipoPesq = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.AnaliseEmbarque).ToString())';
+                TratarNumeroRegistro(false);
+                TratarAnaliseEmbarque(true)
+                TratarPlaca(false);
+                TratarDataFaturamento(false);
+                TratarCodCliente(false);
+                TratarSituacaoRegistroOcorrencia(false);
+                TratarFieldErroDataInicial(false);
+                TratarFieldErroDataFinal(false);
+                TratarDataInicial(false);
+                TratarDataFinal(false);
+                setTimeout(function () {
+                    $("#NumAnaliseEmbarqueTextBox").focus();
+                }, 500);
+            }
+            else if (valor == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Placa_Data_Faturamento).ToString())') {
+                tipoPesq = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Placa_Data_Faturamento).ToString())';
+                TratarNumeroRegistro(false);
+                TratarAnaliseEmbarque(false)
+                TratarPlaca(true);
+                TratarDataFaturamento(true);
+                TratarCodCliente(false);
+                TratarSituacaoRegistroOcorrencia(false);
+                TratarFieldErroDataInicial(false);
+                TratarFieldErroDataFinal(false);
+                TratarDataInicial(false);
+                TratarDataFinal(false);
+                setTimeout(function () {
+                    $("#CodPlacaTextBox").focus();
+                }, 500);
+            }
+            else if (valor == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Periodo_Situacao_Cliente).ToString())') {
+                tipoPesq = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.TipoPesquisaRegistroOcorrencia.Periodo_Situacao_Cliente).ToString())';
+                TratarNumeroRegistro(false);
+                TratarAnaliseEmbarque(false)
+                TratarPlaca(false);
+                TratarDataFaturamento(false);
+                TratarCodCliente(true);
+                TratarSituacaoRegistroOcorrencia(true);
+                TratarFieldErroDataInicial(false);
+                TratarFieldErroDataFinal(false);
+                TratarDataInicial(true);
+                TratarDataFinal(true);
+                setTimeout(function () {
+                    $("#CodClienteTextBox").focus();
+                }, 500);
+            }
+        }
+        function TratarNumeroRegistro(habilita) {
+            if (habilita) {
+                document.getElementById('NumRegistroTextBox').disabled = false;
+                $("#NumRegistroTextBox").rules("add", { required: true });
+            }
+            else {
+                document.getElementById('NumRegistroTextBox').disabled = true;
+                $("#NumRegistroTextBox").rules("add", { required: false });
+                $("#NumRegistroTextBox").valid();
+                $("#NumRegistroTextBox").val("");
+                $("#gridTableAnexos").hide();
+                $("#DivEspaco").hide();
+            }
+        }
+        function TratarAnaliseEmbarque(habilita) {
+            if (habilita) {
+                document.getElementById('FilialAneDropDownList').disabled = false;
+                document.getElementById('NumAnaliseEmbarqueTextBox').disabled = false;
+                $("#NumAnaliseEmbarqueTextBox").rules("add", { required: true });
+            }
+            else {
+                document.getElementById('FilialAneDropDownList').disabled = true;
+                document.getElementById('NumAnaliseEmbarqueTextBox').disabled = true;
+                $("#NumAnaliseEmbarqueTextBox").rules("add", { required: false });
+                $("#NumAnaliseEmbarqueTextBox").valid();
+                $("#NumAnaliseEmbarqueTextBox").val("");
+            }
+        }
+        function TratarPlaca(habilita) {
+            if (habilita) {
+                document.getElementById('CodPlacaTextBox').disabled = false;
+                $("#CodPlacaTextBox").rules("add", { required: true });
+            }
+            else {
+                document.getElementById('CodPlacaTextBox').disabled = true;
+                $("#CodPlacaTextBox").rules("add", { required: false });
+                $("#CodPlacaTextBox").valid();
+                $("#CodPlacaTextBox").val("");
+            }
+        }
+        function TratarDataFaturamento(habilita) {
+            if (habilita) {
+                document.getElementById('DataFaturamentoTextBox').disabled = false;
+                $("#DataFaturamentoTextBox").rules("add", { required: true });
+            }
+            else {
+                document.getElementById('DataFaturamentoTextBox').disabled = true;
+                $("#DataFaturamentoTextBox").rules("add", { required: false });
+                $("#DataFaturamentoTextBox").val("");
+                $("#DataFaturamentoTextBox").valid();
+            }
+        }
+        function TratarFieldErroDataFat(habilita) {
+            if (habilita) {
+                $('#fieldErrorDivValidationDataFat span').html(mensagemErro);
+                $("#fieldErrorDivValidationDataFat").removeClass("field-validation-valid").addClass("field-validation-error");
+            }
+            else {
+                $("#fieldErrorDivValidationDataFat").removeClass("field-validation-error").addClass("field-validation-valid");
+            }
+        }
+        function TratarCodCliente(habilita) {
+            if (habilita) {
+                document.getElementById('PesquisarClienteButton').disabled = false;
+                document.getElementById('CodClienteTextBox').disabled = false;
+                $("#CodClienteTextBox").rules("add", { required: true });
+                $("#CodClienteTextBox").rules("add", { required: false });
+            }
+            else {
+                document.getElementById('PesquisarClienteButton').disabled = true;
+                document.getElementById('CodClienteTextBox').disabled = true;
+                $("#CodClienteTextBox").rules("add", { required: false });
+                $("#CodClienteTextBox").valid();
+                $("#CodClienteTextBox").val("");
+            }
+        }
+        function TratarSituacaoRegistroOcorrencia(habilita) {
+            if (habilita) {
+                document.getElementById('ListaSitRegOcorDropDownList').disabled = false;
+            }
+            else {
+                $("#ListaSitRegOcorDropDownList").prop('selectedIndex', 0);
+                document.getElementById('ListaSitRegOcorDropDownList').disabled = true;
+            }
+        }
+        function TratarDataInicial(habilita) {
+            if (habilita) {
+                document.getElementById('DataInicialTextBox').disabled = false;
+                $("#DataInicialTextBox").rules("add", { required: true });
+            }
+            else {
+                document.getElementById('DataInicialTextBox').disabled = true;
+                $("#DataInicialTextBox").rules("add", { required: false });
+                $("#DataInicialTextBox").val("");
+                $("#DataInicialTextBox").valid();
+            }
+        }
+        function TratarDataFinal(habilita) {
+            if (habilita) {
+                document.getElementById('DataFinalTextBox').disabled = false;
+                $("#DataFinalTextBox").rules("add", { required: true });
+            }
+            else {
+                document.getElementById('DataFinalTextBox').disabled = true;
+                $("#DataFinalTextBox").rules("add", { required: false });
+                $("#DataFinalTextBox").val("");
+                $("#DataFinalTextBox").valid();
+            }
+        }
+        function TratarFieldErroDataInicial(habilita) {
+            if (habilita) {
+                $("#DivValidationDataIni").css({ display: 'block' });
+                $('#fieldErrorDivValidationDataIni span').html(mensagemErro);
+                $("#fieldErrorDivValidationDataIni").removeClass("field-validation-valid").addClass("field-validation-error");
+            }
+            else {
+                $("#DivValidationDataIni").css({ display: 'none' });
+                $("#fieldErrorDivValidationDataIni").removeClass("field-validation-error").addClass("field-validation-valid");
+            }
+        }
+        function TratarFieldErroDataFinal(habilita) {
+            if (habilita) {
+                $("#DivValidationDataFim").css({ display: 'block' });
+                $('#fieldErrorDivValidationDataFim span').html(mensagemErro);
+                $("#fieldErrorDivValidationDataFim").removeClass("field-validation-valid").addClass("field-validation-error");
+            }
+            else {
+                $("#DivValidationDataFim").css({ display: 'none' });
+                $("#fieldErrorDivValidationDataFim").removeClass("field-validation-error").addClass("field-validation-valid");
+            }
+        }
+        function ValidaData(idData, data) {
+            hoje = new Date();
+            anoAtual = hoje.getFullYear();
+            mesAtual = hoje.getMonth() + 1;
+            diaAtual = hoje.getDate();
+            var pad = "00";
+            var strMes = mesAtual.toString();
+            var mesAtual = pad.substring(0, pad.length - strMes.length) + strMes
+            var strDia = diaAtual.toString();
+            var diaAtual = pad.substring(0, pad.length - strDia.length) + strDia
+            var dtAtual = anoAtual.toString() + mesAtual.toString() + diaAtual.toString();
+            var dia = $('#' + idData).val().replace("/", "").replace("/", "").substring(0, 2);
+            var mes = $('#' + idData).val().replace("/", "").replace("/", "").substring(2, 4);
+            var ano = $('#' + idData).val().substring(6, 10);
+            var dtFim = ano + mes + dia;
+            var erros = false;
+            if (isNaN(dia) || dia > 31 || dia < 1) {
+                erros = true;
+            }
+            if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+                if (dia == "31") {
+                    erros = true;
+                }
+            }
+            if (mes == "02") {
+                bissexto = ano % 4;
+                if (bissexto == 0) {
+                    if (dia > 29) {
+                        erros = true;
+                    }
+                } else {
+                    if (dia > 28) {
+                        erros = true;
+                    }
+                }
+            }
+            if (isNaN(mes) || mes > 12 || mes < 1) {
+                erros = true;
+            }
+            //Verifica o ano
+            if (isNaN(ano) || ano == "0000") {
+                erros = true;
+            }
+            if (erros) {
+                mensagemErro = mensagemErro + data + " inválida.<br/>";
+                return false;
+            }
+            else if (dtFim > dtAtual) {
+                mensagemErro = mensagemErro + data + " inválida. A " + data + " não pode ser maior que a Data Atual.<br/>";
+                return false;
+            }
+            return true;
+        }
+        function ValidaDataFimMaiorInicial(idDataIni, idDataFim) {
+            var diaIni = $('#' + idDataIni).val().replace("/", "").replace("/", "").substring(0, 2);
+            var mesIni = $('#' + idDataIni).val().replace("/", "").replace("/", "").substring(2, 4);
+            var anoIni = $('#' + idDataIni).val().substring(6, 10);
+            var dtIni = anoIni + mesIni + diaIni;
+            var diaFim = $('#' + idDataFim).val().replace("/", "").replace("/", "").substring(0, 2);
+            var mesFim = $('#' + idDataFim).val().replace("/", "").replace("/", "").substring(2, 4);
+            var anoFim = $('#' + idDataFim).val().substring(6, 10);
+            var dtFim = anoFim + mesFim + diaFim;
+            if (dtFim < dtIni) {
+                mensagemErro = mensagemErro + "Data Final inválida. A Data Final é menor que a Data Inicial.<br/>";
+                return false;
+            }
+            return true;
+        }
+        function RelatorioRegistrosOcorrencia(codigoRegistro, codFilial, analiseEmbarque, dataInicial, dataFinal, situacaoReg, cliente, codPlaca, dataFaturamento, tipoPesquisa) {
+            $("#gridTableAnexos").hide();
+            $("#DivEspaco").hide();
+            $.post("RelatorioRegistrosOcorrencia", { codigoRegistro: codigoRegistro, codFilial: codFilial, analiseEmbarque: analiseEmbarque, dataInicial: dataInicial, dataFinal: dataFinal, situacaoReg: situacaoReg, cliente: cliente, codPlaca: codPlaca, dataFaturamento: dataFaturamento, tipoPesquisa: tipoPesquisa }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaVazia) {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkNenhumRegEncontrado", "OK", true);
+                    $('#progressBar').hide();
+                }
+                else {
+                    window.open(data);
+                    if (tipoPesquisa == "1") {
+                        PesquisarAnexos(codigoRegistro);
+                    }
+                    $('#progressBar').hide();
+                }
+            }, "json");
+        }
+        // =================================== INÍCIO DIALOG PADRAO  ========================================= //
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+        }
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#TableAnexos').dataTable({
+            "ordering": false,
+            "paging": false,
+            "bSort": false,
+            "bFilter": false,
+            "info": false,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "left", "title": "Nome&nbspAnexo" + espaco.substring(0, 340) },
+                        { "sClass": "center", "title": "Carregar", "bSortable": false, "bSearchable": false }],
+            "scrollY": 145,
+            "scrollX": true,
+            "jQueryUI": false,
+        });
+        function PesquisarAnexos(codigoRegistro) {
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarAnexos")", { codigoRegistro: codigoRegistro }, function sucess(data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.PesquisaSucesso) {
+                    var arrayRow = new Array();
+                    $('#TableAnexos').dataTable().fnClearTable();
+                    for (var i = 0; i < data.ListaN0203ANXPesquisa.length; i++) {
+                        var numRegistro = data.ListaN0203ANXPesquisa[i].NumRegistro;
+                        var nomeAnexo = data.ListaN0203ANXPesquisa[i].NomeAnexo;
+                        var idLinha = data.ListaN0203ANXPesquisa[i].IdLinha
+                        var carregar = "<a style='color:#333333' href=\"#\" onClick=\"PesquisarItemAnexo('" + numRegistro + "','" + idLinha + "')\"><span class='glyphicon glyphicon-eye-open' title='Carregar Anexo'></span></a>";
+                        arrayRow[i] = new Array(nomeAnexo, carregar);
+                    }
+                    $('#TableAnexos').dataTable().fnAddData(arrayRow);
+                    $('#TableAnexos').dataTable().fnPageChange('first');
+                    $("#gridTableAnexos").slideToggle('fast');
+                    $("#DivEspaco").show();
+                }
+            });
+        }
+        function PesquisarItemAnexo(codigoRegistro, idLinhaAnexo) {
+            $('#progressBar').show();
+            $.post("PesquisarItemAnexo", { codigoRegistro: codigoRegistro, idLinhaAnexo: idLinhaAnexo }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else {
+                    if (data.TipoAnexo.substring(0, 5) == "image" || data.TipoAnexo == "application/pdf" || data.TipoAnexo == "text/plain") {
+                        window.open(data.Anexo);
+                    }
+                    else {
+                        window.location = data.Anexo;
+                    }
+                }
+            }, "json");
+            $('#progressBar').hide();
+        }
+        $("#PesquisarClienteButton").click(function () {
+            PesquisaTodosCliente();
+        });
+        $('#TableCliente').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },
+                        { "sClass": "right", "title": "CNPJ/CPF" + espaco.substring(0, 55) },
+                        { "sClass": "right", "title": "Inscrição&nbspEstadual" },
+                        { "sClass": "left", "title": "Endereço" + espaco },
+                        { "sClass": "left", "title": "Cidade" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Estado" }, ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+        function PesquisaTodosCliente() {
+            $('#progressBar').show();
+            $("#gridTableCliente").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaCliente", "Solicitacoes")", { codigoCliente: "" }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.PesquisaTodosClientes) {
+                    var arrayRow = new Array();
+                    $('#TableCliente').dataTable().fnClearTable();
+                    for (var i = 0; i < data.listaClientes.length; i++) {
+                        var codigo = data.listaClientes[i].CodigoCliente;
+                        var nome = data.listaClientes[i].NomeFantasia;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaClientes[i].RazaoSocial;
+                        var cpf = data.listaClientes[i].CnpjCpf;
+                        var ie = data.listaClientes[i].InscricaoEstadual;
+                        var endereco = data.listaClientes[i].Endereco;
+                        var cidade = data.listaClientes[i].Cidade;
+                        var estado = data.listaClientes[i].Estado;
+                        arrayRow[i] = new Array(selecionar, codigo, nome, razaoSocial, cpf, ie, endereco, cidade, estado);
+                    }
+                    $('#TableCliente').dataTable().fnAddData(arrayRow);
+                    $('#TableCliente').dataTable().fnPageChange('first');
+                    $("#gridTableCliente").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#ClienteDialog').modal('show');
+            });
+        }
+        function SelecionarCliente(codigo) {
+            $('#CodClienteTextBox').val("");
+            $("#CodClienteTextBox").focus();
+            $('#ClienteDialog').modal('hide');
+            setTimeout(function () {
+                $('#CodClienteTextBox').val(codigo);
+                $("#CodClienteTextBox").focus();
+            }, 50);
+        }
+        $("#PesquisarTramitesButton").click(function () {
+            if ($("#NumRegistroTextBox").valid()) {
+                var numreg = $("#NumRegistroTextBox").val();
+                PesquisaTramites(numreg);
+            }
+        });
+        $('#TableTramites').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "bInfo": false,
+            "lengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Nº&nbspReg." },
+                        { "sClass": "center", "title": "Seq.&nbspTram." },
+                        { "sClass": "left", "title": "Descrição&nbspdo&nbspTramite" + espaco.substring(0, 225) },
+                        { "sClass": "left", "title": "Usuário&nbspdo&nbspTramite" + espaco.substring(0, 250) },
+                        { "sClass": "center", "title": "Data&nbspdo&nbspTramite" + espaco.substring(0, 50) },
+                        { "sClass": "left", "title": "Observação&nbspdo&nbspTramite" + espaco + espaco + espaco }
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+        function PesquisaTramites(codigoRegistro) {
+            $('#progressBar').show();
+            $("#gridTableTramites").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaTramites", "Solicitacoes")", { codigoRegistro: codigoRegistro }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaN0203TRAPesquisa.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableTramites').dataTable().fnClearTable();
+                    for (var i = 0; i < data.ListaN0203TRAPesquisa.length; i++) {
+                        var numReg = data.ListaN0203TRAPesquisa[i].NUMREG;
+                        var seqTra = data.ListaN0203TRAPesquisa[i].SEQTRA;
+                        var desTra = data.ListaN0203TRAPesquisa[i].DESTRA;
+                        var usuTra = data.ListaN0203TRAPesquisa[i].USUTRA;
+                        var nomeUsuTra = data.ListaN0203TRAPesquisa[i].NOMEUSUTRA;
+                        var usuTraAux = usuTra + " - " + nomeUsuTra;
+                        var datTra = data.ListaN0203TRAPesquisa[i].DATTRA;
+                        var obstra = data.ListaN0203TRAPesquisa[i].OBSTRA;
+                        arrayRow[i] = new Array(numReg, seqTra, desTra, usuTraAux, datTra, obstra);
+                    }
+                    $('#TableTramites').dataTable().fnAddData(arrayRow);
+                    $('#TableTramites').dataTable().fnPageChange('first');
+                    $("#gridTableTramites").slideToggle('fast');
+                    $('#TramitesDialog').modal('show');
+                    $('#progressBar').hide();
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Nenhum registro encontrado", "btnOkNenhumRegTraEncontrado", "OK", true);
+                    $('#TramitesDialog').modal('hide');
+                    $('#progressBar').hide();
+                }
+            });
+        }
+        $("#PesquisarSitsButton").click(function () {
+            RelatorioSituacaoProtocolos();
+        });
+        function RelatorioSituacaoProtocolos() {
+            $('#progressBar').show();
+            $.post("RelatorioSituacaoProtocolos", {}, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else {
+                    window.open(data);
+                    $('#progressBar').hide();
+                }
+            }, "json");
+        }
+        $('#NumRegistroTextBox').mask("9?9999", { placeholder: "" });
+        $('#NumAnaliseEmbarqueTextBox').mask("9?9999", { placeholder: "" });
+        $('#CodPlacaTextBox').mask("aaa-9999", { placeholder: "" });
+        $('#DataFaturamentoTextBox').mask("99/99/9999");
+        $('#DataInicialTextBox').mask("99/99/9999");
+        $('#DataFinalTextBox').mask("99/99/9999");
+        $('#CodClienteTextBox').mask("9?9999", { placeholder: "" });
+        $('#DataInicialTextBox').datepicker({
+            dateFormat: "dd/mm/yy"
+        });
+        $('#DataFinalTextBox').datepicker({
+            dateFormat: "dd/mm/yy",
+        });
+        $('#DataFaturamentoTextBox').datepicker({
+            dateFormat: "dd/mm/yy",
+        });
+        document.getElementById('FilialAneDropDownList').disabled = true;
+        document.getElementById('NumAnaliseEmbarqueTextBox').disabled = true;
+        document.getElementById('CodPlacaTextBox').disabled = true;
+        document.getElementById('DataFaturamentoTextBox').disabled = true;
+        document.getElementById('CodClienteTextBox').disabled = true;
+        document.getElementById('PesquisarClienteButton').disabled = true;
+        document.getElementById('ListaSitRegOcorDropDownList').disabled = true;
+        document.getElementById('DataInicialTextBox').disabled = true;
+        document.getElementById('DataFinalTextBox').disabled = true;
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+    </script>
+}
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Relatórios</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="ClienteDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Cliente</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableCliente" style="display: none;">
+                        <table id="TableCliente" class="display compact" cellspacing="0" ></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="TramitesDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Tramites</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableTramites" style="display: none;">
+                        <table id="TableTramites" class="display compact" cellspacing="0" ></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("RelatorioAnalitico", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "RelatorioAnaliticoForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li onclick="SelectTipoPesquisaRegRadio(1)" class="active"><a href="#TipoPesq1" data-toggle="tab">Número do Registro</a></li>
+        <li onclick="SelectTipoPesquisaRegRadio(2)"><a href="#TipoPesq2" data-toggle="tab" aria-expanded="true">Filial e Análise de Embarque</a></li>
+        <li onclick="SelectTipoPesquisaRegRadio(11)"><a href="#TipoPesq3" data-toggle="tab" aria-expanded="true">Placa e Data de Faturamento</a></li>
+        <li onclick="SelectTipoPesquisaRegRadio(9)"><a href="#TipoPesq4" data-toggle="tab" aria-expanded="true">Cliente / Situação / Período</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="TipoPesq1">
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                @*<legend>&nbsp;&nbsp;Número do Registro</legend>*@
+                <div class="row">
+                    @Html.LabelFor(m => m.NumRegistro, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.NumRegistro, new { @class = "form-control input-sm", @id = "NumRegistroTextBox" })
+                            <span class="input-group-addon" style="padding: 3px 6px">
+                                <a style='color:#333333' href="#" id="PesquisarTramitesButton"><span class="glyphicon glyphicon-search" title="Pesquisar Tramites"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-4">
+                        @Html.ValidationMessageFor(m => m.NumRegistro)
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row" id="gridTableAnexos" style="display:none">
+                    @Html.LabelFor(m => m.Anexos, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-5">
+                        <table id="TableAnexos" class="display compact" cellspacing="0" ></table>
+                    </div>
+                </div>
+                <div class="row" id="DivEspaco" style="display:none">
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="TipoPesq2">
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                @*   <legend>&nbsp;&nbsp;Filial e Análise de Embarque</legend>*@
+                <div class="row">
+                    @Html.LabelFor(m => m.NumAnaliseEmbarque, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-1">
+                        @Html.DropDownListFor(m => m.CodigoFilial, new List<SelectListItem>
+                        {
+                            new SelectListItem{ Text = "1", Value = "1" },
+                            new SelectListItem{ Text = "101", Value = "101" }
+                        }, new { @class = "form-control input-sm", @id = "FilialAneDropDownList" })
+                    </div>
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.NumAnaliseEmbarque, new { @class = "form-control input-sm", @id = "NumAnaliseEmbarqueTextBox" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-4">
+                        @Html.ValidationMessageFor(m => m.NumAnaliseEmbarque)
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="TipoPesq3">
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                @*<legend>&nbsp;&nbsp;Placa e Data de Faturamento</legend>*@
+                <div class="row">
+                    @Html.LabelFor(m => m.CodPlaca, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.CodPlaca, new { @class = "form-control input-sm", @id = "CodPlacaTextBox", @style = "text-transform: uppercase" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-4">
+                        @Html.ValidationMessageFor(m => m.CodPlaca)
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.LabelFor(m => m.DataFaturamento, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.DataFaturamento, new { @class = "form-control input-sm", @id = "DataFaturamentoTextBox" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-7" id="DivValidationDataFat">
+                        @Html.ValidationMessageFor(m => m.DataFaturamento)
+                        <span id="fieldErrorDivValidationDataFat" class="field-validation-valid"><span class=""></span></span>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="TipoPesq4">
+            <div class="panel panel-default" style="margin-bottom:5px">
+                <p></p>
+                @*<legend>&nbsp;&nbsp;Cliente / Situação / Período </legend>*@
+                <div class="row">
+                    @Html.LabelFor(m => m.CodCliente, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        <div class="input-group" id="DivCodCliente">
+                            @Html.TextBoxFor(m => m.CodCliente, new { @class = "form-control input-sm", @id = "CodClienteTextBox" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButton"><span class="glyphicon glyphicon-search" title="Pesquisar cliente"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-4">
+                        @Html.ValidationMessageFor(m => m.CodCliente)
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.LabelFor(m => m.SitRegOcor, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarSitsButton"><span class="glyphicon glyphicon-question-sign" title="Pesquisar Situações"></span></a>
+                            </span>
+                            @Html.DropDownListFor(m => m.SitRegOcor, new SelectList(Model.ListaSituacaoRegistroOcorrencia.Select(x => new { Codigo = x.Id, Descricao = x.Descricao }), "Codigo", "Descricao"), new { @class = "form-control input-sm", @id = "ListaSitRegOcorDropDownList" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-4">
+                        <span class="field-validation-valid"><span class=""></span></span>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                        <label></label>
+                        <br />
+                        @Html.LabelFor(m => m.Periodo, new { })
+                    </div>
+                    <div class="col-md-2" id="DivDataIni">
+                        @Html.LabelFor(m => m.DataInicial, new { @style = "margin-bottom:0px" })
+                        @Html.TextBoxFor(m => m.DataInicial, new { @class = "form-control input-sm", @id = "DataInicialTextBox" })
+                    </div>
+                    <div class="col-md-2" id="DivDataFim">
+                        @Html.LabelFor(m => m.DataFinal, new { @style = "margin-bottom:0px" })
+                        @Html.TextBoxFor(m => m.DataFinal, new { @class = "form-control input-sm", @id = "DataFinalTextBox" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 control-label">
+                    </div>
+                    <div class="col-md-6">
+                        @Html.ValidationMessageFor(m => m.DataInicial)
+                        @Html.ValidationMessageFor(m => m.DataFinal)
+                        <div id="DivValidationDataIni">
+                            <span id="fieldErrorDivValidationDataIni" class="field-validation-valid"><span class=""></span></span>
+                        </div>
+                        <div id="DivValidationDataFim">
+                            <span id="fieldErrorDivValidationDataFim" class="field-validation-valid"><span class=""></span></span>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-1">
+            <button type="button" id="ProcessarButton" class="btn btn-primary btn-sm">Processar</button>
+        </div>
+    </div>
+}

@@ -1,0 +1,340 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.CadMotivoDevolucaoViewModel
+
+@{
+    ViewBag.Title = "Motivo de Devolução";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        $('#TableMotivoDevolucao').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "05%", "sClass": "center", "title": "Código" },
+                        { "sWidth": "25%", "sClass": "center", "title": "Descrição" },
+                        { "sWidth": "05%", "sClass": "center", "title": "Alterar", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "05%", "sClass": "center", "title": "Excluir", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "60%", "bSortable": false, "bSearchable": false }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        PesquisaMotivoDevolucao();
+
+        function PesquisaMotivoDevolucao() {
+
+            $('#progressBar').show();
+            $("#gridTableMotivoDevolucao").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaMotivoDevolucao")", {}, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaN0204MDVPesquisa.length > 0) {
+
+                    var arrayRow = new Array();
+                    $('#TableMotivoDevolucao').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.ListaN0204MDVPesquisa.length; i++) {
+
+                        var codigo = data.ListaN0204MDVPesquisa[i].Codigo;
+                        var descricao = data.ListaN0204MDVPesquisa[i].Descricao;
+                        var alterar = "<a style='color:#333333' href=\"#\" onClick=\"AlterarMotivoDevolucao('" + codigo + "','" + descricao + "')\"><span class='glyphicon glyphicon-edit' title='Alterar Motivo de Devolução'></span></a>";
+                        var excluir = "<a style='color:#333333' href=\"#\" onClick=\"ExcluirMotivoDevolucao('" + codigo + "','" + descricao + "')\"><span class='glyphicon glyphicon-trash' title='Excluir Motivo de Devolução'></span></a>";
+
+                        arrayRow[i] = new Array(codigo, descricao, alterar, excluir, "");
+                    }
+
+                    $('#TableMotivoDevolucao').dataTable().fnAddData(arrayRow);
+                    $('#TableMotivoDevolucao').dataTable().fnPageChange('first');
+                    $("#gridTableMotivoDevolucao").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        var codigoMotivoDevolucao = "";
+        var descricaoMotivoDevolucao = "";
+        function AlterarMotivoDevolucao(codigo, descricao) {
+            codigoMotivoDevolucao = codigo;
+            $("#DescMotivoDevAlteracaoTextBox").val(descricao);
+            $('#AlterarMotivoDevolucaoDialog').modal('show');
+            $("#DescMotivoDevAlteracaoTextBox").focus();
+        }
+
+        function ExcluirMotivoDevolucao(codigo, descricao) {
+            codigoMotivoDevolucao = codigo;
+            descricaoMotivoDevolucao = descricao;
+            var msg = "Deseja excluir a Motivo de Devolução " + codigo + " - " + descricao + " ?";
+            $('#ExcluirMotivoDevolucaoDialog strong').html(msg);
+            $('#ExcluirMotivoDevolucaoDialog').modal('show');
+            $("#ExcluirMotDevBtn").focus();
+        }
+
+        $("#CadastrarButton").click(function () {
+            if ($("#DescMotivoDevTextBox").valid()) {
+                var descricao = $("#DescMotivoDevTextBox").val();
+                InserirMotivoDevolucao(descricao);
+            }
+        });
+
+        $("#SalvarAlteracaoBtn").click(function () {
+            if ($("#DescMotivoDevAlteracaoTextBox").valid()) {
+                var descricao = $("#DescMotivoDevAlteracaoTextBox").val();
+                $('#AlterarMotivoDevolucaoDialog').modal('hide');
+                GravarAlteracaoMotivoDevolucao(codigoMotivoDevolucao, descricao);
+            }
+        });
+
+        $("#ExcluirMotDevBtn").click(function () {
+            $('#ExcluirMotivoDevolucaoDialog').modal('hide');
+            GravarExclusaoMotivoDevolucao(codigoMotivoDevolucao, descricaoMotivoDevolucao);
+        });
+
+        $("#DescMotivoDevTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#DescMotivoDevTextBox").valid()) {
+                    var descricao = $("#DescMotivoDevTextBox").val();
+                    InserirMotivoDevolucao(descricao);
+                }
+                return false;
+            }
+        });
+
+        $("#DescMotivoDevAlteracaoTextBox").keypress(function (e) {
+            // Enter
+            if (e.keyCode == 13) {
+                if ($("#DescMotivoDevAlteracaoTextBox").valid()) {
+                    var descricao = $("#DescMotivoDevAlteracaoTextBox").val();
+                    $('#AlterarMotivoDevolucaoDialog').modal('hide');
+                    GravarAlteracaoMotivoDevolucao(codigoMotivoDevolucao, descricao);
+                }
+                return false;
+            }
+        });
+
+        $("#DescMotivoDevTextBox").focusin(function () {
+            $("#DescMotivoDevTextBox").val("");
+        });
+
+        function InserirMotivoDevolucao(descricao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("InserirMotivoDevolucao")", { descricao: descricao },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.GravadoSucesso) {
+                    PesquisaMotivoDevolucao();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkMotivoDevGravadoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function GravarAlteracaoMotivoDevolucao(codigoMotivoDevolucao, descricao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("AlterarMotivoDevolucao")", { codigo: codigoMotivoDevolucao, descricao: descricao },
+
+            function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.AlteradoSucesso) {
+                    PesquisaMotivoDevolucao();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkMotivoDevAlteradoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function GravarExclusaoMotivoDevolucao(codigoMotivoDevolucao, descricaoMotivoDevolucao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ExcluirMotivoDevolucao")", { codigo: codigoMotivoDevolucao, descricao: descricaoMotivoDevolucao }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ExcluidoSucesso) {
+                    PesquisaMotivoDevolucao();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkMotivoDevExcluidoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+        }
+
+        var keyCodeAnterior = 0;
+        $(window).keydown(function (event) {
+            // F5 ou CTRL + R
+            if (event.keyCode == 116 || keyCodeAnterior == 17 && event.keyCode == 82) {
+                window.location = '@Url.Action("CadMotivoDevolucao", "Solicitacoes")';
+                return false;
+            }
+            keyCodeAnterior = event.keyCode;
+        });
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Solicitações</a></li>
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Cadastros</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("CadMotivoDevolucao", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadMotivoDevolucaoForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="modal" id="AlterarMotivoDevolucaoDialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Alterar Motivo de Devolução</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        @Html.LabelFor(m => m.DescMotivoDevAlteracao, new { @class = "col-md-4 control-label" })
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(m => m.DescMotivoDevAlteracao, new { @class = "form-control input-sm", @id = "DescMotivoDevAlteracaoTextBox", onKeyPress = "return ( this.value.length < 50 );" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 control-label">
+                        </div>
+                        <div class="col-md-7">
+                            @Html.ValidationMessageFor(m => m.DescMotivoDevAlteracao)
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="row">
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="button" id="SalvarAlteracaoBtn" class="btn btn-primary" style="margin-top:0px">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="ExcluirMotivoDevolucaoDialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Excluir Motivo de Devolução</h3>
+                </div>
+                <div class="panel-body">
+                    <strong></strong>
+                    <div class="row">
+                        <br />
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                            <button type="button" id="ExcluirMotDevBtn" class="btn btn-primary" style="margin-top:0px">Sim</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @Html.LabelFor(m => m.DescMotivoDev, new { @class = "col-md-2 control-label" })
+        <div class="col-md-3">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.DescMotivoDev, new { @class = "form-control input-sm", @id = "DescMotivoDevTextBox", onKeyPress = "return ( this.value.length < 50 );" })
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-sm" type="button" id="CadastrarButton">Cadastrar</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.DescMotivoDev)
+        </div>
+    </div>
+    <br />
+    <div class="panel panel-default">
+        <legend>&nbsp;&nbsp;Lista de Motivos de Devolução Cadastrados</legend>
+        <div id="gridTableMotivoDevolucao">
+            <table id="TableMotivoDevolucao" class="display compact" cellspacing="0"></table>
+        </div>
+        <br />
+    </div>
+}

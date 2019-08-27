@@ -1,0 +1,315 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.AprovarRegistroOcorrenciaViewModel
+
+@{
+    ViewBag.Title = "Integrar Registro de Ocorrência";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+        var NFE = "first";
+        $('#AprovarRegistroBtn').click(function () {
+
+            if ($("#AprovarRegistroForm").valid()) {
+                var codigoRegistro = $("#NumRegistroTextBox").val();
+                var observacao = $("#ObservacoesTextBox").val();
+                var operacao = $("#ListaOperacoesDownList option:selected").val();
+                var tipoNota = $("#TipoNotaDropDownListFor option:selected").val();
+                var tipoOperacao = $("#tipoOperacaoTela option:selected").val();
+
+                if (tipoOperacao == 2 && operacao == 2) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Operação não permitida, não é possível cancelar número agrupador!", "btnOkProtocoloNaoAprovado", "OK", true);
+                    return;
+                }
+                AprovarRegistrosOcorrencia(codigoRegistro, operacao, tipoOperacao, tipoNota, observacao, "")
+            }
+            else if (!$("#ObservacoesTextBox").valid()) {
+                $("#ObservacoesDiv").removeClass("col-lg-10").addClass("col-lg-10 has-error");
+            }
+        });
+
+        $("#NumRegistroTextBox").keypress(function (e) {
+            return false;
+        });
+
+        $("#ObservacoesTextBox").keypress(function (e) {
+            ValidaObservacoes();
+        });
+
+        var keyCodeAnt = 0;
+        $("#ObservacoesTextBox").keydown(function (event) {
+            // BackSpace
+            if (event.keyCode == 8) {
+                ValidaObservacoes();
+            }
+            else if (keyCodeAnt == 17 && event.keyCode == 86) {
+                // CTRL + V
+                return false;
+            }
+            keyCodeAnt = event.keyCode;
+        });
+
+        function ValidaObservacoes() {
+
+            setTimeout(function () {
+                if ($("#ObservacoesTextBox").valid()) {
+                    $("#ObservacoesDiv").removeClass("col-lg-10 has-error").addClass("col-lg-10");
+                }
+                else {
+                    $("#ObservacoesDiv").removeClass("col-lg-10").addClass("col-lg-10 has-error");
+                }
+            }, 50);
+        }
+
+        function EmitirNotaEntradaSapiens(codigoRegistro, operacao, tipoNota, observacao, NFE, tipoOperacao) {
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("EmitirNotaEntradaSapiens")", { codigoRegistro: codigoRegistro, operacao: operacao, tipoNota: tipoNota, observacao: observacao, NFE: NFE, tipoOperacao: tipoOperacao }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.AprovadoSucesso) {
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetornoSapiens, "btnOkProtocoloAprovadoSucesso", "OK", true);
+                } else {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetornoSapiens, "btnOkProtocoloNaoAprovado", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        function ExibirNotasDisponiveis(codigoRegistro, operacao, tipoNota, observacao) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ListarNotasDisponiveis")", { codigoRegistro: codigoRegistro, operacao: operacao, tipoNota: tipoNota, observacao: observacao }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                DialogPadrao("warning", "Aviso!", "warning", data.validarNotas, "btnOkProtocoloNaoAprovado", "OK", true);
+                $('#progressBar').hide();
+            });
+        }
+
+        function AprovarRegistrosOcorrencia(codigoRegistro, operacao, tipoOperacao, tipoNota, observacao, msgRetornoSapiens) {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("AprovarRegistrosOcorrencia")", { codigoRegistro: codigoRegistro, operacao: operacao,tipoOperacao:tipoOperacao, tipoNota: tipoNota, observacao: observacao, msgRetornoSapiens: msgRetornoSapiens }, function (data) {
+                var operacao = $("#ListaOperacoesDownList option:selected").val();
+                var tipoNota = $("#TipoNotaDropDownListFor option:selected").val();
+                var tipoOperacao = $("#tipoOperacaoTela option:selected").val();
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+
+                if (data.msgRetorno == "Registros de ocorrências agrupadas foram integradas com sucesso!") {
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkProtocoloAprovadoSucesso", "OK", true);
+                    $('#progressBar').hide();
+                    return;
+                }
+
+                else if (data.AprovadoSucesso) {
+
+                    if (operacao == '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.OperacaoAprovacaoFaturamento.Aprovar).ToString())' && tipoNota != '2') {
+
+                        EmitirNotaEntradaSapiens(codigoRegistro, operacao, tipoNota, observacao, NFE, String(tipoOperacao));
+
+                    } else {
+                        DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkProtocoloAprovadoSucesso", "OK", true);
+                        $('#progressBar').hide();
+                    }
+                } else {
+                    DialogPadrao("warning", "Aviso!", "warning", data.msgRetorno, "btnOkProtocoloNaoAprovado", "OK", true);
+                    $('#progressBar').hide();
+                }
+            });
+        }
+
+        // =================================== INÍCIO DIALOG PADRAO  ========================================= //
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+
+            $("#btnOkProtocoloAprovadoSucesso").click(function () {
+                window.location = '@Url.Action("AprovarRegistro", "Aprovacoes")';
+            });
+
+        }
+
+        function DialogPadraoSelecione(tipoPanel, tituloDialog, tipoLabel, componente, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                " + componente + ""
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "                 <button type='button' class='btn btn-default' id='btnGerar'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>Nutriplan</button>"
+            + "                 <button type='button' class='btn btn-default' id='btnCancelar'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>Cancelar</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            $("#btnOK").click(function () {
+                var codigoRegistro = $("#NumRegistroTextBox").val();
+                var operacao = $("#ListaOperacoesDownList option:selected").val();
+                var observacao = $("#ObservacoesTextBox").val();
+                var tipoNota = $("#TipoNotaDropDownListFor option:selected").val();
+                var tipoOperacao = $("#tipoOperacaoTela option:selected").val();
+
+                EmitirNotaEntradaSapiens(codigoRegistro, operacao, "2", observacao, NFE, tipoOperacao);
+            });
+            $("#btnGerar").click(function () {
+                var codigoRegistro = $("#NumRegistroTextBox").val();
+                var operacao = $("#ListaOperacoesDownList option:selected").val();
+                var observacao = $("#ObservacoesTextBox").val();
+                var tipoNota = $("#TipoNotaDropDownListFor option:selected").val();
+                var tipoOperacao = $("#tipoOperacaoTela option:selected").val();
+
+                EmitirNotaEntradaSapiens(codigoRegistro, operacao, "3", observacao, "", tipoOperacao);
+            });
+            $("#btnCancelar").click(function () {
+                NFE = "first";
+            });
+
+        }
+        function myFunction(browser) {
+            NFE = browser;
+        }
+
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+        $('#NumRegistroTextBox').mask("9?9999", { placeholder: "" });
+
+    </script>
+
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Aprovações</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("AprovarRegistro", "Aprovacoes", FormMethod.Post, new { @class = "form-horizontal", id = "AprovarRegistroForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="panel panel-default" style="margin-bottom:5px">
+        <p></p>
+        <div class="row">
+            @Html.LabelFor(m => m.TipoOperacao, new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(m => m.TipoNota,
+                     new List<SelectListItem> {
+                        new SelectListItem { Value = "1" , Text = "Nº Ocorrência", Selected = true},
+                        new SelectListItem { Value = "2" , Text = "Nº Agrupador" } }, new { @class = "form-control input-sm", @id = "tipoOperacaoTela" })
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            @Html.LabelFor(m => m.NumRegistro, new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.TextBoxFor(m => m.NumRegistro, new { @class = "form-control input-sm", @id = "NumRegistroTextBox" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 control-label">
+            </div>
+            <div class="col-md-4">
+                @Html.ValidationMessageFor(m => m.NumRegistro)
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            @Html.LabelFor(m => m.Operacao, new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(m => m.Operacao, new SelectList(Model.ListaOperacoesAprovacao.Select(x => new { Codigo = x.CodigoOperacao, Descricao = x.DescricaoOperacao }), "Codigo", "Descricao"), new { @class = "form-control input-sm", @id = "ListaOperacoesDownList" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 control-label">
+            </div>
+            <div class="col-md-4">
+                @Html.ValidationMessageFor(m => m.Operacao)
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            @Html.LabelFor(m => m.TipoNota, new { @class = "col-md-2 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownListFor(m => m.TipoNota,
+                     new List<SelectListItem> {
+                        new SelectListItem { Value = "0" , Text = "Selecione...", Selected = true},
+                        new SelectListItem { Value = "3" , Text = "Nutriplan"},
+                        new SelectListItem { Value = "2" , Text = "Cliente" } }, new { @class = "form-control input-sm", @id = "TipoNotaDropDownListFor" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 control-label">
+            </div>
+            <div class="col-md-4">
+                @Html.ValidationMessageFor(m => m.TipoNota)
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            @Html.LabelFor(m => m.Observacoes, new { @class = "col-md-2 control-label" })
+            <div class="col-lg-10" id="ObservacoesDiv">
+                @Html.TextAreaFor(m => m.Observacoes, new { @class = "form-control", @id = "ObservacoesTextBox", @style = "max-width:40%", @rows = "4", onKeyPress = "return ( this.value.length < 400 );" })
+                @Html.ValidationMessageFor(m => m.Observacoes)
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-1">
+            <button type="button" id="AprovarRegistroBtn" class="btn btn-primary btn-sm">Integrar</button>
+        </div>
+    </div>
+}

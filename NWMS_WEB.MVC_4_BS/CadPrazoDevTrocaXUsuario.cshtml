@@ -1,0 +1,441 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.CadPrazoDevTrocaModel
+
+@{
+    ViewBag.Title = "Prazo de Devolução e Troca X Usuário";
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#TableUsuario').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "dpass", "bSortable": false, "bSearchable": false },
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Nome&nbsp;Completo&nbsp;Usuário" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Login&nbspdo&nbspUsuário" + espaco.substring(0, 385) },
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        var idColuna;
+        $('#TableUsuario tbody').on('click', 'td', function () {
+            idColuna = $(this).index();
+        });
+
+        // Recupera o ID da linha clicada -- tr ==> linha
+        $('#TableUsuario tbody').on('click', 'tr', function () {
+
+            // Coluna Selecionar
+            if (idColuna == 1) {
+
+                var table = $('#TableUsuario').DataTable();
+
+                // Recupera os dados da linha clicada para carregar os campos abaixo
+                var dadosLinha = table.row(this).data();
+                var idLinha = dadosLinha[0];
+
+                // id do checkbox da coluna que foi clicada
+                var idCheckBox = "checkBoxUsuario" + idLinha;
+
+                if ($(this).hasClass('selected')) {
+                    $("#" + idCheckBox).prop("checked", false);
+                    $(this).removeClass('selected');
+                }
+                else {
+                    $("#" + idCheckBox).prop("checked", true);
+                    $(this).addClass('selected');
+                }
+            }
+        });
+
+        function PesquisarTodosUsuarios() {
+            $('#progressBar').show();
+            $("#gridTableUsuario").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios", "PermissaoAcesso")", { loginUsuario: "" }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableUsuario').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaUsuariosAD.length; i++) {
+
+                        var login = data.listaUsuariosAD[i].Login;
+                        var nome = data.listaUsuariosAD[i].Nome;
+                        var selecionar = "<input type='checkbox' id='checkBoxUsuario" + i + "' tabindex='-1' alt=\"\" title=\"Selecionar Usuário\">";
+
+                        arrayRow[i] = new Array(i, selecionar, nome, login);
+                    }
+
+                    $('#TableUsuario').dataTable().fnAddData(arrayRow);
+                    $('#TableUsuario').dataTable().fnPageChange('first');
+                    $("#gridTableUsuario").slideToggle('fast');
+
+                    setTimeout(function () {
+                        $('#TableUsuario_filter input').focus();
+                    }, 500);
+                }
+                $('#progressBar').hide();
+                $('#UsuarioDialog').modal('show');
+            });
+        }
+
+        $('#TablePrazos').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "40%", "sClass": "left", "title": "Nome&nbsp;Completo&nbsp;Usuário" },
+                        { "sWidth": "20%", "sClass": "left", "title": "Login&nbspdo&nbspUsuário" },
+                        { "sWidth": "05%", "sClass": "center", "title": "Prazo&nbspDev." },
+                        { "sWidth": "05%", "sClass": "center", "title": "Prazo&nbspTroca" },
+                        { "sWidth": "05%", "sClass": "center", "title": "Excluir", "bSortable": false, "bSearchable": false }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página&nbsp&nbsp",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        PesquisaPrazoDevolucaoTroca();
+
+        MostraBotaoCadastrar();
+
+        function MostraBotaoCadastrar() {
+
+            $('<button id="CadastrarButtonBtn" class="delete_row ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" type="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-disk"></span><span class="ui-button-text">Cadastrar</span></button>').appendTo('div.dataTables_length');
+
+            // Botão Salvar
+            $('#CadastrarButtonBtn').click(function () {
+
+                $('#PrazoDevolucaoPopTextBox').val('');
+                $('#PrazoDeTrocaPopTextBox').val('');
+
+                PesquisarTodosUsuarios();
+            });
+        }
+
+        $('#SalvarButton').click(function () {
+
+            if ($("#PrazoDevolucaoTextBox").valid() && $("#PrazoDeTrocaTextBox").valid())
+                SalvarPrazoDevolucaoTroca($('#PrazoDevolucaoTextBox').val(), $('#PrazoDeTrocaTextBox').val(), "");
+        });
+
+        $('#SalvarButtonPop').click(function () {
+
+            if ($("#PrazoDevolucaoPopTextBox").valid() && $("#PrazoDeTrocaPopTextBox").valid())
+                UsuariosSelecionados();
+        });
+
+        function UsuariosSelecionados() {
+
+            var tabelaUsuario = $('#TableUsuario').DataTable();
+            var data = tabelaUsuario.rows('.selected').data();
+            var listaUsuarios = "";
+            var msgErro = "Para salvar, selecione ao menos um usuário."
+
+            if (data.length == 0) {
+                $('#UsuarioDialog').modal('hide');
+                DialogPadrao("warning", "Aviso!", "warning", msgErro, "btnOkUsuErro", "OK", true);
+                return false;
+            }
+
+            for (var i = 0; i < data.length; i++) {
+                listaUsuarios = listaUsuarios + "-" + data[i][3];
+            }
+
+            listaUsuarios = listaUsuarios.substring(1, listaUsuarios.length);
+            SalvarPrazoDevolucaoTroca($('#PrazoDevolucaoPopTextBox').val(), $('#PrazoDeTrocaPopTextBox').val(), listaUsuarios);
+        }
+
+        function SalvarPrazoDevolucaoTroca(prazoDev, prazoTroca, listaUsuarios) {
+
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("SalvarPrazoDevolucaoTroca")", { prazoDev: prazoDev, prazoTroca: prazoTroca, listaUsuarios: listaUsuarios }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.GravadoSucesso) {
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkPrazoDevGravadoSucesso", "OK", true);
+                    PesquisaPrazoDevolucaoTroca();
+                }
+                else {
+                    DialogPadrao("danger", "Aviso!", "danger", data.msgRetorno, "btnOkPrazoDevGravadoErro", "OK", true);
+                }
+                $('#UsuarioDialog').modal('hide');
+                $('#progressBar').hide();
+            });
+        }
+
+        function PesquisaPrazoDevolucaoTroca() {
+
+            $('#progressBar').show();
+            $("#gridTablePrazos").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaPrazoDevolucaoTroca")", {}, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+
+                $('#TablePrazos').dataTable().fnClearTable();
+
+                if (data.ListaN0204PPUPesquisa.length > 0) {
+
+                    var arrayRow = new Array();
+
+                    for (var i = 0; i < data.ListaN0204PPUPesquisa.length; i++) {
+
+                        var nome = data.ListaN0204PPUPesquisa[i].nomeUsuario;
+                        var login = data.ListaN0204PPUPesquisa[i].loginUsuario;
+                        var prazoDev = data.ListaN0204PPUPesquisa[i].prazoDev;
+                        var prazoTroca = data.ListaN0204PPUPesquisa[i].prazoTroca;
+                        var excluir = "<a style='color:#333333' href=\"#\" onClick=\"ExcluirPrazo('" + nome + "','" + login + "')\"><span class='glyphicon glyphicon-trash' title='Excluir Prazo'></span></a>";
+
+                        arrayRow[i] = new Array(nome, login, prazoDev, prazoTroca, excluir);
+                    }
+
+                    $('#TablePrazos').dataTable().fnAddData(arrayRow);
+                    $('#TablePrazos').dataTable().fnPageChange('first');
+                    $("#gridTablePrazos").slideToggle('fast');
+                }
+
+                $("#gridTablePrazos").show();
+                $('#progressBar').hide();
+            });
+
+        }
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+
+            $("#btnOkUsuErro").click(function () {
+                PesquisarTodosUsuarios();
+            });
+        }
+
+        var loginExclusao = "";
+        function ExcluirPrazo(nome, login) {
+            loginExclusao = login;
+            var msg = "Deseja remover o prazo de Devolução e Troca do Usuário " + nome + " ?";
+            $('#ExcluirPrazoDialog strong').html(msg);
+            $('#ExcluirPrazoDialog').modal('show');
+            $("#ExcluirPrazoBtn").focus();
+        }
+
+        $("#ExcluirPrazoBtn").click(function () {
+            $('#ExcluirPrazoDialog').modal('hide');
+            ExcluirPrazoDevolucaoTroca();
+        });
+
+        function ExcluirPrazoDevolucaoTroca() {
+            $('#progressBar').show();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ExcluirPrazoDevolucaoTroca")", { loginUsuario: loginExclusao }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ExcluidoSucesso) {
+                    PesquisaPrazoDevolucaoTroca();
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkPrazoDevExcluidoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        }
+
+        $('#PrazoDevolucaoTextBox').mask("9?99999", { placeholder: "" });
+        $('#PrazoDeTrocaTextBox').mask("9?99999", { placeholder: "" });
+        $('#PrazoDevolucaoPopTextBox').mask("9?99999", { placeholder: "" });
+        $('#PrazoDeTrocaPopTextBox').mask("9?99999", { placeholder: "" });
+
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Solicitações</a></li>
+        <li><a href="@Url.Content("~/PaginaInicial/Index")">Cadastros</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+<div class="progress progress-striped active" style="display: none;" id="progressBar">
+    <div class="progress-bar" style="width: 100%">
+    </div>
+</div>
+<div class="modal" id="ExcluirPrazoDialog" style="display: none;">
+    <div class="modal-dialog">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 class="panel-title">Remover Vínculo Prazo de Devolução e Troca X Usuário</h3>
+            </div>
+            <div class="panel-body">
+                <strong></strong>
+                <div class="row">
+                    <br />
+                    <div style="text-align:center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                        <button type="button" id="ExcluirPrazoBtn" class="btn btn-primary" style="margin-top:0px">Sim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+@using (Html.BeginForm("CadPrazoDevTrocaXUsuario", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadPrazoDevTrocaXUsuarioForm", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="modal fade bs-example-modal-lg" id="UsuarioDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="panel-title">Usuários</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            @Html.LabelFor(m => m.PrazoDevolucaoPop, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-2">
+                                @Html.TextBoxFor(m => m.PrazoDevolucaoPop, new { @class = "form-control input-sm", @id = "PrazoDevolucaoPopTextBox" })
+                            </div>
+                            @Html.LabelFor(m => m.PrazoDeTrocaPop, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-2">
+                                @Html.TextBoxFor(m => m.PrazoDeTrocaPop, new { @class = "form-control input-sm", @id = "PrazoDeTrocaPopTextBox" })
+                            </div>
+                            <div class="col-md-1" id="DivSalvarPopButton">
+                                <input type="button" value="Cadastrar" id="SalvarButtonPop" style="margin-top:0px" class="btn btn-primary btn-sm" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 control-label">
+                            </div>
+                            <div class="col-md-4">
+                                @Html.ValidationMessageFor(m => m.PrazoDevolucaoPop)
+                                @Html.ValidationMessageFor(m => m.PrazoDeTrocaPop)
+                            </div>
+                        </div>
+                        <br />
+                        <div id="gridTableUsuario" style="display: none;">
+                            <table id="TableUsuario" class="display compact" cellspacing="0" width="99.9%"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <legend>&nbsp;&nbsp;Prazo Padrão de Devolução e Troca </legend>
+        <div class="row">
+            @Html.LabelFor(m => m.PrazoDevolucao, new { @class = "col-md-2 control-label" })
+            <div class="col-md-1">
+                @Html.TextBoxFor(m => m.PrazoDevolucao, new { @class = "form-control input-sm", @id = "PrazoDevolucaoTextBox" })
+            </div>
+            @Html.LabelFor(m => m.PrazoDeTroca, new { @class = "col-md-2 control-label" })
+            <div class="col-md-1">
+                @Html.TextBoxFor(m => m.PrazoDeTroca, new { @class = "form-control input-sm", @id = "PrazoDeTrocaTextBox" })
+            </div>
+            <div class="col-md-1" id="DivSalvarButton">
+                <input type="button" value="Alterar" id="SalvarButton" style="margin-top:0px" class="btn btn-primary btn-sm" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 control-label">
+            </div>
+            <div class="col-md-4">
+                @Html.ValidationMessageFor(m => m.PrazoDevolucao)
+                @Html.ValidationMessageFor(m => m.PrazoDeTroca)
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" id="PanelPrazos">
+        <legend>&nbsp;&nbsp;Prazo de Devolução e Troca X Usuário(s)</legend>
+        <div id="gridTablePrazos">
+            <table id="TablePrazos" class="display compact" cellspacing="0" width="99.9%"></table>
+        </div>
+        <br />
+    </div>
+}

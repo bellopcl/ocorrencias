@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RelatorioGraficoDataSet" targetNamespace="http://tempuri.org/RelatorioGraficoDataSet.xsd" xmlns:mstns="http://tempuri.org/RelatorioGraficoDataSet.xsd" xmlns="http://tempuri.org/RelatorioGraficoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RelatorioGraficoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RelatorioGraficoDataSet" msprop:Generator_UserDSName="RelatorioGraficoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Itens" msprop:Generator_TableClassName="ItensDataTable" msprop:Generator_TableVarName="tableItens" msprop:Generator_TablePropName="Itens" msprop:Generator_RowDeletingName="ItensRowDeleting" msprop:Generator_RowChangingName="ItensRowChanging" msprop:Generator_RowEvHandlerName="ItensRowChangeEventHandler" msprop:Generator_RowDeletedName="ItensRowDeleted" msprop:Generator_UserTableName="Itens" msprop:Generator_RowChangedName="ItensRowChanged" msprop:Generator_RowEvArgName="ItensRowChangeEvent" msprop:Generator_RowClassName="ItensRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMREG" msprop:Generator_ColumnVarNameInTable="columnNUMREG" msprop:Generator_ColumnPropNameInRow="NUMREG" msprop:Generator_ColumnPropNameInTable="NUMREGColumn" msprop:Generator_UserColumnName="NUMREG" type="xs:int" minOccurs="0" />
+              <xs:element name="DESAGP" msprop:Generator_ColumnVarNameInTable="columnDESAGP" msprop:Generator_ColumnPropNameInRow="DESAGP" msprop:Generator_ColumnPropNameInTable="DESAGPColumn" msprop:Generator_UserColumnName="DESAGP" type="xs:string" minOccurs="0" />
+              <xs:element name="CODPRO" msprop:Generator_ColumnVarNameInTable="columnCODPRO" msprop:Generator_ColumnPropNameInRow="CODPRO" msprop:Generator_ColumnPropNameInTable="CODPROColumn" msprop:Generator_UserColumnName="CODPRO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESPRO" msprop:Generator_ColumnVarNameInTable="columnDESPRO" msprop:Generator_ColumnPropNameInRow="DESPRO" msprop:Generator_ColumnPropNameInTable="DESPROColumn" msprop:Generator_UserColumnName="DESPRO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESDER" msprop:Generator_ColumnVarNameInTable="columnDESDER" msprop:Generator_ColumnPropNameInRow="DESDER" msprop:Generator_ColumnPropNameInTable="DESDERColumn" msprop:Generator_UserColumnName="DESDER" type="xs:string" minOccurs="0" />
+              <xs:element name="CODCLI" msprop:Generator_ColumnVarNameInTable="columnCODCLI" msprop:Generator_ColumnPropNameInRow="CODCLI" msprop:Generator_ColumnPropNameInTable="CODCLIColumn" msprop:Generator_UserColumnName="CODCLI" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCORI" msprop:Generator_ColumnVarNameInTable="columnDESCORI" msprop:Generator_ColumnPropNameInRow="DESCORI" msprop:Generator_ColumnPropNameInTable="DESCORIColumn" msprop:Generator_UserColumnName="DESCORI" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCMDV" msprop:Generator_ColumnVarNameInTable="columnDESCMDV" msprop:Generator_ColumnPropNameInRow="DESCMDV" msprop:Generator_ColumnPropNameInTable="DESCMDVColumn" msprop:Generator_UserColumnName="DESCMDV" type="xs:string" minOccurs="0" />
+              <xs:element name="QTDDEV" msprop:Generator_ColumnVarNameInTable="columnQTDDEV" msprop:Generator_ColumnPropNameInRow="QTDDEV" msprop:Generator_ColumnPropNameInTable="QTDDEVColumn" msprop:Generator_UserColumnName="QTDDEV" type="xs:string" minOccurs="0" />
+              <xs:element name="VALORLIQUIDO" msprop:Generator_ColumnVarNameInTable="columnVALORLIQUIDO" msprop:Generator_ColumnPropNameInRow="VALORLIQUIDO" msprop:Generator_ColumnPropNameInTable="VALORLIQUIDOColumn" msprop:Generator_UserColumnName="VALORLIQUIDO" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalValorLiquidoS" msprop:Generator_ColumnVarNameInTable="columnTotalValorLiquidoS" msprop:Generator_ColumnPropNameInRow="TotalValorLiquidoS" msprop:Generator_ColumnPropNameInTable="TotalValorLiquidoSColumn" msprop:Generator_UserColumnName="TotalValorLiquidoS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Ocorrencia" msprop:Generator_TableClassName="OcorrenciaDataTable" msprop:Generator_TableVarName="tableOcorrencia" msprop:Generator_TablePropName="Ocorrencia" msprop:Generator_RowDeletingName="OcorrenciaRowDeleting" msprop:Generator_RowChangingName="OcorrenciaRowChanging" msprop:Generator_RowEvHandlerName="OcorrenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="OcorrenciaRowDeleted" msprop:Generator_UserTableName="Ocorrencia" msprop:Generator_RowChangedName="OcorrenciaRowChanged" msprop:Generator_RowEvArgName="OcorrenciaRowChangeEvent" msprop:Generator_RowClassName="OcorrenciaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMREG" msprop:Generator_ColumnVarNameInTable="columnNUMREG" msprop:Generator_ColumnPropNameInRow="NUMREG" msprop:Generator_ColumnPropNameInTable="NUMREGColumn" msprop:Generator_UserColumnName="NUMREG" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCATD" msprop:Generator_ColumnVarNameInTable="columnDESCATD" msprop:Generator_ColumnPropNameInRow="DESCATD" msprop:Generator_ColumnPropNameInTable="DESCATDColumn" msprop:Generator_UserColumnName="DESCATD" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCORI" msprop:Generator_ColumnVarNameInTable="columnDESCORI" msprop:Generator_ColumnPropNameInRow="DESCORI" msprop:Generator_ColumnPropNameInTable="DESCORIColumn" msprop:Generator_UserColumnName="DESCORI" type="xs:string" minOccurs="0" />
+              <xs:element name="DATGER" msprop:Generator_ColumnVarNameInTable="columnDATGER" msprop:Generator_ColumnPropNameInRow="DATGER" msprop:Generator_ColumnPropNameInTable="DATGERColumn" msprop:Generator_UserColumnName="DATGER" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCMDV" msprop:Generator_ColumnVarNameInTable="columnDESCMDV" msprop:Generator_ColumnPropNameInRow="DESCMDV" msprop:Generator_ColumnPropNameInTable="DESCMDVColumn" msprop:Generator_UserColumnName="DESCMDV" type="xs:string" minOccurs="0" />
+              <xs:element name="NUMNFV" msprop:Generator_ColumnVarNameInTable="columnNUMNFV" msprop:Generator_ColumnPropNameInRow="NUMNFV" msprop:Generator_ColumnPropNameInTable="NUMNFVColumn" msprop:Generator_UserColumnName="NUMNFV" type="xs:string" minOccurs="0" />
+              <xs:element name="VALORLIQUIDO" msprop:Generator_ColumnVarNameInTable="columnVALORLIQUIDO" msprop:Generator_ColumnPropNameInRow="VALORLIQUIDO" msprop:Generator_ColumnPropNameInTable="VALORLIQUIDOColumn" msprop:Generator_UserColumnName="VALORLIQUIDO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,247 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.VincularPlacaOcorrenciaViewModel
+
+@{
+    ViewBag.Title = "Solicitar Coleta";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/datepicker")
+
+    <script type="text/javascript">
+
+        $("#btnVincular").click(function () {
+            vincularOcorrencia();
+        });
+        function vincularOcorrencia() {
+            var codPlaca = $("#campoPlaca").val().replace("-", "");
+            var numeroRegistro = $("#campoNumeroRegistro").val();
+            var observacao = $("#obser").val();
+            if (codPlaca == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Preencha ambos os campos", "btnOkNenhumRegEncontrado", "OK", true);
+                return;
+            }
+            if (numeroRegistro == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Preencha ambos os campos", "btnOkNenhumRegEncontrado", "OK", true);
+                return;
+            }
+            Vincular(numeroRegistro, codPlaca, observacao);
+        }
+        String.prototype.splice = function (idx, rem, str) {
+            return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+        };
+
+
+        function Vincular(numeroRegistro, codPlaca, observacao) {
+
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("Vincular", "PlacaXConferencia")", { numeroRegistro: numeroRegistro, codPlaca: codPlaca, observacao: observacao }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl; a
+                    return;
+                }
+                
+                /*if (!data.transportadora && data.transportadora != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Ocorrência não está dentro dos parâmetros de validação para está operação. &#013 A ocorrência deve estar pelo menos aprovada e ser de transportadora " + data.transportadora , "btnOkNenhumRegEncontrado", "OK", true);
+                    return;
+                }*/
+               
+                if (!data.placa && data.placa != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Placa Inválida", "btnOkNenhumRegEncontrado", "OK", true);
+                    return;
+                }
+                if (data.retorno && data.retorno != undefined) {
+                    DialogPadrao("success", "Sucesso!", "success", "Ocorrência " + numeroRegistro + " vinculada a placa  " + codPlaca.splice(3, 0, "-").toUpperCase() + "!", "btnOkPrazoDevGravadoSucesso", "OK", true);
+                } else {
+                    DialogPadraoTwoButton("warning", "Aviso!", "warning", "Já existe Ocorrência com solicitação de coleta com esta placa, Desejar efetuar nova Solicitação?", "btnOkNenhumRegEncontrado", "VINCULAR", "CANCELAR", true);
+                }
+            });
+        }
+
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+        }
+
+        function Revincular(numeroRegistro, codPlaca, observacao) {
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("Revincular", "PlacaXConferencia")", { numeroRegistro: numeroRegistro, codPlaca: codPlaca, observacao: observacao }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                if (!data.acesso && data.acesso != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Usuário não possuí acesso a esta operação, contate o administrador.", "btnOkNenhumRegEncontrado", "OK", true);
+                    return;
+                }
+                if (data.retorno) {
+                    DialogPadrao("success", "Sucesso!", "success", "Ocorrência " + numeroRegistro + " vinculada a placa  " + codPlaca.splice(3, 0, "-").toUpperCase() + "!", "btnOkPrazoDevGravadoSucesso", "OK", true);
+                } else {
+                     DialogPadrao("warning", "Aviso!", "warning", "ocorreu um erro", "btnOkNenhumRegEncontrado", "OK", true);
+                }
+            });
+        }
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+            $("#" + idBotao).click(function () {
+                if (tituloDialog == "Sucesso!") {
+                    $("#campoNumeroRegistro").val("");
+                    $("#campoPlaca").val("");
+                    $("#obser").val("");
+                    $('#campoNumeroRegistro').focus();
+                } else {
+                    $('#campoNumeroRegistro').focus();
+                }
+            });
+        }
+
+
+        function DialogPadraoTwoButton(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, nomeBotao2, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "            Justificativa:"
+            + "                 <textarea style='resize: vertical;' class=' form-control' id='just'></textarea>"
+            + "                 <button type='button' class='btn btn-default' id='btn1'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "                 <button type='button' class='btn btn-default' id='btn2' data-dismiss='modal'>" + nomeBotao2 + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+            $("#btn1").click(function () {
+                var codPlaca = $("#campoPlaca").val().replace("-", "");
+                var numeroRegistro = $("#campoNumeroRegistro").val();
+                var observacao = $("#just").val();
+                if (observacao.trim() == "") {
+                    DialogPadrao("warning", "Aviso!", "warning", "Digite a Justificativa de Vinculação", "btnOkNenhumRegEncontrado", "OK", true);
+                    return;
+                }
+
+                Revincular(numeroRegistro, codPlaca, observacao);
+                if (tituloDialog == "Sucesso!") {
+                    $('#campoNumeroRegistro').focus();
+                    $("#campoPlaca").val("");
+                    $("#NumeroRegistro").val("");
+                    $("#obser").val("");
+                    $('#campoNumeroRegistro').focus();
+                } else {
+                    $('#campoNumeroRegistro').focus();
+                }
+
+
+            });
+            $("#btn2").click(function () {
+                $("#DialogPadrao").hide();
+                $('#campoNumeroRegistro').focus();
+            });
+            $("#just").focus();
+        }
+
+        $("#campoNumeroRegistro").keypress(function (e) {
+            if (e.keyCode == 13) {
+                vincularOcorrencia();
+            }
+        });
+        $("#campoPlaca").keypress(function (e) {
+            if (e.keyCode == 13) {
+                vincularOcorrencia();
+            }
+        });
+        $("#obser").keypress(function (e) {
+            if (e.keyCode == 13) {
+                vincularOcorrencia();
+            }
+        });
+        $("#campoNumeroRegistro").focus();
+        $('#campoPlaca').mask("aaa-9999", { placeholder: "" });
+        $('#campoNumeroRegistro').mask("9?99999", { placeholder: "" });
+    </script>
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>Solicitações</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<div class="panel panel-default" style="margin-bottom:5px">
+    <p></p>
+    <p></p>
+    <div class="row" style="margin-left:20px">
+        @Html.LabelFor(m => m.campoNumeroRegistro, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.TextBoxFor(m => m.campoNumeroRegistro, new { @class = "form-control input-smgroup", @id = "campoNumeroRegistro", @style = "text-transform: uppercase" })
+        </div>
+    </div>
+    <p></p>
+    <div class="row" style="margin-left:20px">
+        @Html.LabelFor(m => m.campoPlaca, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.TextBoxFor(m => m.campoPlaca, new { @class = "form-control input-smgroup", @id = "campoPlaca", @style = "text-transform: uppercase" })
+        </div>
+    </div>
+    <p></p>
+    <div class="row" style="margin-left:20px">
+        <label class="col-md-2 control-label">Observação</label>
+        <div class="col-md-2">
+            <textarea style="resize: vertical;" class=" form-control" id="obser"></textarea>
+        </div>
+    </div>
+    <p></p>
+    <p></p>
+</div>
+
+<div class="row">
+    <div class="col-md-2 control-label">
+    </div>
+    <div class="col-md-1">
+        <button type="button" id="btnVincular" class="btn btn-primary btn-sm">Confirmar</button>
+    </div>
+
+</div>

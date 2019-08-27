@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RelatorioTransacaoDataSet" targetNamespace="http://tempuri.org/RelatorioTransacaoDataSet.xsd" xmlns:mstns="http://tempuri.org/RelatorioTransacaoDataSet.xsd" xmlns="http://tempuri.org/RelatorioTransacaoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RelatorioTransacaoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RelatorioTransacaoDataSet" msprop:Generator_UserDSName="RelatorioTransacaoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RelatorioTransacao" msprop:Generator_TableClassName="RelatorioTransacaoDataTable" msprop:Generator_TableVarName="tableRelatorioTransacao" msprop:Generator_TablePropName="RelatorioTransacao" msprop:Generator_RowDeletingName="RelatorioTransacaoRowDeleting" msprop:Generator_RowChangingName="RelatorioTransacaoRowChanging" msprop:Generator_RowEvHandlerName="RelatorioTransacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="RelatorioTransacaoRowDeleted" msprop:Generator_UserTableName="RelatorioTransacao" msprop:Generator_RowChangedName="RelatorioTransacaoRowChanged" msprop:Generator_RowEvArgName="RelatorioTransacaoRowChangeEvent" msprop:Generator_RowClassName="RelatorioTransacaoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMREG" msprop:Generator_ColumnVarNameInTable="columnNUMREG" msprop:Generator_ColumnPropNameInRow="NUMREG" msprop:Generator_ColumnPropNameInTable="NUMREGColumn" msprop:Generator_UserColumnName="NUMREG" type="xs:string" minOccurs="0" />
+              <xs:element name="DESTRA" msprop:Generator_ColumnVarNameInTable="columnDESTRA" msprop:Generator_ColumnPropNameInRow="DESTRA" msprop:Generator_ColumnPropNameInTable="DESTRAColumn" msprop:Generator_UserColumnName="DESTRA" type="xs:string" minOccurs="0" />
+              <xs:element name="USUTRA" msprop:Generator_ColumnVarNameInTable="columnUSUTRA" msprop:Generator_ColumnPropNameInRow="USUTRA" msprop:Generator_ColumnPropNameInTable="USUTRAColumn" msprop:Generator_UserColumnName="USUTRA" type="xs:string" minOccurs="0" />
+              <xs:element name="DATTRA" msprop:Generator_ColumnVarNameInTable="columnDATTRA" msprop:Generator_ColumnPropNameInRow="DATTRA" msprop:Generator_ColumnPropNameInTable="DATTRAColumn" msprop:Generator_UserColumnName="DATTRA" type="xs:string" minOccurs="0" />
+              <xs:element name="OBSTRA" msprop:Generator_ColumnVarNameInTable="columnOBSTRA" msprop:Generator_ColumnPropNameInRow="OBSTRA" msprop:Generator_ColumnPropNameInTable="OBSTRAColumn" msprop:Generator_UserColumnName="OBSTRA" type="xs:string" minOccurs="0" />
+              <xs:element name="USULOGIN" msprop:Generator_ColumnVarNameInTable="columnUSULOGIN" msprop:Generator_ColumnPropNameInRow="USULOGIN" msprop:Generator_ColumnPropNameInTable="USULOGINColumn" msprop:Generator_UserColumnName="USULOGIN" type="xs:string" minOccurs="0" />
+              <xs:element name="nomeUsuario" msprop:Generator_ColumnVarNameInTable="columnnomeUsuario" msprop:Generator_ColumnPropNameInRow="nomeUsuario" msprop:Generator_ColumnPropNameInTable="nomeUsuarioColumn" msprop:Generator_UserColumnName="nomeUsuario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

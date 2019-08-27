@@ -1,0 +1,405 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.UsuarioXTipoDashBoardViewModel
+@{
+    ViewBag.Title = "UsuarioxDashboard";
+}
+@section scripts{
+    <script type="text/javascript">
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#TableOrigemOcorrencia').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": false,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "05%", "sClass": "center", "title": "Código" },
+                        { "sWidth": "45%", "sClass": "left", "title": "Descrição" },
+                        { "sWidth": "05%", "sClass": "center", "title": "Selecionar", "bSortable": false, "bSearchable": false },
+                        { "sWidth": "60%", "bSortable": false, "bSearchable": false }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+    
+
+        $("#PesquisarUsuarioButton").click(function () {
+            PesquisarTodosUsuarios();
+        });
+
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#TableUsuario').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Nome&nbsp;Completo&nbsp;Usuário" + espaco.substring(0, 200) },
+                        { "sClass": "left", "title": "Login&nbspdo&nbspUsuário" + espaco.substring(0, 385) },
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+        function PesquisarUmUsuario(loginUsuario) {
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios","PermissaoAcesso")", { loginUsuario: loginUsuario }, function (data) {
+
+            if (data.Logado || data.ErroExcecao) {
+                window.location.href = data.redirectUrl;
+                return;
+            }
+            else if (data.listaUsuariosAD.length > 0) {
+                $("#LoginUsuarioTextBox").val(data.listaUsuariosAD[0].Login);
+                $("#NomeUsuarioTextBox").val(data.listaUsuariosAD[0].Nome);
+              //  $("#PanelTableOrigemOcorrencia").show();
+                PesquisaOrigemOcorrencia();
+            }
+            else {
+                DialogPadrao("warning", "Aviso!", "warning", "Usuário Não Encontrado!", "btnOkOrigemErro", "OK", true);
+                $("#LoginUsuarioTextBox").focus();
+            }
+        });
+        }
+
+        function PesquisarTodosUsuarios() {
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios", "PermissaoAcesso")", { loginUsuario: "" }, function (data) {
+
+            if (data.Logado || data.ErroExcecao) {
+                window.location.href = data.redirectUrl;
+                return;
+            }
+            else if (data.listaUsuariosAD.length > 0) {
+                var arrayRow = new Array();
+                $('#TableUsuario').dataTable().fnClearTable();
+
+                for (var i = 0; i < data.listaUsuariosAD.length; i++) {
+
+                    var login = data.listaUsuariosAD[i].Login;
+                    var nome = data.listaUsuariosAD[i].Nome;
+                    var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarUsuario('" + login + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Usuário'></span></a>";
+
+                    arrayRow[i] = new Array(selecionar, nome, login );
+                }
+
+                $('#TableUsuario').dataTable().fnAddData(arrayRow);
+                $('#TableUsuario').dataTable().fnPageChange('first');
+                $("#gridTableUsuario").slideToggle('fast');
+
+                setTimeout(function () {
+                    $('#TableUsuario_filter input').focus();
+                }, 500);
+            }
+            $('#UsuarioDialog').modal('show');
+        });
+        }
+
+        function SelecionarUsuario(login, nome) {
+            $('#LoginUsuarioTextBox').val(login);
+            $('#NomeUsuarioTextBox').val(nome);
+            $('#UsuarioDialog').modal('hide');
+            PesquisaOrigemOcorrencia();
+        }
+
+        $("#LoginUsuarioTextBox").keypress(function (e) {
+
+            // Enter
+            if (e.keyCode == 13) {
+                    PesquisarUmUsuario($("#LoginUsuarioTextBox").val());
+            }
+        });
+
+        //PesquisaOrigemOcorrencia();
+
+        function PesquisaOrigemOcorrencia() {
+
+            var loginUsuario = $("#LoginUsuarioTextBox").val()
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaTipoDash")", { loginUsuario: loginUsuario }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaN0204DUSU.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableOrigemOcorrencia').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.ListaN0204DUSU.length; i++) {
+
+                        var codigo = data.ListaN0204DUSU[i].CODTIP;
+                        var descricao = data.ListaN0204DUSU[i].TIP;
+                        var coddori = data.ListaN0204DUSU[i].CODUSU;
+                        selecionar = "<input type='checkbox' " + (coddori != 0 ? " checked " : " ") + " id='checkBoxSelecionarOrigem"+codigo+"" + "' tabindex='-1' alt=\"\" title=\"Selecionar Origem da Ocorrência\" value =" + codigo + ">";
+                        arrayRow[i] = new Array(codigo, descricao, selecionar, "");
+                    }
+
+                    $('#TableOrigemOcorrencia').dataTable().fnAddData(arrayRow);
+                    $('#TableOrigemOcorrencia').dataTable().fnPageChange('first');
+                }
+                //$("#gridTableOrigemOcorrencia").hide();
+            });
+        }
+        var idColuna;
+        $('#TableOrigemOcorrencia tbody').on('click', 'td', function () {
+            idColuna = $(this).index();
+        });
+
+        // Recupera o ID da linha clicada -- tr ==> linha
+        $('#TableOrigemOcorrencia tbody').on('click', 'tr', function () {
+
+            // Coluna Selecionar
+            if (idColuna == 2) {
+
+                var table = $('#TableOrigemOcorrencia').DataTable();
+
+                // Recupera os dados da linha clicada para carregar os campos abaixo
+                var dadosLinha = table.row(this).data();
+                var codigoOrigem = dadosLinha[0];
+
+                // id do checkbox da coluna que foi clicada
+                var idCheckBox = "checkBoxSelecionarOrigem" + codigoOrigem;
+
+                if ($(this).hasClass('checked')) {
+                    $("#" + idCheckBox).prop("checked", false);
+                    $(this).removeClass('checked');
+                }
+                else {
+                    $("#" + idCheckBox).prop("checked", true);
+                    $(this).addClass('checked');
+                }
+            }
+
+        });
+
+        function SelecinaLinhasMarcadas() {
+
+            var table = $('#TableOrigemOcorrencia').dataTable();
+
+            $(table.fnSettings().aoData).each(function () {
+
+                var dadosLinha = table.fnGetData(this.nTr);
+                var codigoOrigem = dadosLinha[0];
+                var idCheckBox = "checkBoxSelecionarOrigem" + codigoOrigem;
+
+                if ($("#" + idCheckBox).is(":checked")) {
+                    $(this.nTr).addClass('checked');
+                }
+            });
+        }
+
+        function salvar() {
+
+            SelecinaLinhasMarcadas()
+            var loginUsuario = $("#LoginUsuarioTextBox").val();
+            var tabelaOrigem = $('#TableOrigemOcorrencia').DataTable();
+            var dataMarcados = tabelaOrigem.rows('.checked').data();
+            var itensCodigo = "";
+            var msgErro = "Para salvar, selecione ao menos uma origem da ocorrência.";
+            if (loginUsuario == "") {
+                DialogPadrao("warning", "Aviso!", "warning", "Informe um Usuário", "btnOkOrigemErro", "OK", true);
+            } else {
+                for (var i = 0; i < dataMarcados.length; i++) {
+                    itensCodigo += "-" + dataMarcados[i][0];
+                }
+                itensCodigo = itensCodigo.substring(1, itensCodigo.length);
+
+                $.ajaxSetup({ cache: false });
+                $.getJSON("@Url.Action("GravarPermissaoDashUsuario")", { loginUsuario: loginUsuario, itensCodigo: itensCodigo }, function (data) {
+                    if (data.Logado || data.ErroExcecao) {
+                        window.location.href = data.redirectUrl;
+                        return;
+                    }
+                    else if (data.GravadoSucesso) {
+                        DialogPadrao("success", "Sucesso!", "success", "Gravado com Sucesso!", "btnOkOrigOcorGravadoSucesso", "OK", true);
+                    }
+                });
+            }
+        }
+
+        function PesquisarTodosUsuarios() {
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisarUsuarios", "PermissaoAcesso")", { loginUsuario: "" }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaUsuariosAD.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableUsuario').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.listaUsuariosAD.length; i++) {
+
+                        var login = data.listaUsuariosAD[i].Login;
+                        var nome = data.listaUsuariosAD[i].Nome;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarUsuario('" + login + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Usuário'></span></a>";
+
+                        arrayRow[i] = new Array(selecionar, nome, login);
+                    }
+
+                    $('#TableUsuario').dataTable().fnAddData(arrayRow);
+                    $('#TableUsuario').dataTable().fnPageChange('first');
+                    $("#gridTableUsuario").slideToggle('fast');
+
+                    setTimeout(function () {
+                        $('#TableUsuario_filter input').focus();
+                    }, 500);
+                }
+                $('#UsuarioDialog').modal('show');
+            });
+        }
+        var idColuna;
+        $('#TableOrigemOcorrencia tbody').on('click', 'td', function () {
+            idColuna = $(this).index();
+        });
+
+        // Recupera o ID da linha clicada -- tr ==> linha
+        $('#TableOrigemOcorrencia tbody').on('click', 'tr', function () {
+
+            // Coluna Selecionar
+            if (idColuna == 0) {
+
+                var table = $('#TableOrigemOcorrencia').DataTable();
+
+                // Recupera os dados da linha clicada para carregar os campos abaixo
+                var dadosLinha = table.row(this).data();
+                var codigoOrigem = dadosLinha[1];
+
+                // id do checkbox da coluna que foi clicada
+                var idCheckBox = "checkBoxSelecionarOrigem" + codigoOrigem;
+
+                if ($(this).hasClass('selected')) {
+                    $("#" + idCheckBox).prop("checked", false);
+                    $(this).removeClass('selected');
+                }
+                else {
+                    $("#" + idCheckBox).prop("checked", true);
+                    $(this).addClass('selected');
+                }
+            }
+
+        });
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+
+            $("#btnOkUsuarioNaoEncontrado").click(function () {
+                $("#LoginUsuarioTextBox").focus();
+            });
+        }
+        $('.dataTables_scrollHead').removeAttr('style');
+        $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+    </script>
+}
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="">Config. Dashboard / Usuário x Dashboard</a></li>
+    </ul>
+</h4>
+<div class="modal fade bs-example-modal-lg" id="UsuarioDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Usuários no AD</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableUsuario" style="display: none;">
+                        <table id="TableUsuario" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tabela">
+    <div class="row" style="padding-top:30px">
+        @Html.LabelFor(m => m.LoginUsuario, new { @class = "col-md-2 control-label" })
+        <div class="col-md-3">
+            <div id ="login"class="input-group">
+                @Html.TextBoxFor(m => m.LoginUsuario, new { @class = "form-control input-sm", @id = "LoginUsuarioTextBox" })
+                <span class="input-group-addon" style="padding: 3px 10px">
+                    <a style='color:#333333' href="#" id="PesquisarUsuarioButton"><span class="glyphicon glyphicon-search" title="Pesquisar usuário"></span></a>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-1" id="DivSalvarButton" onclick="salvar()">
+            <input type="button" value="Salvar" id="SalvarButton" style="margin-top:0px" class="btn btn-primary btn-sm" />
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="tabela">
+    <div class="row">
+        <div id="gridTableOrigemOcorrencia">
+            <table id="TableOrigemOcorrencia" class="display compact" cellspacing="0"></table>
+        </div>
+        <br />
+    </div>
+</div>

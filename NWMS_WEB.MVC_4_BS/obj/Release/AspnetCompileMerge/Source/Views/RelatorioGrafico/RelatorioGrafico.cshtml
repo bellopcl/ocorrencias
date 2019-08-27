@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Relatório Gráfico";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/datepicker")
+    <script type="text/javascript">
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#ImprimirButton').click(function () {
+            ImprimirRelatorio();
+        });
+        $('#ImprimirExcel').click(function () {
+            ImprimirRelatorioExcel();
+        });
+            
+        function ImprimirRelatorio(){
+           $.getJSON("@Url.Action("ImprimirGrafico")", {},
+           function (data) {
+           if (data.Logado || data.ErroExcecao) {
+                window.location.href = data.redirectUrl;
+                return;
+           }
+           else if (data.listaVazia) {
+                DialogPadrao("warning", "Aviso!", "warning", "Nenhum Registro Encontrado!", "btnOkNenhumRegEncontrado", "OK", true);
+                $('#myModal').modal('hide');
+           }
+           else {
+                window.open(data);
+                $('#myModal').modal('hide');
+           }
+           }, "json");
+        }
+
+        function ImprimirRelatorioExcel() {
+            $.getJSON("@Url.Action("imprimirRelatorioExcel")", {},
+           function (data) {
+           if (data.Logado || data.ErroExcecao) {
+                window.location.href = data.redirectUrl;
+                return;
+           }
+           else if (data.listaVazia) {
+                DialogPadrao("warning", "Aviso!", "warning", "Nenhum Registro Encontrado!", "btnOkNenhumRegEncontrado", "OK", true);
+                $('#myModal').modal('hide');
+           }
+           else {
+                window.open(data);
+                $('#myModal').modal('hide');
+           }
+           }, "json");
+        }
+    </script>
+
+    }
+
+    <h2>RelatorioGrafico</h2>
+
+
+    <div class="col-md-10" id="imprimir">
+        <div class="col-sm-10">
+            <input type="button" value="Processar" id="ImprimirButton" style="margin-top:0px" class="btn btn-primary btn-sm" />
+        </div>
+    </div>
+
+    <div class="col-md-10" id="imprimir">
+        <div class="col-sm-10">
+            <input type="button" value="Excel" id="ImprimirExcel" style="margin-top:0px" class="btn btn-primary btn-sm" />
+        </div>
+    </div>

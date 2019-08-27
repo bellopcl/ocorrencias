@@ -1,0 +1,147 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.CadLancRegistroOcorrenciaViewModel
+
+@{
+    ViewBag.Title = "Confirmar Recebimento";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    @Scripts.Render("~/bundles/datepicker")
+
+    <script type="text/javascript">
+
+        $("#btnConfirmar").click(function () {
+            confirmar();
+        });
+        function confirmar() {
+            var NUMREG = $("#NumeroRegistro").val();
+            var PLACA = $("#CodPlacaDatFatTextBoxTroca").val();
+            consultarPlacaPOC(NUMREG);
+            //confirmarRecebimento(NUMREG, PLACA);
+        }
+
+        function consultarPlacaPOC(NUMREG) {
+            $.getJSON("@Url.Action("consultarPlacaPOC")", { NUMREG: NUMREG }, function (data) {
+                var PLACA = $("#CodPlacaDatFatTextBoxTroca").val();
+                PLACA = PLACA.replace("-", "").toUpperCase();
+                if (PLACA !== data.resposta & data.resposta != "") {
+                    DialogPadrao("warning", "aviso!", "warning", "Placa diferente da placa da coleta, Placa Digitada: " + PLACA + " Placa de Coleta: " + data.resposta, "btnOkNenhumRegEncontrado", "OK", true);
+                    return;
+                } else {
+                    confirmarRecebimento(NUMREG, PLACA);
+                }
+            });
+        }
+        function confirmarRecebimento(NUMREG, PLACA) {
+            $.getJSON("@Url.Action("confirmarRecebimento")", { NUMREG: NUMREG, PLACA: PLACA }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                if (data.campos && data.campos != undefined) {
+                    DialogPadrao("warning", "Aviso!", "warning", "Informe corretamente ambos os campos", "btnOkNenhumRegEncontrado", "OK", true);
+                    return;
+                }
+                if (data.resposta) {
+                    DialogPadrao("success", "Sucesso!", "success", "Confirmação efetuada com sucesso", "btnOkPrazoDevGravadoSucesso", "OK", true);
+                    return;
+                } else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Ocorrência não está dentro dos parâmetros de validação para está operação. Certifique-se que a placa está correta e a ocorrências está aprovada.", "btnOkNenhumRegEncontrado", "OK", true);
+                    return;
+                }
+            });
+        }
+
+        function DialogPadrao(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, focus) {
+
+            var html_Dialog = ""
+            + "<div class='modal-dialog'>"
+            + "     <div class='panel panel-" + tipoPanel + "'>"
+            + "         <div class='panel-heading'>"
+            + "             <h3 class='panel-title'>" + tituloDialog + "</h3>"
+            + "         </div>"
+            + "         <div class='panel-body'>"
+            + "             <div class='alert alert-dismissable alert-" + tipoLabel + "'>"
+            + "                 <strong>" + msgErro + "</strong>"
+            + "             </div>"
+            + "             <div style='text-align:center'>"
+            + "                 <button type='button' class='btn btn-default' id='" + idBotao + "'" + "onclick='$(\"#DialogPadrao\").hide();' data-dismiss='modal'>" + nomeBotao + "</button>"
+            + "             </div>"
+            + "         </div>"
+            + "     </div>"
+            + "</div>";
+
+            $("#DialogPadrao").html(html_Dialog);
+            $("#DialogPadrao").show();
+
+            if (focus) {
+                $("#" + idBotao).focus();
+            }
+            $("#" + idBotao).click(function () {
+                $("#NumeroRegistro").val("");
+                $("#NumeroRegistro").focus();
+            });
+        }
+        $("#NumeroRegistro").keypress(function (e) {
+            if (e.keyCode == 13) {
+                confirmar();
+            }
+        });
+
+        //$('#CodPlacaDatFatTextBoxTroca').mask("aaa-9999", { placeholder: "" });
+        $('#NumeroRegistro').mask("9?99999", { placeholder: "" });
+        $("#CodPlacaDatFatTextBoxTroca").focus();
+    </script>
+
+}
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>Solicitações</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+
+<div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+<p></p>
+<div class="panel panel-default" style="margin-bottom:5px">
+    <p></p>
+    <div class="row" style="margin-left:20px">
+        @Html.LabelFor(m => m.CodPlaca, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.TextBoxFor(m => m.CodPlaca, new { @class = "form-control input-smgroup", @id = "CodPlacaDatFatTextBoxTroca", @style = "text-transform: uppercase" })
+        </div>
+    </div>
+    <div class="row" style="margin-left:20px">
+
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.CodPlaca)
+            <p></p>
+        </div>
+    </div>
+    <div class="row" style="margin-left:20px">
+        @Html.LabelFor(m => m.numeroOcorrencia, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.TextBoxFor(m => m.numeroOcorrencia, new { @class = "form-control input-smgroup", @id = "NumeroRegistro" })
+        </div>
+
+    </div>
+    <div class="row" style="margin-left:20px">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-7" id="DivValidationDataFat">
+            @Html.ValidationMessageFor(m => m.numeroOcorrencia)
+            <span id="fieldErrorDivValidationDataFat" class="field-validation-valid"><span class=""></span></span>
+            <p></p>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-left:20px">
+    <div class="col-sm-1 control-label">
+    </div>
+    <div class="col-sm-1">
+        <button type="button" id="btnConfirmar" class="btn btn-primary btn-sm">Confirmar</button>
+    </div>
+</div>
+<!-- /.row -->

@@ -1,0 +1,135 @@
+﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.ConsultaAprovadorViewModel
+@{
+    ViewBag.Title = "Consulta de Aprovadores";
+}
+@section scripts{
+
+    <script type="text/javascript">
+     
+        $('#TableAprovadores').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": true,
+            "aoColumns": [
+                        { "sWidth": "25%", "sClass": "center", "title": "Nome" }],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+        var codigoOrigem = 0;
+        var codigoAtendimento = 0;
+
+        function carregaOrigem() {
+            codigoOrigem = $("#OrigemOcorrenciaDropBox option:selected").val();
+            codigoAtendimento = $("#TipoAtendimentoDropBox option:selected").val();
+            if (codigoAtendimento != 0) {
+                PesquisaOrigemOcorrencia();
+            } 
+        }
+
+        PesquisaOrigemOcorrencia();
+        
+        function PesquisaOrigemOcorrencia() {
+
+            $('#progressBar').show();
+            $("#gridTableAprovadores").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaAprovador")", { codigoOrigem: codigoOrigem, codigoAtendimento: codigoAtendimento }, function (data) {
+
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaUsuariosAD.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableAprovadores').dataTable().fnClearTable();
+
+                    for (var i = 0; i < data.ListaUsuariosAD.length; i++) {
+
+                        var nome = data.ListaUsuariosAD[i].Nome;
+                        arrayRow[i] = new Array(nome);
+                    }
+
+                    $('#TableAprovadores').dataTable().fnAddData(arrayRow);
+                    $('#TableAprovadores').dataTable().fnPageChange('first');
+
+                    $("#gridTableAprovadores").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+            });
+            $('.dataTables_scrollHead').removeAttr('style');
+            $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
+        }
+
+    </script>
+}
+    <h4>
+        <ul class="breadcrumb" style="margin-bottom: 5px;">
+            <li><a href="@Url.Content("~/PaginaInicial/Index")">Consulta Aprovador</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ul>
+    </h4>
+    <div class="progress progress-striped active" style="display: none;" id="progressBar">
+        <div class="progress-bar" style="width: 100%">
+        </div>
+    </div>
+    <div class="modal" id="DialogPadrao" data-backdrop="static"></div>
+    <div class="panel panel-default">
+
+    </div>
+    @using (Html.BeginForm("CadOrigemOcorrencia", "Solicitacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadOrigemOcorrenciaForm", role = "form" }))
+    {
+        <div class="panel panel-default">
+            <p></p>
+            <div class="row">
+                @Html.LabelFor(m => m.TipoAtendimento, new { @class = "col-md-2 control-label" })
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        @Html.DropDownListFor(m => m.TipoAtendimento, new SelectList(Model.ListaTipoAtendimento.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao"), new { @class = "form-control input-sm", @id = "TipoAtendimentoDropBox" })
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+                @Html.LabelFor(m => m.descOrigem, new { @class = "col-md-2 control-label" })
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        @Html.DropDownListFor(m => m.codigoOrigem, new SelectList(Model.ListaOrigemOcorrencia.Select(x => new { Codigo = x.Codigo, Descricao = x.Descricao }), "Codigo", "Descricao"), new { @class = "form-control input-sm", @id = "OrigemOcorrenciaDropBox", @onChange = "carregaOrigem()" })
+                    </div>
+                </div>
+            </div>
+            <p></p>
+        </div>
+        <br />
+        <div class="panel panel-default">
+            <legend>&nbsp;&nbsp;Lista de Aprovadores</legend>
+            <div id="gridTableAprovadores">
+                <table id="TableAprovadores" class="display compact" cellspacing="0"></table>
+            </div>
+            <br />
+        </div>
+
+
+    }

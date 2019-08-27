@@ -1,0 +1,208 @@
+﻿﻿﻿@model NWORKFLOW_WEB.MVC_4_BS.Models.OcorrenciaReabilitadaViewModel
+@{
+    ViewBag.Title = "Ocorrências/Operação";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    @Scripts.Render("~/bundles/datepicker")
+    <script type="text/javascript">
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+        $('#ImprimirButton').click(function () {
+            RelatorioOcorrenciasReabilitadas();
+        });
+        function RelatorioOcorrenciasReabilitadas() {
+            $('#myModal').modal('show');
+            var CodigoRegistro = $("#CodigoRegistro").val();
+            var dateInicial = $("#DataInicial").val();
+            var dateFinal = $("#DataFinal").val();
+            var operacao = $("#operacao").val();
+            $.getJSON("@Url.Action("ImprimirRelatorioOcorrenciaReabilitada")", { Numreg: CodigoRegistro, dateInicial: dateInicial, dateFinal: dateFinal, operacao: operacao },
+        function (data) {
+            if (data.Logado || data.ErroExcecao) {
+                window.location.href = data.redirectUrl;
+                return;
+            }
+            else if (data.listaVazia) {
+                DialogPadrao("warning", "Aviso!", "warning", "Nenhum Registro Encontrado!", "btnOkNenhumRegEncontrado", "OK", true);
+                $('#myModal').modal('hide');
+            }
+            else {
+                window.open(data);
+                $('#myModal').modal('hide');
+            }
+        }, "json");
+        }
+
+        $("#PesquisarTramitesButton").click(function () {
+            var numreg = $("#CodigoRegistro").val();
+            if (numreg != "")
+                PesquisaTramites(numreg);
+        });
+
+        function PesquisaTramites(numreg) {
+            $('#progressBar').show();
+            $("#gridTableTramites").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("PesquisaTramites", "Solicitacoes")", { codigoRegistro: numreg }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ListaN0203TRAPesquisa.length > 0) {
+                    var arrayRow = new Array();
+                    $('#TableTramites').dataTable().fnClearTable();
+                    for (var i = 0; i < data.ListaN0203TRAPesquisa.length; i++) {
+                        var numReg = data.ListaN0203TRAPesquisa[i].NUMREG;
+                        var seqTra = data.ListaN0203TRAPesquisa[i].SEQTRA;
+                        var desTra = data.ListaN0203TRAPesquisa[i].DESTRA;
+                        var usuTra = data.ListaN0203TRAPesquisa[i].USUTRA;
+                        var nomeUsuTra = data.ListaN0203TRAPesquisa[i].NOMEUSUTRA;
+                        var usuTraAux = usuTra + " - " + nomeUsuTra;
+                        var datTra = data.ListaN0203TRAPesquisa[i].DATTRA;
+                        var obstra = data.ListaN0203TRAPesquisa[i].OBSTRA;
+                        arrayRow[i] = new Array(numReg, seqTra, desTra, usuTraAux, datTra, obstra);
+                    }
+                    $('#TableTramites').dataTable().fnAddData(arrayRow);
+                    $('#TableTramites').dataTable().fnPageChange('first');
+                    $("#gridTableTramites").slideToggle('fast');
+                    $('#TramitesDialog').modal('show');
+                    $('#progressBar').hide();
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Nenhum registro encontrado", "btnOkNenhumRegTraEncontrado", "OK", true);
+                    $('#TramitesDialog').modal('hide');
+                    $('#progressBar').hide();
+                }
+            });
+        }
+
+        $('#TableTramites').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            //"ordering": false,
+            //"info": false,
+            "paging": true,
+            "bSort": false,
+            "bFilter": true,
+            "bInfo": false,
+            "lengthChange": false,
+            "aoColumns": [
+                { "sClass": "center", "title": "Nº&nbspReg." },
+                { "sClass": "center", "title": "Seq.&nbspTram." },
+                { "sClass": "left", "title": "Descrição&nbspdo&nbspTramite" + espaco.substring(0, 225) },
+                { "sClass": "left", "title": "Usuário&nbspdo&nbspTramite" + espaco.substring(0, 250) },
+                { "sClass": "center", "title": "Data&nbspdo&nbspTramite" + espaco.substring(0, 50) },
+                { "sClass": "left", "title": "Observação&nbspdo&nbspTramite" + espaco + espaco + espaco }
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            //"scrollY": 380,
+            "scrollX": true,
+        });
+
+    </script>
+}
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+<h4>
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li><a href="@Url.Content("~/InformacoesProtocolo/InformacoesProtocolo")">Relatórios</a></li>
+        <li class="active">@ViewBag.Title</li>
+    </ul>
+</h4>
+
+<div class="modal fade bs-example-modal-lg" id="TramitesDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Tramites</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableTramites" style="display: none;">
+                        <table id="TableTramites" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="row">
+        <div class="tabela">
+            <form class="form-horizontal" id="commentForm" method="get" action="">
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Relatório de Ocorrências por Operação</legend>
+                    <p></p>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Numreg, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                @Html.TextBoxFor(m => m.Numreg, new { @class = "form-control input-sm", @id = "CodigoRegistro" })
+                                <span class="input-group-addon" style="padding: 3px 6px">
+                                    <a style="color:#333333" href="#" id="PesquisarTramitesButton"><span class="glyphicon glyphicon-search" title="Pesquisar Tramites"></span></a>
+                                </span>
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Numreg)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.operacao, new { @class = "col-md-2 control-label" })
+                        <div class="row">
+                            <div class="col-md-2">
+                                @Html.DropDownListFor(m => m.operacao,
+                                new List<SelectListItem> {
+                                new SelectListItem { Value = "0" , Text = "Selecione...", Selected = true},
+                                new SelectListItem { Value = "APROVADO" , Text = "Aprovar"},
+                                new SelectListItem { Value = "CANCELADO" , Text = "Cancelar"},
+                                new SelectListItem { Value = "REABILITADO" , Text = "Reabilitar" } }, new { @class = "form-control input-sm", @id = "operacao" })
+                            </div>
+                            @Html.ValidationMessageFor(m => m.operacao)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.DataInicial, new { @class = "col-md-2 control-label" })
+                        <div class="row">
+                            <div class="col-sm-3">
+                                @Html.TextBoxFor(m => m.DataInicial, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "DataInicial", @type = "date" })
+                            </div>
+                            <div class="col-sm-3">
+                                @Html.TextBoxFor(m => m.DataInicial, new { @class = "form-control input-smgroup hasDatepicker valid", @id = "DataFinal", @type = "date" })
+                            </div>
+                            <div class="col-sm-2">
+                                @Html.ValidationMessageFor(m => m.DataInicial)
+                                @Html.ValidationMessageFor(m => m.DataFinal)
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div><!-- /.col-lg-12 -->
+    </div><!-- /.row -->
+</div>
+    <div class="col-md-10" id="imprimir">
+        <div class="col-sm-10">
+            <input type="button" value="Processar" id="ImprimirButton" style="margin-top:0px" class="btn btn-primary btn-sm" />
+        </div>
+    </div>

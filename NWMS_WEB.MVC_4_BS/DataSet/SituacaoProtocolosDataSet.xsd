@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SituacaoProtocolosDataSet" targetNamespace="http://tempuri.org/SituacaoProtocolosDataSet.xsd" xmlns:mstns="http://tempuri.org/SituacaoProtocolosDataSet.xsd" xmlns="http://tempuri.org/SituacaoProtocolosDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SituacaoProtocolosDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SituacaoProtocolosDataSet" msprop:Generator_UserDSName="SituacaoProtocolosDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SituacaoProtocolosDataSet" msprop:Generator_TableClassName="SituacaoProtocolosDataSetDataTable" msprop:Generator_TableVarName="tableSituacaoProtocolosDataSet" msprop:Generator_TablePropName="_SituacaoProtocolosDataSet" msprop:Generator_RowDeletingName="SituacaoProtocolosDataSetRowDeleting" msprop:Generator_RowChangingName="SituacaoProtocolosDataSetRowChanging" msprop:Generator_RowEvHandlerName="SituacaoProtocolosDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="SituacaoProtocolosDataSetRowDeleted" msprop:Generator_UserTableName="SituacaoProtocolosDataSet" msprop:Generator_RowChangedName="SituacaoProtocolosDataSetRowChanged" msprop:Generator_RowEvArgName="SituacaoProtocolosDataSetRowChangeEvent" msprop:Generator_RowClassName="SituacaoProtocolosDataSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Item1" msprop:Generator_ColumnVarNameInTable="columnItem1" msprop:Generator_ColumnPropNameInRow="Item1" msprop:Generator_ColumnPropNameInTable="Item1Column" msprop:Generator_UserColumnName="Item1" type="xs:string" minOccurs="0" />
+              <xs:element name="Item2" msprop:Generator_ColumnVarNameInTable="columnItem2" msprop:Generator_ColumnPropNameInRow="Item2" msprop:Generator_ColumnPropNameInTable="Item2Column" msprop:Generator_UserColumnName="Item2" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
