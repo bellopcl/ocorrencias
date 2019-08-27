@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NCommand.Console</id>
+    <version>0.1.5769.40164</version>
+    <title>NCommand.Console</title>
+    <authors>Tectil GmbH</authors>
+    <owners>Tectil GmbH</owners>
+    <licenseUrl>https://github.com/tectil/NCommand/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/tectil/NCommand</projectUrl>
+    <iconUrl>https://github.com/tectil/NCommand/blob/master/Colors.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NCommand.Console is a .NET library to parse command line arguments and map them to commands.</description>
+    <summary>NCommand.Console is a .NET library to parse command line arguments and map them to commands.</summary>
+    <copyright>Tectil GmbH</copyright>
+    <tags>Console Task Command</tags>
+  </metadata>
+</package>

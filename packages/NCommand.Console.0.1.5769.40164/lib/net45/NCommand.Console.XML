@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NCommand.Console</name>
+    </assembly>
+    <members>
+        <member name="T:Tectil.NCommand.ConsoleUtility">
+            <summary>
+            Utility functions for console
+            </summary>
+        </member>
+        <member name="P:Tectil.NCommand.ConsoleUtility.Instance">
+            <summary>
+            Static instance.
+            </summary>
+            <value>
+            The io.
+            </value>
+        </member>
+        <member name="M:Tectil.NCommand.ConsoleUtility.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write line.
+            </summary>
+            <param name="value"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Tectil.NCommand.ConsoleUtility.Write(System.String,System.Object[])">
+            <summary>
+            Write to consule.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Tectil.NCommand.ConsoleUtility.ReadLine(System.Action)">
+            <summary>
+            Read line with trigger for ESC.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.ConsoleUtility.ClearLastLine">
+            <summary>
+            Clears the last line.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.ConsoleUtility.ClearLine(System.Int32,System.Boolean)">
+            <summary>
+            Clears the specified line.
+            </summary>
+            <param name="top">The top.</param>
+            <param name="moveToClearedLine">if set to <c>true</c> [move to cleared line].</param>
+        </member>
+        <member name="M:Tectil.NCommand.ConsoleUtility.Clear">
+            <summary>
+            Clears the window.
+            </summary>
+        </member>
+        <member name="T:Tectil.NCommand.Contract.ExecutionContext">
+            <summary>
+            Execution context
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.Contract.ExecutionContext.#ctor(Tectil.NCommand.ConsoleUtility,Tectil.NCommand.Contract.CommandResult,Tectil.NCommand.CommandRunner,System.Collections.Generic.List{System.String},Tectil.NCommand.CommandConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tectil.NCommand.Contract.ExecutionContext"/> class.
+            </summary>
+            <param name="io">The io.</param>
+            <param name="command">The command.</param>
+            <param name="runner">The runner.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="P:Tectil.NCommand.Contract.ExecutionContext.IO">
+            <summary>
+            Gets or sets the io.
+            </summary>
+        </member>
+        <member name="P:Tectil.NCommand.Contract.ExecutionContext.Command">
+            <summary>
+            Gets or sets the command.
+            </summary>
+        </member>
+        <member name="P:Tectil.NCommand.Contract.ExecutionContext.Runner">
+            <summary>
+            Gets or sets the runner.
+            </summary>
+        </member>
+        <member name="P:Tectil.NCommand.Contract.ExecutionContext.Arguments">
+            <summary>
+            Gets or sets the arguments.
+            </summary>
+        </member>
+        <member name="P:Tectil.NCommand.Contract.ExecutionContext.Commands">
+            <summary>
+            Gets or sets the commands.
+            </summary>
+            <value>
+            The commands.
+            </value>
+        </member>
+        <member name="P:Tectil.NCommand.Contract.ExecutionContext.Configuration">
+            <summary>
+            Gets or sets the context.
+            </summary>
+        </member>
+        <member name="T:Tectil.NCommand.Contract.IExecutionFlowFactory">
+            <summary>
+            Returns the appropriate execution flow.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.Contract.IExecutionFlowFactory.Get(Tectil.NCommand.Contract.ExecutionContext)">
+            <summary>
+            Gets the appropriate execution flow.
+            </summary>
+            <param name="context">Execution context.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tectil.NCommand.Contract.IExecutionFlow">
+            <summary>
+            Implements an execution flow. Interactive, execute, silent,..
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.Contract.IExecutionFlow.Run(Tectil.NCommand.Contract.ExecutionContext)">
+            <summary>
+            Run
+            </summary>
+            <param name="context">Execution context</param>
+        </member>
+        <member name="T:Tectil.NCommand.ExecutionFlows.Internals.ExecutionFlowFactory">
+            <summary>
+            Returns the appropriate execution flow.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.ExecutionFlows.Internals.ExecutionFlowFactory.Get(Tectil.NCommand.Contract.ExecutionContext)">
+            <summary>
+            Gets the appropriate execution flow.
+            </summary>
+            <param name="context">Execution context.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tectil.NCommand.ExecutionFlows.Internals.ExecutionFlowBase">
+            <summary>
+            Base class for flow execution.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.ExecutionFlows.Internals.ExecutionFlowBase.RunCommand(Tectil.NCommand.Contract.ExecutionContext)">
+            <summary>
+            Runs the command.
+            </summary>
+        </member>
+        <member name="T:Tectil.NCommand.ExecutionFlows.RunExecute">
+            <summary>
+            Execute single command. Missing arguments will be asked for.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.ExecutionFlows.RunExecute.Run(Tectil.NCommand.Contract.ExecutionContext)">
+            <summary>
+            Mode Execute. Not silent, missing parameters will be asked.
+            </summary>
+            <param name="context">Execution context</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tectil.NCommand.ExecutionFlows.RunExecuteSilent">
+            <summary>
+            Execute single command. If arguments are missing execution will be canceled.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.ExecutionFlows.RunExecuteSilent.Run(Tectil.NCommand.Contract.ExecutionContext)">
+            <summary>
+            Mode Execute silent. 
+            </summary>
+            <param name="context">Execution context</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tectil.NCommand.ExecutionFlows.RunInteractive">
+            <summary>
+            Run in interactive mode. Commands will be listed and can be executed multiple times.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.ExecutionFlows.RunInteractive.Run(Tectil.NCommand.Contract.ExecutionContext)">
+            <summary>
+            Runs the command in interactive mode.
+            </summary>
+            <param name="context">Execution context</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tectil.NCommand.NCommandsConsole">
+            <summary>
+            Starting point for your console.
+            </summary>
+        </member>
+        <member name="M:Tectil.NCommand.NCommandsConsole.IO(Tectil.NCommand.NCommands)">
+            <summary>
+            Gets console io manager.
+            </summary>
+            <value>
+            The io.
+            </value>
+        </member>
+        <member name="M:Tectil.NCommand.NCommandsConsole.RunConsole(Tectil.NCommand.NCommands,System.String[])">
+            <summary>
+            Run command in console.
+            </summary>
+            <param name="commands"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
