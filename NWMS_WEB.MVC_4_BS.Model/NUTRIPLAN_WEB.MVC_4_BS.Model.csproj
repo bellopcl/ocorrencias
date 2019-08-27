@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4B66DE0-08AC-41DC-AC68-4EE3D15CE7C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUTRIPLAN_WEB.MVC_4_BS.Model</RootNamespace>
+    <AssemblyName>NUTRIPLAN_WEB.MVC_4_BS.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DwgSmsServer.Net, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DwgSmsServer.Net.1.0.4\lib\net40\DwgSmsServer.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DebugEmail.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="Enums\Configuration.cs" />
+    <Compile Include="Enums\MotivoDevolucaoModel.cs" />
+    <Compile Include="Enums\OrigemOcorrenciaModel.cs" />
+    <Compile Include="ListaMotivoporOrigem.cs" />
+    <Compile Include="MesXOcorrencia.cs" />
+    <Compile Include="Models\Agrupamento.cs" />
+    <Compile Include="Models\MediaAprovado.cs" />
+    <Compile Include="Models\MediaPreAprovadocs.cs" />
+    <Compile Include="Models\MesXOrigem.cs" />
+    <Compile Include="Models\N0203UAP.cs" />
+    <Compile Include="Models\N0203OPE.cs" />
+    <Compile Include="Models\N0203UOF.cs" />
+    <Compile Include="Enums\OperacaoAprovacaoModel.cs" />
+    <Compile Include="Models\N0204AUS.cs" />
+    <Compile Include="Models\N0204DORI.cs" />
+    <Compile Include="Models\N0204DUSU.cs" />
+    <Compile Include="Models\N0204POC.cs" />
+    <Compile Include="Models\N0204PPU.cs" />
+    <Compile Include="Models\N9999USM.cs" />
+    <Compile Include="Models\N9999USU.cs" />
+    <Compile Include="Models\TimeLine.cs" />
+    <Compile Include="Ocorrencia.cs" />
+    <Compile Include="ProtocolosAprovacaoModel.cs" />
+    <Compile Include="RelatorioGraficoItens.cs" />
+    <Compile Include="RelatorioGraficoOcorrencia.cs" />
+    <Compile Include="RelatorioOcorrenciaReabilitadaViewModel.cs" />
+    <Compile Include="Relatorio\ItensSinteticoColeta.cs" />
+    <Compile Include="Relatorio\ItensSinteticoTroca.cs" />
+    <Compile Include="Relatorio\ItensColeta.cs" />
+    <Compile Include="Relatorio\ItensTroca.cs" />
+    <Compile Include="Relatorio\ItensSinteticoCarga.cs" />
+    <Compile Include="Relatorio\PermissaoDevTrocaUsu.cs" />
+    <Compile Include="Relatorio\RelatorioOcorrenciasReabilitadas.cs" />
+    <Compile Include="Relatorio\RelatorioSinteticoCarga.cs" />
+    <Compile Include="Relatorio\RelatorioSinteticoTroca.cs" />
+    <Compile Include="Relatorio\RelatorioSinteticoOcorrencia.cs" />
+    <Compile Include="Relatorio\RelatorioTempoCarga.cs" />
+    <Compile Include="Relatorio\RelatorioTransacoes.cs" />
+    <Compile Include="Relatorio\RelPermissaoAprovadorOrigem.cs" />
+    <Compile Include="Relatorio\RelPermissaoTela.cs" />
+    <Compile Include="Relatorio\RelPermissaoUsuarioAprovacaoFaturamento.cs" />
+    <Compile Include="RelTipoAtendUsuario.cs" />
+    <Compile Include="RelUsuAprovadorOperacaoFat.cs" />
+    <Compile Include="RelUsuAprovadorOrigemOcorrencia.cs" />
+    <Compile Include="Sapiens\E073VEIModel.cs" />
+    <Compile Include="Models\N0203ANX.cs" />
+    <Compile Include="Relatorio\RelatorioAnalitico.cs" />
+    <Compile Include="RelacionamentoTipoAtendOrigemRelacionamentoTipoAtendOrigemModel.cs" />
+    <Compile Include="Relatorio\RelatorioSintetico.cs" />
+    <Compile Include="Sapiens\E140IPVModel.cs" />
+    <Compile Include="Sapiens\E140NFVModel.cs" />
+    <Compile Include="Models\N0204AOR.cs" />
+    <Compile Include="Models\N0204ATD.cs" />
+    <Compile Include="Models\N0204MDO.cs" />
+    <Compile Include="Models\N0204MDV.cs" />
+    <Compile Include="Models\N0204ORI.cs" />
+    <Compile Include="RelacionamentoMotivoOrigemModel.cs" />
+    <Compile Include="Sapiens\E073MOTModel.cs" />
+    <Compile Include="Sapiens\E085CLIModel.cs" />
+    <Compile Include="Enums\Attributes.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Enums\LogadoModel.cs" />
+    <Compile Include="MenuModel.cs" />
+    <Compile Include="Models\N0000AGE.cs" />
+    <Compile Include="Models\N0000ERR.cs" />
+    <Compile Include="Models\N0000LOG.cs" />
+    <Compile Include="Models\N0000REL.cs" />
+    <Compile Include="Models\N0001EMPModel.cs" />
+    <Compile Include="Models\N0001EMP_HIS.cs" />
+    <Compile Include="Models\N0002FIL.cs" />
+    <Compile Include="Models\N0003ARM.cs" />
+    <Compile Include="Models\N0005TNS.cs" />
+    <Compile Include="Models\N0006DER.cs" />
+    <Compile Include="Models\N0006FAM.cs" />
+    <Compile Include="Models\N0006ORI.cs" />
+    <Compile Include="Models\N0006PROModel.cs" />
+    <Compile Include="Models\N0007UNI.cs" />
+    <Compile Include="Models\N0008CNV.cs" />
+    <Compile Include="Models\N0009ITP.cs" />
+    <Compile Include="Models\N0009TAB.cs" />
+    <Compile Include="Models\N0009VLD.cs" />
+    <Compile Include="Models\N0010UCT.cs" />
+    <Compile Include="Models\N0011CLI.cs" />
+    <Compile Include="Models\N0011ENT.cs" />
+    <Compile Include="Models\N0012LVM.cs" />
+    <Compile Include="Models\N0012MOT.cs" />
+    <Compile Include="Models\N0012TRA.cs" />
+    <Compile Include="Models\N0012VEI.cs" />
+    <Compile Include="Models\N0013MCP.cs" />
+    <Compile Include="Models\N0014REP.cs" />
+    <Compile Include="Models\N0018DEP.cs" />
+    <Compile Include="Models\N0018LPD.cs" />
+    <Compile Include="Models\N0019CPR.cs" />
+    <Compile Include="Models\N0019CTE.cs" />
+    <Compile Include="Models\N0020ABR.cs" />
+    <Compile Include="Models\N0023LED.cs" />
+    <Compile Include="Models\N0044CCU.cs" />
+    <Compile Include="Models\N0101LOC.cs" />
+    <Compile Include="Models\N0102ESE.cs" />
+    <Compile Include="Models\N0103TUA.cs" />
+    <Compile Include="Models\N0104TPE.cs" />
+    <Compile Include="Models\N0105TLE.cs" />
+    <Compile Include="Models\N0106END.cs" />
+    <Compile Include="Models\N0107DEN.cs" />
+    <Compile Include="Models\N0108UCA.cs" />
+    <Compile Include="Models\N0109HUA.cs" />
+    <Compile Include="Models\N0109IUA.cs" />
+    <Compile Include="Models\N0109LOT.cs" />
+    <Compile Include="Models\N0109MOV.cs" />
+    <Compile Include="Models\N0109UAR.cs" />
+    <Compile Include="Models\N0110DOC.cs" />
+    <Compile Include="Models\N0110ITD.cs" />
+    <Compile Include="Models\N0110ROM.cs" />
+    <Compile Include="Models\N0111INVModel.cs" />
+    <Compile Include="Models\N0111ITV.cs" />
+    <Compile Include="Models\N0111LOT.cs" />
+    <Compile Include="Models\N0111UAV.cs" />
+    <Compile Include="Models\N0112TAR.cs" />
+    <Compile Include="Models\N0112TPT.cs" />
+    <Compile Include="Models\N0200PER.cs" />
+    <Compile Include="Models\N0201SIT.cs" />
+    <Compile Include="Models\N0202APR.cs" />
+    <Compile Include="Models\N0202MOT.cs" />
+    <Compile Include="Models\N0202REQ.cs" />
+    <Compile Include="Models\N0202TRA.cs" />
+    <Compile Include="Models\N0203APR.cs" />
+    <Compile Include="Models\N0203IPV.cs" />
+    <Compile Include="Models\N0203ITR.cs" />
+    <Compile Include="Models\N0203REG.cs" />
+    <Compile Include="Models\N0203TRA.cs" />
+    <Compile Include="Models\N9999MEN.cs" />
+    <Compile Include="Models\N9999SIS.cs" />
+    <Compile Include="Models\N9999UXM.cs" />
+    <Compile Include="Enums\OperacaoModel.cs" />
+    <Compile Include="Models\N0111CURModel.cs" />
+    <Compile Include="Models\N0111INRModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\SYS_CAIXA.cs" />
+    <Compile Include="Models\SYS_CATEND.cs" />
+    <Compile Include="Models\SYS_CFGGER.cs" />
+    <Compile Include="Models\SYS_CLASSES.cs" />
+    <Compile Include="Models\SYS_COMSQL.cs" />
+    <Compile Include="Models\SYS_CONCORRENCIA.cs" />
+    <Compile Include="Models\SYS_CONSULTA.cs" />
+    <Compile Include="Models\SYS_FICHATECNICA.cs" />
+    <Compile Include="Models\SYS_FICHAXCOMPONENTE.cs" />
+    <Compile Include="Models\SYS_HELP.cs" />
+    <Compile Include="Models\SYS_HELPBODY.cs" />
+    <Compile Include="Models\SYS_KPI.cs" />
+    <Compile Include="Models\SYS_LAYOUT.cs" />
+    <Compile Include="Models\SYS_LOGMSG.cs" />
+    <Compile Include="Models\SYS_LTELA.cs" />
+    <Compile Include="Models\SYS_MAIL.cs" />
+    <Compile Include="Models\SYS_REFRULES.cs" />
+    <Compile Include="Models\SYS_REGINI.cs" />
+    <Compile Include="Models\SYS_REGRAS.cs" />
+    <Compile Include="Models\SYS_REPORTS.cs" />
+    <Compile Include="Models\SYS_USRCOLUMN.cs" />
+    <Compile Include="Models\SYS_USRCOMPONENT.cs" />
+    <Compile Include="Models\SYS_USRFORM.cs" />
+    <Compile Include="Models\SYS_USRFORMXTABLE.cs" />
+    <Compile Include="Models\SYS_USRLOG.cs" />
+    <Compile Include="Models\SYS_USRON.cs" />
+    <Compile Include="Models\SYS_USRTABLE.cs" />
+    <Compile Include="Models\SYS_USRXREL.cs" />
+    <Compile Include="Models\SYS_USUARIO.cs" />
+    <Compile Include="Models\V_SALDONWMS.cs" />
+    <Compile Include="Enums\TipoAtendimentoModel.cs" />
+    <Compile Include="Enums\SitRegOcorModel.cs" />
+    <Compile Include="Enums\TipoPesquisaRegModel.cs" />
+    <Compile Include="Services\DadosNotasServicoModel.cs" />
+    <Compile Include="Sapiens\E099USUModel.cs" />
+    <Compile Include="TramitesNotificacao.cs" />
+    <Compile Include="UsuarioADModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

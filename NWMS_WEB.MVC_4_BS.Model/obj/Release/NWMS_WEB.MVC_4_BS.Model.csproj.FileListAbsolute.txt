@@ -1,0 +1,4 @@
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\bin\Release\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\bin\Release\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Release\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Release\NWMS_WEB.MVC_4_BS.Model.pdb

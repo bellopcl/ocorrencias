@@ -1,0 +1,1012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.Email" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.Attributes" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\Attributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.Enums" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.LogadoModel" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\LogadoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.MotivoDevolucaoModel" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Enums\MotivoDevolucaoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.OperacaoAprovacaoModel" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAUAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAA=</HashCode>
+      <FileName>Enums\OperacaoAprovacaoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.OperacaoModel" Collapsed="true">
+    <Position X="5.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\OperacaoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.OrigemOcorrenciaModel" Collapsed="true">
+    <Position X="7.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\OrigemOcorrenciaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SitRegOcorModel" Collapsed="true">
+    <Position X="2.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\SitRegOcorModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.TipoAtendimentoModel" Collapsed="true">
+    <Position X="12.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Enums\TipoAtendimentoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.TipoPesquisaRegModel" Collapsed="true">
+    <Position X="14.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\TipoPesquisaRegModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.MenuModel" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAACAAAACAABAFAAAAAAAAAAAiAAAEAAAAACAAAAIA=</HashCode>
+      <FileName>MenuModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0000AGE" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEDQgAiEAEAAACAgCAFAAAEAAAAIACEAAAAADAAgA=</HashCode>
+      <FileName>Models\N0000AGE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0000ERR" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAgAAAAACQAAAgEAAAUIAAICAAIAAAAACkAIA=</HashCode>
+      <FileName>Models\N0000ERR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0000LOG" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAQAAAAAAAAABAAAAAAAAAAAAACAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\N0000LOG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0000REL" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0000REL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0001EMP_HIS" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQGAAAAAAAAAAAAAAAABCAAAAAAaAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\N0001EMP_HIS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0001EMPModel" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkEGAAGAAQAAEAAAAACEBCgAVAEAcCAAJQABACABgiE=</HashCode>
+      <FileName>Models\N0001EMPModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0002FIL" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAEAAAAAAAAAEAEQiEBAgAAAAAIAAAQAAADACAAAA=</HashCode>
+      <FileName>Models\N0002FIL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0003ARM" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AOEgQgVABEAFIAAAEAQARgABaECEIBAAggEIDAWCkAQ=</HashCode>
+      <FileName>Models\N0003ARM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0005TNS" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEIAAAAAAAAAAAAAICABAAAQAQgIBgAQAAADAQAAAA=</HashCode>
+      <FileName>Models\N0005TNS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0006DER" Collapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEMCyQICAAEAAAgAAIAAFEBAwgBkIAwAAAAADCEAAAA=</HashCode>
+      <FileName>Models\N0006DER.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0006FAM" Collapsed="true">
+    <Position X="19.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAABAAAEAAAAACAQBAAACAAAAA=</HashCode>
+      <FileName>Models\N0006FAM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0006ORI" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAABEAAAAACAAAAAACAAAAA=</HashCode>
+      <FileName>Models\N0006ORI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0006PROModel" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUGgQQAAAAAIAgAAAAAAFAEIEgAQIAyAUQAADCAQCAA=</HashCode>
+      <FileName>Models\N0006PROModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0007UNI" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAACAAEIAAAAEIAAAAAAQBhAIAgAAAAADCAAAAA=</HashCode>
+      <FileName>Models\N0007UNI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0008CNV" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEIAAAAAAAYAAAAAAAAAAAAAAAAIAAAAAAADAAQAAA=</HashCode>
+      <FileName>Models\N0008CNV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0009ITP" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAgAAAAAgAAAAABAIACAAAIAQAAAAADgASCAA=</HashCode>
+      <FileName>Models\N0009ITP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0009TAB" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACgAAAAAAAAABAJAAAAAIAAAQAAADAAQAAA=</HashCode>
+      <FileName>Models\N0009TAB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0009VLD" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAEAAAAAAAAAAAAABAEAAAAgIAAAAAAADAAQAAA=</HashCode>
+      <FileName>Models\N0009VLD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0010UCT" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEACAAAAAAIAAgAAAAABAAAAAAAIAQAQAAADCAACAA=</HashCode>
+      <FileName>Models\N0010UCT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0011CLI" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAgAAABQAAAAAAgAAAAAAAAAIAgAACAAjACAAAA=</HashCode>
+      <FileName>Models\N0011CLI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0011ENT" Collapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAESAAgAAAABFAAAgACAIAAAAEAAIAgAAAAATAAAAAA=</HashCode>
+      <FileName>Models\N0011ENT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0012LVM" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAACABAIABAAAAAAAAAAIEAAEAAAHAAAAAA=</HashCode>
+      <FileName>Models\N0012LVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0012MOT" Collapsed="true">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAABAAAAAAAAAAAAQAIAAAEAQAjAAAAEA=</HashCode>
+      <FileName>Models\N0012MOT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0012TRA" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAgAACIABAAAAACAAAAIUgAAAAAjAAAgAA=</HashCode>
+      <FileName>Models\N0012TRA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0012VEI" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAACACAgAAAAAAAAAAQAIEABAAAADAAAAEA=</HashCode>
+      <FileName>Models\N0012VEI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0013MCP" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAQgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0013MCP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0014REP" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAACAAAAAAABAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0014REP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0018DEP" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAACAAAAAAgAAAQABAQAAAAEIAAAQAAADACAAAA=</HashCode>
+      <FileName>Models\N0018DEP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0018LPD" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAQAIAAgAAAAABAAgAgBAIAQBIAAADIEQCAA=</HashCode>
+      <FileName>Models\N0018LPD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0019CPR" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAABAAAEAgAIAQQIAAADCAAAAQ=</HashCode>
+      <FileName>Models\N0019CPR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0019CTE" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAABAAACAAAAABAEAAAgAIAAAQAAALAAAAAA=</HashCode>
+      <FileName>Models\N0019CTE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0020ABR" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAACAEAIAEAAAAADQBAAAA=</HashCode>
+      <FileName>Models\N0020ABR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0023LED" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAIAAgAAAAABAAASAgAQgSACgAABACAAAA=</HashCode>
+      <FileName>Models\N0023LED.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0044CCU" Collapsed="true">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAAAAAgAAAAAAIAABAAAGAAAcAAAQAAADAAAAAA=</HashCode>
+      <FileName>Models\N0044CCU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0101LOC" Collapsed="true">
+    <Position X="19.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEAAAAQAAAQAAABAQAABCAAAAAAIAAACgIADACAAAA=</HashCode>
+      <FileName>Models\N0101LOC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0102ESE" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIAAAAAAAAAAAAAAABAAAAAABIAAAQEAADAAAAQA=</HashCode>
+      <FileName>Models\N0102ESE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0103TUA" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAIgAAFUACgEAAABBAAAAAAIAAAQAABDAAACAA=</HashCode>
+      <FileName>Models\N0103TUA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0104TPE" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAQgAAAAAAAAABABAAAAAIAAAQIAADAAQAAA=</HashCode>
+      <FileName>Models\N0104TPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0105TLE" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAwAAAAAAAAAABABAgABAIAAAQAAADAAAAAA=</HashCode>
+      <FileName>Models\N0105TLE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0106END" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAEBEgAAABAEQkAIQEBQEAAABJIgAAGgQDTACSgAA=</HashCode>
+      <FileName>Models\N0106END.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0107DEN" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAAAAQAIAAgAAAAABAAACAAAAgQACgABDACQCAA=</HashCode>
+      <FileName>Models\N0107DEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0108UCA" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEACQCAgAEIAAgAAEAABAAAAAEAIAQAQAEgDAAgCAA=</HashCode>
+      <FileName>Models\N0108UCA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0109HUA" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAAAEEADAAAAABAAARAAQAAYQEAAAAAABAAABAAA=</HashCode>
+      <FileName>Models\N0109HUA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0109IUA" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAEAAAIFAgAAAEAFAAAAAAABAQCQBABAAAQCAA=</HashCode>
+      <FileName>Models\N0109IUA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0109LOT" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAEAAAAAAAAAIEABAIAQEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0109LOT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0109MOV" Collapsed="true">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YIAIAAgWEABYAAgIBQEABAAQAgYAEAYkIjEABAiVCAY=</HashCode>
+      <FileName>Models\N0109MOV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0109UAR" Collapsed="true">
+    <Position X="19.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAEAiGAAAQAACWEIAABAAASAAIACACAAAAAAAACAA=</HashCode>
+      <FileName>Models\N0109UAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0110DOC" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCKAAhAAAACAAAIggAABEgZQAQCEEgAESAAAACAAAA=</HashCode>
+      <FileName>Models\N0110DOC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0110ITD" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CwCAIIAAAAIICQgIAAAABBAQQAQAEAwAEAAAACCSCAA=</HashCode>
+      <FileName>Models\N0110ITD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0110ROM" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AcEGAgQAAUEAAAAAAAIABAQYEAAAAAiCAQAABACAgAA=</HashCode>
+      <FileName>Models\N0110ROM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0111CURModel" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0111CURModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0111INRModel" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Models\N0111INRModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0111INVModel" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQNQAAIIBEAAEAAAAQEAJAAA4DEQAChAEiAABACYAAA=</HashCode>
+      <FileName>Models\N0111INVModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0111ITV" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAIAAAIFAgMAAAABACAACFARAQAQgAIBACQCAA=</HashCode>
+      <FileName>Models\N0111ITV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0111LOT" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAEAAAAIAAAABAIAAGEAAAAAAgAAAACAAAA=</HashCode>
+      <FileName>Models\N0111LOT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0111UAV" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAGEBAFAAAAIAAAABAAAACAAAgAACgAAAACACAA=</HashCode>
+      <FileName>Models\N0111UAV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0112TAR" Collapsed="true">
+    <Position X="16.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IiMAQAiGAABIAAgoBACABAAQQCFYADYAACEBGACRiAI=</HashCode>
+      <FileName>Models\N0112TAR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0112TPT">
+    <Position X="22.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAEAAAAAgAAAAAEAAABABAAAAAEBACQAAADAAQAAA=</HashCode>
+      <FileName>Models\N0112TPT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0200PER">
+    <Position X="19.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0200PER.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0201SIT" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\N0201SIT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0202APR" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAABAAAAAAAIAABAYAEAMIAUBAECAAAAAAABA=</HashCode>
+      <FileName>Models\N0202APR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0202MOT" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAEAAAAAAAEAA=</HashCode>
+      <FileName>Models\N0202MOT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0202REQ" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACCAwEAAIAIAAIAAAAABAQIAAEEQAmARQAACCAgUBI=</HashCode>
+      <FileName>Models\N0202REQ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0202TRA" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAACAAAAAAAAABASAUAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0202TRA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203ANX" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAEAAQAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0203ANX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203APR" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAEAAIAAAAwAQAIIAGBAAAAADAAAAAA=</HashCode>
+      <FileName>Models\N0203APR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203IPV" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAcAAggEAAABgBAAAABAyAggACGRYCEAIAAACACAA=</HashCode>
+      <FileName>Models\N0203IPV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203ITR" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAAAAAAAAAAAgBAAAAAAwASAACADQAAAIAAAAQAAA=</HashCode>
+      <FileName>Models\N0203ITR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203OPE" Collapsed="true">
+    <Position X="16.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIAA=</HashCode>
+      <FileName>Models\N0203OPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203REG" Collapsed="true">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiEAgAkEgAAAAAAAAAAAQAYAEgADECFAAAAACACAA=</HashCode>
+      <FileName>Models\N0203REG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203TRA" Collapsed="true">
+    <Position X="19.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAACAAAAgAAEAAAyAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0203TRA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203UAP" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAEAAAAAAiAAAAGAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0203UAP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0203UOF" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAgAAAAAEAAAAAACAAAAEAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\N0203UOF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0204AOR" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAEAAAAAAiAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0204AOR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0204ATD" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAQAAACAAAAAAAAEAAAAQCgA=</HashCode>
+      <FileName>Models\N0204ATD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0204AUS" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAAAAAEAAAAAACAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0204AUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0204MDO" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIAAEAAAAAAAgAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0204MDO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0204MDV" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\N0204MDV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N0204ORI" Collapsed="true">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAgAARACACAFAAAAACAA=</HashCode>
+      <FileName>Models\N0204ORI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N9999MEN" Collapsed="true">
+    <Position X="16.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAACAABAFAAECAAAAAAAgAAAAAAACAAAAAAIA=</HashCode>
+      <FileName>Models\N9999MEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N9999SIS" Collapsed="true">
+    <Position X="18" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAABAAAAAAAAAAAACAAAAAAAAAAAAgAAAAAAIA=</HashCode>
+      <FileName>Models\N9999SIS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N9999USM" Collapsed="true">
+    <Position X="19.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAACAAABAAAhAAAAAAAAAAAAACAAAEAAAAACAAAAAA=</HashCode>
+      <FileName>Models\N9999USM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N9999USU" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAACAAQAAAAAAAAMAAAEAAAAQAAA=</HashCode>
+      <FileName>Models\N9999USU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.N9999UXM" Collapsed="true">
+    <Position X="2.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAACAAABAAABAAAAAAAAAAAAAGAAAEAAAAACAAAAAA=</HashCode>
+      <FileName>Models\N9999UXM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_CAIXA" Collapsed="true">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAEAAAAAAAAAAAAAAAABAAAAEBAAMAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_CAIXA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_CATEND" Collapsed="true">
+    <Position X="5.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAQAAAAAAAAEIAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_CATEND.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_CFGGER" Collapsed="true">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAQAAAAABAAAAAAACAQAAAABAYAAACAAQAAAAA=</HashCode>
+      <FileName>Models\SYS_CFGGER.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_CLASSES" Collapsed="true">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAQAAAAAAACAAAAAAAAAggAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_CLASSES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_COMSQL" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAgAABAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\SYS_COMSQL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_CONCORRENCIA" Collapsed="true">
+    <Position X="12.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIEAAAEAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\SYS_CONCORRENCIA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_CONSULTA" Collapsed="true">
+    <Position X="14.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAEAAAAAAAAAAAAAAACAAABAAQAAAAAAAAAQAA=</HashCode>
+      <FileName>Models\SYS_CONSULTA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_FICHATECNICA" Collapsed="true">
+    <Position X="16.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQIAAAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_FICHATECNICA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_FICHAXCOMPONENTE" Collapsed="true">
+    <Position X="18" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_FICHAXCOMPONENTE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_HELP" Collapsed="true">
+    <Position X="19.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAABAAAAAAAEAIAAAQBAKAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_HELP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_HELPBODY" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAAAAggAAAAAAAAAABAAAAAAAAQAAAgAAAQAAIAAA=</HashCode>
+      <FileName>Models\SYS_HELPBODY.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_KPI" Collapsed="true">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAIAACACAAAAAAAAAEAAAAABAAAAgAAAAAAAAgQ=</HashCode>
+      <FileName>Models\SYS_KPI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_LAYOUT" Collapsed="true">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAAEAgAAAIQAIAAAAIAICAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\SYS_LAYOUT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_LOGMSG" Collapsed="true">
+    <Position X="5.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAIQAAAUAAQCAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_LOGMSG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_LTELA" Collapsed="true">
+    <Position X="7.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAIEAAAAAAAAAAAAgAAAQAUAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_LTELA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_MAIL" Collapsed="true">
+    <Position X="9.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAEAYAIAAYAAAQAAAAEAAAAAABgAMAAAAAAACASAQ=</HashCode>
+      <FileName>Models\SYS_MAIL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_REFRULES" Collapsed="true">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAACAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_REFRULES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_REGINI" Collapsed="true">
+    <Position X="12.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAgAAAAAABABAEACQAAAAAEAAAAQAEAAAAA=</HashCode>
+      <FileName>Models\SYS_REGINI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_REGRAS" Collapsed="true">
+    <Position X="14.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAQAAAAAAUACCAAAAAAAggAggQAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_REGRAS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_REPORTS" Collapsed="true">
+    <Position X="16.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAACACAAAEAAAAAEAAAAARAAAAAAAIAAAAiAA=</HashCode>
+      <FileName>Models\SYS_REPORTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRCOLUMN" Collapsed="true">
+    <Position X="18" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAgACAAAAgAAEEQAQAEAAAEEBEAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRCOLUMN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRCOMPONENT" Collapsed="true">
+    <Position X="19.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgAAAAAAAABQAAEEAAADABEAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRCOMPONENT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRFORM" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGEAEgAAAAAAgAIAEQAAAEAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRFORM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRFORMXTABLE" Collapsed="true">
+    <Position X="2.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAgAAAAAAIAAAAAAFAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRFORMXTABLE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRLOG" Collapsed="true">
+    <Position X="4" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAEBAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRLOG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRON" Collapsed="true">
+    <Position X="5.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAIAEAAAEAABAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRON.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRTABLE" Collapsed="true">
+    <Position X="7.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgAAAAAAAAEQAAAAAAAAABAAIAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRTABLE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USRXREL" Collapsed="true">
+    <Position X="9.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAECAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SYS_USRXREL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.SYS_USUARIO" Collapsed="true">
+    <Position X="11" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAsAKQSIBACM0QACycECFEwgEACkAYEA4EORiCABGgg=</HashCode>
+      <FileName>Models\SYS_USUARIO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.V_SALDONWMS" Collapsed="true">
+    <Position X="19.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAgACAAAAAAIAAAAAAYAgAAICCIgAAAgA=</HashCode>
+      <FileName>Models\V_SALDONWMS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.ProtocolosAprovacaoModel" Collapsed="true">
+    <Position X="9.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAIAAARgAMAAIQNwMAAAAQAIBCEAAACQgAAACAkQgA=</HashCode>
+      <FileName>ProtocolosAprovacaoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.RelacionamentoMotivoOrigemModel" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RelacionamentoMotivoOrigemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.RelacionamentoTipoAtendOrigemModel" Collapsed="true">
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RelacionamentoTipoAtendOrigemRelacionamentoTipoAtendOrigemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.RelatorioAnalitico" Collapsed="true">
+    <Position X="14.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JRBAIEQVAAMBAIQMCEQIAgQBBUCUoCQCAAAACiK8Qgw=</HashCode>
+      <FileName>Relatorio\RelatorioAnalitico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.RelatorioSintetico" Collapsed="true">
+    <Position X="16.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQwAAEAAgAAAAAAECAAAAAEABAAAIAWKAAIAAgCCEgg=</HashCode>
+      <FileName>Relatorio\RelatorioSintetico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.RelTipoAtendUsuario" Collapsed="true">
+    <Position X="18" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RelTipoAtendUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.RelUsuAprovadorOperacaoFat" Collapsed="true">
+    <Position X="19.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAUAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>RelUsuAprovadorOperacaoFat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.RelUsuAprovadorOrigemOcorrencia" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAQAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RelUsuAprovadorOrigemOcorrencia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.E073MOTModel" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAACAAAAAAAAAAAAAAAGAEAg=</HashCode>
+      <FileName>Sapiens\E073MOTModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.E073VEIModel" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Sapiens\E073VEIModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.E085CLIModel" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAMAAACAEAAAAAAAAEAAAAAAEAg=</HashCode>
+      <FileName>Sapiens\E085CLIModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.E099USUModel" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAgEAAAA=</HashCode>
+      <FileName>Sapiens\E099USUModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.E140IPVModel" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAAEwIAiAAAAAEEIAAggQAAAAAACAAAAAIQAAQABg=</HashCode>
+      <FileName>Sapiens\E140IPVModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.E140NFVModel" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAoAACgCAABQQAAIAAAACAUIAACAIgEAACKAAECQ=</HashCode>
+      <FileName>Sapiens\E140NFVModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.DadosNotasServicoModel" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAACAQAAASAAAAAAAAEAAAAAAEAAACAAAAgA=</HashCode>
+      <FileName>Services\DadosNotasServicoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.TramitesNotificacao" Collapsed="true">
+    <Position X="16.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAACAAAAgAAEAAASAAAAAAACAAAAAAACAAAA=</HashCode>
+      <FileName>TramitesNotificacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.UsuarioADModel" Collapsed="true">
+    <Position X="18" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAA=</HashCode>
+      <FileName>UsuarioADModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.Model.Models.N0204PPU" Collapsed="true">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgBAAAAAAAACAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\N0204PPU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

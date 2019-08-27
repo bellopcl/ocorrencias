@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DwgSmsServer.Net</name>
+    </assembly>
+    <members>
+        <member name="T:DwgSmsServerNet.DwgSmsServer">
+            <summary>
+            Fully featured DWG SMS server for Dinstar SMS API 2.0
+            Can be used for sending/receiving SMS and sending USSD
+            Available under MIT License
+            </summary>
+        </member>
+        <member name="M:DwgSmsServerNet.DwgSmsServer.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Creating DWG SMS Server
+            </summary>
+            <param name="port">Port to listen DWG. Should be same in DWG settings</param>
+            <param name="user">User name of SMS server. Should be same in DWG settings</param>
+            <param name="password">Password of SMS server. Should be same in DWG settings</param>
+        </member>
+        <member name="M:DwgSmsServerNet.DwgSmsServer.Start">
+            <summary>
+            Start DWG SMS server
+            </summary>
+        </member>
+        <member name="M:DwgSmsServerNet.DwgSmsServer.Stop">
+            <summary>
+            Stop DWG SMS server
+            </summary>
+        </member>
+        <member name="M:DwgSmsServerNet.DwgSmsServer.SendSms(System.Byte,System.String,System.String,DwgSmsServerNet.DwgSmsEncoding)">
+            <summary>
+            Send SMS message
+            </summary>
+            <param name="port">DWG port to send from</param>
+            <param name="number">Phone number</param>
+            <param name="message">Message to send</param>
+            <param name="smsEncoding">Encoding of SMS to send, Unicode by default</param>
+            <returns>Result of sending SMS</returns>
+        </member>
+        <member name="M:DwgSmsServerNet.DwgSmsServer.SendUssd(System.Byte,DwgSmsServerNet.DwgUssdType,System.String)">
+            <summary>
+            Send USSD request
+            </summary>
+            <param name="port">DWG port to send from</param>
+            <param name="type">USSD type</param>
+            <param name="ussd">USSD request content</param>
+            <returns>Result of sending USSD to network</returns>
+        </member>
+        <member name="E:DwgSmsServerNet.DwgSmsServer.StateChanged">
+            <summary>
+            Occurs on State of server changed
+            </summary>
+        </member>
+        <member name="E:DwgSmsServerNet.DwgSmsServer.Error">
+            <summary>
+            Occurs on server error
+            </summary>
+        </member>
+        <member name="E:DwgSmsServerNet.DwgSmsServer.SmsSendingResult">
+            <summary>
+            Occurs on info about sent SMS from DWG
+            </summary>
+        </member>
+        <member name="E:DwgSmsServerNet.DwgSmsServer.UssdSendingResult">
+            <summary>
+            Occurs on info abous sent USSD from DWG
+            </summary>
+        </member>
+        <member name="E:DwgSmsServerNet.DwgSmsServer.SmsReceieved">
+            <summary>
+            Occurs on SMS receieved
+            </summary>
+        </member>
+        <member name="E:DwgSmsServerNet.DwgSmsServer.SmsReceipt">
+            <summary>
+            Occurs on SMS receipt
+            </summary>
+        </member>
+        <member name="P:DwgSmsServerNet.DwgSmsServer.Port">
+            <summary>
+            Listen port of SMS Server
+            </summary>
+        </member>
+        <member name="P:DwgSmsServerNet.DwgSmsServer.User">
+            <summary>
+            User of SMS server
+            </summary>
+        </member>
+        <member name="P:DwgSmsServerNet.DwgSmsServer.Password">
+            <summary>
+            Password of SMS server
+            </summary>
+        </member>
+        <member name="P:DwgSmsServerNet.DwgSmsServer.DwgMacAddress">
+            <summary>
+            MAC address of DWG. 
+            00-00-00-00-00-00 if not connected.
+            </summary>
+        </member>
+        <member name="P:DwgSmsServerNet.DwgSmsServer.State">
+            <summary>
+            Dwg connectiong status
+            </summary>
+        </member>
+        <member name="P:DwgSmsServerNet.DwgSmsServer.PortsCount">
+            <summary>
+            Number of Dwg ports
+            </summary>
+        </member>
+        <member name="P:DwgSmsServerNet.DwgSmsServer.PortsStatuses">
+            <summary>
+            Statuses of ports
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.Gsm7BitEncoding">
+            <summary>
+            GSM 7bit encoder/decoder
+            Idea of encoding was taken here: http://stackoverflow.com/questions/17218874/convert-string-to-gsm-7-bit-using-c-sharp
+            Idea of decoding was taken here: http://stackoverflow.com/questions/13130935/decode-7-bit-gsm
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.Messages.DwgMessageResult">
+            <summary>
+            Result of message processing
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.Messages.DwgMessageResult.Succeed">
+            <summary>
+            Processing successed
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.Messages.DwgMessageResult.Fail">
+            <summary>
+            Processing failed
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgStateChangedDelegate">
+            <summary>
+            Delegate for informing about DWG SMS server state changed
+            </summary>
+            <param name="state">New state of Dwg SMS server</param>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgErrorDelegate">
+            <summary>
+            Delegate for informing about DWG errors
+            </summary>
+            <param name="error">Error text</param>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSmsSendingResultDelegate">
+            <summary>
+            Delegate for informing about sent SMS result
+            </summary>
+            <param name="port">Port of DWG, which sent SMS</param>
+            <param name="number">Phone number of SMS reciever</param>
+            <param name="result">Sending result</param>
+            <param name="totalSlices">Count of SMS slices</param>
+            <param name="succededSlices">Count of succeeded SMS slices</param>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgUssdSendingResultDelegate">
+            <summary>
+            Delegate for informing about sent USSD result
+            </summary>
+            <param name="port">Port of DWG, which send USSD</param>
+            <param name="result">Result of USSD from network</param>
+            <param name="message">Message from executing USSD</param>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSmsReceivedDelegate">
+            <summary>
+            Delegate for informing about receieved SMS 
+            </summary>
+            <param name="port">Port receieved SMS</param>
+            <param name="dateTime">Time of sending SMS</param>
+            <param name="number">Number, that sent SMS</param>
+            <param name="message">SMS text</param>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSmsReceiptDelegate">
+            <summary>
+            Delegate for informing about receieved SMS receipt
+            </summary>
+            <param name="port">Port receieved SMS</param>
+            <param name="dateTime">Time of sending SMS</param>
+            <param name="number">Number, that sent SMS</param>
+            <param name="receiptId">ID of receipt</param>
+            <param name="state">State of receipt</param>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSmsServerState">
+            <summary>
+            DWG SMS server state
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsServerState.Disconnected">
+            <summary>
+            DWG listener not started
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsServerState.WaitingDwg">
+            <summary>
+            DWG listener started, waiting for DWG to establish socket connection
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsServerState.Connecting">
+            <summary>
+            DWG established connection, waiting for welcome packet exhange
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsServerState.Connected">
+            <summary>
+            DWG connected
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSendSmsResult">
+            <summary>
+            Result of sending SMS
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendSmsResult.Succeed">
+            <summary>
+            SMS sent successfully
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendSmsResult.Fail">
+            <summary>
+            SMS sent failed
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendSmsResult.Timeout">
+            <summary>
+            SMS sent timeout
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendSmsResult.BadRequest">
+            <summary>
+            Something wrong with sending SMS request
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendSmsResult.PortUnavailable">
+            <summary>
+            Specified port is not available for sending SMS
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendSmsResult.PartialSucceed">
+            <summary>
+            Not all parts of SMS successfully sent
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendSmsResult.OtherError">
+            <summary>
+            Some unknown error occurs while sending SMS
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgPortStatus">
+            <summary>
+            DWG port status
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgPortStatus.Works">
+            <summary>
+            Port normally works
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgPortStatus.NoSim">
+            <summary>
+            No SIM card inserted
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgPortStatus.NotRegistered">
+            <summary>
+            Not registered on mobile network
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgPortStatus.Unavailable">
+            <summary>
+            No hardware port
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgUssdType">
+            <summary>
+            DWG USSD type
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgUssdType.Send">
+            <summary>
+            Send USSD request
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgUssdType.EndSession">
+            <summary>
+            Complete current USSD session
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSendUssdResult">
+            <summary>
+            Result of sending USSD
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendUssdResult.Succeed">
+            <summary>
+            USSD sent successfully
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendUssdResult.Fail">
+            <summary>
+            USSD sent failed
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendUssdResult.Timeout">
+            <summary>
+            USSD sent timeout
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendUssdResult.BadRequest">
+            <summary>
+            Something wrong with sending USSD request
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendUssdResult.PortUnavailable">
+            <summary>
+            Specified port is not available for sending SMS
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSendUssdResult.OtherError">
+            <summary>
+            Some unknown error occurs while sending SMS
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgRecieveUssdResult">
+            <summary>
+            Result of USSD
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgRecieveUssdResult.NoFurtherUserActionRequired">
+            <summary>
+            No further user action required
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgRecieveUssdResult.FurtherUserActionRequired">
+            <summary>
+            Further user action required
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgRecieveUssdResult.UssdTerminatedByNetwork">
+            <summary>
+            Ussd terminated by network
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgRecieveUssdResult.OperationNotSupported">
+            <summary>
+            Operation not supported
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSmsEncoding">
+            <summary>
+            Encoding of SMS
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsEncoding.Unicode">
+            <summary>
+            UNICODE
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsEncoding.Gsm7Bit">
+            <summary>
+            GSM 7bit
+            </summary>
+        </member>
+        <member name="T:DwgSmsServerNet.DwgSmsReceiptState">
+            <summary>
+            State of SMS receipt
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsReceiptState.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsReceiptState.TemporaryError">
+            <summary>
+            Temporary error
+            </summary>
+        </member>
+        <member name="F:DwgSmsServerNet.DwgSmsReceiptState.PermanentError">
+            <summary>
+            Permanent error
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,10 @@
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\bin\Debug\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\bin\Debug\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NWMS_WEB.MVC_4_BS.Model.csprojResolveAssemblyReference.cache
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\bin\Debug\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\bin\Debug\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NWMS_WEB.MVC_4_BS.Model.csprojResolveAssemblyReference.cache
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NWMS_WEB.MVC_4_BS.Model.pdb
