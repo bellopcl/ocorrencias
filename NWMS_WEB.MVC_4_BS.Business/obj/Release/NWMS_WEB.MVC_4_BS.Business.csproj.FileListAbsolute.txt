@@ -1,0 +1,11 @@
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\NWMS_WEB.MVC_4_BS.Business.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\NWMS_WEB.MVC_4_BS.Business.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\NWMS_WEB.MVC_4_BS.DataAccess.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\EntityFramework.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\NWMS_WEB.MVC_4_BS.DataAccess.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Release\EntityFramework.xml
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Release\NWMS_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Release\NWMS_WEB.MVC_4_BS.Business.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Release\NWMS_WEB.MVC_4_BS.Business.pdb

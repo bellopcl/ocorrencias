@@ -1,0 +1,22 @@
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Business.dll
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Business.pdb
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NWMS_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NWMS_WEB.MVC_4_BS.Business.dll
+C:\Users\4509\documents\visual studio 2013\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NWMS_WEB.MVC_4_BS.Business.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Business.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Business.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.DataAccess.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.DataAccess.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NWMS_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NWMS_WEB.MVC_4_BS.Business.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NWMS_WEB.MVC_4_BS.Business.pdb

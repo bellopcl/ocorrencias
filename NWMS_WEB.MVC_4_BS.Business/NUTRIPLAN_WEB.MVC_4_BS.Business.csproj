@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D27BD416-2929-41F2-9521-00A3DA077440}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUTRIPLAN_WEB.MVC_4_BS.Business</RootNamespace>
+    <AssemblyName>NUTRIPLAN_WEB.MVC_4_BS.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.Compression.Base, Version=17.1450.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.17.1.0.32-beta\lib\net45\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=17.1450.0.32, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.17.1.0.32-beta\lib\net45\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=17.1450.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.AspNet.17.1.0.32-beta\lib\net45\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveDirectoryBusiness.cs" />
+    <Compile Include="E000NFCBusiness.cs" />
+    <Compile Include="N0203TRABusiness.cs" />
+    <Compile Include="N0203UAPBusiness.cs" />
+    <Compile Include="N0203UOFBusiness.cs" />
+    <Compile Include="N0204AUSBusiness.cs" />
+    <Compile Include="N0204DORIBusiness.cs" />
+    <Compile Include="N0204DUSUBusiness.cs" />
+    <Compile Include="N0204PPUBusiness.cs" />
+    <Compile Include="N9999USUBusiness.cs" />
+    <Compile Include="OCORREABILITADOBusiness.cs" />
+    <Compile Include="PERMISSAOBusiness.cs" />
+    <Compile Include="Sapiens\E099USUBusiness.cs" />
+    <Compile Include="Sapiens\E073VEIBusiness.cs" />
+    <Compile Include="N0203ANXBusiness.cs" />
+    <Compile Include="N0203IPVBusiness.cs" />
+    <Compile Include="N0203REGBusiness.cs" />
+    <Compile Include="N0204AORBusiness.cs" />
+    <Compile Include="Sapiens\E140IPVBusiness.cs" />
+    <Compile Include="Sapiens\E073MOTBusiness.cs" />
+    <Compile Include="Sapiens\E085CLIBusiness.cs" />
+    <Compile Include="Sapiens\E140NFVBusiness.cs" />
+    <Compile Include="N0204ATDBusiness.cs" />
+    <Compile Include="N0204MDOBusiness.cs" />
+    <Compile Include="N0204MDVBusiness.cs" />
+    <Compile Include="N0204ORIBusiness.cs" />
+    <Compile Include="N9999MENBusiness.cs" />
+    <Compile Include="N9999UXMBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYS_USUARIOBusiness.cs" />
+    <Compile Include="TitulosClienteBusiness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NWMS_WEB.MVC_4_BS.DataAccess\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.csproj">
+      <Project>{7366ae18-134e-4db6-bc66-71d0770eb7b9}</Project>
+      <Name>NUTRIPLAN_WEB.MVC_4_BS.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NWMS_WEB.MVC_4_BS.Model\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj">
+      <Project>{d4b66de0-08ac-41dc-ac68-4ee3d15ce7c8}</Project>
+      <Name>NUTRIPLAN_WEB.MVC_4_BS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

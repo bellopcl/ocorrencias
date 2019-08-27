@@ -1,0 +1,228 @@
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\WS_Visual_Studio\Projetos\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\WS_Visual_Studio\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\asus\Desktop\NWORKFLOW_WEB\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\NWORKFLOW_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\backup 06.04\protocolo-nutriplan\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Documents\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\diogo.melo\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Users\cleverson.bello\Desktop\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojResolveAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard2\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
+C:\Projetos_Desenvolvimento\Ocorrencias\ocorrencia-dasboard\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\Projetos_Desenvolvimento\Ocorrencia\Ocorrencias\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Compression.Base.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Licensing.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Compression.Base.xml
+C:\programas desenvolvimento\Ocorrencias\Ocor\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Compression.Base.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Licensing.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Compression.Base.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Compression.Base.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Licensing.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Compression.Base.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Debug\EntityFramework.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
