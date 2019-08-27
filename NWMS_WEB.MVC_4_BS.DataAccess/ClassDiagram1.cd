@@ -1,0 +1,1189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.ActiveDirectoryDataAccess" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAASAAAABAAACAAAAAAACAAAAAQA=</HashCode>
+      <FileName>ActiveDirectoryDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.NfeLancamentoDataAccess" Collapsed="true">
+    <Position X="16.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Classes Services\NfeLancamentoDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.ServicoNotasDataAccess" Collapsed="true">
+    <Position X="13" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Classes Services\ServicoNotasDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.TitulosClienteDataAccess" Collapsed="true">
+    <Position X="25.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEBAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes Services\TitulosClienteDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Context" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MkkiAoGqFQWM1AAqXdGEEQuKUhVkEEoA4THRBKOSmFI=</HashCode>
+      <FileName>Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0203UAPMap" Collapsed="true">
+    <Position X="18.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203UAPMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0203ANXDataAccess" Collapsed="true">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAAAAI=</HashCode>
+      <FileName>N0203ANXDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0203IPVDataAccess" Collapsed="true">
+    <Position X="25.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>N0203IPVDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0203REGDataAccess" Collapsed="true">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAAABABABAAFAAAAAAAABIAgAAAAGFACGAAAIBA=</HashCode>
+      <FileName>N0203REGDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0203TRADataAccess" Collapsed="true">
+    <Position X="13" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>N0203TRADataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0203UAPDataAccess" Collapsed="true">
+    <Position X="16.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAIQAA=</HashCode>
+      <FileName>N0203UAPDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0203UOFDataAccess" Collapsed="true">
+    <Position X="20" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>N0203UOFDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0204AORDataAccess" Collapsed="true">
+    <Position X="23.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIACQAAAAAAAA=</HashCode>
+      <FileName>N0204AORDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0204ATDDataAccess" Collapsed="true">
+    <Position X="27" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAA=</HashCode>
+      <FileName>N0204ATDDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0204AUSDataAccess" Collapsed="true">
+    <Position X="7.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>N0204AUSDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0204MDODataAccess" Collapsed="true">
+    <Position X="11.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAEAAAAIAAAAAAA=</HashCode>
+      <FileName>N0204MDODataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0204MDVDataAccess" Collapsed="true">
+    <Position X="14.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>N0204MDVDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0204ORIDataAccess" Collapsed="true">
+    <Position X="18.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACAAgAAAAAAgA=</HashCode>
+      <FileName>N0204ORIDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N0204PPUDataAccess" Collapsed="true">
+    <Position X="21.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAgAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>N0204PPUDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N9999MENDataAccess" Collapsed="true">
+    <Position X="25.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>N9999MENDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N9999USUDataAccess" Collapsed="true">
+    <Position X="9.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>N9999USUDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.N9999UXMDataAccess" Collapsed="true">
+    <Position X="13" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>N9999UXMDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.E000NFCDataAccess" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sapiens\E000NFCDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.E073MOTDataAccess" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Sapiens\E073MOTDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.E073VEIDataAccess" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sapiens\E073VEIDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.E085CLIDataAccess" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Sapiens\E085CLIDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.E099USUDataAccess" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Sapiens\E099USUDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.E140IPVDataAccess" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAIAgABAAAAAQAAAAIAAAABAA=</HashCode>
+      <FileName>Sapiens\E140IPVDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.E140NFVDataAccess" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAgARAQAA=</HashCode>
+      <FileName>Sapiens\E140NFVDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.USU_T135LANDataAccess" Collapsed="true">
+    <Position X="11.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sapiens\USU_T135LANDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.SYS_USUARIODataAccess" Collapsed="true">
+    <Position X="18.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAIAAAQAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>SYS_USUARIODataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0000AGEMap" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0000AGEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0000ERRMap" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0000ERRMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0000LOGMap" Collapsed="true">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0000LOGMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0000RELMap" Collapsed="true">
+    <Position X="27" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0000RELMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0001EMP_HISMap" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0001EMP_HISMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0001EMPMap" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0001EMPMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0002FILMap" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0002FILMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0003ARMMap" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0003ARMMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0005TNSMap" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0005TNSMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0006DERMap" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0006DERMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0006FAMMap" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0006FAMMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0006ORIMap" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0006ORIMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0006PROMap" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0006PROMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0007UNIMap" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0007UNIMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0008CNVMap" Collapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0008CNVMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0009ITPMap" Collapsed="true">
+    <Position X="25.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0009ITPMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0009TABMap" Collapsed="true">
+    <Position X="27" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0009TABMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0009VLDMap" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0009VLDMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0010UCTMap" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0010UCTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0011CLIMap" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0011CLIMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0011ENTMap" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0011ENTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0012LVMMap" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0012LVMMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0012MOTMap" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0012MOTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0012TRAMap" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0012TRAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0012VEIMap" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0012VEIMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0013MCPMap" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0013MCPMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0014REPMap" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0014REPMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0018DEPMap" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0018DEPMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0018LPDMap" Collapsed="true">
+    <Position X="25.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0018LPDMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0019CPRMap" Collapsed="true">
+    <Position X="27" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0019CPRMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0019CTEMap" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0019CTEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0020ABRMap" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0020ABRMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0023LEDMap" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0023LEDMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0044CCUMap" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0044CCUMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0101LOCMap" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0101LOCMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0102ESEMap" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0102ESEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0103TUAMap" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0103TUAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0104TPEMap" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0104TPEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0105TLEMap" Collapsed="true">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0105TLEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0106ENDMap" Collapsed="true">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0106ENDMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0107DENMap" Collapsed="true">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0107DENMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0108UCAMap" Collapsed="true">
+    <Position X="25.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0108UCAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0109HUAMap" Collapsed="true">
+    <Position X="27" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0109HUAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0109IUAMap" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0109IUAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0109LOTMap" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0109LOTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0109MOVMap" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0109MOVMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0109UARMap" Collapsed="true">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0109UARMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0110DOCMap" Collapsed="true">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0110DOCMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0110ITDMap" Collapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0110ITDMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0110ROMMap" Collapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0110ROMMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0111CURMap" Collapsed="true">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0111CURMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0111INRMap" Collapsed="true">
+    <Position X="20" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0111INRMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0111INVMap" Collapsed="true">
+    <Position X="21.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0111INVMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0111ITVMap" Collapsed="true">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0111ITVMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0111LOTMap" Collapsed="true">
+    <Position X="25.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0111LOTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0111UAVMap" Collapsed="true">
+    <Position X="27" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0111UAVMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0112TARMap" Collapsed="true">
+    <Position X="6" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0112TARMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0112TPTMap" Collapsed="true">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0112TPTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0200PERMap" Collapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0200PERMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0201SITMap" Collapsed="true">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0201SITMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0202APRMap" Collapsed="true">
+    <Position X="13" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0202APRMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0202MOTMap" Collapsed="true">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0202MOTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0202REQMap" Collapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0202REQMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0202TRAMap" Collapsed="true">
+    <Position X="18.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0202TRAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203ANXMap" Collapsed="true">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203ANXMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203APRMap" Collapsed="true">
+    <Position X="23.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203APRMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203IPVMap" Collapsed="true">
+    <Position X="27" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203IPVMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203ITRMap" Collapsed="true">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203ITRMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203OPEMap" Collapsed="true">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203OPEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203REGMap" Collapsed="true">
+    <Position X="11.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203REGMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203TRAMap" Collapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203TRAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0203UOFMap" Collapsed="true">
+    <Position X="21.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0203UOFMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0204AORMap" Collapsed="true">
+    <Position X="25.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0204AORMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0204ATDMap" Collapsed="true">
+    <Position X="6" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0204ATDMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0204AUSMap" Collapsed="true">
+    <Position X="9.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0204AUSMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0204MDOMap" Collapsed="true">
+    <Position X="13" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0204MDOMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0204MDVMap" Collapsed="true">
+    <Position X="16.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0204MDVMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0204ORIMap" Collapsed="true">
+    <Position X="20" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0204ORIMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N0204PPUMap" Collapsed="true">
+    <Position X="23.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N0204PPUMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N9999MENMap" Collapsed="true">
+    <Position X="27" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N9999MENMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N9999SISMap" Collapsed="true">
+    <Position X="6" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N9999SISMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N9999USMMap" Collapsed="true">
+    <Position X="7.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N9999USMMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N9999USUMap" Collapsed="true">
+    <Position X="11.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N9999USUMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.N9999UXMMap" Collapsed="true">
+    <Position X="14.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\N9999UXMMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_CAIXAMap" Collapsed="true">
+    <Position X="14.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_CAIXAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_CATENDMap" Collapsed="true">
+    <Position X="16.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_CATENDMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_CFGGERMap" Collapsed="true">
+    <Position X="18.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_CFGGERMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_CLASSESMap" Collapsed="true">
+    <Position X="20" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_CLASSESMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_COMSQLMap" Collapsed="true">
+    <Position X="21.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_COMSQLMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_CONCORRENCIAMap" Collapsed="true">
+    <Position X="23.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_CONCORRENCIAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_CONSULTAMap" Collapsed="true">
+    <Position X="25.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_CONSULTAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_FICHATECNICAMap" Collapsed="true">
+    <Position X="27" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_FICHATECNICAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_FICHAXCOMPONENTEMap" Collapsed="true">
+    <Position X="6" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_FICHAXCOMPONENTEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_HELPBODYMap" Collapsed="true">
+    <Position X="7.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_HELPBODYMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_HELPMap" Collapsed="true">
+    <Position X="9.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_HELPMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_KPIMap" Collapsed="true">
+    <Position X="11.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_KPIMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_LAYOUTMap" Collapsed="true">
+    <Position X="13" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_LAYOUTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_LOGMSGMap" Collapsed="true">
+    <Position X="14.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_LOGMSGMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_LTELAMap" Collapsed="true">
+    <Position X="16.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_LTELAMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_MAILMap" Collapsed="true">
+    <Position X="18.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_MAILMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_REFRULESMap" Collapsed="true">
+    <Position X="20" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_REFRULESMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_REGINIMap" Collapsed="true">
+    <Position X="21.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_REGINIMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_REGRASMap" Collapsed="true">
+    <Position X="23.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_REGRASMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_REPORTSMap" Collapsed="true">
+    <Position X="25.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_REPORTSMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRCOLUMNMap" Collapsed="true">
+    <Position X="27" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRCOLUMNMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRCOMPONENTMap" Collapsed="true">
+    <Position X="6" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRCOMPONENTMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRFORMMap" Collapsed="true">
+    <Position X="7.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRFORMMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRFORMXTABLEMap" Collapsed="true">
+    <Position X="9.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRFORMXTABLEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRLOGMap" Collapsed="true">
+    <Position X="11.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRLOGMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRONMap" Collapsed="true">
+    <Position X="13" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRONMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRTABLEMap" Collapsed="true">
+    <Position X="14.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRTABLEMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USRXRELMap" Collapsed="true">
+    <Position X="16.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USRXRELMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.SYS_USUARIOMap" Collapsed="true">
+    <Position X="20" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\SYS_USUARIOMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.Mapping.V_SALDONWMSMap" Collapsed="true">
+    <Position X="13" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mapping\V_SALDONWMSMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.notafiscalGravarNFEntradaIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAIAAACAACAEAAAAAEIAABBgQgAgAAAAAAAAAgAABg=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.notafiscalGravarNFEntradaInDadosGerais" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAlJjit/T8CPgk5Q0GMGKYiimrgLo9TwKJTHUZQC6Bk=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.notafiscalGravarNFEntradaInDadosGeraisProdutos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Ckua5jTvzkis/M7jGUL/RFhowRUqsAnjuPWtmJvEcvU=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.notafiscalGravarNFEntradaOutRetornosNotasEntrada" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBACFCCwAAAgAAwAAACACAgAAABAAAABAAAAAAQgA=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.notafiscalGravarNFEntradaOut" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACEAAAAAAAgAAAAAAAgAAABAAAABAAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.sapiens_Syncnutriplan_nfe_notafiscalClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NOTAS.notafiscalIncluirObservacoesIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IogAAAQCEAAAAAABIAAAAAQAgAgAAAAAAAAAAAgEAAA=</HashCode>
+      <FileName>Service References\WS_NOTAS\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NOTAS.notafiscalIncluirObservacoesOut" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAgABBAAAAgAAAAAAAABAAAAACAAQ=</HashCode>
+      <FileName>Service References\WS_NOTAS\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NOTAS.sapiens_Syncnutriplan_nfv_notafiscalClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_NOTAS\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosInserirObsMovimentoIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MoAAAAYCEAIAAAABIgFAAAQAgAgAAgAAAAAAQAhAAAA=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosRecalcularComissaoOut" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAEAAAAgAAAAIAAgAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosRecalcularComissaoIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ApAAAAQCACACAQAAAAAAAAACiAjBAAAgAAAAAAgAJAA=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosAlterarObsTituloOut" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAgABBAAAAgAAAAAAAABAAAAACAAQ=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosAlterarObsTituloIn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IoAAAAYCEAgAAAABIgEAAAQAgAgAAgAQAAAAQAhAAAA=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosInserirObsMovimentoOut" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAgABBAAAAgAAAAAAAABAAAAACAAQ=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.sapiens_Syncnutriplan_cre_titulosClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEQAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAABI=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.sapiens_Syncnutriplan_nfe_notafiscal" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.sapiens_Syncnutriplan_nfe_notafiscalChannel" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_NFE_DEV\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NOTAS.sapiens_Syncnutriplan_nfv_notafiscal" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_NOTAS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NOTAS.sapiens_Syncnutriplan_nfv_notafiscalChannel" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_NOTAS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.sapiens_Syncnutriplan_cre_titulos" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEQAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAABI=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.sapiens_Syncnutriplan_cre_titulosChannel" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\WS_TITULOS_CLIENTE\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

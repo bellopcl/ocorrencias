@@ -1,0 +1,10 @@
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\bin\Release\NWMS_WEB.MVC_4_BS.DataAccess.dll.config
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\bin\Release\NWMS_WEB.MVC_4_BS.DataAccess.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\bin\Release\NWMS_WEB.MVC_4_BS.DataAccess.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\bin\Release\EntityFramework.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\bin\Release\NWMS_WEB.MVC_4_BS.Model.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\bin\Release\NWMS_WEB.MVC_4_BS.Model.pdb
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\bin\Release\EntityFramework.xml
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\obj\Release\NWMS_WEB.MVC_4_BS.DataAccess.csprojResolveAssemblyReference.cache
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\obj\Release\NWMS_WEB.MVC_4_BS.DataAccess.dll
+C:\Willian\Projects\NWMS_WEB.MVC_4_BS\NWMS_WEB.MVC_4_BS.DataAccess\obj\Release\NWMS_WEB.MVC_4_BS.DataAccess.pdb

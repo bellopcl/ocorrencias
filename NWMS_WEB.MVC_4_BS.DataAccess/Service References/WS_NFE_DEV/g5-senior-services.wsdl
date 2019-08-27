@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.senior.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="g5-senior-services" targetNamespace="http://services.senior.com.br" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://eucalipto.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_nfe_notafiscal?xsd=1" namespace="http://services.senior.com.br" />
+    </xsd:schema>
+  </types>
+  <message name="GravarNFEntrada">
+    <part name="user" type="xsd:string" />
+    <part name="password" type="xsd:string" />
+    <part name="encryption" type="xsd:int" />
+    <part name="parameters" type="tns:notafiscalGravarNFEntradaIn" />
+  </message>
+  <message name="GravarNFEntradaResponse">
+    <part name="result" type="tns:notafiscalGravarNFEntradaOut" />
+  </message>
+  <portType name="sapiens_Syncnutriplan_nfe_notafiscal">
+    <operation name="GravarNFEntrada" parameterOrder="user password encryption parameters">
+      <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_nfe_notafiscal/GravarNFEntradaRequest" message="tns:GravarNFEntrada" />
+      <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_nfe_notafiscal/GravarNFEntradaResponse" message="tns:GravarNFEntradaResponse" />
+    </operation>
+  </portType>
+  <binding name="sapiens_Syncnutriplan_nfe_notafiscalPortBinding" type="tns:sapiens_Syncnutriplan_nfe_notafiscal">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="GravarNFEntrada">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </output>
+    </operation>
+  </binding>
+  <service name="g5-senior-services">
+    <port name="sapiens_Syncnutriplan_nfe_notafiscalPort" binding="tns:sapiens_Syncnutriplan_nfe_notafiscalPortBinding">
+      <soap:address location="http://eucalipto.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_nfe_notafiscal" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://services.senior.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="g5-senior-services" targetNamespace="http://services.senior.com.br" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://eucalipto.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_nfv_notafiscal?xsd=1" namespace="http://services.senior.com.br" />
+    </xsd:schema>
+  </types>
+  <message name="IncluirObservacoes">
+    <part name="user" type="xsd:string" />
+    <part name="password" type="xsd:string" />
+    <part name="encryption" type="xsd:int" />
+    <part name="parameters" type="tns:notafiscalIncluirObservacoesIn" />
+  </message>
+  <message name="IncluirObservacoesResponse">
+    <part name="result" type="tns:notafiscalIncluirObservacoesOut" />
+  </message>
+  <portType name="sapiens_Syncnutriplan_nfv_notafiscal">
+    <operation name="IncluirObservacoes" parameterOrder="user password encryption parameters">
+      <input message="tns:IncluirObservacoes" />
+      <output message="tns:IncluirObservacoesResponse" />
+    </operation>
+  </portType>
+  <binding name="sapiens_Syncnutriplan_nfv_notafiscalPortBinding" type="tns:sapiens_Syncnutriplan_nfv_notafiscal">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="IncluirObservacoes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </output>
+    </operation>
+  </binding>
+  <service name="g5-senior-services">
+    <port name="sapiens_Syncnutriplan_nfv_notafiscalPort" binding="tns:sapiens_Syncnutriplan_nfv_notafiscalPortBinding">
+      <soap:address location="http://eucalipto.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_nfv_notafiscal" />
+    </port>
+  </service>
+</definitions>

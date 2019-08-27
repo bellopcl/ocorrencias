@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fcf5fe78-8960-43ad-9dd0-202b0186e400" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://pinus.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_ven_pedidos?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="g5-senior-services.wsdl" MetadataType="Wsdl" ID="a56bbbb1-39cb-40b2-85d8-a8629a734054" SourceId="1" SourceUrl="http://pinus.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_ven_pedidos?wsdl" />
+    <MetadataFile FileName="sapiens_Syncnutriplan_ven_pedidos.xsd" MetadataType="Schema" ID="3a1ea18f-eb51-4745-b9fd-952a9aa784f7" SourceId="1" SourceUrl="http://pinus.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_ven_pedidos?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

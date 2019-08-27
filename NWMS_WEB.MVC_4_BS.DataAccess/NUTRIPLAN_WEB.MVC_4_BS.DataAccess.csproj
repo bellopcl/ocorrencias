@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7366AE18-134E-4DB6-BC66-71D0770EB7B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUTRIPLAN_WEB.MVC_4_BS.DataAccess</RootNamespace>
+    <AssemblyName>NUTRIPLAN_WEB.MVC_4_BS.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="NCommand.Console">
+      <HintPath>..\packages\NCommand.Console.0.1.5769.40164\lib\net45\NCommand.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveDirectoryDataAccess.cs" />
+    <Compile Include="Classes Services\AutenticaUsuarioSapDataAccess.cs" />
+    <Compile Include="Classes Services\PedidosViaOcorrenciaDataAccess.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Mapping\N0204PPUMap.cs" />
+    <Compile Include="Mapping\N0204AUSMap.cs" />
+    <Compile Include="N0204AUSDataAccess.cs" />
+    <Compile Include="N0204DORIDataAcess.cs" />
+    <Compile Include="N0204DUSUDataAcess.cs" />
+    <Compile Include="N0204PPUDataAccess.cs" />
+    <Compile Include="OCORREABILITADODataAccess.cs" />
+    <Compile Include="PERMISSAODataAccess.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SalvarTXT.cs" />
+    <Compile Include="Sapiens\E000NFCDataAccess.cs" />
+    <Compile Include="Mapping\N0203OPEMap.cs" />
+    <Compile Include="Mapping\N0203UOFMap.cs" />
+    <Compile Include="Mapping\N9999USMMap.cs" />
+    <Compile Include="Mapping\N9999USUMap.cs" />
+    <Compile Include="N0203TRADataAccess.cs" />
+    <Compile Include="N0203UAPDataAccess.cs" />
+    <Compile Include="Classes Services\NfeLancamentoDataAccess.cs" />
+    <Compile Include="N0203UOFDataAccess.cs" />
+    <Compile Include="N9999USUDataAccess.cs" />
+    <Compile Include="NfeLancamentoSIDDataAccess.cs" />
+    <Compile Include="Sapiens\E099USUDataAccess.cs" />
+    <Compile Include="Mapping\N0000AGEMap.cs" />
+    <Compile Include="Mapping\N0000ERRMap.cs" />
+    <Compile Include="Mapping\N0000LOGMap.cs" />
+    <Compile Include="Mapping\N0000RELMap.cs" />
+    <Compile Include="Mapping\N0001EMPMap.cs" />
+    <Compile Include="Mapping\N0001EMP_HISMap.cs" />
+    <Compile Include="Mapping\N0002FILMap.cs" />
+    <Compile Include="Mapping\N0003ARMMap.cs" />
+    <Compile Include="Mapping\N0005TNSMap.cs" />
+    <Compile Include="Mapping\N0006DERMap.cs" />
+    <Compile Include="Mapping\N0006FAMMap.cs" />
+    <Compile Include="Mapping\N0006ORIMap.cs" />
+    <Compile Include="Mapping\N0006PROMap.cs" />
+    <Compile Include="Mapping\N0007UNIMap.cs" />
+    <Compile Include="Mapping\N0008CNVMap.cs" />
+    <Compile Include="Mapping\N0009ITPMap.cs" />
+    <Compile Include="Mapping\N0009TABMap.cs" />
+    <Compile Include="Mapping\N0009VLDMap.cs" />
+    <Compile Include="Mapping\N0010UCTMap.cs" />
+    <Compile Include="Mapping\N0011CLIMap.cs" />
+    <Compile Include="Mapping\N0011ENTMap.cs" />
+    <Compile Include="Mapping\N0012LVMMap.cs" />
+    <Compile Include="Mapping\N0012MOTMap.cs" />
+    <Compile Include="Mapping\N0012TRAMap.cs" />
+    <Compile Include="Mapping\N0012VEIMap.cs" />
+    <Compile Include="Mapping\N0013MCPMap.cs" />
+    <Compile Include="Mapping\N0014REPMap.cs" />
+    <Compile Include="Mapping\N0018DEPMap.cs" />
+    <Compile Include="Mapping\N0018LPDMap.cs" />
+    <Compile Include="Mapping\N0019CPRMap.cs" />
+    <Compile Include="Mapping\N0019CTEMap.cs" />
+    <Compile Include="Mapping\N0020ABRMap.cs" />
+    <Compile Include="Mapping\N0023LEDMap.cs" />
+    <Compile Include="Mapping\N0044CCUMap.cs" />
+    <Compile Include="Mapping\N0101LOCMap.cs" />
+    <Compile Include="Mapping\N0102ESEMap.cs" />
+    <Compile Include="Mapping\N0103TUAMap.cs" />
+    <Compile Include="Mapping\N0104TPEMap.cs" />
+    <Compile Include="Mapping\N0105TLEMap.cs" />
+    <Compile Include="Mapping\N0106ENDMap.cs" />
+    <Compile Include="Mapping\N0107DENMap.cs" />
+    <Compile Include="Mapping\N0108UCAMap.cs" />
+    <Compile Include="Mapping\N0109HUAMap.cs" />
+    <Compile Include="Mapping\N0109IUAMap.cs" />
+    <Compile Include="Mapping\N0109LOTMap.cs" />
+    <Compile Include="Mapping\N0109MOVMap.cs" />
+    <Compile Include="Mapping\N0109UARMap.cs" />
+    <Compile Include="Mapping\N0110DOCMap.cs" />
+    <Compile Include="Mapping\N0110ITDMap.cs" />
+    <Compile Include="Mapping\N0110ROMMap.cs" />
+    <Compile Include="Mapping\N0111CURMap.cs" />
+    <Compile Include="Mapping\N0111INRMap.cs" />
+    <Compile Include="Mapping\N0111INVMap.cs" />
+    <Compile Include="Mapping\N0111ITVMap.cs" />
+    <Compile Include="Mapping\N0111LOTMap.cs" />
+    <Compile Include="Mapping\N0111UAVMap.cs" />
+    <Compile Include="Mapping\N0112TARMap.cs" />
+    <Compile Include="Mapping\N0112TPTMap.cs" />
+    <Compile Include="Mapping\N0200PERMap.cs" />
+    <Compile Include="Mapping\N0201SITMap.cs" />
+    <Compile Include="Mapping\N0202APRMap.cs" />
+    <Compile Include="Mapping\N0202MOTMap.cs" />
+    <Compile Include="Mapping\N0202REQMap.cs" />
+    <Compile Include="Mapping\N0202TRAMap.cs" />
+    <Compile Include="Mapping\N0203ANXMap.cs" />
+    <Compile Include="Mapping\N0203APRMap.cs" />
+    <Compile Include="Mapping\N0203IPVMap.cs" />
+    <Compile Include="Mapping\N0203ITRMap.cs" />
+    <Compile Include="Mapping\N0203REGMap.cs" />
+    <Compile Include="Mapping\N0203TRAMap.cs" />
+    <Compile Include="Mapping\N0204AORMap.cs" />
+    <Compile Include="Mapping\N0204ATDMap.cs" />
+    <Compile Include="Mapping\N0204MDOMap.cs" />
+    <Compile Include="Mapping\N0204MDVMap.cs" />
+    <Compile Include="Mapping\N0204ORIMap.cs" />
+    <Compile Include="Mapping\N9999MENMap.cs" />
+    <Compile Include="Mapping\N9999SISMap.cs" />
+    <Compile Include="Mapping\N9999UXMMap.cs" />
+    <Compile Include="Mapping\SYS_CAIXAMap.cs" />
+    <Compile Include="Mapping\SYS_CATENDMap.cs" />
+    <Compile Include="Mapping\SYS_CFGGERMap.cs" />
+    <Compile Include="Mapping\SYS_CLASSESMap.cs" />
+    <Compile Include="Mapping\SYS_COMSQLMap.cs" />
+    <Compile Include="Mapping\SYS_CONCORRENCIAMap.cs" />
+    <Compile Include="Mapping\SYS_CONSULTAMap.cs" />
+    <Compile Include="Mapping\SYS_FICHATECNICAMap.cs" />
+    <Compile Include="Mapping\SYS_FICHAXCOMPONENTEMap.cs" />
+    <Compile Include="Mapping\SYS_HELPBODYMap.cs" />
+    <Compile Include="Mapping\SYS_HELPMap.cs" />
+    <Compile Include="Mapping\SYS_KPIMap.cs" />
+    <Compile Include="Mapping\SYS_LAYOUTMap.cs" />
+    <Compile Include="Mapping\SYS_LOGMSGMap.cs" />
+    <Compile Include="Mapping\SYS_LTELAMap.cs" />
+    <Compile Include="Mapping\SYS_MAILMap.cs" />
+    <Compile Include="Mapping\SYS_REFRULESMap.cs" />
+    <Compile Include="Mapping\SYS_REGINIMap.cs" />
+    <Compile Include="Mapping\SYS_REGRASMap.cs" />
+    <Compile Include="Mapping\SYS_REPORTSMap.cs" />
+    <Compile Include="Mapping\SYS_USRCOLUMNMap.cs" />
+    <Compile Include="Mapping\SYS_USRCOMPONENTMap.cs" />
+    <Compile Include="Mapping\SYS_USRFORMMap.cs" />
+    <Compile Include="Mapping\SYS_USRFORMXTABLEMap.cs" />
+    <Compile Include="Mapping\SYS_USRLOGMap.cs" />
+    <Compile Include="Mapping\SYS_USRONMap.cs" />
+    <Compile Include="Mapping\SYS_USRTABLEMap.cs" />
+    <Compile Include="Mapping\SYS_USRXRELMap.cs" />
+    <Compile Include="Mapping\SYS_USUARIOMap.cs" />
+    <Compile Include="Mapping\V_SALDONWMSMap.cs" />
+    <Compile Include="Mapping\N0203UAPMap.cs" />
+    <Compile Include="Sapiens\E073VEIDataAccess.cs" />
+    <Compile Include="N0203ANXDataAccess.cs" />
+    <Compile Include="N0203IPVDataAccess.cs" />
+    <Compile Include="N0203REGDataAccess.cs" />
+    <Compile Include="Sapiens\E140IPVDataAccess.cs" />
+    <Compile Include="Sapiens\E140NFVDataAccess.cs" />
+    <Compile Include="N0204MDODataAccess.cs" />
+    <Compile Include="N0204AORDataAccess.cs" />
+    <Compile Include="N0204ATDDataAccess.cs" />
+    <Compile Include="N0204MDVDataAccess.cs" />
+    <Compile Include="N0204ORIDataAccess.cs" />
+    <Compile Include="Sapiens\E073MOTDataAccess.cs" />
+    <Compile Include="Sapiens\E085CLIDataAccess.cs" />
+    <Compile Include="N9999MENDataAccess.cs" />
+    <Compile Include="N9999UXMDataAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WS_NFE_DEV\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WS_NOTAS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WS_PEDIDOS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WS_TITULOS_CLIENTE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Classes Services\ServicoNotasDataAccess.cs" />
+    <Compile Include="SYS_USUARIODataAccess.cs" />
+    <Compile Include="Sapiens\USU_T135LANDataAccess.cs" />
+    <Compile Include="Classes Services\TitulosClienteDataAccess.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WS_NFE_DEV\g5-senior-services.wsdl" />
+    <None Include="Service References\WS_NFE_DEV\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NFE_DEV.notafiscalGravarNFEntradaOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_NFE_DEV\sapiens_Syncnutriplan_nfe_notafiscal.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WS_NOTAS\g5-senior-services.wsdl" />
+    <None Include="Service References\WS_NOTAS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_NOTAS.notafiscalIncluirObservacoesOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_NOTAS\sapiens_Syncnutriplan_nfv_notafiscal.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\g5-senior-services.wsdl" />
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedido1Out.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedidoOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosCancelamentoAutomaticoSim3G1Out.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosCancelamentoAutomaticoSim3GOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosIntegrarPedidoSim3G1Out.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosIntegrarPedidoSim3GOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosPedidoViaOcorrenciaOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosRecalcularComissaoOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosRecalcularSaldoBonificacaoOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_PEDIDOS\sapiens_Syncnutriplan_ven_pedidos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WS_TITULOS_CLIENTE\g5-senior-services.wsdl" />
+    <None Include="Service References\WS_TITULOS_CLIENTE\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosAlterarObsTituloOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_TITULOS_CLIENTE\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosInserirObsMovimentoOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_TITULOS_CLIENTE\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_TITULOS_CLIENTE.titulosRecalcularComissaoOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WS_TITULOS_CLIENTE\sapiens_Syncnutriplan_cre_titulos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NWMS_WEB.MVC_4_BS.Model\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj">
+      <Project>{d4b66de0-08ac-41dc-ac68-4ee3d15ce7c8}</Project>
+      <Name>NUTRIPLAN_WEB.MVC_4_BS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WS_NFE_DEV\" />
+    <WCFMetadataStorage Include="Service References\WS_NOTAS\" />
+    <WCFMetadataStorage Include="Service References\WS_PEDIDOS\" />
+    <WCFMetadataStorage Include="Service References\WS_TITULOS_CLIENTE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_TITULOS_CLIENTE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_TITULOS_CLIENTE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_TITULOS_CLIENTE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_NOTAS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_NOTAS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_NOTAS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_NFE_DEV\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_NFE_DEV\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_NFE_DEV\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_PEDIDOS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_PEDIDOS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WS_PEDIDOS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

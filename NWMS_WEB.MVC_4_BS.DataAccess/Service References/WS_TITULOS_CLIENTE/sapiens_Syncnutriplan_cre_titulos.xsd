@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://services.senior.com.br" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="titulosInserirObsMovimentoIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACodEmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACodFil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACodSnf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACodTpt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AFilNfv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANumNfv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANumTit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AObsTit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ATipIns" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowInstanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="titulosInserirObsMovimentoOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="erroExecucao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensagemRetorno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoRetorno" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="titulosRecalcularComissaoIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACodSnf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowInstanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NCodEmp" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NCodFil" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NNumNfv" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="titulosRecalcularComissaoOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AMsgRet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="erroExecucao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="titulosAlterarObsTituloIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACodEmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACodFil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACodSnf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACodTpt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AFilNfv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANumNfv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANumTit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AObsTcr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowInstanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="titulosAlterarObsTituloOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="erroExecucao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensagemRetorno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoRetorno" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
