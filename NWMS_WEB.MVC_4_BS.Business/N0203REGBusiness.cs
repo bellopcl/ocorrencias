@@ -4,8 +4,7 @@ using System.Linq;
 using NUTRIPLAN_WEB.MVC_4_BS.Model;
 using NUTRIPLAN_WEB.MVC_4_BS.DataAccess;
 using System.Collections;
-
-
+using NWORKFLOW_WEB.MVC_4_BS.Model;
 
 namespace NUTRIPLAN_WEB.MVC_4_BS.Business
 {
@@ -45,13 +44,25 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
  
         }
 
-        public bool PedidosViaOcorrencia(int ocorrencia, out string mensagemRetorno)
+        public listaTransportadora ConsultaTransportadora(int ocorrencia)
+        {
+            var N0203GDataAccess = new N0203REGDataAccess();
+            return N0203GDataAccess.ConsultaTransportadora(ocorrencia);
+        }
+
+        public string OrigemOcorrencia(int NumReg)
+        {
+            var N0203GDataAccess = new N0203REGDataAccess();
+            return N0203GDataAccess.OrigemOcorrencia(NumReg);
+        }
+
+        public bool PedidosViaOcorrencia(int ocorrencia, long Usuario, int codTra, out string mensagemRetorno)
         {
             try
             {
                 mensagemRetorno = string.Empty;
                 var pedidosViaOcorrencia = new PedidosViaOcorrenciaDataAccess();
-                return pedidosViaOcorrencia.EmitirPedido(ocorrencia, out mensagemRetorno);
+                return pedidosViaOcorrencia.EmitirPedido(ocorrencia, Usuario, codTra, out mensagemRetorno);
             }
             catch (Exception ex)
             {

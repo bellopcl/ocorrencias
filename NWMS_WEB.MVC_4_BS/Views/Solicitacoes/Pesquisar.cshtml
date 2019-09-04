@@ -701,27 +701,7 @@
                 CarregaDropDownOrigemOcorrencia(codMotivo, "OrigemOcorrenciaItemNotaDropDownList", origemOcor);
             }
         }
-        //var motivos = document.getElementById('MotivoDevolucaoItemNotaDropDownList');
-        //for (var i = 0; i < motivos.length; i++) {
-        //    if (motivos[i].text == motivoDev) {
-        //        var codMotivo = parseInt(motivos[i].value);
-        //        $('#MotivoDevolucaoItemNotaDropDownList').val(codMotivo);
-        //    }
-        //}
-        //var origens = document.getElementById('OrigemOcorrenciaItemNotaDropDownList');
-        //for (var i = 0; i < origens.length; i++) {
-        //    if (origens[i].text == origemOcor) {
-        //        var codOrigem = parseInt(origens[i].value);
-        //        $('#OrigemOcorrenciaItemNotaDropDownList').val(codOrigem);
-        //    }
-        //}
-        //document.getElementById('OrigemOcorrenciaItemNotaDropDownList').disabled = false;
-        //var valorOrigem = $("#OrigemOcorrenciaItemNotaDropDownList option:selected").val();
-        //if (valorOrigem == "0") {
-        //    $("#OrigemOcorrenciaItemNotaDropDownList").empty();
-        //    $("#OrigemOcorrenciaItemNotaDropDownList").append($('<option></option>').val("0").html("Selecione..."));
-        //    document.getElementById('OrigemOcorrenciaItemNotaDropDownList').disabled = true;
-        //}
+
         $('#AlterarItemNotaDialog h3').text("Alterar Nota " + numeroNota + " Item Sequência " + seqNota);
         $('#AlterarItemNotaDialog').modal('show');
         $('#QtdeDevolucaoItemNotaTextBox').focus();
@@ -741,17 +721,10 @@
         for (var i = 0; i < data.length; i++) {
             qtdeFaturada = data[i][5];
             qtdeDevolucao = data[i][6];
-            //var soNumero = ValidaNumero(qtdeDevolucao);
-            //if (!soNumero || parseInt(qtdeDevolucao) > parseInt(qtdeFaturada)) {
-            //    qtdeDevolucao = 0;
-            //}
             qtdeDevolucao = parseInt(qtdeDevolucao);
             qtdeTotal = qtdeTotal + qtdeDevolucao;
             var precoUnitario = data[i][7].toString().replace("R$ ", "").replace(",", ".");
             valorBruto = (parseFloat(valorBruto) + ((parseFloat(precoUnitario) * qtdeDevolucao))).toFixed(2);
-            //var porcIpi = data[i][11].replace(" %", "").replace(",", ".");
-            //porcIpi = parseFloat((porcIpi / 100));
-            //valorIpi = valorIpi + ((parseFloat(precoUnitario) * porcIpi) * qtdeDevolucao);
             var vlIpi = data[i][12].toString().replace(",", ".");
             var vlIpiUnidade = qtdeDevolucao * (parseFloat(vlIpi) / qtdeFaturada);
             valorIpi = valorIpi + vlIpiUnidade;
@@ -845,10 +818,6 @@
         if (ValidaCamposGridItensNotaFiscal()) {
             if (ValidaItensIncluidosGridDevolucao()) {
                 AddItensGridDevolucao();
-                //var classe = document.getElementById('liFase3').className;
-                //if (classe == "disabled") {
-                //    MostraBotaoExcluirItensDev();
-                //}
                 AtualizaTotaisDevolucao();
                 //HabilitaFase34();
                 //$('#DivPanelFase3').show();
@@ -1068,10 +1037,6 @@
             qtdeTotal = qtdeTotal + qtdeDevolucao;
             var precoUnitario = data[i][13].toString().replace("R$ ", "").replace(",", ".");
             valorBruto = (parseFloat(valorBruto) + ((parseFloat(precoUnitario) * qtdeDevolucao))).toFixed(2);
-            //var porcIpi = data[i][15].replace(" %", "").replace(",", ".");;
-            //porcIpi = parseFloat((porcIpi / 100));
-            //valorIpi = (parseFloat(valorIpi) + (valorBruto * porcIpi)).toFixed(2);
-            //valorIpi = valorIpi + ((parseFloat(precoUnitario) * porcIpi) * qtdeDevolucao);
             var vlIpi = data[i][16].toString().replace(",", ".");
             var vlIpiUnidade = qtdeDevolucao * (parseFloat(vlIpi) / qtdeFaturada);
             valorIpi = valorIpi + vlIpiUnidade;
@@ -1079,7 +1044,6 @@
             var vlrStUnidade = qtdeDevolucao * (parseFloat(vlSt) / qtdeFaturada);
             valorSt = valorSt + vlrStUnidade;
         }
-        //valorLiquido = (parseFloat(valorBruto.toString()) + parseFloat(valorIpi.toString())).toFixed(2);
         valorLiquido = (parseFloat(valorBruto.toString()) + parseFloat(valorIpi.toString()) + parseFloat(valorSt.toString())).toFixed(2);
         valorIpi = parseFloat(valorIpi.toString()).toFixed(2);
         valorSt = parseFloat(valorSt.toString()).toFixed(2);
@@ -1124,52 +1088,7 @@
         $("#ValorReceberTextBox").val(valorReceber);
         HabilitaMaskaraMoedaDevolucao();
     }
-    // ================================== FIM GRID ITENS DE DEVOLUÇÃO  ====================================== //
-    // ----------------------------------------------------------------------------------------------------- //
-    // =========================== INÍCIO MOTIVO DEVOLUCAO E ORIGEM OCORRÊNCIA  ============================ //
-    // Se o usuário selecionar qualquer motivo de ocorrência, exceto "Selecione...", e a origem da ocorrência também for diferente de "Selecione...". O sistema deve realizar as seguintes tarefas:
-    // O campo de quantidade de devolução da tabela de itens de notas fiscais recebe o valor da quantidade faturada em todas as linhas;
-    // A tabela de itens de notas fiscais recebe o motivo selecionado em todas as linhas;
-    // A tabela de itens de notas fiscais recebe a "seleção" de todas as linhas;
-    // Os campos de totais abaixo da tabela de itens de notas fiscais devem ser atualizados em tempo real.
-    //function MudarMotivoDevolucao() {
-    //    scrollTo(0, 0);
-    //    $('#progressBar').show();
-    //    setTimeout(function () {
-    //        var valorMotivo = $("#MotivoDevolucaoFase2DropDownList option:selected").val();
-    //        if (valorMotivo != "0") {
-    //            CarregaDropDownOrigemOcorrencia(valorMotivo, "OrigemOcorrenciaFase2DropDownList", "");
-    //        }
-    //        else {
-    //            $("#OrigemOcorrenciaFase2DropDownList").empty();
-    //            $("#OrigemOcorrenciaFase2DropDownList").append($('<option></option>').val("0").html("Selecione..."));
-    //            document.getElementById('OrigemOcorrenciaFase2DropDownList').disabled = true;
-    //        }
-    //        SetarOrigemOcorrenciaCarregarMotivo();
-    //        var valorOrigem = $("#OrigemOcorrenciaFase2DropDownList option:selected").val();
-    //        var motivo = $("#MotivoDevolucaoFase2DropDownList option:selected").text();
-    //        var table = $('#TableItensNotasFiscaisSaida').DataTable();
-    //        //var numeroNota = $("#NumNotaFiscalTextBox").val();
-    //        // Recebe os valores de todas as linhas
-    //        var data = table.rows().data();
-    //        for (var i = 0; i < data.length; i++) {
-    //            //var seqNota = data[i][1];
-    //            //var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(motivo, i, 8);
-    //            if (valorMotivo != "0" && valorOrigem != "0") {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(data[i][5], i, 6);
-    //                //$("#" + idCheckBox).prop("checked", true);
-    //            }
-    //            else {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate("0", i, 6);
-    //                //$("#" + idCheckBox).prop("checked", false);
-    //            }
-    //        }
-    //        //SelecionaTodasLinhasItensNotaFiscal();
-    //        $('#progressBar').hide();
-    //        scrollTo(0, 490);
-    //    }, 10);
-    //}
+
     function MudarMotivoDevolucao() {
         scrollTo(0, 0);
         $('#progressBar').show();
@@ -1198,63 +1117,6 @@
             AtualizaTotais();
         }, 10);
     }
-    // Mesmo procedimento listado acima no item motivo de ocorrência
-    //function MudarOrigemOcorrencia() {
-    //    scrollTo(0, 0);
-    //    $('#progressBar').show();
-    //    setTimeout(function () {
-    //        var valorMotivo = $("#MotivoDevolucaoFase2DropDownList option:selected").val();
-    //        var valorOrigem = $("#OrigemOcorrenciaFase2DropDownList option:selected").val();
-    //        var origem = $("#OrigemOcorrenciaFase2DropDownList option:selected").text();
-    //        var table = $('#TableItensNotasFiscaisSaida').DataTable();
-    //        //var numeroNota = $("#NumNotaFiscalTextBox").val();
-    //        // Recebe os valores de todas as linhas
-    //        var data = table.rows().data();
-    //        for (var i = 0; i < data.length; i++) {
-    //            //var seqNota = data[i][1];
-    //            //var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(origem, i, 9);
-    //            if (valorMotivo != "0" && valorOrigem != "0") {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(data[i][5], i, 6);
-    //                //$("#" + idCheckBox).prop("checked", true);
-    //            }
-    //            else {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate("0", i, 6);
-    //                //$("#" + idCheckBox).prop("checked", false);
-    //            }
-    //        }
-    //        SelecionaTodasLinhasItensNotaFiscal();
-    //        $('#progressBar').hide();
-    //        scrollTo(0, 490);
-    //    }, 10);
-    //}
-    //// Ao selecionar motivo e origem, seleciona todas as linhas da grid de itens de nota fiscal
-    //function SelecionaTodasLinhasItensNotaFiscal() {
-    //    var table = $('#TableItensNotasFiscaisSaida').dataTable();
-    //    var selectedMotivo = $("#MotivoDevolucaoFase2DropDownList option:selected").val();
-    //    var selectedOrigem = $("#OrigemOcorrenciaFase2DropDownList option:selected").val();
-    //    var numeroNota = $("#NumNotaFiscalTextBox").val();
-    //    if (selectedMotivo != "0" && selectedOrigem != "0") {
-    //        $(table.fnSettings().aoData).each(function () {
-    //            $(this.nTr).addClass('selected');
-    //            var dadosLinha = table.fnGetData($(this.nTr).index());
-    //            var seqNota = dadosLinha[1];
-    //            var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $("#" + idCheckBox).prop("checked", true);
-    //        });
-    //        AtualizaTotais();
-    //    }
-    //    else if (selectedMotivo == "0" || selectedOrigem == "0") {
-    //        $(table.fnSettings().aoData).each(function () {
-    //            $(this.nTr).removeClass('selected');
-    //            var dadosLinha = table.fnGetData($(this.nTr).index());
-    //            var seqNota = dadosLinha[1];
-    //            var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $("#" + idCheckBox).prop("checked", false);
-    //        });
-    //        AtualizaTotais();
-    //    }
-    //}
     function MudarOrigemOcorrencia() {
         scrollTo(0, 0);
         $('#progressBar').show();
@@ -1483,18 +1345,8 @@
             $('#AlterarItemNotaDialog').modal('hide');
         }
     });
-    //function AtualizaValoresItemNota() {
-    //    var valorQtdeDev = $("#QtdeDevolucaoItemNotaTextBox").val();
-    //    var valorMotivo = $("#MotivoDevolucaoItemNotaDropDownList option:selected").text();
-    //    var valorOrigem = $("#OrigemOcorrenciaItemNotaDropDownList option:selected").text();
-    //    $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(valorQtdeDev, idLinhaColunaInvisivel, 6);
-    //    $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(valorMotivo, idLinhaColunaInvisivel, 8);
-    //    $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(valorOrigem, idLinhaColunaInvisivel, 9);
-    //    SelecionaLinhaUpdate();
-    //}
+    
     function AlteraDadosLinhaItemNotaUpdate() {
-        //$('#TableItensNotasFiscaisSaida_filter input').val(" ");
-        //$('#TableItensNotasFiscaisSaida_filter input').focus();
         var contador = 0;
         var table = $('#TableItensNotasFiscaisSaida').dataTable();
         var valorQtdeDev = $("#QtdeDevolucaoItemNotaTextBox").val();
@@ -1667,18 +1519,10 @@
             }
             else {
                 document.getElementById(idDropDownMotivo).disabled = true;
-                //DialogPadrao("warning", "Aviso!", "warning", "O Motivo de Devolução Selecionado não possuí nenhuma Origem da Ocorrência atrelada.", "btnOkOrigemNaoEncontrada", "OK", true);
             }
         });
     }
-    //function SetarOrigemOcorrenciaCarregarMotivo() {
-    //    var table = $('#TableItensNotasFiscaisSaida').DataTable();
-    //    // Recebe os valores de todas as linhas
-    //    var data = table.rows().data();
-    //    for (var i = 0; i < data.length; i++) {
-    //        $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate("Selecione...", i, 9);
-    //    }
-    //}
+    
     function ListaItensDevolucao() {
         $('#progressBar').show();
         scrollTo(0, 0);
@@ -1713,7 +1557,7 @@
         $('#ListaItensDevolucaoHidden').val(listaItensDev);
         $('#NumRegistroHidden').val($('#NumRegistroTextBox').val());
         document.forms[0].submit();
-        //return JSON.stringify(listaItensDev);
+        
     }
     $('#TableAnexos').dataTable({
         "ordering": false,
@@ -1763,18 +1607,13 @@
                 return;
             }
             else {
-                //window.open(data, '_blank', 'location=no');
-                //window.open(data, "_system", "location=yes,enableViewportScale=yes,hidden=no");
-                //window.open(data);
                 if (data.TipoAnexo.substring(0, 5) == "image" || data.TipoAnexo == "application/pdf" || data.TipoAnexo == "text/plain") {
                     window.open(data.Anexo);
                 }
                 else {
                     window.location = data.Anexo;
                 }
-                //window.location = data;
-                //window.location.href = data;
-                //window.location.assign(data);
+                
             }
         }, "json");
         $('#progressBar').hide();
@@ -1983,9 +1822,6 @@
                 <span class="input-group-addon" style="padding: 3px 10px">
                     <a style='color:#333333' href="#" id="PesquisarRegistroBtn"><span class="glyphicon glyphicon-search" title="Pesquisar registro"></span></a>
                 </span>
-                @*<span class="input-group-btn">
-                        <button class="btn btn-default btn-sm" type="button" id="PesquisarRegistroBtn">Pesquisar</button>
-                    </span>*@
             </div>
         </div>
     </div>
@@ -2196,8 +2032,6 @@
                             <button class="btn btn-default btn-sm" type="button" id="AdicionarItenButton">Adicionar Itens</button>
                         </div>
                     </div>
-                    @*<label class="col-md-2 control-label">Itens Selecionados ? </label>
-                        <button class="btn btn-default btn-sm" type="button" id="AdicionarItenButton">Adicionar Itens</button>*@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.ValorBruto, new { @class = "col-md-2 control-label" })

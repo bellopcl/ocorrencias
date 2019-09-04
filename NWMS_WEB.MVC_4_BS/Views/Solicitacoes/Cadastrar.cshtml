@@ -1200,6 +1200,7 @@
                     notasAdicionadasDevolucao = notasAdicionadasDevolucao.replace(notasAdd[x], "");
                 }
             }
+
             var valorLiquido = $("#ValorLiquidoDevolucaoTextBox").val().toString().replace(".", "").replace(",", "");
             var valorReceber = totalNotas - parseFloat(valorLiquido);
             $("#ValorReceberTextBox").val(valorReceber);

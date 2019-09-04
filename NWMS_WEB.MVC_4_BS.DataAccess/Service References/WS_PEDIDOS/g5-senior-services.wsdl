@@ -5,15 +5,6 @@
       <xsd:import schemaLocation="http://pinus.nutriplan.com.br:8080/g5-senior-services/sapiens_Syncnutriplan_ven_pedidos?xsd=1" namespace="http://services.senior.com.br" />
     </xsd:schema>
   </types>
-  <message name="AprovarPedido">
-    <part name="user" type="xsd:string" />
-    <part name="password" type="xsd:string" />
-    <part name="encryption" type="xsd:int" />
-    <part name="parameters" type="tns:pedidosAprovarPedidoIn" />
-  </message>
-  <message name="AprovarPedidoResponse">
-    <part name="result" type="tns:pedidosAprovarPedidoOut" />
-  </message>
   <message name="CancelamentoAutomaticoSim3g">
     <part name="user" type="xsd:string" />
     <part name="password" type="xsd:string" />
@@ -50,15 +41,6 @@
   <message name="RecalcularComissaoResponse">
     <part name="result" type="tns:pedidosRecalcularComissaoOut" />
   </message>
-  <message name="BloquearPedido_1">
-    <part name="user" type="xsd:string" />
-    <part name="password" type="xsd:string" />
-    <part name="encryption" type="xsd:int" />
-    <part name="parameters" type="tns:pedidosBloquearPedido1In" />
-  </message>
-  <message name="BloquearPedido_1Response">
-    <part name="result" type="tns:pedidosBloquearPedido1Out" />
-  </message>
   <message name="AprovarPedido_1">
     <part name="user" type="xsd:string" />
     <part name="password" type="xsd:string" />
@@ -86,6 +68,15 @@
   <message name="IntegrarPedidoSim3g_1Response">
     <part name="result" type="tns:pedidosIntegrarPedidoSim3G1Out" />
   </message>
+  <message name="BloquearPedido_1">
+    <part name="user" type="xsd:string" />
+    <part name="password" type="xsd:string" />
+    <part name="encryption" type="xsd:int" />
+    <part name="parameters" type="tns:pedidosBloquearPedido1In" />
+  </message>
+  <message name="BloquearPedido_1Response">
+    <part name="result" type="tns:pedidosBloquearPedido1Out" />
+  </message>
   <message name="BloquearPedido">
     <part name="user" type="xsd:string" />
     <part name="password" type="xsd:string" />
@@ -95,14 +86,14 @@
   <message name="BloquearPedidoResponse">
     <part name="result" type="tns:pedidosBloquearPedidoOut" />
   </message>
-  <message name="ReabilitarPedidoSim3g">
+  <message name="AprovarPedido">
     <part name="user" type="xsd:string" />
     <part name="password" type="xsd:string" />
     <part name="encryption" type="xsd:int" />
-    <part name="parameters" type="tns:pedidosReabilitarPedidoSim3GIn" />
+    <part name="parameters" type="tns:pedidosAprovarPedidoIn" />
   </message>
-  <message name="ReabilitarPedidoSim3gResponse">
-    <part name="result" type="tns:pedidosReabilitarPedidoSim3GOut" />
+  <message name="AprovarPedidoResponse">
+    <part name="result" type="tns:pedidosAprovarPedidoOut" />
   </message>
   <message name="PedidoViaOcorrencia">
     <part name="user" type="xsd:string" />
@@ -113,11 +104,16 @@
   <message name="PedidoViaOcorrenciaResponse">
     <part name="result" type="tns:pedidosPedidoViaOcorrenciaOut" />
   </message>
+  <message name="ReabilitarPedidoSim3g">
+    <part name="user" type="xsd:string" />
+    <part name="password" type="xsd:string" />
+    <part name="encryption" type="xsd:int" />
+    <part name="parameters" type="tns:pedidosReabilitarPedidoSim3GIn" />
+  </message>
+  <message name="ReabilitarPedidoSim3gResponse">
+    <part name="result" type="tns:pedidosReabilitarPedidoSim3GOut" />
+  </message>
   <portType name="sapiens_Syncnutriplan_ven_pedidos">
-    <operation name="AprovarPedido" parameterOrder="user password encryption parameters">
-      <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoRequest" message="tns:AprovarPedido" />
-      <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoResponse" message="tns:AprovarPedidoResponse" />
-    </operation>
     <operation name="CancelamentoAutomaticoSim3g" parameterOrder="user password encryption parameters">
       <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/CancelamentoAutomaticoSim3gRequest" message="tns:CancelamentoAutomaticoSim3g" />
       <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/CancelamentoAutomaticoSim3gResponse" message="tns:CancelamentoAutomaticoSim3gResponse" />
@@ -134,10 +130,6 @@
       <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/RecalcularComissaoRequest" message="tns:RecalcularComissao" />
       <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/RecalcularComissaoResponse" message="tns:RecalcularComissaoResponse" />
     </operation>
-    <operation name="BloquearPedido_1" parameterOrder="user password encryption parameters">
-      <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1Request" message="tns:BloquearPedido_1" />
-      <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1Response" message="tns:BloquearPedido_1Response" />
-    </operation>
     <operation name="AprovarPedido_1" parameterOrder="user password encryption parameters">
       <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedido_1Request" message="tns:AprovarPedido_1" />
       <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedido_1Response" message="tns:AprovarPedido_1Response" />
@@ -150,30 +142,29 @@
       <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/IntegrarPedidoSim3g_1Request" message="tns:IntegrarPedidoSim3g_1" />
       <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/IntegrarPedidoSim3g_1Response" message="tns:IntegrarPedidoSim3g_1Response" />
     </operation>
+    <operation name="BloquearPedido_1" parameterOrder="user password encryption parameters">
+      <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1Request" message="tns:BloquearPedido_1" />
+      <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1Response" message="tns:BloquearPedido_1Response" />
+    </operation>
     <operation name="BloquearPedido" parameterOrder="user password encryption parameters">
       <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedidoRequest" message="tns:BloquearPedido" />
       <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedidoResponse" message="tns:BloquearPedidoResponse" />
     </operation>
-    <operation name="ReabilitarPedidoSim3g" parameterOrder="user password encryption parameters">
-      <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoSim3gRequest" message="tns:ReabilitarPedidoSim3g" />
-      <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoSim3gResponse" message="tns:ReabilitarPedidoSim3gResponse" />
+    <operation name="AprovarPedido" parameterOrder="user password encryption parameters">
+      <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoRequest" message="tns:AprovarPedido" />
+      <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoResponse" message="tns:AprovarPedidoResponse" />
     </operation>
     <operation name="PedidoViaOcorrencia" parameterOrder="user password encryption parameters">
       <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/PedidoViaOcorrenciaRequest" message="tns:PedidoViaOcorrencia" />
       <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/PedidoViaOcorrenciaResponse" message="tns:PedidoViaOcorrenciaResponse" />
     </operation>
+    <operation name="ReabilitarPedidoSim3g" parameterOrder="user password encryption parameters">
+      <input wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoSim3gRequest" message="tns:ReabilitarPedidoSim3g" />
+      <output wsam:Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoSim3gResponse" message="tns:ReabilitarPedidoSim3gResponse" />
+    </operation>
   </portType>
   <binding name="sapiens_Syncnutriplan_ven_pedidosPortBinding" type="tns:sapiens_Syncnutriplan_ven_pedidos">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
-    <operation name="AprovarPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" namespace="http://services.senior.com.br" />
-      </input>
-      <output>
-        <soap:body use="literal" namespace="http://services.senior.com.br" />
-      </output>
-    </operation>
     <operation name="CancelamentoAutomaticoSim3g">
       <soap:operation soapAction="" />
       <input>
@@ -210,15 +201,6 @@
         <soap:body use="literal" namespace="http://services.senior.com.br" />
       </output>
     </operation>
-    <operation name="BloquearPedido_1">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" namespace="http://services.senior.com.br" />
-      </input>
-      <output>
-        <soap:body use="literal" namespace="http://services.senior.com.br" />
-      </output>
-    </operation>
     <operation name="AprovarPedido_1">
       <soap:operation soapAction="" />
       <input>
@@ -246,6 +228,15 @@
         <soap:body use="literal" namespace="http://services.senior.com.br" />
       </output>
     </operation>
+    <operation name="BloquearPedido_1">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </output>
+    </operation>
     <operation name="BloquearPedido">
       <soap:operation soapAction="" />
       <input>
@@ -255,7 +246,7 @@
         <soap:body use="literal" namespace="http://services.senior.com.br" />
       </output>
     </operation>
-    <operation name="ReabilitarPedidoSim3g">
+    <operation name="AprovarPedido">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" namespace="http://services.senior.com.br" />
@@ -265,6 +256,15 @@
       </output>
     </operation>
     <operation name="PedidoViaOcorrencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://services.senior.com.br" />
+      </output>
+    </operation>
+    <operation name="ReabilitarPedidoSim3g">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" namespace="http://services.senior.com.br" />

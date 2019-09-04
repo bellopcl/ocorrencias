@@ -32,9 +32,10 @@
   </xs:complexType>
   <xs:complexType name="pedidosPedidoViaOcorrenciaIn">
     <xs:sequence>
+      <xs:element minOccurs="0" name="codTra" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="flowInstanceID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="flowName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ocorrencia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="numReg" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="pedidosPedidoViaOcorrenciaOut">
@@ -49,22 +50,6 @@
       <xs:element minOccurs="0" name="codEmp" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="codFil" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="numPed" nillable="true" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="pedidosBloquearPedido1In">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="codEmp" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="codFil" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="flowInstanceID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="flowName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="numPed" nillable="true" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="pedidosBloquearPedido1Out">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="erroExecucao" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="mensagemRetorno" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="pedidoBloqueado" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="pedidosAprovarPedidoIn">
@@ -84,6 +69,22 @@
       <xs:element minOccurs="0" name="erroExecucao" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="liberarPedido" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="mensagemRetorno" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedidosBloquearPedido1In">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codEmp" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="codFil" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="flowInstanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="numPed" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedidosBloquearPedido1Out">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="erroExecucao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mensagemRetorno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pedidoBloqueado" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="pedidosAprovarPedido1In">

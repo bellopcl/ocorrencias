@@ -1386,3 +1386,139 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csp
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.Agent.Intercept.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.DependencyCollector.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.Web.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.WindowsServer.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ApplicationInsights.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.DependencyCollector.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.PerfCounterCollector.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.Web.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.WindowsServer.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ApplicationInsights.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll.config
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.Agent.Intercept.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.DependencyCollector.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.Web.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.WindowsServer.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ApplicationInsights.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Infrastructure.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Mvc.Mailer.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Optimization.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Providers.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\WebGrease.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.pdb
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.DependencyCollector.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.PerfCounterCollector.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.Web.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.WindowsServer.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ApplicationInsights.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Spatial.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\EntityFramework.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Newtonsoft.Json.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Net.Http.Formatting.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Mvc.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.Razor.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Deployment.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Web.WebPages.Razor.xml
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\de\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\es\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\fr\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\it\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ja\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ko\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
+C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb

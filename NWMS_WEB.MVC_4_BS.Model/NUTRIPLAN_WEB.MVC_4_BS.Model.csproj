@@ -218,6 +218,7 @@
     <Compile Include="Enums\TipoAtendimentoModel.cs" />
     <Compile Include="Enums\SitRegOcorModel.cs" />
     <Compile Include="Enums\TipoPesquisaRegModel.cs" />
+    <Compile Include="listaTransportadora.cs" />
     <Compile Include="Services\DadosNotasServicoModel.cs" />
     <Compile Include="Sapiens\E099USUModel.cs" />
     <Compile Include="TramitesNotificacao.cs" />

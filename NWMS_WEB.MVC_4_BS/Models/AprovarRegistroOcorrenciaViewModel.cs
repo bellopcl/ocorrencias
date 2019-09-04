@@ -37,6 +37,13 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Models
         [Range(1, 999, ErrorMessage = "O Tipo da operação deve ser selecionado.")]
         public int TipoOperacao { get; set; }
 
+        [Display(Name = "Cód. Transportadora")]
+        public int CodCliente { get; set; }
+
+        [Display(Name = "Cliente")]
+        public string NomeCliente { get; set; }
+
         public List<OperacaoAprovacaoModel> ListaOperacoesAprovacao { get; set; }
     }
 }
+

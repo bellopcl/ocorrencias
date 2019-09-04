@@ -168,7 +168,7 @@
             },
             "scrollX": true,
         });
-
+        
         function ValidaCliente() {
             var valorPlaca = $("#CodPlacaDatFatTextBox").val();
             if (valorPlaca == "aaa-2222") {
@@ -308,15 +308,17 @@
                 var codPlaca = $("#CodPlacaDatFatTextBox").val().replace("-", "");
                 var dtFat = $("#DataFaturamentoTextBox").val();
                 var codigoCliente = $("#CodigoClienteConferenciaItem").val();
-                
                 RelatorioSintetico("", "1", codPlaca, "", "", 10, dtFat, codigoCliente);
+            
             } else if (valor == 6) {
                 limparCampos1()
                 limparCampos3();
                 var codPlaca = $("#CodPlacaDatFatTextBoxTroca").val().replace("-", "");
                 var dtFat = $("#DataFaturamentoTextBoxTroca").val();
                 var codigoCliente = $("#CodClienteConferenciaOcorrencia").val();
+
                 RelatorioSinteticoConferencia("", "", codPlaca, "", "", 10, dtFat, codigoCliente);
+                
             } else if (valor == 3) {
                 limparCampos1();
                 limparCampos2();
@@ -821,6 +823,7 @@
                                     new SelectListItem { Value = "8" , Text = "Coleta"},
                                     new SelectListItem { Value = "9" , Text = "Conferido"},
                                     new SelectListItem { Value = "10" , Text = "Faturado"},
+                                    new SelectListItem { Value = "11" , Text = "Indenizado"},
                                     new SelectListItem { Value = "7" , Text = "Cancelado" } }, new { @class = "form-control input-sm", @id = "campoSituacao" })
                         </div>
                         @Html.ValidationMessageFor(m => m.campoSituacao)
@@ -986,6 +989,7 @@
                                     new SelectListItem { Value = "8" , Text = "Coleta"},
                                     new SelectListItem { Value = "9" , Text = "Conferido"},
                                     new SelectListItem { Value = "10" , Text = "Faturado"},
+                                    new SelectListItem { Value = "11", Text = "Indenizado"},
                                     new SelectListItem { Value = "7" , Text = "Cancelado" } }, new { @class = "form-control input-sm", @id = "campoSituacao" })
                         </div>
                         @Html.ValidationMessageFor(m => m.campoSituacao)

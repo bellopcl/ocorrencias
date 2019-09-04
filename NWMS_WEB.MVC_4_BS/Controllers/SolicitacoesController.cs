@@ -1507,6 +1507,8 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 return this.Json(new { Campos = true }, JsonRequestBehavior.AllowGet);
             }
 
+            DebugEmail email = new DebugEmail();
+            email.Email("Teste", codigoCliente.ToString());
 
             try
             {

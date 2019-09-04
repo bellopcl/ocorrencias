@@ -9,6 +9,7 @@
 
     <script type="text/javascript">
         var NFE = "first";
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
         $('#AprovarRegistroBtn').click(function () {
 
             if ($("#AprovarRegistroForm").valid()) {
@@ -29,13 +30,85 @@
             }
         });
 
+        $('#TableCliente').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            "scrollX": true,
+        });
+       
+        function PesquisaTodosCliente() {
+            var ocorrencia = $("#NumRegistroTextBox").val();
+            $('#progressBar').show();
+            $("#gridTableCliente").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", { ocorrencia: ocorrencia }, function (data) {
+                if (data.listaTransportador) {
+                    var arrayRow = new Array();
+                    $('#TableCliente').dataTable().fnClearTable();
+                    var codigo = data.listaTransportador.CODTRA;
+                    var nome = data.listaTransportador.NOMTRA;
+                    var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                    var razaoSocial = data.listaTransportador.APETRA;
+                    arrayRow[0] = new Array(selecionar, codigo, nome, razaoSocial);
+
+                    if (data.listaTransportador.CODRED != "0") {
+                        var codigo = data.listaTransportador.CODRED;
+                        var nome = data.listaTransportador.NOMETRAREDES;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.CODREDAPETRA;
+                        arrayRow[1] = new Array(selecionar, codigo, nome, razaoSocial);
+                    }
+                    
+                    $('#TableCliente').dataTable().fnAddData(arrayRow);
+                    $('#TableCliente').dataTable().fnPageChange('first');
+                    $("#gridTableCliente").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#ClienteDialog').modal('show');
+            });
+        }
+
         $("#NumRegistroTextBox").keypress(function (e) {
             return false;
+        });
+
+        $("#PesquisarClienteButtonItens").click(function () {
+            PesquisaTodosCliente();
         });
 
         $("#ObservacoesTextBox").keypress(function (e) {
             ValidaObservacoes();
         });
+
+        document.getElementById("CodigoClienteConferenciaItem").style.display = "none";
+        document.getElementById("NomeclienteConferenciaItem").style.display = "none";
+        document.getElementById("ConferenciaItem").style.display = "none";
 
         var keyCodeAnt = 0;
         $("#ObservacoesTextBox").keydown(function (event) {
@@ -50,6 +123,42 @@
             keyCodeAnt = event.keyCode;
         });
 
+        function PesquisarTransportadora() {
+            var ocorrencia = $("#NumRegistroTextBox").val();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", {ocorrencia: ocorrencia}, function (data) {
+                if (data.logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.listaTransportador.CODTRA > 0) {
+                    ValidaOcorrencia();
+                    $("#CodigoClienteConferenciaItem").val(data.listaTransportador.CODTRA);
+                    $("#NomeclienteConferenciaItem").val(data.listaTransportador.NOMTRA);
+                }
+                else {
+                    DialogPadrao("warning", "Aviso!", "warning", "Nenhum registro encontrado", "btnOkNenhumRegTraEncontrado", "OK", true);
+                }
+            });
+        }
+
+        function ValidaOcorrencia() {
+            var registro = $("#NumRegistroTextBox").val();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("OrigemOcorrencia", "Aprovacoes")", { Numreg: registro }, function (data) {
+                if (data.ListaOrigemOcorrencia == "8") {
+                    document.getElementById("CodigoClienteConferenciaItem").style.display = "block";
+                    document.getElementById("NomeclienteConferenciaItem").style.display = "block";
+                    document.getElementById("ConferenciaItem").style.display = "block";
+                } else {
+                    document.getElementById("CodigoClienteConferenciaItem").style.display = "none";
+                    document.getElementById("NomeclienteConferenciaItem").style.display = "none";
+                    document.getElementById("ConferenciaItem").style.display = "none";
+                }
+            });
+            
+        }
+
         function ValidaObservacoes() {
 
             setTimeout(function () {
@@ -63,8 +172,9 @@
         }
 
         function EmitirNotaEntradaSapiens(codigoRegistro, operacao, tipoNota, observacao, NFE, tipoOperacao) {
+            var codTra = $("#CodigoClienteConferenciaItem").val();
             $.ajaxSetup({ cache: false });
-            $.getJSON("@Url.Action("EmitirNotaEntradaSapiens")", { codigoRegistro: codigoRegistro, operacao: operacao, tipoNota: tipoNota, observacao: observacao, NFE: NFE, tipoOperacao: tipoOperacao }, function (data) {
+            $.getJSON("@Url.Action("EmitirNotaEntradaSapiens")", { codigoRegistro: codigoRegistro, codTra: codTra, operacao: operacao, tipoNota: tipoNota, observacao: observacao, NFE: NFE, tipoOperacao: tipoOperacao }, function (data) {
 
                 if (data.Logado || data.ErroExcecao) {
                     window.location.href = data.redirectUrl;
@@ -214,6 +324,17 @@
             NFE = browser;
         }
 
+        function SelecionarTransportadora(codigo, nome) {
+            $("#CodigoClienteConferenciaItem").val("");
+                $("#CodigoClienteConferenciaItem").focus();
+                $("#ClienteDialog").modal("hide");
+                setTimeout(function () {
+                    $("#CodigoClienteConferenciaItem").val(codigo);
+                    $("#NomeclienteConferenciaItem").val(nome);
+                    $("#CodigoClienteConferenciaItem").focus();
+                }, 50);
+        }
+
         $('.dataTables_scrollHead').removeAttr('style');
         $('.dataTables_scrollHead').attr('style', 'overflow: hidden', 'width: 100%;');
         $('#NumRegistroTextBox').mask("9?9999", { placeholder: "" });
@@ -232,79 +353,120 @@
     <div class="progress-bar" style="width: 100%">
     </div>
 </div>
+
+<div class="modal fade bs-example-modal-lg" id="ClienteDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Cliente</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableCliente" style="display: none;">
+                        <table id="TableCliente" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal" id="DialogPadrao" data-backdrop="static"></div>
 @using (Html.BeginForm("AprovarRegistro", "Aprovacoes", FormMethod.Post, new { @class = "form-horizontal", id = "AprovarRegistroForm", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <hr />
     @Html.ValidationSummary(true)
-    <div class="panel panel-default" style="margin-bottom:5px">
-        <p></p>
-        <div class="row">
-            @Html.LabelFor(m => m.TipoOperacao, new { @class = "col-md-2 control-label" })
-            <div class="col-md-2">
-                @Html.DropDownListFor(m => m.TipoNota,
-                     new List<SelectListItem> {
-                        new SelectListItem { Value = "1" , Text = "Nº Ocorrência", Selected = true},
-                        new SelectListItem { Value = "2" , Text = "Nº Agrupador" } }, new { @class = "form-control input-sm", @id = "tipoOperacaoTela" })
-                <p></p>
-            </div>
-        </div>
-        <div class="row">
-            @Html.LabelFor(m => m.NumRegistro, new { @class = "col-md-2 control-label" })
-            <div class="col-md-2">
-                @Html.TextBoxFor(m => m.NumRegistro, new { @class = "form-control input-sm", @id = "NumRegistroTextBox" })
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2 control-label">
-            </div>
-            <div class="col-md-4">
-                @Html.ValidationMessageFor(m => m.NumRegistro)
-                <p></p>
-            </div>
-        </div>
-        <div class="row">
-            @Html.LabelFor(m => m.Operacao, new { @class = "col-md-2 control-label" })
-            <div class="col-md-2">
-                @Html.DropDownListFor(m => m.Operacao, new SelectList(Model.ListaOperacoesAprovacao.Select(x => new { Codigo = x.CodigoOperacao, Descricao = x.DescricaoOperacao }), "Codigo", "Descricao"), new { @class = "form-control input-sm", @id = "ListaOperacoesDownList" })
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2 control-label">
-            </div>
-            <div class="col-md-4">
-                @Html.ValidationMessageFor(m => m.Operacao)
-                <p></p>
-            </div>
-        </div>
-        <div class="row">
-            @Html.LabelFor(m => m.TipoNota, new { @class = "col-md-2 control-label" })
-            <div class="col-md-2">
-                @Html.DropDownListFor(m => m.TipoNota,
-                     new List<SelectListItem> {
-                        new SelectListItem { Value = "0" , Text = "Selecione...", Selected = true},
-                        new SelectListItem { Value = "3" , Text = "Nutriplan"},
-                        new SelectListItem { Value = "2" , Text = "Cliente" } }, new { @class = "form-control input-sm", @id = "TipoNotaDropDownListFor" })
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2 control-label">
-            </div>
-            <div class="col-md-4">
-                @Html.ValidationMessageFor(m => m.TipoNota)
-                <p></p>
-            </div>
-        </div>
-        <div class="row">
-            @Html.LabelFor(m => m.Observacoes, new { @class = "col-md-2 control-label" })
-            <div class="col-lg-10" id="ObservacoesDiv">
-                @Html.TextAreaFor(m => m.Observacoes, new { @class = "form-control", @id = "ObservacoesTextBox", @style = "max-width:40%", @rows = "4", onKeyPress = "return ( this.value.length < 400 );" })
-                @Html.ValidationMessageFor(m => m.Observacoes)
-                <p></p>
-            </div>
+<div class="panel panel-default" style="margin-bottom:5px">
+    <p></p>
+    <div class="row">
+        @Html.LabelFor(m => m.TipoOperacao, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.DropDownListFor(m => m.TipoNota,
+                 new List<SelectListItem> {
+                    new SelectListItem { Value = "1" , Text = "Nº Ocorrência", Selected = true},
+                    new SelectListItem { Value = "2" , Text = "Nº Agrupador" } }, new { @class = "form-control input-sm", @id = "tipoOperacaoTela" })
+            <p></p>
         </div>
     </div>
+    <div class="row">
+        @Html.LabelFor(m => m.NumRegistro, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.TextBoxFor(m => m.NumRegistro, new { @class = "form-control input-sm", @id = "NumRegistroTextBox", @onblur = "PesquisarTransportadora()" })
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.NumRegistro)
+            <p></p>
+        </div>
+    </div>
+
+    <div id="ConferenciaItem" class="form-group">
+        <p></p>
+        @Html.LabelFor(m => m.CodCliente, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            <div class="input-group">
+                @Html.TextBoxFor(m => m.CodCliente, new { @class = "form-control input-smgroup", @id = "CodigoClienteConferenciaItem" })
+                <span class="input-group-addon" style="padding: 3px 10px">
+                    <a style='color:#333333' href="#" id="PesquisarClienteButtonItens"><span class="glyphicon glyphicon-search" title="Pesquisar cliente"></span></a>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            @Html.TextBoxFor(m => m.NomeCliente, new { @class = "form-control input-smgroup", @id = "NomeclienteConferenciaItem", @readonly = "true" })
+            @Html.ValidationMessageFor(m => m.NomeCliente)
+            @Html.ValidationMessageFor(m => m.CodCliente)
+        </div>
+    </div>
+    
+    <div class="row">
+        @Html.LabelFor(m => m.Operacao, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.DropDownListFor(m => m.Operacao, new SelectList(Model.ListaOperacoesAprovacao.Select(x => new { Codigo = x.CodigoOperacao, Descricao = x.DescricaoOperacao }), "Codigo", "Descricao"), new { @class = "form-control input-sm", @id = "ListaOperacoesDownList" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.Operacao)
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        @Html.LabelFor(m => m.TipoNota, new { @class = "col-md-2 control-label" })
+        <div class="col-md-2">
+            @Html.DropDownListFor(m => m.TipoNota,
+                 new List<SelectListItem> {
+                    new SelectListItem { Value = "0" , Text = "Selecione...", Selected = true},
+                    new SelectListItem { Value = "3" , Text = "Nutriplan"},
+                    new SelectListItem { Value = "2" , Text = "Cliente" } }, new { @class = "form-control input-sm", @id = "TipoNotaDropDownListFor" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 control-label">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.TipoNota)
+            <p></p>
+        </div>
+    </div>
+
+    <div class="row">
+        @Html.LabelFor(m => m.Observacoes, new { @class = "col-md-2 control-label" })
+        <div class="col-lg-10" id="ObservacoesDiv">
+            @Html.TextAreaFor(m => m.Observacoes, new { @class = "form-control", @id = "ObservacoesTextBox", @style = "max-width:40%", @rows = "4", onKeyPress = "return ( this.value.length < 400 );" })
+            @Html.ValidationMessageFor(m => m.Observacoes)
+            <p></p>
+        </div>
+    </div>
+
+</div>
     <div class="row">
         <div class="col-md-2 control-label">
         </div>

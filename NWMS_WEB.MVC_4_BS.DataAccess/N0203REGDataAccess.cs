@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.OracleClient;
 using System.Collections;
 using System.Globalization;
-
+using NWORKFLOW_WEB.MVC_4_BS.Model;
 
 namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 {
@@ -241,6 +241,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                 throw ex;
             }
         }
+
+
+
         /// <summary>
         /// Busca coluna no banco de dados
         /// </summary>
@@ -286,6 +289,111 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             }
             return itens;
         }
+
+        public listaTransportadora ConsultaTransportadora(int ocorrencia)
+        {
+            String sql = "SELECT DISTINCT(NFV.CODTRA) AS CODTRA, TRA.NOMTRA AS NOMTRA, TRA.APETRA AS APETRA, NFV.CODRED AS CODRED FROM  " +
+                "SAPIENS.E140NFV NFV, N0203IPV IPV, SAPIENs.E073TRA TRA" +
+                " WHERE NFV.CODEMP = IPV.CODEMP AND NFV.CODFIL = IPV.CODFIL AND " +
+                "NFV.CODSNF = IPV.CODSNF AND TRA.CODTRA = NFV.CODTRA AND" +
+                " NFV.NUMNFV = IPV.NUMNFV AND IPV.NUMREG = " + ocorrencia;
+
+            OracleConnection conn = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            OracleDataReader dr = cmd.ExecuteReader();
+            listaTransportadora lista = new listaTransportadora();
+            int codRed = 0;
+
+            DebugEmail email = new DebugEmail();
+            email.Email("Relatorio", sql);
+
+            if (dr.Read())
+            {
+                lista.CODTRA = dr["CODTRA"].ToString();
+                lista.NOMTRA = dr["NOMTRA"].ToString();
+                lista.APETRA = dr["APETRA"].ToString();
+
+                lista.CODRED = dr["CODRED"].ToString();
+                codRed = Convert.ToInt32(dr["CODRED"]);
+            }
+
+            conn.Close();
+
+            if (codRed > 0)
+            {
+                sql = "SELECT NOMTRA AS NOMETRAREDES, APETRA AS CODREDAPETRA FROM SAPIENS.E073TRA WHERE CODTRA = " + lista.CODRED;
+                OracleConnection con2 = new OracleConnection(OracleStringConnection);
+                OracleCommand cmd2 = new OracleCommand(sql, con2);
+                cmd2.CommandType = CommandType.Text;
+                con2.Open();
+                
+                OracleDataReader dr2 = cmd2.ExecuteReader();
+                if (dr2.Read())
+                {
+                    lista.NOMETRAREDES = dr2["NOMETRAREDES"].ToString();
+                    lista.CODREDAPETRA = dr2["CODREDAPETRA"].ToString();
+                }
+                con2.Close(); 
+            }
+            
+
+            return lista;
+        }
+
+        public string OrigemOcorrencia(long NumReg)
+        {
+            string origem = "";
+            string sql = "SELECT ORIOCO FROM N0203REG WHERE NUMREG = " + NumReg;
+            OracleConnection conn = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            OracleDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                origem = dr["ORIOCO"].ToString();
+            }
+            conn.Close();
+            return origem;
+
+        }
+
+        public string GravarTransacaoIndenizado(long NumReg, long Usuario)
+        {
+            string sql = "SELECT MAX(SEQTRA) AS SEQTRA FROM N0203TRA WHERE NUMREG = " + NumReg;
+
+            OracleConnection conn = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            OracleDataReader dr = cmd.ExecuteReader();
+            long sequencia = 0;
+            if (dr.Read())
+            {
+                sequencia = Convert.ToInt32(dr["SEQTRA"]);
+            }
+
+            conn.Close();
+
+            sequencia = sequencia + 1;
+
+            DateTime DataAtual = DateTime.Now;
+
+            sql = "INSERT INTO N0203TRA VALUES(" + NumReg + "," + sequencia + ", 'REGISTO DE OCORRENCIA INDENIZADO', " + Usuario + ",'" + DataAtual + "', '', '')";
+
+            OracleConnection con2 = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd2 = new OracleCommand(sql, con2);
+            cmd2.CommandType = CommandType.Text;
+            con2.Open();
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+            con2.Close();
+
+
+            return "";
+        }
+
         /// <summary>
         /// Grava os agrupamentos
         /// </summary>
@@ -1235,7 +1343,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 OracleDataReader dr = cmd.ExecuteReader();
-               
+                
                 ArrayList lista = new ArrayList();
                 if (dr.Read())
                 {
@@ -1862,6 +1970,10 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                             {
                                 DescSituacaoRegistro = Attributes.KeyValueAttribute.GetFirst("Descricao", Enums.SituacaoRegistroOcorrencia.Cancelado).GetValue<string>();
                             }
+                            else if (item.SITREG == (int)Enums.SituacaoRegistroOcorrencia.Indenizado)
+                            {
+                                DescSituacaoRegistro = Attributes.KeyValueAttribute.GetFirst("Descricao", Enums.SituacaoRegistroOcorrencia.Indenizado).GetValue<string>();
+                            }
 
                             var UltimaAlteracao = item.DATULT.ToString();
                             var UsuarioUltimaAlteracao = item.USUULT.ToString();
@@ -2136,6 +2248,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                         dr["SITREG"].ToString() == "8" ? "Coleta" :
                         dr["SITREG"].ToString() == "9" ? "Conferido" :
                         dr["SITREG"].ToString() == "10" ? "Faturado" :
+                        dr["SITREG"].ToString() == "11" ? "Indenizado" :
                         dr["SITREG"].ToString() == "7" ? "Cancelado" : "";
                     itemProtocolo.valorTotal = dr["VALORLIQUIDO"].ToString();
                     valorTotal += Convert.ToDecimal(dr["VALORLIQUIDO"]); //aqui
@@ -2318,6 +2431,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                         dr["SITREG"].ToString() == "8" ? "Coleta" :
                         dr["SITREG"].ToString() == "9" ? "Conferido" :
                         dr["SITREG"].ToString() == "10" ? "Faturado" :
+                        dr["SITREG"].ToString() == "11" ? "Indenizado" :
                         dr["SITREG"].ToString() == "7" ? "Cancelado" : "";
                     itemProtocolo.valorTotal = dr["VALORLIQUIDO"].ToString();
                     valorTotal += Convert.ToDecimal(dr["VALORLIQUIDO"]); //aqui
@@ -2509,7 +2623,10 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             try
             {
                 String sql;
-                //codPlaca = "AAA2222";
+                if (codCli == null) {
+                    codCli = 0;
+                }
+
                 if (codPlaca == "AAA2222") { 
                     sql = " SELECT " +
                              "    OCORRENCIA, " +
@@ -2692,6 +2809,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                        dr["SITREG"].ToString() == "6" ? "Reabilitado":
                        dr["SITREG"].ToString() == "9" ? "Conferido" :
                        dr["SITREG"].ToString() == "10" ? "Faturado" :
+                       dr["SITREG"].ToString() == "11" ? "Indenizado" :
                        dr["SITREG"].ToString() == "7" ? "Cancelado" : "";
                     itensTroca.dataGeracao = dr["DATGER"].ToString();
                     itensTroca.embarque = dr["ANALISE"].ToString();
@@ -2819,9 +2937,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
 
-                DebugEmail email = new DebugEmail();
-                //email.Email("ItensCargaConferencia", sql);
-
                 OracleDataReader dr = cmd.ExecuteReader();
 
                 List<ItensSinteticoCarga> listaItensCarga = new List<ItensSinteticoCarga>();
@@ -2843,6 +2958,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                         dr["SITREG"].ToString() == "8" ? "Coleta" :
                         dr["SITREG"].ToString() == "9" ? "Conferido" :
                         dr["SITREG"].ToString() == "10" ? "Faturado" :
+                        dr["SITREG"].ToString() == "11" ? "Indenizado" :
                         dr["SITREG"].ToString() == "7" ? "Cancelado" : "";
                     itensCarga.dataGeracao = dr["DATGER"].ToString();
                     itensCarga.embarque = dr["NUMANE"].ToString();
@@ -2921,6 +3037,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                         dr["SITREG"].ToString() == "8" ? "Coleta" :
                         dr["SITREG"].ToString() == "9" ? "Conferido" :
                         dr["SITREG"].ToString() == "10" ? "Faturado" :
+                        dr["SITREG"].ToString() == "11" ? "Indenizado" :
                         dr["SITREG"].ToString() == "7" ? "Cancelado" : "";
                     itensColeta.dataGeracao = dr["DATGER"].ToString();
                     somaTotalColeta += (decimal)Convert.ToDouble(dr["VALORLIQUIDO"]);
@@ -3759,6 +3876,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     //email.Email("Codigo Usuário ", codUsuarioLogado.ToString());
 
                     var centroCusto = contexto.N0203UAP.Where(c => c.CODATD == tipoAtendimento && c.CODUSU == codUsuarioLogado).Select(t => t.CODORI).ToList();
+
                     var listaRegistros = (from c in contexto.N0203REG
                                           join m in contexto.N0203IPV on new { c.NUMREG } equals new { m.NUMREG }
                                           where (c.SITREG == situacaoFechado) && (c.APREAP == null || c.APREAP == "S") && centroCusto.Contains(m.ORIOCO)
@@ -3770,7 +3888,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 
                          var verificaPreAprovacao = (from c in contexto.N0203REG
                                                     join d in contexto.N0203TRA on new { c.NUMREG } equals new { d.NUMREG }
-                                                    where c.NUMREG == reg.NUMREG && d.USUTRA == codUsuarioLogado && c.SITREG == 2//&& d.DESTRA == "REGISTRO DE OCORRENCIA PRÉ APROVADO" && c.SITREG == 2
+                                                    where c.NUMREG == reg.NUMREG && d.USUTRA == codUsuarioLogado && c.SITREG == 2 && d.DESTRA == "REGISTRO DE OCORRENCIA PRÉ APROVADO"
                                                     select c).Count();
 
                         if (verificaPreAprovacao == 0)
@@ -4596,6 +4714,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     listaSituacao.Add((long)Enums.SituacaoRegistroOcorrencia.Coleta);
                     listaSituacao.Add((long)Enums.SituacaoRegistroOcorrencia.Recebido);
                     listaSituacao.Add((long)Enums.SituacaoRegistroOcorrencia.Faturado);
+                    listaSituacao.Add((long)Enums.SituacaoRegistroOcorrencia.Indenizado);
 
                     var listaItemNota = (from a in contexto.N0203REG
                                          join b in contexto.N0203IPV on new { a.NUMREG } equals new { b.NUMREG }
@@ -5171,6 +5290,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                         case "7":
                             itens.DescSituacaoRegistro = "Cancelado";
                             break;
+                        case "11":
+                            itens.DescSituacaoRegistro = "Indenizado";
+                            break;
                     }
                     
                     itens.UltimaAlteracao = dr["DATULT"].ToString(); ;
@@ -5399,6 +5521,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                         break;
                     case "7":
                         itens.DescSituacaoRegistro = "Reprovado";
+                        break;
+                    case "11":
+                        itens.DescSituacaoRegistro = "Indenizado";
                         break;
                 }
                 
@@ -6207,6 +6332,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                             break;
                         case "7":
                             itens.DescSituacaoRegistro = "Reprovado";
+                            break;
+                        case "11":
+                            itens.DescSituacaoRegistro = "Indenizado";
                             break;
                     }
 

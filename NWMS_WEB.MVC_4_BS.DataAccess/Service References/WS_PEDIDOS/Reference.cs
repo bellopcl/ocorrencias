@@ -15,19 +15,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.senior.com.br", ConfigurationName="WS_PEDIDOS.sapiens_Syncnutriplan_ven_pedidos")]
     public interface sapiens_Syncnutriplan_ven_pedidos {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoRequ" +
-            "est", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoResp" +
-            "onse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut AprovarPedido(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoRequ" +
-            "est", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoResp" +
-            "onse")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut> AprovarPedidoAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/CancelamentoAutom" +
             "aticoSim3gRequest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/CancelamentoAutom" +
             "aticoSim3gResponse")]
@@ -80,19 +67,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
         System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosRecalcularComissaoOut> RecalcularComissaoAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosRecalcularComissaoIn parameters);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
-            "equest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
-            "esponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out BloquearPedido_1(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
-            "equest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
-            "esponse")]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out> BloquearPedido_1Async(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedido_1Re" +
             "quest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedido_1Re" +
             "sponse")]
@@ -132,6 +106,19 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
         System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosIntegrarPedidoSim3G1Out> IntegrarPedidoSim3g_1Async(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosIntegrarPedidoSim3G1In parameters);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
+            "equest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
+            "esponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out BloquearPedido_1(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
+            "equest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedido_1R" +
+            "esponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out> BloquearPedido_1Async(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedidoReq" +
             "uest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/BloquearPedidoRes" +
             "ponse")]
@@ -145,18 +132,18 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
         System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedidoOut> BloquearPedidoAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedidoIn parameters);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
-            "im3gRequest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
-            "im3gResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoRequ" +
+            "est", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoResp" +
+            "onse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut ReabilitarPedidoSim3g(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters);
+        NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut AprovarPedido(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
-            "im3gRequest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
-            "im3gResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoRequ" +
+            "est", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/AprovarPedidoResp" +
+            "onse")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
-        System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut> ReabilitarPedidoSim3gAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters);
+        System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut> AprovarPedidoAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/PedidoViaOcorrenc" +
             "iaRequest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/PedidoViaOcorrenc" +
@@ -170,6 +157,607 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
             "iaResponse")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
         System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosPedidoViaOcorrenciaOut> PedidoViaOcorrenciaAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosPedidoViaOcorrenciaIn parameters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
+            "im3gRequest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
+            "im3gResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut ReabilitarPedidoSim3g(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
+            "im3gRequest", ReplyAction="http://services.senior.com.br/sapiens_Syncnutriplan_ven_pedidos/ReabilitarPedidoS" +
+            "im3gResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="result")]
+        System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut> ReabilitarPedidoSim3gAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosCancelamentoAutomaticoSim3GIn : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string codIltField;
+        
+        private System.Nullable<int> codLstField;
+        
+        private bool codLstFieldSpecified;
+        
+        private string flowInstanceIDField;
+        
+        private string flowNameField;
+        
+        private System.Nullable<int> pedPalField;
+        
+        private bool pedPalFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public string codIlt {
+            get {
+                return this.codIltField;
+            }
+            set {
+                this.codIltField = value;
+                this.RaisePropertyChanged("codIlt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public System.Nullable<int> codLst {
+            get {
+                return this.codLstField;
+            }
+            set {
+                this.codLstField = value;
+                this.RaisePropertyChanged("codLst");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool codLstSpecified {
+            get {
+                return this.codLstFieldSpecified;
+            }
+            set {
+                this.codLstFieldSpecified = value;
+                this.RaisePropertyChanged("codLstSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public string flowInstanceID {
+            get {
+                return this.flowInstanceIDField;
+            }
+            set {
+                this.flowInstanceIDField = value;
+                this.RaisePropertyChanged("flowInstanceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public string flowName {
+            get {
+                return this.flowNameField;
+            }
+            set {
+                this.flowNameField = value;
+                this.RaisePropertyChanged("flowName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
+        public System.Nullable<int> pedPal {
+            get {
+                return this.pedPalField;
+            }
+            set {
+                this.pedPalField = value;
+                this.RaisePropertyChanged("pedPal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pedPalSpecified {
+            get {
+                return this.pedPalFieldSpecified;
+            }
+            set {
+                this.pedPalFieldSpecified = value;
+                this.RaisePropertyChanged("pedPalSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosReabilitarPedidoSim3GOut : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string erroExecucaoField;
+        
+        private string mensagemRetornoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public string erroExecucao {
+            get {
+                return this.erroExecucaoField;
+            }
+            set {
+                this.erroExecucaoField = value;
+                this.RaisePropertyChanged("erroExecucao");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public string mensagemRetorno {
+            get {
+                return this.mensagemRetornoField;
+            }
+            set {
+                this.mensagemRetornoField = value;
+                this.RaisePropertyChanged("mensagemRetorno");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosReabilitarPedidoSim3GIn : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> codMotField;
+        
+        private bool codMotFieldSpecified;
+        
+        private string flowInstanceIDField;
+        
+        private string flowNameField;
+        
+        private System.Nullable<int> pedPalField;
+        
+        private bool pedPalFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public System.Nullable<int> codMot {
+            get {
+                return this.codMotField;
+            }
+            set {
+                this.codMotField = value;
+                this.RaisePropertyChanged("codMot");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool codMotSpecified {
+            get {
+                return this.codMotFieldSpecified;
+            }
+            set {
+                this.codMotFieldSpecified = value;
+                this.RaisePropertyChanged("codMotSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public string flowInstanceID {
+            get {
+                return this.flowInstanceIDField;
+            }
+            set {
+                this.flowInstanceIDField = value;
+                this.RaisePropertyChanged("flowInstanceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public string flowName {
+            get {
+                return this.flowNameField;
+            }
+            set {
+                this.flowNameField = value;
+                this.RaisePropertyChanged("flowName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public System.Nullable<int> pedPal {
+            get {
+                return this.pedPalField;
+            }
+            set {
+                this.pedPalField = value;
+                this.RaisePropertyChanged("pedPal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pedPalSpecified {
+            get {
+                return this.pedPalFieldSpecified;
+            }
+            set {
+                this.pedPalFieldSpecified = value;
+                this.RaisePropertyChanged("pedPalSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosPedidoViaOcorrenciaOutRetorno : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> codEmpField;
+        
+        private bool codEmpFieldSpecified;
+        
+        private System.Nullable<int> codFilField;
+        
+        private bool codFilFieldSpecified;
+        
+        private System.Nullable<int> numPedField;
+        
+        private bool numPedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public System.Nullable<int> codEmp {
+            get {
+                return this.codEmpField;
+            }
+            set {
+                this.codEmpField = value;
+                this.RaisePropertyChanged("codEmp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool codEmpSpecified {
+            get {
+                return this.codEmpFieldSpecified;
+            }
+            set {
+                this.codEmpFieldSpecified = value;
+                this.RaisePropertyChanged("codEmpSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public System.Nullable<int> codFil {
+            get {
+                return this.codFilField;
+            }
+            set {
+                this.codFilField = value;
+                this.RaisePropertyChanged("codFil");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool codFilSpecified {
+            get {
+                return this.codFilFieldSpecified;
+            }
+            set {
+                this.codFilFieldSpecified = value;
+                this.RaisePropertyChanged("codFilSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public System.Nullable<int> numPed {
+            get {
+                return this.numPedField;
+            }
+            set {
+                this.numPedField = value;
+                this.RaisePropertyChanged("numPed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool numPedSpecified {
+            get {
+                return this.numPedFieldSpecified;
+            }
+            set {
+                this.numPedFieldSpecified = value;
+                this.RaisePropertyChanged("numPedSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosPedidoViaOcorrenciaOut : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string erroExecucaoField;
+        
+        private string mensagemRetornoField;
+        
+        private pedidosPedidoViaOcorrenciaOutRetorno[] retornoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public string erroExecucao {
+            get {
+                return this.erroExecucaoField;
+            }
+            set {
+                this.erroExecucaoField = value;
+                this.RaisePropertyChanged("erroExecucao");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public string mensagemRetorno {
+            get {
+                return this.mensagemRetornoField;
+            }
+            set {
+                this.mensagemRetornoField = value;
+                this.RaisePropertyChanged("mensagemRetorno");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("retorno", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public pedidosPedidoViaOcorrenciaOutRetorno[] retorno {
+            get {
+                return this.retornoField;
+            }
+            set {
+                this.retornoField = value;
+                this.RaisePropertyChanged("retorno");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosPedidoViaOcorrenciaIn : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> codTraField;
+        
+        private bool codTraFieldSpecified;
+        
+        private string flowInstanceIDField;
+        
+        private string flowNameField;
+        
+        private System.Nullable<int> numRegField;
+        
+        private bool numRegFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public System.Nullable<int> codTra {
+            get {
+                return this.codTraField;
+            }
+            set {
+                this.codTraField = value;
+                this.RaisePropertyChanged("codTra");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool codTraSpecified {
+            get {
+                return this.codTraFieldSpecified;
+            }
+            set {
+                this.codTraFieldSpecified = value;
+                this.RaisePropertyChanged("codTraSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public string flowInstanceID {
+            get {
+                return this.flowInstanceIDField;
+            }
+            set {
+                this.flowInstanceIDField = value;
+                this.RaisePropertyChanged("flowInstanceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public string flowName {
+            get {
+                return this.flowNameField;
+            }
+            set {
+                this.flowNameField = value;
+                this.RaisePropertyChanged("flowName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public System.Nullable<int> numReg {
+            get {
+                return this.numRegField;
+            }
+            set {
+                this.numRegField = value;
+                this.RaisePropertyChanged("numReg");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool numRegSpecified {
+            get {
+                return this.numRegFieldSpecified;
+            }
+            set {
+                this.numRegFieldSpecified = value;
+                this.RaisePropertyChanged("numRegSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosAprovarPedidoOut : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string erroExecucaoField;
+        
+        private string liberarPedidoField;
+        
+        private string mensagemRetornoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public string erroExecucao {
+            get {
+                return this.erroExecucaoField;
+            }
+            set {
+                this.erroExecucaoField = value;
+                this.RaisePropertyChanged("erroExecucao");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public string liberarPedido {
+            get {
+                return this.liberarPedidoField;
+            }
+            set {
+                this.liberarPedidoField = value;
+                this.RaisePropertyChanged("liberarPedido");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public string mensagemRetorno {
+            get {
+                return this.mensagemRetornoField;
+            }
+            set {
+                this.mensagemRetornoField = value;
+                this.RaisePropertyChanged("mensagemRetorno");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     /// <remarks/>
@@ -364,390 +952,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosPedidoViaOcorrenciaOutRetorno : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Nullable<int> codEmpField;
-        
-        private bool codEmpFieldSpecified;
-        
-        private System.Nullable<int> codFilField;
-        
-        private bool codFilFieldSpecified;
-        
-        private System.Nullable<int> numPedField;
-        
-        private bool numPedFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public System.Nullable<int> codEmp {
-            get {
-                return this.codEmpField;
-            }
-            set {
-                this.codEmpField = value;
-                this.RaisePropertyChanged("codEmp");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool codEmpSpecified {
-            get {
-                return this.codEmpFieldSpecified;
-            }
-            set {
-                this.codEmpFieldSpecified = value;
-                this.RaisePropertyChanged("codEmpSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public System.Nullable<int> codFil {
-            get {
-                return this.codFilField;
-            }
-            set {
-                this.codFilField = value;
-                this.RaisePropertyChanged("codFil");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool codFilSpecified {
-            get {
-                return this.codFilFieldSpecified;
-            }
-            set {
-                this.codFilFieldSpecified = value;
-                this.RaisePropertyChanged("codFilSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public System.Nullable<int> numPed {
-            get {
-                return this.numPedField;
-            }
-            set {
-                this.numPedField = value;
-                this.RaisePropertyChanged("numPed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool numPedSpecified {
-            get {
-                return this.numPedFieldSpecified;
-            }
-            set {
-                this.numPedFieldSpecified = value;
-                this.RaisePropertyChanged("numPedSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosPedidoViaOcorrenciaOut : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string erroExecucaoField;
-        
-        private string mensagemRetornoField;
-        
-        private pedidosPedidoViaOcorrenciaOutRetorno[] retornoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public string erroExecucao {
-            get {
-                return this.erroExecucaoField;
-            }
-            set {
-                this.erroExecucaoField = value;
-                this.RaisePropertyChanged("erroExecucao");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public string mensagemRetorno {
-            get {
-                return this.mensagemRetornoField;
-            }
-            set {
-                this.mensagemRetornoField = value;
-                this.RaisePropertyChanged("mensagemRetorno");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("retorno", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public pedidosPedidoViaOcorrenciaOutRetorno[] retorno {
-            get {
-                return this.retornoField;
-            }
-            set {
-                this.retornoField = value;
-                this.RaisePropertyChanged("retorno");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosPedidoViaOcorrenciaIn : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string flowInstanceIDField;
-
-        private System.Nullable<int> ocorrenciaField;
-
-        private string flowNameField;
-        
-        private bool ocorrenciaFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public string flowInstanceID {
-            get {
-                return this.flowInstanceIDField;
-            }
-            set {
-                this.flowInstanceIDField = value;
-                this.RaisePropertyChanged("flowInstanceID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public string flowName {
-            get {
-                return this.flowNameField;
-            }
-            set {
-                this.flowNameField = value;
-                this.RaisePropertyChanged("flowName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public System.Nullable<int> ocorrencia {
-            get {
-                return this.ocorrenciaField;
-            }
-            set {
-                this.ocorrenciaField = value;
-                this.RaisePropertyChanged("ocorrencia");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ocorrenciaSpecified {
-            get {
-                return this.ocorrenciaFieldSpecified;
-            }
-            set {
-                this.ocorrenciaFieldSpecified = value;
-                this.RaisePropertyChanged("ocorrenciaSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosReabilitarPedidoSim3GOut : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string erroExecucaoField;
-        
-        private string mensagemRetornoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public string erroExecucao {
-            get {
-                return this.erroExecucaoField;
-            }
-            set {
-                this.erroExecucaoField = value;
-                this.RaisePropertyChanged("erroExecucao");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public string mensagemRetorno {
-            get {
-                return this.mensagemRetornoField;
-            }
-            set {
-                this.mensagemRetornoField = value;
-                this.RaisePropertyChanged("mensagemRetorno");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosReabilitarPedidoSim3GIn : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Nullable<int> codMotField;
-        
-        private bool codMotFieldSpecified;
-        
-        private string flowInstanceIDField;
-        
-        private string flowNameField;
-        
-        private System.Nullable<int> pedPalField;
-        
-        private bool pedPalFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public System.Nullable<int> codMot {
-            get {
-                return this.codMotField;
-            }
-            set {
-                this.codMotField = value;
-                this.RaisePropertyChanged("codMot");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool codMotSpecified {
-            get {
-                return this.codMotFieldSpecified;
-            }
-            set {
-                this.codMotFieldSpecified = value;
-                this.RaisePropertyChanged("codMotSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public string flowInstanceID {
-            get {
-                return this.flowInstanceIDField;
-            }
-            set {
-                this.flowInstanceIDField = value;
-                this.RaisePropertyChanged("flowInstanceID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public string flowName {
-            get {
-                return this.flowNameField;
-            }
-            set {
-                this.flowNameField = value;
-                this.RaisePropertyChanged("flowName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
-        public System.Nullable<int> pedPal {
-            get {
-                return this.pedPalField;
-            }
-            set {
-                this.pedPalField = value;
-                this.RaisePropertyChanged("pedPal");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pedPalSpecified {
-            get {
-                return this.pedPalFieldSpecified;
-            }
-            set {
-                this.pedPalFieldSpecified = value;
-                this.RaisePropertyChanged("pedPalSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
     public partial class pedidosBloquearPedidoOut : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string erroExecucaoField;
@@ -809,6 +1013,196 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
     public partial class pedidosBloquearPedidoIn : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<int> codEmpField;
+        
+        private bool codEmpFieldSpecified;
+        
+        private System.Nullable<int> codFilField;
+        
+        private bool codFilFieldSpecified;
+        
+        private string flowInstanceIDField;
+        
+        private string flowNameField;
+        
+        private System.Nullable<int> numPedField;
+        
+        private bool numPedFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public System.Nullable<int> codEmp {
+            get {
+                return this.codEmpField;
+            }
+            set {
+                this.codEmpField = value;
+                this.RaisePropertyChanged("codEmp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool codEmpSpecified {
+            get {
+                return this.codEmpFieldSpecified;
+            }
+            set {
+                this.codEmpFieldSpecified = value;
+                this.RaisePropertyChanged("codEmpSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public System.Nullable<int> codFil {
+            get {
+                return this.codFilField;
+            }
+            set {
+                this.codFilField = value;
+                this.RaisePropertyChanged("codFil");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool codFilSpecified {
+            get {
+                return this.codFilFieldSpecified;
+            }
+            set {
+                this.codFilFieldSpecified = value;
+                this.RaisePropertyChanged("codFilSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public string flowInstanceID {
+            get {
+                return this.flowInstanceIDField;
+            }
+            set {
+                this.flowInstanceIDField = value;
+                this.RaisePropertyChanged("flowInstanceID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public string flowName {
+            get {
+                return this.flowNameField;
+            }
+            set {
+                this.flowNameField = value;
+                this.RaisePropertyChanged("flowName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
+        public System.Nullable<int> numPed {
+            get {
+                return this.numPedField;
+            }
+            set {
+                this.numPedField = value;
+                this.RaisePropertyChanged("numPed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool numPedSpecified {
+            get {
+                return this.numPedFieldSpecified;
+            }
+            set {
+                this.numPedFieldSpecified = value;
+                this.RaisePropertyChanged("numPedSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosBloquearPedido1Out : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string erroExecucaoField;
+        
+        private string mensagemRetornoField;
+        
+        private string pedidoBloqueadoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
+        public string erroExecucao {
+            get {
+                return this.erroExecucaoField;
+            }
+            set {
+                this.erroExecucaoField = value;
+                this.RaisePropertyChanged("erroExecucao");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public string mensagemRetorno {
+            get {
+                return this.mensagemRetornoField;
+            }
+            set {
+                this.mensagemRetornoField = value;
+                this.RaisePropertyChanged("mensagemRetorno");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public string pedidoBloqueado {
+            get {
+                return this.pedidoBloqueadoField;
+            }
+            set {
+                this.pedidoBloqueadoField = value;
+                this.RaisePropertyChanged("pedidoBloqueado");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
+    public partial class pedidosBloquearPedido1In : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Nullable<int> codEmpField;
         
@@ -1494,196 +1888,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosBloquearPedido1Out : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string erroExecucaoField;
-        
-        private string mensagemRetornoField;
-        
-        private string pedidoBloqueadoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public string erroExecucao {
-            get {
-                return this.erroExecucaoField;
-            }
-            set {
-                this.erroExecucaoField = value;
-                this.RaisePropertyChanged("erroExecucao");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public string mensagemRetorno {
-            get {
-                return this.mensagemRetornoField;
-            }
-            set {
-                this.mensagemRetornoField = value;
-                this.RaisePropertyChanged("mensagemRetorno");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public string pedidoBloqueado {
-            get {
-                return this.pedidoBloqueadoField;
-            }
-            set {
-                this.pedidoBloqueadoField = value;
-                this.RaisePropertyChanged("pedidoBloqueado");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosBloquearPedido1In : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Nullable<int> codEmpField;
-        
-        private bool codEmpFieldSpecified;
-        
-        private System.Nullable<int> codFilField;
-        
-        private bool codFilFieldSpecified;
-        
-        private string flowInstanceIDField;
-        
-        private string flowNameField;
-        
-        private System.Nullable<int> numPedField;
-        
-        private bool numPedFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public System.Nullable<int> codEmp {
-            get {
-                return this.codEmpField;
-            }
-            set {
-                this.codEmpField = value;
-                this.RaisePropertyChanged("codEmp");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool codEmpSpecified {
-            get {
-                return this.codEmpFieldSpecified;
-            }
-            set {
-                this.codEmpFieldSpecified = value;
-                this.RaisePropertyChanged("codEmpSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public System.Nullable<int> codFil {
-            get {
-                return this.codFilField;
-            }
-            set {
-                this.codFilField = value;
-                this.RaisePropertyChanged("codFil");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool codFilSpecified {
-            get {
-                return this.codFilFieldSpecified;
-            }
-            set {
-                this.codFilFieldSpecified = value;
-                this.RaisePropertyChanged("codFilSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public string flowInstanceID {
-            get {
-                return this.flowInstanceIDField;
-            }
-            set {
-                this.flowInstanceIDField = value;
-                this.RaisePropertyChanged("flowInstanceID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
-        public string flowName {
-            get {
-                return this.flowNameField;
-            }
-            set {
-                this.flowNameField = value;
-                this.RaisePropertyChanged("flowName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
-        public System.Nullable<int> numPed {
-            get {
-                return this.numPedField;
-            }
-            set {
-                this.numPedField = value;
-                this.RaisePropertyChanged("numPed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool numPedSpecified {
-            get {
-                return this.numPedFieldSpecified;
-            }
-            set {
-                this.numPedFieldSpecified = value;
-                this.RaisePropertyChanged("numPedSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
     public partial class pedidosRecalcularComissaoOut : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string erroExecucaoField;
@@ -2196,182 +2400,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosCancelamentoAutomaticoSim3GIn : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string codIltField;
-        
-        private System.Nullable<int> codLstField;
-        
-        private bool codLstFieldSpecified;
-        
-        private string flowInstanceIDField;
-        
-        private string flowNameField;
-        
-        private System.Nullable<int> pedPalField;
-        
-        private bool pedPalFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public string codIlt {
-            get {
-                return this.codIltField;
-            }
-            set {
-                this.codIltField = value;
-                this.RaisePropertyChanged("codIlt");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public System.Nullable<int> codLst {
-            get {
-                return this.codLstField;
-            }
-            set {
-                this.codLstField = value;
-                this.RaisePropertyChanged("codLst");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool codLstSpecified {
-            get {
-                return this.codLstFieldSpecified;
-            }
-            set {
-                this.codLstFieldSpecified = value;
-                this.RaisePropertyChanged("codLstSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public string flowInstanceID {
-            get {
-                return this.flowInstanceIDField;
-            }
-            set {
-                this.flowInstanceIDField = value;
-                this.RaisePropertyChanged("flowInstanceID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
-        public string flowName {
-            get {
-                return this.flowNameField;
-            }
-            set {
-                this.flowNameField = value;
-                this.RaisePropertyChanged("flowName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
-        public System.Nullable<int> pedPal {
-            get {
-                return this.pedPalField;
-            }
-            set {
-                this.pedPalField = value;
-                this.RaisePropertyChanged("pedPal");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pedPalSpecified {
-            get {
-                return this.pedPalFieldSpecified;
-            }
-            set {
-                this.pedPalFieldSpecified = value;
-                this.RaisePropertyChanged("pedPalSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3190.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.senior.com.br")]
-    public partial class pedidosAprovarPedidoOut : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string erroExecucaoField;
-        
-        private string liberarPedidoField;
-        
-        private string mensagemRetornoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=0)]
-        public string erroExecucao {
-            get {
-                return this.erroExecucaoField;
-            }
-            set {
-                this.erroExecucaoField = value;
-                this.RaisePropertyChanged("erroExecucao");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public string liberarPedido {
-            get {
-                return this.liberarPedidoField;
-            }
-            set {
-                this.liberarPedidoField = value;
-                this.RaisePropertyChanged("liberarPedido");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public string mensagemRetorno {
-            get {
-                return this.mensagemRetornoField;
-            }
-            set {
-                this.mensagemRetornoField = value;
-                this.RaisePropertyChanged("mensagemRetorno");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface sapiens_Syncnutriplan_ven_pedidosChannel : NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.sapiens_Syncnutriplan_ven_pedidos, System.ServiceModel.IClientChannel {
     }
@@ -2397,14 +2425,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
         
         public sapiens_Syncnutriplan_ven_pedidosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut AprovarPedido(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters) {
-            return base.Channel.AprovarPedido(user, password, encryption, parameters);
-        }
-        
-        public System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut> AprovarPedidoAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters) {
-            return base.Channel.AprovarPedidoAsync(user, password, encryption, parameters);
         }
         
         public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosCancelamentoAutomaticoSim3GOut CancelamentoAutomaticoSim3g(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosCancelamentoAutomaticoSim3GIn parameters) {
@@ -2439,14 +2459,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
             return base.Channel.RecalcularComissaoAsync(user, password, encryption, parameters);
         }
         
-        public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out BloquearPedido_1(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters) {
-            return base.Channel.BloquearPedido_1(user, password, encryption, parameters);
-        }
-        
-        public System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out> BloquearPedido_1Async(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters) {
-            return base.Channel.BloquearPedido_1Async(user, password, encryption, parameters);
-        }
-        
         public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedido1Out AprovarPedido_1(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedido1In parameters) {
             return base.Channel.AprovarPedido_1(user, password, encryption, parameters);
         }
@@ -2471,6 +2483,14 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
             return base.Channel.IntegrarPedidoSim3g_1Async(user, password, encryption, parameters);
         }
         
+        public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out BloquearPedido_1(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters) {
+            return base.Channel.BloquearPedido_1(user, password, encryption, parameters);
+        }
+        
+        public System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1Out> BloquearPedido_1Async(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedido1In parameters) {
+            return base.Channel.BloquearPedido_1Async(user, password, encryption, parameters);
+        }
+        
         public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedidoOut BloquearPedido(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosBloquearPedidoIn parameters) {
             return base.Channel.BloquearPedido(user, password, encryption, parameters);
         }
@@ -2479,12 +2499,12 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
             return base.Channel.BloquearPedidoAsync(user, password, encryption, parameters);
         }
         
-        public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut ReabilitarPedidoSim3g(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters) {
-            return base.Channel.ReabilitarPedidoSim3g(user, password, encryption, parameters);
+        public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut AprovarPedido(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters) {
+            return base.Channel.AprovarPedido(user, password, encryption, parameters);
         }
         
-        public System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut> ReabilitarPedidoSim3gAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters) {
-            return base.Channel.ReabilitarPedidoSim3gAsync(user, password, encryption, parameters);
+        public System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoOut> AprovarPedidoAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosAprovarPedidoIn parameters) {
+            return base.Channel.AprovarPedidoAsync(user, password, encryption, parameters);
         }
         
         public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosPedidoViaOcorrenciaOut PedidoViaOcorrencia(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosPedidoViaOcorrenciaIn parameters) {
@@ -2493,6 +2513,14 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS {
         
         public System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosPedidoViaOcorrenciaOut> PedidoViaOcorrenciaAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosPedidoViaOcorrenciaIn parameters) {
             return base.Channel.PedidoViaOcorrenciaAsync(user, password, encryption, parameters);
+        }
+        
+        public NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut ReabilitarPedidoSim3g(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters) {
+            return base.Channel.ReabilitarPedidoSim3g(user, password, encryption, parameters);
+        }
+        
+        public System.Threading.Tasks.Task<NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GOut> ReabilitarPedidoSim3gAsync(string user, string password, int encryption, NUTRIPLAN_WEB.MVC_4_BS.DataAccess.WS_PEDIDOS.pedidosReabilitarPedidoSim3GIn parameters) {
+            return base.Channel.ReabilitarPedidoSim3gAsync(user, password, encryption, parameters);
         }
     }
 }

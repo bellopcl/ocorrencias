@@ -9,11 +9,10 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
     {
         private sapiens_Syncnutriplan_ven_pedidosClient PedidosClient { get; set; }
 
-        public bool EmitirPedido(int ocorrencia, out string mensagemRetorno)
+        public bool EmitirPedido(int ocorrencia, long Usuario, int codTra, out string mensagemRetorno)
         {
             try
             {
-                var erro = false;
                 mensagemRetorno = string.Empty;
                 using (this.PedidosClient = new sapiens_Syncnutriplan_ven_pedidosClient())
                 {
@@ -22,23 +21,30 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 
                     DebugEmail email = new DebugEmail();
 
+                    dadosPedido.codTra = codTra;
+
+                    dadosPedido.codTraSpecified = true;
+
                     dadosPedido.flowInstanceID = "1";
 
                     dadosPedido.flowName = "1";
 
-                    dadosPedido.ocorrencia = ocorrencia;
+                    dadosPedido.numReg = ocorrencia;
 
-                    dadosPedido.ocorrenciaSpecified = true;
+                    dadosPedido.numRegSpecified = true;
 
                     var retorno = PedidosClient.PedidoViaOcorrencia("nworkflow.web", "!nfr@t1n", 0, dadosPedido);
 
                     if (retorno.erroExecucao == null)
                     {
-
-                        email.Email("Webservice", retorno.mensagemRetorno);
+                        email.Email("Webservice Pedido", retorno.mensagemRetorno);
                     }
 
                     mensagemRetorno = retorno.mensagemRetorno;
+                    if (mensagemRetorno == "OK") { 
+                        N0203REGDataAccess reg = new N0203REGDataAccess();
+                        reg.GravarTransacaoIndenizado(ocorrencia, Usuario);
+                    }
                 }
 
                 return true;

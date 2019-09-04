@@ -301,6 +301,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Model
 
             [Attributes.KeyValue("Descricao", "Cancelado")]
             Cancelado = 7,
+
+            [Attributes.KeyValue("Descricao", "Indenizado")]
+            Indenizado = 11,
         }
 
         public enum TipoPesquisaRegistroOcorrencia
