@@ -614,8 +614,6 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 var msgRetornoPedido = string.Empty;
 
                 // Operação ==> Aprovar e Tipo Nota ==> Nutriplan
-                N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), codTra, out msgRetornoPedido);
-
                 if (int.Parse(operacao) == (int)Enums.OperacaoAprovacaoFaturamento.Aprovar && int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Nutriplan)
                 {
                     var dadosProtocolo = N0203REGBusiness.PesquisaRegistroOcorrencia(long.Parse(codigoRegistro), (int)Enums.SituacaoRegistroOcorrencia.Recebido);
@@ -639,14 +637,12 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                             }
                             if (!N0203REGBusiness.EmitirLancamentoNfe(long.Parse(codigoRegistro), dadosProtocolo, out msgRetornoSapiens))
                             {
-
                                 msgRetornoSapiens = "Registro de devolução Nº " + codigoRegistro + " não aprovado.<br/><br/>Erro de integração com o sistema sapiens.<br/><br/>" + msgRetornoSapiens + " " + msgRetornoPedido;
                                 var tipoAtend = Enums.TipoAtendimento.DevolucaoMercadorias;
                                 if (dadosProtocolo.TIPATE == (int)Enums.TipoAtendimento.TrocaMercadorias)
                                     tipoAtend = Enums.TipoAtendimento.TrocaMercadorias;
                                 // Envia Email para TI informando ERRO de integração...
                                 this.MontarEmailErroIntegracaoSapiens(codigoRegistro, msgRetornoSapiens, tipoAtend);
-                                
                             }
                             else
                             {
@@ -683,7 +679,6 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
             var N0203REGBusiness = new N0203REGBusiness();
             var listaTransportador = N0203REGBusiness.ConsultaTransportadora(ocorrencia);
             return this.Json(new { listaTransportador = listaTransportador, redirectUrl = Url.Action("Login", "Login"), Logado = true }, JsonRequestBehavior.AllowGet);
-            
         }
 
         public JsonResult OrigemOcorrencia(int Numreg)

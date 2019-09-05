@@ -306,9 +306,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             listaTransportadora lista = new listaTransportadora();
             int codRed = 0;
 
-            DebugEmail email = new DebugEmail();
-            email.Email("Relatorio", sql);
-
             if (dr.Read())
             {
                 lista.CODTRA = dr["CODTRA"].ToString();
