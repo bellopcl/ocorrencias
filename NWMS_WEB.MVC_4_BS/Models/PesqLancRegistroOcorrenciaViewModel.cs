@@ -136,6 +136,11 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Models
         [Range(1, 999, ErrorMessage = "A Origem da Ocorrência deve ser selecionada.")]
         public int OrigemOcorrenciaItemNota { get; set; }
 
+        [Display(Name = "Transportadora")]
+        public int CodTra { get; set; }
+
+        public string NomeTra { get; set; }
+
         public List<ListaN0204ATDPesquisa> ListaTipoAtendimento { get; set; }
 
         public List<ListaN0204MDVPesquisa> ListaMotivoDevolucao { get; set; }

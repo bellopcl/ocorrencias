@@ -6,6 +6,8 @@
 @section scripts{
     @Scripts.Render("~/bundles/maskMoney")
     <script type="text/javascript">
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+
     $("#PesquisarRegistroBtn").click(function () {
         PesquisaTodosRegistros();
     });
@@ -29,9 +31,7 @@
             LimpaCamposRegistro();
         }
     });
-    //$("#NumRegistroTextBox").focusin(function () {
-    //    LimpaCamposRegistro();
-    //});
+    
     function LimpaCamposRegistro() {
         $("#TipoAtendimentoDropDownList").prop('selectedIndex', 0);
         $("#OrigemOcorrenciaFase1DropDownList").prop('selectedIndex', 0);
@@ -76,7 +76,90 @@
         $("#HrefFase4").attr("href", "#fase4");
         $("#HrefFase4").attr("data-toggle", "tab");
         $("#liFase4").removeClass("disabled");
-    }
+        }
+
+    $('#TableTransporte').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            "scrollX": true,
+    });
+
+    function PesquisarTransportador() {
+            //var ocorrencia = $("#NumRegistroTextBox").val();
+            var ocorrencia = $("#NumNotaFiscalTextBox").val();
+            $('#progressBar').show();
+            $("#gridTableTransporte").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", { ocorrencia: ocorrencia, tipo: "T" }, function (data) {
+                if (data.listaTransportador) {
+                    var arrayRow = new Array();
+                    $('#TableTransporte').dataTable().fnClearTable();
+                    var array = 0;
+                    if (data.listaTransportador.CODTRA > 1) {
+                        var codigo = data.listaTransportador.CODTRA;
+                        var nome = data.listaTransportador.NOMTRA;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarTransporte('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.APETRA;
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
+                        array = 1;
+                    }
+                    if (data.listaTransportador.CODRED != "0") {
+                        var codigo = data.listaTransportador.CODRED;
+                        var nome = data.listaTransportador.NOMETRAREDES;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarTransporte('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.CODREDAPETRA;
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
+                    }
+                    $('#TableTransporte').dataTable().fnAddData(arrayRow);
+                    $('#TableTransporte').dataTable().fnPageChange('first');
+                    $("#gridTableTransporte").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#TransporteDialog').modal('show');
+            });
+        }
+
+        $("#PesquisarClienteButtonItens").click(function () {
+            PesquisarTransportador();
+        });
+
+        function SelecionarTransporte(codigo, nome) {
+            $("#CodigoClienteConferenciaItem").val("");
+            $("#CodigoClienteConferenciaItem").focus();
+            $("#TransporteDialog").modal("hide");
+            setTimeout(function () {
+                $("#CodigoClienteConferenciaItem").val(codigo);
+                $("#NomeclienteConferenciaItem").val(nome);
+                $("#CodigoClienteConferenciaItem").focus();
+            }, 50);
+        }
+
     // Desabilita botao pesquisar e o campo num registro
     $('#liFase2').click(function () {
         var tamanho = $('#TableNotasFiscaisSaida').DataTable().rows().data().length;
@@ -161,6 +244,7 @@
         //"scrollY": 380,
         "scrollX": true,
     });
+
     function PesquisaUmRegistro(codigoRegistro) {
         $('#progressBar').show();
         $.ajaxSetup({ cache: false });
@@ -186,6 +270,8 @@
                     $("#UltimaAlteracaoTextBox").val(data.ListaN0203REGPesquisa[0].UltimaAlteracao);
                     $("#UsuarioUltimaAlteracaoTextBox").val(data.ListaN0203REGPesquisa[0].UsuarioUltimaAlteracao + " - " + data.ListaN0203REGPesquisa[0].NomeUsuarioUltimaAlteracao);
                     $("#ObservacoesTextBox").val(data.ListaN0203REGPesquisa[0].Observacao);
+                    $("#CodigoClienteConferenciaItem").val(data.ListaN0203REGPesquisa[0].CodTra);
+                    DescTransportadora(data.ListaN0203REGPesquisa[0].CodTra)
                     HabilitaFase2();
                     document.getElementById('NumRegistroTextBox').disabled = false;
                     $('#NumRegistroTextBox').focus();
@@ -199,6 +285,11 @@
             $('#progressBar').hide();
         });
     }
+    function DescTransportadora(DescTransportadora) {
+        $.getJSON("@Url.Action("descTransportadoraIndenizacao")", { CodTra: DescTransportadora }, function (data) {
+             $("#NomeclienteConferenciaItem").val(data.DescTransportadora);
+         });
+     }
     function ValidaSituacaoReprovado(sit) {
         var situacao = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.SituacaoRegistroOcorrencia.Reprovado).ToString())';
         if (sit == situacao) {
@@ -1738,6 +1829,25 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade bs-example-modal-lg" id="TransporteDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Transportadora</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableTransporte" style="display: none;">
+                        <table id="TableTransporte" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal" id="CancelarRegistroDialog" style="display: none;" data-backdrop="static">
     <div class="modal-dialog">
         <div class="panel panel-primary">
@@ -2133,6 +2243,25 @@
         <div class="tab-pane fade" id="fase4">
             <div class="panel panel-default" id="DivPanelFase4" style="display: block;">
                 <legend>&nbsp;&nbsp;Digite as observações abaixo</legend>
+
+                <div id="ConferenciaItem" class="form-group">
+                    <p></p>
+                    @Html.LabelFor(m => m.CodTra, new { @class = "col-md-1 control-label" })
+                    <div class="col-md-1">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.CodTra, new { @class = "form-control input-smgroup", @id = "CodigoClienteConferenciaItem" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButtonItens"><span class="glyphicon glyphicon-search" title="Pesquisar Transportadora"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextBoxFor(m => m.NomeTra, new { @class = "form-control input-smgroup", @id = "NomeclienteConferenciaItem", @readonly = "true" })
+                        @Html.ValidationMessageFor(m => m.CodTra)
+                        @Html.ValidationMessageFor(m => m.NomeTra)
+                    </div>
+                </div>
+
                 <div class="form-group">
                     @Html.LabelFor(m => m.Observacoes, new { @class = "col-md-1 control-label" })
                     <div class="col-lg-10-2" id="ObservacoesDiv">

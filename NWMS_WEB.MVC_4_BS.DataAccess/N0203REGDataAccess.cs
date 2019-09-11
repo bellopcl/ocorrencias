@@ -290,13 +290,48 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             return itens;
         }
 
-        public listaTransportadora ConsultaTransportadora(int ocorrencia)
+        public bool InserirTransporteIndenizado(long NumReg, int CodTra)
         {
-            String sql = "SELECT DISTINCT(NFV.CODTRA) AS CODTRA, TRA.NOMTRA AS NOMTRA, TRA.APETRA AS APETRA, NFV.CODRED AS CODRED FROM  " +
-                "SAPIENS.E140NFV NFV, N0203IPV IPV, SAPIENs.E073TRA TRA" +
-                " WHERE NFV.CODEMP = IPV.CODEMP AND NFV.CODFIL = IPV.CODFIL AND " +
-                "NFV.CODSNF = IPV.CODSNF AND TRA.CODTRA = NFV.CODTRA AND" +
-                " NFV.NUMNFV = IPV.NUMNFV AND IPV.NUMREG = " + ocorrencia;
+            string sql = "UPDATE N0203REG SET TRACLI = " + CodTra + " WHERE NUMREG = " + NumReg;
+
+            //string sql = "select USUGER from N0203REG WHERE NUMREG = " + NumReg;
+
+            DebugEmail email = new DebugEmail();
+            email.Email("InserirTransporteIndenizado", sql);
+
+            OracleConnection conn = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            OracleDataReader dr = cmd.ExecuteReader();
+            
+            //if (dr.Read()) { 
+            //    email.Email("inserir ocorrencia ", dr["USUGER"].ToString());
+            //}
+            conn.Close();
+
+            return true;
+        }
+
+        public listaTransportadora ConsultaTransportadora(int NotaOcorrencia, string Tipo)
+        {
+            String sql = "";
+            if (Tipo == "O") { 
+                sql = "SELECT DISTINCT(NFV.CODTRA) AS CODTRA, TRA.NOMTRA AS NOMTRA, TRA.APETRA AS APETRA, NFV.CODRED AS CODRED FROM  " +
+                    "SAPIENS.E140NFV NFV, N0203IPV IPV, SAPIENs.E073TRA TRA" +
+                    " WHERE NFV.CODEMP = IPV.CODEMP AND NFV.CODFIL = IPV.CODFIL AND " +
+                    "NFV.CODSNF = IPV.CODSNF AND TRA.CODTRA = NFV.CODTRA AND" +
+                    " NFV.NUMNFV = IPV.NUMNFV AND IPV.NUMREG = " + NotaOcorrencia;
+            }
+            else
+            {
+                sql = "SELECT DISTINCT(NFV.CODTRA) AS CODTRA, " +
+                      "TRA.NOMTRA AS NOMTRA, " +
+                      "TRA.APETRA AS APETRA, " +
+                      "NFV.CODRED AS CODRED " +
+                      "FROM SAPIENS.E140NFV NFV, SAPIENS.E073TRA TRA " +
+                      "WHERE TRA.CODTRA = NFV.CODTRA AND NFV.NUMNFV = " + NotaOcorrencia;
+            }
 
             OracleConnection conn = new OracleConnection(OracleStringConnection);
             OracleCommand cmd = new OracleCommand(sql, conn);
@@ -355,6 +390,26 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             conn.Close();
             return origem;
 
+        }
+
+        public int pegaTransportadoraOcorrencia(long NumReg)
+        {
+            string sql = "SELECT TRACLI FROM N0203REG WHERE NUMREG = " + NumReg;
+
+            DebugEmail email = new DebugEmail();
+            email.Email("pegaTransportadoraOcorrencia", sql);
+            OracleConnection conn = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            OracleDataReader dr = cmd.ExecuteReader();
+            int TraCli = 0;
+            if (dr.Read())
+            {
+                TraCli = Convert.ToInt32(dr["TRACLI"]);
+            }
+
+            return TraCli;
         }
 
         public string GravarTransacaoIndenizado(long NumReg, long Usuario)
@@ -1568,7 +1623,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     listaSituacao.Add((long)Enums.SituacaoRegistroOcorrencia.Reprovado);
 
                     N9999USUDataAccess N9999USUDataAccess = new N9999USUDataAccess();
+
                     ActiveDirectoryDataAccess ActiveDirectoryDataAccess = new ActiveDirectoryDataAccess();
+
 
                     var loginUsuario = N9999USUDataAccess.ListaDadosUsuarioPorCodigo(codUsuarioLogado).LOGIN;
 
@@ -1588,6 +1645,33 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 
                     return lista;
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string descTransportadoraIndenizacao(long CodTRa)
+        {
+            try
+            {
+                string sql = "SELECT NOMTRA FROM SAPIENS.E073TRA WHERE CODTRA = " + CodTRa;
+                OracleConnection conn = new OracleConnection(OracleStringConnection);
+                OracleCommand cmd = new OracleCommand(sql, conn);
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+
+                DebugEmail email = new DebugEmail();
+                email.Email("desc", sql);
+
+                OracleDataReader dr = cmd.ExecuteReader();
+                string NomTra = "";
+                while (dr.Read())
+                {
+                    NomTra = dr["NOMTRA"].ToString();
+                }
+                return NomTra;
             }
             catch (Exception ex)
             {
@@ -3157,8 +3241,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     listaTiposPesquisa.Add((int)Enums.TipoPesquisaRegistroOcorrencia.Placa_Periodo);
                     listaTiposPesquisa.Add((int)Enums.TipoPesquisaRegistroOcorrencia.Placa_Data_Faturamento);
 
-                    DebugEmail email = new DebugEmail();
-                    
                     if (listaTiposPesquisa.Contains(tipoPesquisa))
                     {
                         // Seta Lista
@@ -3868,9 +3950,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     //var situacaoPreAprovado = (int)Enums.SituacaoRegistroOcorrencia.PreAprovado;
                     var tipoAtendimento = (int)Enums.TipoAtendimento.DevolucaoMercadorias;
                     var listaN0203REG = new List<N0203REG>();
-
-                    DebugEmail email = new DebugEmail();
-                    //email.Email("Codigo Usuário ", codUsuarioLogado.ToString());
 
                     var centroCusto = contexto.N0203UAP.Where(c => c.CODATD == tipoAtendimento && c.CODUSU == codUsuarioLogado).Select(t => t.CODORI).ToList();
 
@@ -5448,8 +5527,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                                       MDV.DESCMDV
                              ORDER BY REG.DATGER ASC";
 
-            DebugEmail email = new DebugEmail();
-            
             OracleConnection conn = new OracleConnection(OracleStringConnection);
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.CommandType = CommandType.Text;

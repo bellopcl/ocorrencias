@@ -196,6 +196,9 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 {
                     modelo.MensagemRetorno = "Registro salvo com sucesso! Ocorrência número: " + N0203REG.NUMREG.ToString() + ".";
 
+                    DebugEmail email = new DebugEmail();
+                    email.Email("Solicitação controller ", modelo.CodTra.ToString());
+
                     if (modelo.Acao == "Finalizar")
                     {
                         E140NFVBusiness E140NFVBusiness = new E140NFVBusiness();
@@ -257,6 +260,9 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                         {
                             //this.MontarEmailFinanceiroNotasBoleto(N0203REG.NUMREG.ToString(), notasEmail, cliente, tipoAtend);
                         }
+
+                        N0203REGBusiness n0203REGBusiness = new N0203REGBusiness();
+                        n0203REGBusiness.InserirTransporteIndenizado(N0203REG.NUMREG, modelo.CodTra);
 
                         // Email Usuários Aprovadores
                         var areasAprovadoras = N0203REG.N0203IPV.GroupBy(c => c.ORIOCO).Select(c => c.Key).ToList();
@@ -442,6 +448,13 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 this.Session["ExceptionErro"] = ex;
                 return this.Json(new { redirectUrl = Url.Action("ErroException", "Erro"), ErroExcecao = true }, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        public JsonResult descTransportadoraIndenizacao(long CodTra)
+        {
+            N0203REGBusiness n0203REGBusiness = new N0203REGBusiness();
+            var DescTransportadora = n0203REGBusiness.descTransportadoraIndenizacao(CodTra);
+            return this.Json(new { DescTransportadora = DescTransportadora, redirectUrl = Url.Action("Login", "Login"), Logado = true }, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult PesquisarItemAnexo(string codigoRegistro, string idLinhaAnexo)
@@ -652,6 +665,12 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 {
                     modelo.MensagemRetorno = "Registro salvo com sucesso! Ocorrência número: " + codProtocolo.ToString() + ".";
 
+                    DebugEmail email = new DebugEmail();
+                    email.Email("Solicitação controller 2", modelo.CodTra.ToString());
+
+                    N0203REGBusiness n0203REGBusiness = new N0203REGBusiness();
+                    n0203REGBusiness.InserirTransporteIndenizado(codProtocolo, modelo.CodTra);
+
                     if (modelo.Acao == "Finalizar")
                     {
                         E140NFVBusiness E140NFVBusiness = new E140NFVBusiness();
@@ -704,10 +723,10 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                         if (modelo.TipoAtendimento == (int)Enums.TipoAtendimento.TrocaMercadorias)
                             tipoAtend = Enums.TipoAtendimento.TrocaMercadorias;
                         // INSERIR REGISTRO
-                        if (!string.IsNullOrEmpty(notasEmail))
-                        {
+                        //if (!string.IsNullOrEmpty(notasEmail))
+                        //{
                             //   this.MontarEmailFinanceiroNotasBoleto(N0203REG.NUMREG.ToString(), notasEmail, cliente, tipoAtend);
-                        }
+                        //}
 
                         // Email Usuários Aprovadores
                         var areasAprovadoras = N0203REG.N0203IPV.GroupBy(c => c.ORIOCO).Select(c => c.Key).ToList();
@@ -1506,9 +1525,6 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
             {
                 return this.Json(new { Campos = true }, JsonRequestBehavior.AllowGet);
             }
-
-            DebugEmail email = new DebugEmail();
-            email.Email("Teste", codigoCliente.ToString());
 
             try
             {

@@ -9,13 +9,18 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
     {
         private sapiens_Syncnutriplan_ven_pedidosClient PedidosClient { get; set; }
 
-        public bool EmitirPedido(int ocorrencia, long Usuario, int codTra, out string mensagemRetorno)
+        public bool EmitirPedido(int ocorrencia, long Usuario, out string mensagemRetorno)
         {
             try
             {
                 mensagemRetorno = string.Empty;
                 using (this.PedidosClient = new sapiens_Syncnutriplan_ven_pedidosClient())
                 {
+
+                    N0203REGDataAccess reg = new N0203REGDataAccess();
+
+                    int codTra = reg.pegaTransportadoraOcorrencia(ocorrencia);
+
                     this.PedidosClient.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
                     var dadosPedido = new pedidosPedidoViaOcorrenciaIn();
 
@@ -42,7 +47,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 
                     mensagemRetorno = retorno.mensagemRetorno;
                     if (mensagemRetorno == "OK") { 
-                        N0203REGDataAccess reg = new N0203REGDataAccess();
                         reg.GravarTransacaoIndenizado(ocorrencia, Usuario);
                     }
                 }

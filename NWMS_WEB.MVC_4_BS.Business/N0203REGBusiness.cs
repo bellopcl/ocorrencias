@@ -44,10 +44,16 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
  
         }
 
-        public listaTransportadora ConsultaTransportadora(int ocorrencia)
+        public bool InserirTransporteIndenizado(long Numreg, int Codtra)
+        {
+            N0203REGDataAccess n0203REGDataAccess = new N0203REGDataAccess();
+            return n0203REGDataAccess.InserirTransporteIndenizado(Numreg, Codtra);
+        }
+
+        public listaTransportadora ConsultaTransportadora(int ocorrencia, string Tipo)
         {
             var N0203GDataAccess = new N0203REGDataAccess();
-            return N0203GDataAccess.ConsultaTransportadora(ocorrencia);
+            return N0203GDataAccess.ConsultaTransportadora(ocorrencia, Tipo);
         }
 
         public string OrigemOcorrencia(int NumReg)
@@ -56,13 +62,13 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
             return N0203GDataAccess.OrigemOcorrencia(NumReg);
         }
 
-        public bool PedidosViaOcorrencia(int ocorrencia, long Usuario, int codTra, out string mensagemRetorno)
+        public bool PedidosViaOcorrencia(int ocorrencia, long Usuario, out string mensagemRetorno)
         {
             try
             {
                 mensagemRetorno = string.Empty;
                 var pedidosViaOcorrencia = new PedidosViaOcorrenciaDataAccess();
-                return pedidosViaOcorrencia.EmitirPedido(ocorrencia, Usuario, codTra, out mensagemRetorno);
+                return pedidosViaOcorrencia.EmitirPedido(ocorrencia, Usuario, out mensagemRetorno);
             }
             catch (Exception ex)
             {
@@ -342,6 +348,12 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
             {
                 throw ex;
             }
+        }
+
+        public string descTransportadoraIndenizacao(long CodTra)
+        {
+            N0203REGDataAccess n0203REGDataAccess = new N0203REGDataAccess();
+            return n0203REGDataAccess.descTransportadoraIndenizacao(CodTra);
         }
         /// <summary>
         /// Chama a classe para pesquisar todos os registros de ocorrência 

@@ -30,6 +30,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Model
         public string OBSREG { get; set; }
         public string PLACA { get; set; }
         public string APREAP { get; set; }
+        public long TRACLI { get; set; }
         public virtual ICollection<N0203ANX> N0203ANX { get; set; }
         public virtual ICollection<N0203APR> N0203APR { get; set; }
         public virtual ICollection<N0203IPV> N0203IPV { get; set; }

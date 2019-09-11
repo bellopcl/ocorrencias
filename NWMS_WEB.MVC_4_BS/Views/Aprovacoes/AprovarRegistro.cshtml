@@ -64,21 +64,25 @@
             $('#progressBar').show();
             $("#gridTableCliente").hide();
             $.ajaxSetup({ cache: false });
-            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", { ocorrencia: ocorrencia }, function (data) {
+            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", { ocorrencia: ocorrencia , tipo: "O"}, function (data) {
                 if (data.listaTransportador) {
                     var arrayRow = new Array();
                     $('#TableCliente').dataTable().fnClearTable();
-                    var codigo = data.listaTransportador.CODTRA;
-                    var nome = data.listaTransportador.NOMTRA;
-                    var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
-                    var razaoSocial = data.listaTransportador.APETRA;
-                    arrayRow[0] = new Array(selecionar, codigo, nome, razaoSocial);
+                    var array = 0;
+                    if (data.listaTransportador.CODTRA > 1) {
+                        var codigo = data.listaTransportador.CODTRA;
+                        var nome = data.listaTransportador.NOMTRA;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.APETRA;
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
+                        array = 1;
+                    }
                     if (data.listaTransportador.CODRED != "0") {
                         var codigo = data.listaTransportador.CODRED;
                         var nome = data.listaTransportador.NOMETRAREDES;
                         var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarCliente('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
                         var razaoSocial = data.listaTransportador.CODREDAPETRA;
-                        arrayRow[1] = new Array(selecionar, codigo, nome, razaoSocial);
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
                     }
                     $('#TableCliente').dataTable().fnAddData(arrayRow);
                     $('#TableCliente').dataTable().fnPageChange('first');
@@ -129,41 +133,7 @@
             keyCodeAnt = event.keyCode;
         });
 
-        function PesquisarTransportadora() {
-            var ocorrencia = $("#NumRegistroTextBox").val();
-            $.ajaxSetup({ cache: false });
-            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", {ocorrencia: ocorrencia}, function (data) {
-                if (data.logado || data.ErroExcecao) {
-                    window.location.href = data.redirectUrl;
-                    return;
-                }
-                else if (data.listaTransportador.CODTRA > 0) {
-                    ValidaOcorrencia();
-                    $("#CodigoClienteConferenciaItem").val(data.listaTransportador.CODTRA);
-                    $("#NomeclienteConferenciaItem").val(data.listaTransportador.NOMTRA);
-                }
-                else {
-                    DialogPadrao("warning", "Aviso!", "warning", "Nenhum registro encontrado", "btnOkNenhumRegTraEncontrado", "OK", true);
-                }
-            });
-        }
-
-        function ValidaOcorrencia() {
-            var registro = $("#NumRegistroTextBox").val();
-            $.ajaxSetup({ cache: false });
-            $.getJSON("@Url.Action("OrigemOcorrencia", "Aprovacoes")", { Numreg: registro }, function (data) {
-                if (data.ListaOrigemOcorrencia == "8") {
-                    document.getElementById("CodigoClienteConferenciaItem").style.display = "block";
-                    document.getElementById("NomeclienteConferenciaItem").style.display = "block";
-                    document.getElementById("ConferenciaItem").style.display = "block";
-                } else {
-                    document.getElementById("CodigoClienteConferenciaItem").style.display = "none";
-                    document.getElementById("NomeclienteConferenciaItem").style.display = "none";
-                    document.getElementById("ConferenciaItem").style.display = "none";
-                }
-            });
-        }
-
+        
         function ValidaObservacoes() {
             setTimeout(function () {
                 if ($("#ObservacoesTextBox").valid()) {
@@ -376,7 +346,7 @@
         <div class="row">
             @Html.LabelFor(m => m.NumRegistro, new { @class = "col-md-2 control-label" })
             <div class="col-md-2">
-                @Html.TextBoxFor(m => m.NumRegistro, new { @class = "form-control input-sm", @id = "NumRegistroTextBox", @onblur = "PesquisarTransportadora()" })
+                @Html.TextBoxFor(m => m.NumRegistro, new { @class = "form-control input-sm", @id = "NumRegistroTextBox"})
             </div>
         </div>
         <div class="row">

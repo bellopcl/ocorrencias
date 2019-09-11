@@ -205,11 +205,6 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                         dadosUsuario = N9999USUBusiness.ListaDadosUsuarioPorLogin(modelo.UserName);
                         modelo.versaoSistema = "Produção";
 
-                        string testo = "";
-                        testo = modelo.UserName + " " + modelo.Password;
-                        DebugEmail email = new DebugEmail();
-                        //email.Email("LoginController", testo);
-
                         if (dadosUsuario != null)
                         {
                             var n9999MENBusiness = new N9999MENBusiness();

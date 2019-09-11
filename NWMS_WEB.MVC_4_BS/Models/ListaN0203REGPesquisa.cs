@@ -36,6 +36,7 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Models
         public string Observacao { get; set; }
         public string CodPlaca { get; set; }
         public string DescPlaca { get; set; }
+        public long CodTra { get; set; }
 
         public static explicit operator ListaN0203REGPesquisa(N0203REG N0203REG)
         {
@@ -63,6 +64,8 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Models
             item.NomeCliente = listaClientes.FirstOrDefault().NomeFantasia;
             item.CnpjCliente = listaClientes.FirstOrDefault().CnpjCpf;
             item.InscricaoEstadualCliente = listaClientes.FirstOrDefault().InscricaoEstadual;
+
+            item.CodTra = N0203REG.TRACLI;
 
             item.CodMotorista = N0203REG.CODMOT;
             item.NomeMotorista = "TRANSPORTADORA";

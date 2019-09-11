@@ -614,6 +614,7 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 var msgRetornoPedido = string.Empty;
 
                 // Operação ==> Aprovar e Tipo Nota ==> Nutriplan
+                //N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), out msgRetornoPedido);
                 if (int.Parse(operacao) == (int)Enums.OperacaoAprovacaoFaturamento.Aprovar && int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Nutriplan)
                 {
                     var dadosProtocolo = N0203REGBusiness.PesquisaRegistroOcorrencia(long.Parse(codigoRegistro), (int)Enums.SituacaoRegistroOcorrencia.Recebido);
@@ -633,7 +634,7 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
 
                             if (Motivo == 8)
                             { 
-                                N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), codTra, out msgRetornoPedido);
+                                N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), out msgRetornoPedido);
                             }
                             if (!N0203REGBusiness.EmitirLancamentoNfe(long.Parse(codigoRegistro), dadosProtocolo, out msgRetornoSapiens))
                             {
@@ -673,11 +674,10 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
             }
         }
 
-        public JsonResult ConsultarTransportadora(int ocorrencia)
+        public JsonResult ConsultarTransportadora(int ocorrencia, string tipo)
         {
-            DebugEmail email = new DebugEmail();
             var N0203REGBusiness = new N0203REGBusiness();
-            var listaTransportador = N0203REGBusiness.ConsultaTransportadora(ocorrencia);
+            var listaTransportador = N0203REGBusiness.ConsultaTransportadora(ocorrencia, tipo);
             return this.Json(new { listaTransportador = listaTransportador, redirectUrl = Url.Action("Login", "Login"), Logado = true }, JsonRequestBehavior.AllowGet);
         }
 
