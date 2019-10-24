@@ -36,10 +36,10 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
             }
         }
 
-        public int ConsultarOrigem(int Ocorrencia)
+        public bool ConsultarOrigem(int Ocorrencia)
         {
             var N0203REGDataAccess = new N0203REGDataAccess();
-            int Motivo = N0203REGDataAccess.ConsultarOrigem(Ocorrencia);
+            bool Motivo = N0203REGDataAccess.ConsultarOrigem(Ocorrencia);
             return Motivo;
  
         }
@@ -54,6 +54,12 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
         {
             var N0203GDataAccess = new N0203REGDataAccess();
             return N0203GDataAccess.ConsultaTransportadora(ocorrencia, Tipo);
+        }
+
+        public bool verificaAprovador(long CodOri, long CodAtendimento)
+        {
+            var N0203GDataAccess = new N0203REGDataAccess();
+            return N0203GDataAccess.verificaAprovador(CodOri, CodAtendimento);
         }
 
         public string OrigemOcorrencia(int NumReg)

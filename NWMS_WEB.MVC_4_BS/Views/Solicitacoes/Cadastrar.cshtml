@@ -1468,12 +1468,17 @@
             }
         });
         var msgRetorno = '@Model.MensagemRetorno';
+        var aprovado = '@Model.Aprovado';
         if (msgRetorno != "") {
-            if (msgRetorno.length > 160) {
+            if (aprovado == 1) {
                 DialogPadrao("danger", "Verifique!", "danger", msgRetorno, "btnOkProtocolosAberto", "OK", true);
-            }
-            else {
-                DialogPadrao("success", "Sucesso!", "success", msgRetorno, "btnOkDevolucaoSucesso", "OK", true);
+            } else {
+                if (msgRetorno.length > 160) {
+                    DialogPadrao("danger", "Verifique!", "danger", msgRetorno, "btnOkProtocolosAberto", "OK", true);
+                }
+                else {
+                    DialogPadrao("success", "Sucesso!", "success", msgRetorno, "btnOkDevolucaoSucesso", "OK", true);
+                }
             }
         }
         $(window).keydown(function (event) {

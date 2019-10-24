@@ -614,7 +614,7 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 var msgRetornoPedido = string.Empty;
 
                 // Operação ==> Aprovar e Tipo Nota ==> Nutriplan
-                //N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), out msgRetornoPedido);
+                
                 if (int.Parse(operacao) == (int)Enums.OperacaoAprovacaoFaturamento.Aprovar && int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Nutriplan)
                 {
                     var dadosProtocolo = N0203REGBusiness.PesquisaRegistroOcorrencia(long.Parse(codigoRegistro), (int)Enums.SituacaoRegistroOcorrencia.Recebido);
@@ -630,9 +630,9 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                         if (validarNotas.Count() == 0)
                         {
                             // Lançar Nota No SISTEMA SAPIENS
-                            int Motivo = N0203REGBusiness.ConsultarOrigem(Convert.ToInt32(codigoRegistro));
+                            bool Motivo = N0203REGBusiness.ConsultarOrigem(Convert.ToInt32(codigoRegistro));
 
-                            if (Motivo == 8)
+                            if (Motivo == true)
                             { 
                                 N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), out msgRetornoPedido);
                             }

@@ -1131,7 +1131,6 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.d
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\RdlCompile.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\RdlCompile.compiled
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\NWORKFLOW_WEB.MVC_4_BS.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\NWORKFLOW_WEB.MVC_4_BS.pdb

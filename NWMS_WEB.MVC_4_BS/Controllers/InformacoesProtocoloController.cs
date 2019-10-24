@@ -427,7 +427,6 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 return this.Json(new { redirectUrl = Url.Action("ErroException", "Erro"), ErroExcecao = true }, JsonRequestBehavior.AllowGet);
             }
         }
-
         public JsonResult AprovadosEsperandoFaturamento()
         {
             if (this.Logado != ((char)Enums.Logado.Sim).ToString())

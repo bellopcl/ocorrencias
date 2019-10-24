@@ -274,7 +274,6 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Compre
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Pdf.Base.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\EntityFramework.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb

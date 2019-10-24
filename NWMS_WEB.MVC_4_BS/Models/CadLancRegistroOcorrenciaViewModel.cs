@@ -140,6 +140,8 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Models
         public int CodTra { get; set;  }
 
         public string NomeTra { get; set; }
+
+        public int Aprovado { get; set; }
         
         public List<ListaN0204ATDPesquisa> ListaTipoAtendimento { get; set; }
         

@@ -596,8 +596,15 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 modelo.ListaTipoAtendimento = ListaTipoAtendimentoPorUsuario();
 
                 ModelState.Remove("NumNotaSug");
-
+                modelo.Aprovado = 0;
                 N0203REGBusiness N0203REGBusiness = new N0203REGBusiness();
+                if (N0203REGBusiness.verificaAprovador(modelo.OrigemOcorrencia, modelo.TipoAtendimento) == false)
+                {
+                    modelo.MensagemRetorno = "Não existe usuário aprovador para esta origem!";
+                    modelo.Aprovado = 1;
+                    return View("Cadastrar", modelo);
+                }
+
                 N0203REG N0203REG = new N0203REG();
                 N0203ANX N0203ANX = new N0203ANX();
                 modelo.MensagemRetorno = string.Empty;
@@ -665,16 +672,12 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 {
                     modelo.MensagemRetorno = "Registro salvo com sucesso! Ocorrência número: " + codProtocolo.ToString() + ".";
 
-                    DebugEmail email = new DebugEmail();
-                    email.Email("Solicitação controller 2", modelo.CodTra.ToString());
-
                     N0203REGBusiness n0203REGBusiness = new N0203REGBusiness();
                     n0203REGBusiness.InserirTransporteIndenizado(codProtocolo, modelo.CodTra);
 
                     if (modelo.Acao == "Finalizar")
                     {
                         E140NFVBusiness E140NFVBusiness = new E140NFVBusiness();
-
                         var notas = (from a in N0203REG.N0203IPV
                                      group new { a } by new { a.CODFIL, a.NUMNFV } into grupo
                                      select new

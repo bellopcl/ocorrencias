@@ -208,7 +208,6 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\bin\Debug\NUTRIPLAN_WEB.MVC
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\bin\Debug\EntityFramework.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\bin\Debug\NCommand.Console.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.csprojAssemblyReference.cache
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.csproj.CoreCompileInputs.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.csproj.CopyComplete
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.DataAccess\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb

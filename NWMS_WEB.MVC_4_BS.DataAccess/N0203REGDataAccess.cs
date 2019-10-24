@@ -266,6 +266,25 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             }
             return "VAZIO";
         }
+
+        public bool verificaAprovador(long CodOri, long CodAtendimento)
+        {
+            string sql = "SELECT COUNT(CODORI) AS QUANTIDADE FROM N0203UAP WHERE CODORI = " + CodOri + " AND CODATD = " + CodAtendimento;
+
+            OracleConnection conn = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                if (Convert.ToInt32(dr["QUANTIDADE"]) > 0){
+                    return  true;
+                }
+            }
+            return false;
+        }
         /// <summary>
         /// Retorna uma lista de colunas do banco de dados
         /// </summary>
@@ -295,9 +314,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             string sql = "UPDATE N0203REG SET TRACLI = " + CodTra + " WHERE NUMREG = " + NumReg;
 
             //string sql = "select USUGER from N0203REG WHERE NUMREG = " + NumReg;
-
-            DebugEmail email = new DebugEmail();
-            email.Email("InserirTransporteIndenizado", sql);
 
             OracleConnection conn = new OracleConnection(OracleStringConnection);
             OracleCommand cmd = new OracleCommand(sql, conn);
@@ -396,8 +412,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
         {
             string sql = "SELECT TRACLI FROM N0203REG WHERE NUMREG = " + NumReg;
 
-            DebugEmail email = new DebugEmail();
-            email.Email("pegaTransportadoraOcorrencia", sql);
             OracleConnection conn = new OracleConnection(OracleStringConnection);
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.CommandType = CommandType.Text;
@@ -408,7 +422,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             {
                 TraCli = Convert.ToInt32(dr["TRACLI"]);
             }
-
             return TraCli;
         }
 
@@ -1661,9 +1674,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
-
-                DebugEmail email = new DebugEmail();
-                email.Email("desc", sql);
 
                 OracleDataReader dr = cmd.ExecuteReader();
                 string NomTra = "";
@@ -3535,22 +3545,26 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             }
         }
 
-        public int ConsultarOrigem(int Ocorrencia)
+        public bool ConsultarOrigem(int Ocorrencia)
         {
             try
             {
-                string sql = "SELECT ORIOCO FROM N0203REG WHERE NUMREG = " + Ocorrencia + "";
+                string sql = "SELECT ORIOCO FROM N0203IPV WHERE NUMREG = " + Ocorrencia + "";
 
                 OracleConnection conn = new OracleConnection(OracleStringConnection);
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
-                int Motivo = 0;
+                bool Motivo = false;
                 OracleDataReader dr2 = cmd.ExecuteReader();
                 
                 while(dr2.Read())
                 {
-                    Motivo = (Convert.ToInt32(dr2["ORIOCO"]));
+                    //Motivo = (Convert.ToInt32(dr2["ORIOCO"]));
+                    if (Convert.ToInt32(dr2["ORIOCO"]) == 8)
+                    {
+                        Motivo = true;
+                    }
                 }
 
                 dr2.Close();
@@ -5420,8 +5434,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     itens.ValorLiquido = (itens.QtdeDevolucao * decimal.Parse(itens.PrecoUnitario.ToString())) + itens.ValorIpi + itens.ValorSt + itens.valorFrete - itens.Suframa;
                     itens.ValorLiquidoS = itens.ValorLiquido.ToString("###,###,##0.00");
 
-
-
                     SomaTotalValorLiquido = SomaTotalValorLiquido + itens.ValorLiquido;
                     itens.TotalValorLiquido = SomaTotalValorLiquido;
                     lista.Add(itens);
@@ -5797,6 +5809,8 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     return "4";
                 case "myBarChartRepresentante":
                     return "6";
+                case "myBarChartIndenizado":
+                    return "8";
             }
             return "";
         }
