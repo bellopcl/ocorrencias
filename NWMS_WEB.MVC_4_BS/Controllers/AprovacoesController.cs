@@ -699,6 +699,15 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 var N0203REGBusiness = new N0203REGBusiness();
                 var aprovadoSucesso = true;
                 string msgRetorno = "";
+                string msgRetornoPedido = string.Empty;
+                DebugEmail email = new DebugEmail();
+
+                bool Motivo = N0203REGBusiness.ConsultarOrigem(Convert.ToInt32(codigoRegistro));
+                email.Email("Email ", codigoRegistro);
+                if (Motivo == true)
+                {
+                    N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), out msgRetornoPedido);
+                }
 
                 msgRetorno = N0203REGBusiness.AprovarRegistrosOcorrencia(long.Parse(codigoRegistro), long.Parse(this.CodigoUsuarioLogado), observacao, int.Parse(operacao), tipoOperacao);
                 if (msgRetorno.Contains("Operação não permitida, verifique se a ocorrência está com a situação integrado ou faturada.") || msgRetorno.Contains("Operação não permitida, verifique se a ocorrência está com a situação recebida") || msgRetorno.Contains("não está com a situação recebido") || msgRetorno.Contains("Registro de Ocorrência está vinculada a um agrupamento."))
@@ -721,7 +730,13 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
 
                     if (int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Nutriplan)
                     {
-                        msgRetorno += msgRetorno + "<br/><br/>Retorno Sapiens: " + msgRetornoSapiens;
+                        if (msgRetornoPedido != "")
+                        {
+                            msgRetorno += msgRetorno + "<br/><br/>Retorno Sapiens: " + msgRetornoSapiens + " Pedido Indenizado: " + msgRetornoPedido;
+                        }
+                        else { 
+                            msgRetorno += msgRetorno + "<br/><br/>Retorno Sapiens: " + msgRetornoSapiens;
+                        }
                     }
                 }
 

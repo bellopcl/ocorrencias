@@ -40,9 +40,11 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 
                     var retorno = PedidosClient.PedidoViaOcorrencia("nworkflow.web", "!nfr@t1n", 0, dadosPedido);
 
+                    string msg = "Ocorrência: " + ocorrencia.ToString() + " Mensagem Retorno: " + retorno.mensagemRetorno; 
+
                     if (retorno.erroExecucao == null)
                     {
-                        email.Email("Webservice Pedido", retorno.mensagemRetorno);
+                        email.Email("Webservice Pedido", msg);
                     }
 
                     mensagemRetorno = retorno.mensagemRetorno;

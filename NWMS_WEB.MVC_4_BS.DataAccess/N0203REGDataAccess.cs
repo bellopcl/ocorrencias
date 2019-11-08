@@ -3550,7 +3550,8 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             try
             {
                 string sql = "SELECT ORIOCO FROM N0203IPV WHERE NUMREG = " + Ocorrencia + "";
-
+                DebugEmail email = new DebugEmail();
+                email.Email("email", sql);
                 OracleConnection conn = new OracleConnection(OracleStringConnection);
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
