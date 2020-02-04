@@ -1660,7 +1660,7 @@
         function ValidaQtdeFatDev() {
             var valorQtdeDev = $("#QtdeDevolucaoItemNotaTextBox").val();
             if (valorQtdeDev == "") { valorQtdeDev == "0"; }
-
+            alert(valorQtdeDev + " valorQtdeDev " + qtdeFaturadaItemNota + " qtdeFaturadaItemNota " + saldo + " saldo ")
             if (parseInt(valorQtdeDev) > parseInt(qtdeFaturadaItemNota - saldo)) {
                 $("#FieldErrorQtdeDevFat").removeClass("field-validation-valid").addClass("field-validation-error");
                 return false;

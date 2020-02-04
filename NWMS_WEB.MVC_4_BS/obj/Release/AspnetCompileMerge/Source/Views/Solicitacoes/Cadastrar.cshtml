@@ -60,6 +60,19 @@
             $("#HrefFase4").attr("href", "#fase4");
             $("#HrefFase4").attr("data-toggle", "tab");
             $("#liFase4").removeClass("disabled");
+            var Origem = $("#OrigemOcorrenciaFase2DropDownList").val();
+            var Origem1 = $("#OrigemOcorrenciaItemNotaDropDownList").val();
+            if (Origem == 8 || Origem1 == 8) {
+                document.getElementById("CodigoClienteConferenciaItem").style.display = "block";
+                document.getElementById("NomeclienteConferenciaItem").style.display = "block";
+                document.getElementById("ConferenciaItem").style.display = "block";
+                listaTransportadora();
+            }
+            else {
+                document.getElementById("CodigoClienteConferenciaItem").style.display = "none";
+                document.getElementById("NomeclienteConferenciaItem").style.display = "none";
+                document.getElementById("ConferenciaItem").style.display = "none";
+            }
         }
         function ValidaCamposObrigatorios() {
             var tipAtend = $("#TipoAtendimentoDropDownList option:selected").val();
@@ -551,6 +564,116 @@
             });
         }
         var idColunaTableNotasSaida;
+
+        // Seleciona Transportadora do Cliente
+        $("#PesquisarClienteButtonItens").click(function () {
+            PesquisarTransportador();
+        });
+
+        $('#TableTransporte').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            "scrollX": true,
+        });
+
+        function PesquisarTransportador() {
+            //var ocorrencia = $("#NumRegistroTextBox").val();
+            var ocorrencia = $("#NumNotaFiscalTextBox").val();
+            //var Origem = $("#OrigemOcorrenciaItemNotaDropDownList").val();
+            var Origem = $("#OrigemOcorrenciaFase2DropDownList").val();
+            var origem1 = $("#OrigemOcorrenciaFase1Div").val();
+            $('#progressBar').show();
+            $("#gridTableTransporte").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", { ocorrencia: ocorrencia, tipo: "T" }, function (data) {
+                if (data.listaTransportador) {
+                    var arrayRow = new Array();
+                    $('#TableTransporte').dataTable().fnClearTable();
+                    var array = 0;
+                    if (data.listaTransportador.CODTRA > 1) {
+                        var codigo = data.listaTransportador.CODTRA;
+                        var nome = data.listaTransportador.NOMTRA;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarTransporte('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.APETRA;
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
+                        array = 1;
+                    }
+                    if (data.listaTransportador.CODRED != "0") {
+                        var codigo = data.listaTransportador.CODRED;
+                        var nome = data.listaTransportador.NOMETRAREDES;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarTransporte('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.CODREDAPETRA;
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
+                    }
+                    $('#TableTransporte').dataTable().fnAddData(arrayRow);
+                    $('#TableTransporte').dataTable().fnPageChange('first');
+                    $("#gridTableTransporte").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#TransporteDialog').modal('show');
+            });
+        }
+
+        function SelecionarTransporte(codigo, nome) {
+            $("#CodigoClienteConferenciaItem").val("");
+            $("#CodigoClienteConferenciaItem").focus();
+            $("#TransporteDialog").modal("hide");
+            setTimeout(function () {
+                $("#CodigoClienteConferenciaItem").val(codigo);
+                $("#NomeclienteConferenciaItem").val(nome);
+                $("#CodigoClienteConferenciaItem").focus();
+            }, 50);
+        }
+
+        function listaTransportadora() {
+            var ocorrencia = $("#NumNotaFiscalTextBox").val();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", { ocorrencia: ocorrencia, tipo: "T" }, function (data) {
+                if (data.listaTransportador.CODTRA > 0) {
+                    var CodTransportadora = data.listaTransportador.CODTRA;
+                    var CodTraRedespacho = data.listaTransportador.CODRED;
+                    //ValidaOcorrencia(CodTransportadora, CodTraRedespacho);
+                    if (CodTransportadora > 1) {
+                        $("#CodigoClienteConferenciaItem").val(data.listaTransportador.CODTRA);
+                        $("#NomeclienteConferenciaItem").val(data.listaTransportador.NOMTRA);
+                    } else if (CodTraRedespacho > 1) {
+                        $("#CodigoClienteConferenciaItem").val(data.listaTransportador.CODRED);
+                        $("#NomeclienteConferenciaItem").val(data.listaTransportador.NOMETRAREDES); //
+                    } else {
+                        $("#CodigoClienteConferenciaItem").val(0);
+                        $("#NomeclienteConferenciaItem").val("");
+                    }
+                }
+                
+            });
+        }
+
         // Recupera o id da coluna clicada para selecionar a linha clicada no evento abaixo -- td ==> coluna
         $('#TableNotasFiscaisSaida tbody').on('click', 'td', function () {
             // idColuna
@@ -1200,6 +1323,7 @@
                     notasAdicionadasDevolucao = notasAdicionadasDevolucao.replace(notasAdd[x], "");
                 }
             }
+
             var valorLiquido = $("#ValorLiquidoDevolucaoTextBox").val().toString().replace(".", "").replace(",", "");
             var valorReceber = totalNotas - parseFloat(valorLiquido);
             $("#ValorReceberTextBox").val(valorReceber);
@@ -1216,7 +1340,7 @@
                 var descricaoMotivo = $("#MotivoDevolucaoFase2DropDownList option:selected").text();
                 if (codigoMotivo != "0") {
                     //AQUI
-                    CarregaDropDownOrigemOcorrencia(codigoMotivo, "OrigemOcorrenciaFase2DropDownList", "");
+                    //CarregaDropDownOrigemOcorrencia(codigoMotivo, "OrigemOcorrenciaFase2DropDownList", "");
                 }
                 else {
                     //$("#OrigemOcorrenciaFase2DropDownList").empty();
@@ -1233,6 +1357,7 @@
                     var qtdeFat = dadosLinha[5];
                     var numeroNota = $("#NumNotaFiscalTextBox").val();
                     table.fnUpdate("0", $(this.nTr).index(), 6, false, false);
+                    //aquio
                     table.fnUpdate(descricaoMotivo, $(this.nTr).index(), 8, false, false);
                     table.fnUpdate(qtdeFat, $(this.nTr).index(), 6, false, false);
                     var dadosLinha = table.fnGetData($(this.nTr).index());
@@ -1343,12 +1468,17 @@
             }
         });
         var msgRetorno = '@Model.MensagemRetorno';
+        var aprovado = '@Model.Aprovado';
         if (msgRetorno != "") {
-            if (msgRetorno.length > 160) {
+            if (aprovado == 1) {
                 DialogPadrao("danger", "Verifique!", "danger", msgRetorno, "btnOkProtocolosAberto", "OK", true);
-            }
-            else {
-                DialogPadrao("success", "Sucesso!", "success", msgRetorno, "btnOkDevolucaoSucesso", "OK", true);
+            } else {
+                if (msgRetorno.length > 160) {
+                    DialogPadrao("danger", "Verifique!", "danger", msgRetorno, "btnOkProtocolosAberto", "OK", true);
+                }
+                else {
+                    DialogPadrao("success", "Sucesso!", "success", msgRetorno, "btnOkDevolucaoSucesso", "OK", true);
+                }
             }
         }
         $(window).keydown(function (event) {
@@ -1530,7 +1660,7 @@
         function ValidaQtdeFatDev() {
             var valorQtdeDev = $("#QtdeDevolucaoItemNotaTextBox").val();
             if (valorQtdeDev == "") { valorQtdeDev == "0"; }
-
+            alert(valorQtdeDev + " valorQtdeDev " + qtdeFaturadaItemNota + " qtdeFaturadaItemNota " + saldo + " saldo ")
             if (parseInt(valorQtdeDev) > parseInt(qtdeFaturadaItemNota - saldo)) {
                 $("#FieldErrorQtdeDevFat").removeClass("field-validation-valid").addClass("field-validation-error");
                 return false;
@@ -2122,6 +2252,25 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade bs-example-modal-lg" id="TransporteDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Transportadora</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableTransporte" style="display: none;">
+                        <table id="TableTransporte" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade bs-example-modal-lg" id="MotoristaDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -2533,6 +2682,25 @@
         <div class="tab-pane fade" id="fase4">
             <div class="panel panel-default" id="DivPanelFase4" style="display: block;">
                 <legend>&nbsp;&nbsp;Digite as observações abaixo</legend>
+
+                <div id="ConferenciaItem" class="form-group">
+                    <p></p>
+                    @Html.LabelFor(m => m.CodTra, new { @class = "col-md-1 control-label" })
+                    <div class="col-md-1">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.CodTra, new { @class = "form-control input-smgroup", @id = "CodigoClienteConferenciaItem" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButtonItens"><span class="glyphicon glyphicon-search" title="Pesquisar Transportadora"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextBoxFor(m => m.NomeTra, new { @class = "form-control input-smgroup", @id = "NomeclienteConferenciaItem", @readonly = "true" })
+                        @Html.ValidationMessageFor(m => m.CodTra)
+                        @Html.ValidationMessageFor(m => m.NomeTra)
+                    </div>
+                </div>
+
                 <div class="form-group">
                     @Html.LabelFor(m => m.Observacoes, new { @class = "col-md-1 control-label" })
                     <div class="col-lg-10-2" id="ObservacoesDiv">

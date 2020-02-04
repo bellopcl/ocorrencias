@@ -1380,8 +1380,6 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\ru\System.Spatial.resources.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hans\System.Spatial.resources.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\zh-Hant\System.Spatial.resources.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csprojAssemblyReference.cache
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
@@ -1639,3 +1637,5 @@ C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CopyComplete
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.dll
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled

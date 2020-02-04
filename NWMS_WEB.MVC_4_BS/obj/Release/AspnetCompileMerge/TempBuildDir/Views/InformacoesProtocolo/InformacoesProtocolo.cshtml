@@ -1,4 +1,5 @@
 ﻿
+
 @model NWORKFLOW_WEB.MVC_4_BS.Models.InformacoesProtocoloViewModel
 @{
     ViewBag.Title = "InformacoesProtocolo";
@@ -37,6 +38,7 @@
         var comercial = 0;
         var cliente = 0;
         var transporte = 0;
+        var transporteindenizado = 0;
         var contabilidade = 0;
         var mes = 0;
         var ano = 0;
@@ -52,6 +54,7 @@
         var arrayComercial = new Array();
         var arrayCliente = new Array();
         var arrayTransporte = new Array();
+        var arrayIndenizado = new Array();
         var arrayContabilidade = new Array();
         var myLineChart;
         var myRadarChart;
@@ -739,12 +742,14 @@
                     var countTransporte = 0;
                     var countIndustria = 0;
                     var countContabilidade = 0;
+                    var countIndenizado = 0;
 
                     for (var i = 0; i < data.mesOrigem.length; i++) {
                         var mes = data.mesOrigem[i].mes;
                         var ano = data.mesOrigem[i].ano;
                         var quantidade = data.mesOrigem[i].quantidade;
                         var origem = data.mesOrigem[i].origem;
+
                         switch (data.mesOrigem[i].origem) {
                             case "Comercial":
                                 arrayComercial[countComercial] = new Array(mes, quantidade, origem, ano);
@@ -765,6 +770,10 @@
                             case "Transporte":
                                 arrayTransporte[countTransporte] = new Array(mes, quantidade, origem, ano);
                                 countTransporte++;
+                                break;
+                            case "Transporte Indenizado":
+                                arrayIndenizado[countIndenizado] = new Array(mes, quantidade, origem, ano);
+                                countIndenizado++;
                                 break;
                             case "Qualidade":
                                 arrayIndustria[countIndustria] = new Array(mes, quantidade, origem, ano);
@@ -822,6 +831,7 @@
             transporte = 0;
             industria = 0;
             contabilidade = 0;
+            transporteindenizado = 0;
         }
 
 
@@ -865,6 +875,9 @@
                             case "Contabilidade":
                                 contabilidade = data.ListaN0204ORI[i].QTDORIVALOR;
                                 break;
+                            case "Transporte Indenizado":
+                                transporteindenizado = data.ListaN0204ORI[i].QTDORIVALOR;
+                                break;
                         }
                     }
                     if (at) {
@@ -873,8 +886,10 @@
                         myRadarChart.data.datasets[0].data[2] = expedicao;
                         myRadarChart.data.datasets[0].data[3] = cliente;
                         myRadarChart.data.datasets[0].data[4] = transporte;
-                        myRadarChart.data.datasets[0].data[5] = industria;
-                        myRadarChart.data.datasets[0].data[6] = contabilidade;
+                        myRadarChart.data.datasets[0].data[5] = transporteindenizado;
+                        myRadarChart.data.datasets[0].data[6] = industria;
+                        myRadarChart.data.datasets[0].data[7] = contabilidade;
+                        
                         myRadarChart.update();
                     }
                 } else {
@@ -902,14 +917,14 @@
                     }
                 },
                 data: {
-                    labels: ['Aguardando Faturamento (Usu)', 'Pendentes de Pré-Aprovação (Usu)'],
+                    labels: ['Aguardando Faturamento (Usu)', 'Pendentes de Pré-Aprovação teste (Usu)'],
                     legend: false,
                     datasets: [{
                         backgroundColor: [
                           "#73a839",
                           "#396339"
                         ],
-                        data: [quantidadePendentePreAprovado, quantidadePendentePreAprovacao]
+                        data: [quantidadePendentePreAprovado, quantidadePendentePreAprovacao,]
                     }]
                 }
             });
@@ -979,6 +994,7 @@
             exepdicaoMeses = 0;
             clienteMeses = 0;
             transporteMeses = 0;
+            transporteindenizadoMeses = 0;
             industriaMeses = 0;
             contabilidadeMeses = 0;
 
@@ -991,6 +1007,7 @@
             var exepdicaoMeses = 0;
             var clienteMeses = 0;
             var transporteMeses = 0;
+            var transporteindenizadoMeses = 0;
             var industriaMeses = 0;
 
             var contabilidadeMeses = 0;
@@ -1030,6 +1047,9 @@
                             case "Contabilidade":
                                 contabilidadeMeses = data.ListaN0204ORI[i].QTDORI;
                                 break;
+                            case "Transporte Indenizado":
+                                transporteindenizadoMeses = data.ListaN0204ORI[i].QTDORI;
+                                break;
                         }
                     }
                     if (at) {
@@ -1038,15 +1058,16 @@
                         myLineChart.data.datasets[0].data[2] = exepdicaoMeses;
                         myLineChart.data.datasets[0].data[3] = clienteMeses;
                         myLineChart.data.datasets[0].data[4] = transporteMeses;
-                        myLineChart.data.datasets[0].data[5] = industriaMeses;
-                        myLineChart.data.datasets[0].data[6] = contabilidadeMeses;
+                        myLineChart.data.datasets[0].data[5] = transporteindenizadoMeses;
+                        myLineChart.data.datasets[0].data[6] = industriaMeses;
+                        myLineChart.data.datasets[0].data[7] = contabilidadeMeses;
                         myLineChart.update();
                     } else {
-                        graficoRadarMeses(comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, industriaMeses, contabilidadeMeses)
+                        graficoRadarMeses(comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, transporteindenizadoMeses, industriaMeses, contabilidadeMeses)
                     }
                 } else {
                     if (!at) {
-                        graficoRadarMeses(comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, industriaMeses, contabilidadeMeses);
+                        graficoRadarMeses(comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, transporteindenizadoMeses, industriaMeses, contabilidadeMeses);
                         limparDadosQuantidade();
                         myLineChart.update();
                     } else {
@@ -1071,11 +1092,11 @@
         $("select#filtroDiasValor").change(function () {
             quantidadeProtocolosPorArea(0, 0, true)
         });
-        function graficoRadarMeses(comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, industriaMeses, contabilidadeMeses) {
+        function graficoRadarMeses(comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, transporteindenizadoMeses, industriaMeses, contabilidadeMeses) {
 
             var ctx = document.getElementById("myChartRadarMeses").getContext('2d');
             var data = {
-                labels: ["Comercial", "Representante", "Expedição", "Cliente", "Transporte", "Qualidade", "Contabilidade"],
+                labels: ["Comercial", "Representante", "Expedição", "Cliente", "Transporte", "Transporte Indenizado", "Qualidade", "Contabilidade"],
                 datasets: [
                     {
                         label: "Quantidade",
@@ -1085,7 +1106,7 @@
                         pointBorderColor: "#fff",
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(179,181,198,1)",
-                        data: [comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, industriaMeses, contabilidadeMeses]
+                        data: [comercialMeses, representanteMeses, exepdicaoMeses, clienteMeses, transporteMeses, transporteindenizadoMeses, industriaMeses, contabilidadeMeses]
                     },
                 ]
             };
@@ -1112,7 +1133,7 @@
 
             var ctxz = document.getElementById("myChartRadar").getContext('2d');
             var data = {
-                labels: ["Comercial", "Representante", "Expedição", "Cliente", "Transporte", "Qualidade", "Contabilidade"],
+                labels: ["Comercial", "Representante", "Expedição", "Cliente", "Transporte", "Transporte Indenizado", "Qualidade", "Contabilidade"],
                 datasets: [
                     {
                         backgroundColor: "rgba(179,181,198,0.2)",
@@ -1121,7 +1142,7 @@
                         pointBorderColor: "#fff",
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(179,181,198,1)",
-                        data: [comercial, representante, expedicao, cliente, transporte, industria, contabilidade]
+                        data: [comercial, representante, expedicao, cliente, transporte, transporteindenizado, industria, contabilidade]
                     },
                 ]
 
@@ -1660,6 +1681,82 @@
                 };
 
                 var myBarChart = new Chart(ctxt, {
+                    type: 'bar',
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        onClick: function (evt, item) {
+                            modalIndicador(item);
+                        },
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    fontSize: 7
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    beginAtZero: true,   // minimum value will be 0.
+                                    stacked: true
+                                }
+                            }]
+                        }
+                    },
+                    data: data,
+
+                });
+
+                /*Transporte Indenizado*/
+                var arrayLabel = [];
+                var arrayData = [];
+                for (var i = 0; i < arrayIndenizado.length; i++) {
+                    arrayLabel.push(arrayIndenizado[i][0] + '/' + arrayIndenizado[i][3]);
+                    arrayData.push(arrayIndenizado[i][1]);
+                }
+                var ctxi = document.getElementById("myBarChartIndenizado").getContext('2d');
+                var data = {
+
+                    labels: arrayLabel,
+                    datasets: [
+                        {
+                            scaleBeginAtZero: true,
+                            scaleStartValue: 0,
+                            label: "Quantidade",
+                            backgroundColor: [
+                            "#73a839",
+                            "#396339",
+                            "#436b17",
+                            "#3b4c27",
+                            "#444f38",
+                            "#1a3003",
+                            "#738264",
+                            "#363835",
+                            "#0e1909",
+                            "#acc6a1",
+                            "#07600f"
+                            ],
+                            borderColor: [
+                            "#73a839",
+                            "#396339",
+                            "#436b17",
+                            "#3b4c27",
+                            "#444f38",
+                            "#1a3003",
+                            "#738264",
+                            "#363835",
+                            "#0e1909",
+                            "#acc6a1",
+                            "#07600f"
+                            ],
+                            borderWidth: 1,
+                            data: arrayData,
+                        }
+                    ]
+                };
+
+                var myBarChart = new Chart(ctxi, {
                     type: 'bar',
                     options: {
                         legend: {
@@ -2652,7 +2749,7 @@
     <div class="row">
         <div id="19" class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading">,
                     Valor de Ocorrências Por Área
                 </div>
                 <!-- /.panel-heading -->
@@ -2669,6 +2766,7 @@
                         <option value="9">Conferido</option>
                         <option value="10">Faturado</option>
                         <option value="7">Cancelado</option>
+                        <option value="11">Indenizado</option>
                     </select>
                     <select id="filtroDiasValor">
                         <option value="30">Últimos 30 dias</option>
@@ -2706,6 +2804,7 @@
                         <option value="10">Faturado</option>
                         <option value="9">Conferido</option>
                         <option value="7">Cancelado</option>
+                        <option value="11">Indenizado</option>
                     </select>
                     <select id="filtroDiasQuantidade">
                         <option value="30">Últimos 30 dias</option>
@@ -2903,6 +3002,23 @@
             <!-- /.panel -->
         </div>
     </div>
+
+    <div class="row">
+        <div id="16" class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Mês X Ocorrência - Transporte Indenizado
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <canvas id="myBarChartIndenizado"></canvas>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+
     <div class="row">
         <div id="17" class="col-lg-12">
             <div class="panel panel-default">

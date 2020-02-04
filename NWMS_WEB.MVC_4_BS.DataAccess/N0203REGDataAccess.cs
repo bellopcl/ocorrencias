@@ -3550,8 +3550,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             try
             {
                 string sql = "SELECT ORIOCO FROM N0203IPV WHERE NUMREG = " + Ocorrencia + "";
-                DebugEmail email = new DebugEmail();
-                email.Email("email", sql);
                 OracleConnection conn = new OracleConnection(OracleStringConnection);
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
@@ -5546,6 +5544,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             conn.Open();
             OracleDataReader dr = cmd.ExecuteReader();
 
+            DebugEmail email = new DebugEmail();
+            email.Email("dasch", sql);
+
             List<Ocorrencia> lista = new List<Ocorrencia>();
             Ocorrencia itens = new Ocorrencia();
             
@@ -5624,6 +5625,22 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             return lista;
         }
 
+        public int pedidosFaturarIndenizacao()
+        {
+            string sql = "SELECT COUNT(DISTINCT(REG.NUMREG)) AS CONTADOR FROM N0203REG REG, N0203IPV IPV WHERE REG.NUMREG = IPV.NUMREG AND REG.SITREG = 11 AND IPV.ORIOCO = 8";
+
+            OracleConnection conn = new OracleConnection(OracleStringConnection);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+            conn.Open();
+            OracleDataReader dr = cmd.ExecuteReader();
+            int contador = 0;
+            while (dr.Read())
+            {
+                contador = Convert.ToInt32(dr["CONTADOR"].ToString());
+            }
+            return contador;
+        }
 
         public List<RelatorioGraficoOcorrencia> relatorioGraficoOcorrencias(string mes, string ano, string indicador)
         {

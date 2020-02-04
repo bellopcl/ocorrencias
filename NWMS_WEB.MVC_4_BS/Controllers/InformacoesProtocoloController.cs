@@ -38,6 +38,25 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
             }
         }
 
+        public JsonResult pedidosFaturarIndenizacao()
+        {
+            if (this.Logado != ((char)Enums.Logado.Sim).ToString())
+            {
+                return this.Json(new { redirectUrl = Url.Action("Login", "Login"), Logado = true }, JsonRequestBehavior.AllowGet);
+            }
+            try
+            {
+                N0203REGBusiness n0203REGBusiness = new N0203REGBusiness();
+                var contador = n0203REGBusiness.pedidosFaturarIndenizacao();
+                return this.Json(new { contador, sucesso = true }, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+                this.Session["ExceptionErro"] = ex;
+                return this.Json(new { redirectUrl = Url.Action("ErroException", "Erro"), ErroExcecao = true }, JsonRequestBehavior.AllowGet);
+            }
+        }
 
         public JsonResult CarregarIndicadoresTabela(string status, string mes, string filtroAgrup, string indicador, string ano)
         {
@@ -303,6 +322,26 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
             }
         }
 
+        public JsonResult PesquisaProtocolosIndenizados()
+        {
+            if (this.Logado != ((char)Enums.Logado.Sim).ToString())
+            {
+                return this.Json(new { redirectUrl = Url.Action("Login", "Login"), Logado = true }, JsonRequestBehavior.AllowGet);
+            }
+            try
+            {
+                N0203REGBusiness n0203REGBusiness = new N0203REGBusiness();
+                List<Ocorrencia> ListaProtocolosPendentes = new List<Ocorrencia>();
+                ListaProtocolosPendentes = n0203REGBusiness.PesquisaProtocolosIndenizados("", "", "", "", "", "", "", "11", "", Convert.ToInt64(this.CodigoUsuarioLogado));
+                return this.Json(new { ListaProtocolosPendentes, sucesso = true }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                this.Session["ExceptionErro"] = ex;
+                return this.Json(new { redirectUrl = Url.Action("ErroException", "Erro"), ErroExcecao = true }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public JsonResult PesquisarProtocolosPendentesAprovacaoDashBoard()
         {
 
@@ -440,7 +479,7 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 int quantidadeEmAtraso = 0;
                 N0203REGBusiness N0203REGBusines = new N0203REGBusiness();
                 List<Ocorrencia> lista = new List<Ocorrencia>();
-                lista = N0203REGBusines.carregarProtocolosForamAprovadosEsperandoFaturamento("", "", "", "", "", "", "", "4,6,8,9", "", Convert.ToInt64(this.CodigoUsuarioLogado));
+                lista = N0203REGBusines.carregarProtocolosForamAprovadosEsperandoFaturamento("", "", "", "", "", "", "", "4,6,8,9,11", "", Convert.ToInt64(this.CodigoUsuarioLogado));
                 DateTime dateForButton = DateTime.Now.AddDays(-30);
                 foreach (var item in lista)
                 {

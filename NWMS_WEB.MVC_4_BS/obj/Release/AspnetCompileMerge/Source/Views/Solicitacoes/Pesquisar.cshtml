@@ -6,6 +6,8 @@
 @section scripts{
     @Scripts.Render("~/bundles/maskMoney")
     <script type="text/javascript">
+        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+
     $("#PesquisarRegistroBtn").click(function () {
         PesquisaTodosRegistros();
     });
@@ -29,9 +31,7 @@
             LimpaCamposRegistro();
         }
     });
-    //$("#NumRegistroTextBox").focusin(function () {
-    //    LimpaCamposRegistro();
-    //});
+    
     function LimpaCamposRegistro() {
         $("#TipoAtendimentoDropDownList").prop('selectedIndex', 0);
         $("#OrigemOcorrenciaFase1DropDownList").prop('selectedIndex', 0);
@@ -76,7 +76,90 @@
         $("#HrefFase4").attr("href", "#fase4");
         $("#HrefFase4").attr("data-toggle", "tab");
         $("#liFase4").removeClass("disabled");
-    }
+        }
+
+    $('#TableTransporte').dataTable({
+            "jQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 10,
+            "iDisplayStart": 1,
+            "paging": true,
+            "bSort": true,
+            "bFilter": true,
+            "Info": true,
+            "bLengthChange": false,
+            "aoColumns": [
+                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
+                        { "sClass": "left", "title": "Cód." },
+                        { "sClass": "left", "title": "Nome&nbspFantasia" + espaco },
+                        { "sClass": "left", "title": "Razão&nbspSocial" + espaco },],
+            "oLanguage": {
+                "sLengthMenu": "Mostrando _MENU_ registros por página",
+                "sSearch": "Pesquisar:",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "«&nbspAnterior",
+                    "sNext": "Próximo&nbsp»",
+                    "sLast": "Último"
+                }
+            },
+            "scrollX": true,
+    });
+
+    function PesquisarTransportador() {
+            //var ocorrencia = $("#NumRegistroTextBox").val();
+            var ocorrencia = $("#NumNotaFiscalTextBox").val();
+            $('#progressBar').show();
+            $("#gridTableTransporte").hide();
+            $.ajaxSetup({ cache: false });
+            $.getJSON("@Url.Action("ConsultarTransportadora", "Aprovacoes")", { ocorrencia: ocorrencia, tipo: "T" }, function (data) {
+                if (data.listaTransportador) {
+                    var arrayRow = new Array();
+                    $('#TableTransporte').dataTable().fnClearTable();
+                    var array = 0;
+                    if (data.listaTransportador.CODTRA > 1) {
+                        var codigo = data.listaTransportador.CODTRA;
+                        var nome = data.listaTransportador.NOMTRA;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarTransporte('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.APETRA;
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
+                        array = 1;
+                    }
+                    if (data.listaTransportador.CODRED != "0") {
+                        var codigo = data.listaTransportador.CODRED;
+                        var nome = data.listaTransportador.NOMETRAREDES;
+                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarTransporte('" + codigo + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Cliente'></span></a>";
+                        var razaoSocial = data.listaTransportador.CODREDAPETRA;
+                        arrayRow[array] = new Array(selecionar, codigo, nome, razaoSocial);
+                    }
+                    $('#TableTransporte').dataTable().fnAddData(arrayRow);
+                    $('#TableTransporte').dataTable().fnPageChange('first');
+                    $("#gridTableTransporte").slideToggle('fast');
+                }
+                $('#progressBar').hide();
+                $('#TransporteDialog').modal('show');
+            });
+        }
+
+        $("#PesquisarClienteButtonItens").click(function () {
+            PesquisarTransportador();
+        });
+
+        function SelecionarTransporte(codigo, nome) {
+            $("#CodigoClienteConferenciaItem").val("");
+            $("#CodigoClienteConferenciaItem").focus();
+            $("#TransporteDialog").modal("hide");
+            setTimeout(function () {
+                $("#CodigoClienteConferenciaItem").val(codigo);
+                $("#NomeclienteConferenciaItem").val(nome);
+                $("#CodigoClienteConferenciaItem").focus();
+            }, 50);
+        }
+
     // Desabilita botao pesquisar e o campo num registro
     $('#liFase2').click(function () {
         var tamanho = $('#TableNotasFiscaisSaida').DataTable().rows().data().length;
@@ -161,6 +244,7 @@
         //"scrollY": 380,
         "scrollX": true,
     });
+
     function PesquisaUmRegistro(codigoRegistro) {
         $('#progressBar').show();
         $.ajaxSetup({ cache: false });
@@ -186,6 +270,8 @@
                     $("#UltimaAlteracaoTextBox").val(data.ListaN0203REGPesquisa[0].UltimaAlteracao);
                     $("#UsuarioUltimaAlteracaoTextBox").val(data.ListaN0203REGPesquisa[0].UsuarioUltimaAlteracao + " - " + data.ListaN0203REGPesquisa[0].NomeUsuarioUltimaAlteracao);
                     $("#ObservacoesTextBox").val(data.ListaN0203REGPesquisa[0].Observacao);
+                    $("#CodigoClienteConferenciaItem").val(data.ListaN0203REGPesquisa[0].CodTra);
+                    DescTransportadora(data.ListaN0203REGPesquisa[0].CodTra)
                     HabilitaFase2();
                     document.getElementById('NumRegistroTextBox').disabled = false;
                     $('#NumRegistroTextBox').focus();
@@ -199,6 +285,11 @@
             $('#progressBar').hide();
         });
     }
+    function DescTransportadora(DescTransportadora) {
+        $.getJSON("@Url.Action("descTransportadoraIndenizacao")", { CodTra: DescTransportadora }, function (data) {
+             $("#NomeclienteConferenciaItem").val(data.DescTransportadora);
+         });
+     }
     function ValidaSituacaoReprovado(sit) {
         var situacao = '@(((int)NUTRIPLAN_WEB.MVC_4_BS.Model.Enums.SituacaoRegistroOcorrencia.Reprovado).ToString())';
         if (sit == situacao) {
@@ -701,27 +792,7 @@
                 CarregaDropDownOrigemOcorrencia(codMotivo, "OrigemOcorrenciaItemNotaDropDownList", origemOcor);
             }
         }
-        //var motivos = document.getElementById('MotivoDevolucaoItemNotaDropDownList');
-        //for (var i = 0; i < motivos.length; i++) {
-        //    if (motivos[i].text == motivoDev) {
-        //        var codMotivo = parseInt(motivos[i].value);
-        //        $('#MotivoDevolucaoItemNotaDropDownList').val(codMotivo);
-        //    }
-        //}
-        //var origens = document.getElementById('OrigemOcorrenciaItemNotaDropDownList');
-        //for (var i = 0; i < origens.length; i++) {
-        //    if (origens[i].text == origemOcor) {
-        //        var codOrigem = parseInt(origens[i].value);
-        //        $('#OrigemOcorrenciaItemNotaDropDownList').val(codOrigem);
-        //    }
-        //}
-        //document.getElementById('OrigemOcorrenciaItemNotaDropDownList').disabled = false;
-        //var valorOrigem = $("#OrigemOcorrenciaItemNotaDropDownList option:selected").val();
-        //if (valorOrigem == "0") {
-        //    $("#OrigemOcorrenciaItemNotaDropDownList").empty();
-        //    $("#OrigemOcorrenciaItemNotaDropDownList").append($('<option></option>').val("0").html("Selecione..."));
-        //    document.getElementById('OrigemOcorrenciaItemNotaDropDownList').disabled = true;
-        //}
+
         $('#AlterarItemNotaDialog h3').text("Alterar Nota " + numeroNota + " Item Sequência " + seqNota);
         $('#AlterarItemNotaDialog').modal('show');
         $('#QtdeDevolucaoItemNotaTextBox').focus();
@@ -741,17 +812,10 @@
         for (var i = 0; i < data.length; i++) {
             qtdeFaturada = data[i][5];
             qtdeDevolucao = data[i][6];
-            //var soNumero = ValidaNumero(qtdeDevolucao);
-            //if (!soNumero || parseInt(qtdeDevolucao) > parseInt(qtdeFaturada)) {
-            //    qtdeDevolucao = 0;
-            //}
             qtdeDevolucao = parseInt(qtdeDevolucao);
             qtdeTotal = qtdeTotal + qtdeDevolucao;
             var precoUnitario = data[i][7].toString().replace("R$ ", "").replace(",", ".");
             valorBruto = (parseFloat(valorBruto) + ((parseFloat(precoUnitario) * qtdeDevolucao))).toFixed(2);
-            //var porcIpi = data[i][11].replace(" %", "").replace(",", ".");
-            //porcIpi = parseFloat((porcIpi / 100));
-            //valorIpi = valorIpi + ((parseFloat(precoUnitario) * porcIpi) * qtdeDevolucao);
             var vlIpi = data[i][12].toString().replace(",", ".");
             var vlIpiUnidade = qtdeDevolucao * (parseFloat(vlIpi) / qtdeFaturada);
             valorIpi = valorIpi + vlIpiUnidade;
@@ -845,10 +909,6 @@
         if (ValidaCamposGridItensNotaFiscal()) {
             if (ValidaItensIncluidosGridDevolucao()) {
                 AddItensGridDevolucao();
-                //var classe = document.getElementById('liFase3').className;
-                //if (classe == "disabled") {
-                //    MostraBotaoExcluirItensDev();
-                //}
                 AtualizaTotaisDevolucao();
                 //HabilitaFase34();
                 //$('#DivPanelFase3').show();
@@ -1068,10 +1128,6 @@
             qtdeTotal = qtdeTotal + qtdeDevolucao;
             var precoUnitario = data[i][13].toString().replace("R$ ", "").replace(",", ".");
             valorBruto = (parseFloat(valorBruto) + ((parseFloat(precoUnitario) * qtdeDevolucao))).toFixed(2);
-            //var porcIpi = data[i][15].replace(" %", "").replace(",", ".");;
-            //porcIpi = parseFloat((porcIpi / 100));
-            //valorIpi = (parseFloat(valorIpi) + (valorBruto * porcIpi)).toFixed(2);
-            //valorIpi = valorIpi + ((parseFloat(precoUnitario) * porcIpi) * qtdeDevolucao);
             var vlIpi = data[i][16].toString().replace(",", ".");
             var vlIpiUnidade = qtdeDevolucao * (parseFloat(vlIpi) / qtdeFaturada);
             valorIpi = valorIpi + vlIpiUnidade;
@@ -1079,7 +1135,6 @@
             var vlrStUnidade = qtdeDevolucao * (parseFloat(vlSt) / qtdeFaturada);
             valorSt = valorSt + vlrStUnidade;
         }
-        //valorLiquido = (parseFloat(valorBruto.toString()) + parseFloat(valorIpi.toString())).toFixed(2);
         valorLiquido = (parseFloat(valorBruto.toString()) + parseFloat(valorIpi.toString()) + parseFloat(valorSt.toString())).toFixed(2);
         valorIpi = parseFloat(valorIpi.toString()).toFixed(2);
         valorSt = parseFloat(valorSt.toString()).toFixed(2);
@@ -1124,52 +1179,7 @@
         $("#ValorReceberTextBox").val(valorReceber);
         HabilitaMaskaraMoedaDevolucao();
     }
-    // ================================== FIM GRID ITENS DE DEVOLUÇÃO  ====================================== //
-    // ----------------------------------------------------------------------------------------------------- //
-    // =========================== INÍCIO MOTIVO DEVOLUCAO E ORIGEM OCORRÊNCIA  ============================ //
-    // Se o usuário selecionar qualquer motivo de ocorrência, exceto "Selecione...", e a origem da ocorrência também for diferente de "Selecione...". O sistema deve realizar as seguintes tarefas:
-    // O campo de quantidade de devolução da tabela de itens de notas fiscais recebe o valor da quantidade faturada em todas as linhas;
-    // A tabela de itens de notas fiscais recebe o motivo selecionado em todas as linhas;
-    // A tabela de itens de notas fiscais recebe a "seleção" de todas as linhas;
-    // Os campos de totais abaixo da tabela de itens de notas fiscais devem ser atualizados em tempo real.
-    //function MudarMotivoDevolucao() {
-    //    scrollTo(0, 0);
-    //    $('#progressBar').show();
-    //    setTimeout(function () {
-    //        var valorMotivo = $("#MotivoDevolucaoFase2DropDownList option:selected").val();
-    //        if (valorMotivo != "0") {
-    //            CarregaDropDownOrigemOcorrencia(valorMotivo, "OrigemOcorrenciaFase2DropDownList", "");
-    //        }
-    //        else {
-    //            $("#OrigemOcorrenciaFase2DropDownList").empty();
-    //            $("#OrigemOcorrenciaFase2DropDownList").append($('<option></option>').val("0").html("Selecione..."));
-    //            document.getElementById('OrigemOcorrenciaFase2DropDownList').disabled = true;
-    //        }
-    //        SetarOrigemOcorrenciaCarregarMotivo();
-    //        var valorOrigem = $("#OrigemOcorrenciaFase2DropDownList option:selected").val();
-    //        var motivo = $("#MotivoDevolucaoFase2DropDownList option:selected").text();
-    //        var table = $('#TableItensNotasFiscaisSaida').DataTable();
-    //        //var numeroNota = $("#NumNotaFiscalTextBox").val();
-    //        // Recebe os valores de todas as linhas
-    //        var data = table.rows().data();
-    //        for (var i = 0; i < data.length; i++) {
-    //            //var seqNota = data[i][1];
-    //            //var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(motivo, i, 8);
-    //            if (valorMotivo != "0" && valorOrigem != "0") {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(data[i][5], i, 6);
-    //                //$("#" + idCheckBox).prop("checked", true);
-    //            }
-    //            else {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate("0", i, 6);
-    //                //$("#" + idCheckBox).prop("checked", false);
-    //            }
-    //        }
-    //        //SelecionaTodasLinhasItensNotaFiscal();
-    //        $('#progressBar').hide();
-    //        scrollTo(0, 490);
-    //    }, 10);
-    //}
+
     function MudarMotivoDevolucao() {
         scrollTo(0, 0);
         $('#progressBar').show();
@@ -1198,63 +1208,6 @@
             AtualizaTotais();
         }, 10);
     }
-    // Mesmo procedimento listado acima no item motivo de ocorrência
-    //function MudarOrigemOcorrencia() {
-    //    scrollTo(0, 0);
-    //    $('#progressBar').show();
-    //    setTimeout(function () {
-    //        var valorMotivo = $("#MotivoDevolucaoFase2DropDownList option:selected").val();
-    //        var valorOrigem = $("#OrigemOcorrenciaFase2DropDownList option:selected").val();
-    //        var origem = $("#OrigemOcorrenciaFase2DropDownList option:selected").text();
-    //        var table = $('#TableItensNotasFiscaisSaida').DataTable();
-    //        //var numeroNota = $("#NumNotaFiscalTextBox").val();
-    //        // Recebe os valores de todas as linhas
-    //        var data = table.rows().data();
-    //        for (var i = 0; i < data.length; i++) {
-    //            //var seqNota = data[i][1];
-    //            //var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(origem, i, 9);
-    //            if (valorMotivo != "0" && valorOrigem != "0") {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(data[i][5], i, 6);
-    //                //$("#" + idCheckBox).prop("checked", true);
-    //            }
-    //            else {
-    //                $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate("0", i, 6);
-    //                //$("#" + idCheckBox).prop("checked", false);
-    //            }
-    //        }
-    //        SelecionaTodasLinhasItensNotaFiscal();
-    //        $('#progressBar').hide();
-    //        scrollTo(0, 490);
-    //    }, 10);
-    //}
-    //// Ao selecionar motivo e origem, seleciona todas as linhas da grid de itens de nota fiscal
-    //function SelecionaTodasLinhasItensNotaFiscal() {
-    //    var table = $('#TableItensNotasFiscaisSaida').dataTable();
-    //    var selectedMotivo = $("#MotivoDevolucaoFase2DropDownList option:selected").val();
-    //    var selectedOrigem = $("#OrigemOcorrenciaFase2DropDownList option:selected").val();
-    //    var numeroNota = $("#NumNotaFiscalTextBox").val();
-    //    if (selectedMotivo != "0" && selectedOrigem != "0") {
-    //        $(table.fnSettings().aoData).each(function () {
-    //            $(this.nTr).addClass('selected');
-    //            var dadosLinha = table.fnGetData($(this.nTr).index());
-    //            var seqNota = dadosLinha[1];
-    //            var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $("#" + idCheckBox).prop("checked", true);
-    //        });
-    //        AtualizaTotais();
-    //    }
-    //    else if (selectedMotivo == "0" || selectedOrigem == "0") {
-    //        $(table.fnSettings().aoData).each(function () {
-    //            $(this.nTr).removeClass('selected');
-    //            var dadosLinha = table.fnGetData($(this.nTr).index());
-    //            var seqNota = dadosLinha[1];
-    //            var idCheckBox = "checkBoxSelecionarItensDev" + numeroNota + "-" + seqNota;
-    //            $("#" + idCheckBox).prop("checked", false);
-    //        });
-    //        AtualizaTotais();
-    //    }
-    //}
     function MudarOrigemOcorrencia() {
         scrollTo(0, 0);
         $('#progressBar').show();
@@ -1445,21 +1398,24 @@
     });
     $("#BtnSimCancelarRegistro").click(function () {
         $('#CancelarRegistroDialog').modal('hide');
-        CancelarRegistrosOcorrencia($('#NumRegistroTextBox').val());
+        CancelarRegistrosOcorrencia($('#NumRegistroTextBox').val(), $("#mensagemCancelamento").val());
     });
-    function CancelarRegistrosOcorrencia(codigoRegistro) {
+    function CancelarRegistrosOcorrencia(codigoRegistro, cancelamentoRegistro) {
         $('#progressBar').show();
         $.ajaxSetup({ cache: false });
-        $.getJSON("@Url.Action("CancelarRegistrosOcorrencia")", { codigoRegistro: codigoRegistro }, function (data) {
-            if (data.Logado || data.ErroExcecao) {
-                window.location.href = data.redirectUrl;
-                return;
-            }
-            else if (data.ExcluidoSucesso) {
-                DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkProtocoloExcluidoSucesso", "OK", true);
-            }
-            $('#progressBar').hide();
-        });
+            $.getJSON("@Url.Action("CancelarRegistrosOcorrencia")", { codigoRegistro: codigoRegistro, motivoCancelamento: cancelamentoRegistro }, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                }
+                else if (data.ExcluidoSucesso) {
+                    DialogPadrao("success", "Sucesso!", "success", data.msgRetorno, "btnOkProtocoloExcluidoSucesso", "OK", true);
+                } else {
+                    DialogPadrao("warning", "Aviso", "warning", data.msgRetorno, "btnOkProtocoloExcluidoSucesso", "OK", true);
+                }
+                $('#progressBar').hide();
+            });
+        
     }
     $('#NumRegistroTextBox').mask("9?9999", { placeholder: "" });
     $('#QtdeDevolucaoItemNotaTextBox').mask("9?9999", { placeholder: "" });
@@ -1480,18 +1436,8 @@
             $('#AlterarItemNotaDialog').modal('hide');
         }
     });
-    //function AtualizaValoresItemNota() {
-    //    var valorQtdeDev = $("#QtdeDevolucaoItemNotaTextBox").val();
-    //    var valorMotivo = $("#MotivoDevolucaoItemNotaDropDownList option:selected").text();
-    //    var valorOrigem = $("#OrigemOcorrenciaItemNotaDropDownList option:selected").text();
-    //    $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(valorQtdeDev, idLinhaColunaInvisivel, 6);
-    //    $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(valorMotivo, idLinhaColunaInvisivel, 8);
-    //    $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate(valorOrigem, idLinhaColunaInvisivel, 9);
-    //    SelecionaLinhaUpdate();
-    //}
+    
     function AlteraDadosLinhaItemNotaUpdate() {
-        //$('#TableItensNotasFiscaisSaida_filter input').val(" ");
-        //$('#TableItensNotasFiscaisSaida_filter input').focus();
         var contador = 0;
         var table = $('#TableItensNotasFiscaisSaida').dataTable();
         var valorQtdeDev = $("#QtdeDevolucaoItemNotaTextBox").val();
@@ -1664,18 +1610,10 @@
             }
             else {
                 document.getElementById(idDropDownMotivo).disabled = true;
-                //DialogPadrao("warning", "Aviso!", "warning", "O Motivo de Devolução Selecionado não possuí nenhuma Origem da Ocorrência atrelada.", "btnOkOrigemNaoEncontrada", "OK", true);
             }
         });
     }
-    //function SetarOrigemOcorrenciaCarregarMotivo() {
-    //    var table = $('#TableItensNotasFiscaisSaida').DataTable();
-    //    // Recebe os valores de todas as linhas
-    //    var data = table.rows().data();
-    //    for (var i = 0; i < data.length; i++) {
-    //        $('#TableItensNotasFiscaisSaida').dataTable().fnUpdate("Selecione...", i, 9);
-    //    }
-    //}
+    
     function ListaItensDevolucao() {
         $('#progressBar').show();
         scrollTo(0, 0);
@@ -1710,7 +1648,7 @@
         $('#ListaItensDevolucaoHidden').val(listaItensDev);
         $('#NumRegistroHidden').val($('#NumRegistroTextBox').val());
         document.forms[0].submit();
-        //return JSON.stringify(listaItensDev);
+        
     }
     $('#TableAnexos').dataTable({
         "ordering": false,
@@ -1760,18 +1698,13 @@
                 return;
             }
             else {
-                //window.open(data, '_blank', 'location=no');
-                //window.open(data, "_system", "location=yes,enableViewportScale=yes,hidden=no");
-                //window.open(data);
                 if (data.TipoAnexo.substring(0, 5) == "image" || data.TipoAnexo == "application/pdf" || data.TipoAnexo == "text/plain") {
                     window.open(data.Anexo);
                 }
                 else {
                     window.location = data.Anexo;
                 }
-                //window.location = data;
-                //window.location.href = data;
-                //window.location.assign(data);
+                
             }
         }, "json");
         $('#progressBar').hide();
@@ -1896,6 +1829,25 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade bs-example-modal-lg" id="TransporteDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" id="BtnFecharClienteDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="panel-title">Pesquisar Transportadora</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="gridTableTransporte" style="display: none;">
+                        <table id="TableTransporte" class="display compact" cellspacing="0"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal" id="CancelarRegistroDialog" style="display: none;" data-backdrop="static">
     <div class="modal-dialog">
         <div class="panel panel-primary">
@@ -1903,10 +1855,16 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h3 class="panel-title">Cancelar Ocorrência de Devolução</h3>
             </div>
+            
             <div class="panel-body">
                 <strong></strong>
                 <div class="row">
                     <br />
+                    <div>
+                        <label  for="msg">Motivo de Cancelamento:</label>
+                        <br/>
+                        <textarea rows="6" cols="80" id="mensagemCancelamento" name="comment" required></textarea>
+                    </div>
                     <div style="text-align:center">
                         <button type="button" id="BtnNaoCancelarRegistro" class="btn btn-default" data-dismiss="modal">Não</button>
                         <button type="button" id="BtnSimCancelarRegistro" class="btn btn-primary" style="margin-top:0px">Sim</button>
@@ -1974,9 +1932,6 @@
                 <span class="input-group-addon" style="padding: 3px 10px">
                     <a style='color:#333333' href="#" id="PesquisarRegistroBtn"><span class="glyphicon glyphicon-search" title="Pesquisar registro"></span></a>
                 </span>
-                @*<span class="input-group-btn">
-                        <button class="btn btn-default btn-sm" type="button" id="PesquisarRegistroBtn">Pesquisar</button>
-                    </span>*@
             </div>
         </div>
     </div>
@@ -2187,8 +2142,6 @@
                             <button class="btn btn-default btn-sm" type="button" id="AdicionarItenButton">Adicionar Itens</button>
                         </div>
                     </div>
-                    @*<label class="col-md-2 control-label">Itens Selecionados ? </label>
-                        <button class="btn btn-default btn-sm" type="button" id="AdicionarItenButton">Adicionar Itens</button>*@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.ValorBruto, new { @class = "col-md-2 control-label" })
@@ -2290,6 +2243,25 @@
         <div class="tab-pane fade" id="fase4">
             <div class="panel panel-default" id="DivPanelFase4" style="display: block;">
                 <legend>&nbsp;&nbsp;Digite as observações abaixo</legend>
+
+                <div id="ConferenciaItem" class="form-group">
+                    <p></p>
+                    @Html.LabelFor(m => m.CodTra, new { @class = "col-md-1 control-label" })
+                    <div class="col-md-1">
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.CodTra, new { @class = "form-control input-smgroup", @id = "CodigoClienteConferenciaItem" })
+                            <span class="input-group-addon" style="padding: 3px 10px">
+                                <a style='color:#333333' href="#" id="PesquisarClienteButtonItens"><span class="glyphicon glyphicon-search" title="Pesquisar Transportadora"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.TextBoxFor(m => m.NomeTra, new { @class = "form-control input-smgroup", @id = "NomeclienteConferenciaItem", @readonly = "true" })
+                        @Html.ValidationMessageFor(m => m.CodTra)
+                        @Html.ValidationMessageFor(m => m.NomeTra)
+                    </div>
+                </div>
+
                 <div class="form-group">
                     @Html.LabelFor(m => m.Observacoes, new { @class = "col-md-1 control-label" })
                     <div class="col-lg-10-2" id="ObservacoesDiv">

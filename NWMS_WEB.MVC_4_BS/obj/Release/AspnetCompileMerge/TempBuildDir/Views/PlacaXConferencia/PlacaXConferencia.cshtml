@@ -40,11 +40,6 @@
                     window.location.href = data.redirectUrl; a
                     return;
                 }
-                
-                /*if (!data.transportadora && data.transportadora != undefined) {
-                    DialogPadrao("warning", "Aviso!", "warning", "Ocorrência não está dentro dos parâmetros de validação para está operação. &#013 A ocorrência deve estar pelo menos aprovada e ser de transportadora " + data.transportadora , "btnOkNenhumRegEncontrado", "OK", true);
-                    return;
-                }*/
                
                 if (!data.placa && data.placa != undefined) {
                     DialogPadrao("warning", "Aviso!", "warning", "Placa Inválida", "btnOkNenhumRegEncontrado", "OK", true);
@@ -122,8 +117,7 @@
                 }
             });
         }
-
-
+        
         function DialogPadraoTwoButton(tipoPanel, tituloDialog, tipoLabel, msgErro, idBotao, nomeBotao, nomeBotao2, focus) {
 
             var html_Dialog = ""

@@ -6,119 +6,6 @@
 @section scripts{
     <script type="text/javascript">
 
-        @*$("#PesquisarUsuarioButton").click(function () {
-            PesquisaTodasUsuarios();
-        });
-
-        var espaco = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-        $('#TableUsuario').dataTable({
-            "jQueryUI": true,
-            "sPaginationType": "full_numbers",
-            "iDisplayLength": 10,
-            "iDisplayStart": 1,
-            //"ordering": false,
-            //"info": false,
-            "paging": true,
-            "bSort": true,
-            "bFilter": true,
-            "Info": true,
-            "bLengthChange": false,
-            "aoColumns": [
-                        { "sClass": "center", "title": "Sel.", "bSortable": false, "bSearchable": false },
-                        { "sClass": "left", "title": "Código" },
-                        { "sClass": "left", "title": "Nome&nbspdo&nbspUsuário" + espaco + espaco.substring(0, 220) }, ],
-            "oLanguage": {
-                "sLengthMenu": "Mostrando _MENU_ registros por página",
-                "sSearch": "Pesquisar:",
-                "sZeroRecords": "Nenhum registro encontrado",
-                "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
-                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
-                "sInfoFiltered": "(Pesquisados no total de _MAX_ registros)",
-                "oPaginate": {
-                    "sFirst": "Primeiro",
-                    "sPrevious": "«&nbspAnterior",
-                    "sNext": "Próximo&nbsp»",
-                    "sLast": "Último"
-                }
-            },
-            //"scrollY": 380,
-            "scrollX": true,
-        });
-
-        function PesquisaUmUsuario(codigoUsuario) {
-            $('#progressBar').show();
-            $.ajaxSetup({ cache: false });
-            $.getJSON("@Url.Action("PesquisarUsuariosSapiens")", { codigoUsuario: codigoUsuario }, function (data) {
-
-                if (data.Logado || data.ErroExcecao) {
-                    window.location.href = data.redirectUrl;
-                    return;
-                }
-                else if (data.listaUsuarios.length > 0) {
-                    //$("#LoginUsuarioTextBox").val(data.listaUsuarios[0].CodigoUsuario);
-                    $("#NomeUsuarioTextBox").val(data.listaUsuarios[0].NomeUsuario);
-
-                    $("#PanelTableOrigemOcorrencia").show();
-                    PesquisaUsuarioAprovadorXOrigemOcorrencia(data.listaUsuarios[0].CodigoUsuario);
-                }
-                else {
-                    DialogPadrao("warning", "Aviso!", "warning", "Usuário não encontrado.", "btnOkUsuarioNaoEncontrado", "OK", true);
-                    $('#progressBar').hide();
-                }
-            });
-        }
-
-        function PesquisaTodasUsuarios() {
-            $('#progressBar').show();
-            $("#gridTableUsuario").hide();
-            $('#TableUsuario').dataTable().fnFilter('');
-            $.ajaxSetup({ cache: false });
-            $.getJSON("@Url.Action("PesquisarUsuariosSapiens")", { codigoUsuario: "" }, function (data) {
-
-                if (data.Logado || data.ErroExcecao) {
-                    window.location.href = data.redirectUrl;
-                    return;
-                }
-                else if (data.listaUsuarios) {
-                    var arrayRow = new Array();
-                    $('#TableUsuario').dataTable().fnClearTable();
-
-                    for (var i = 0; i < data.listaUsuarios.length; i++) {
-
-                        var codUsu = data.listaUsuarios[i].CodigoUsuario;
-                        var nome = data.listaUsuarios[i].NomeUsuario;
-                        var selecionar = "<a style='color:#333333' href=\"#\" onClick=\"SelecionarUsuario('" + codUsu + "','" + nome + "')\"><span class='glyphicon glyphicon-check' title='Selecionar Usuário'></span></a>";
-
-                        arrayRow[i] = new Array(selecionar, codUsu, nome);
-                    }
-
-                    $('#TableUsuario').dataTable().fnAddData(arrayRow);
-                    $('#TableUsuario').dataTable().fnPageChange('first');
-                    $("#gridTableUsuario").slideToggle('fast');
-                }
-                $('#progressBar').hide();
-                $('#UsuarioDialog').modal('show');
-                setTimeout(function () {
-                    $('#TableUsuario_filter input').focus();
-                }, 500);
-            });
-        }
-
-        function SelecionarUsuario(codUsu, nome) {
-            $('#LoginUsuarioTextBox').val("");
-            $("#LoginUsuarioTextBox").focus();
-            $('#UsuarioDialog').modal('hide');
-            $("#PanelTableOrigemOcorrencia").show();
-            PesquisaUsuarioAprovadorXOrigemOcorrencia(codUsu);
-
-            setTimeout(function () {
-                $('#LoginUsuarioTextBox').val(codUsu);
-                $('#NomeUsuarioTextBox').val(nome);
-                $('#LoginUsuarioTextBox').valid();
-                $('#NomeUsuarioTextBox').valid();
-            }, 50);
-        }*@
-
         $("#PesquisarUsuarioButton").click(function () {
             PesquisarTodosUsuarios();
         });
@@ -507,23 +394,7 @@
         </div>
     </div>
 </div>
-@*<div class="modal fade bs-example-modal-lg" id="UsuarioDialog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <button type="button" id="BtnFecharUsuarioDialog" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h3 class="panel-title">Pesquisar Usuários</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div id="gridTableUsuario" style="display: none;">
-                            <table id="TableUsuario" class="display compact" cellspacing="0" ></table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>*@
+
 <div class="modal" id="DialogPadrao" data-backdrop="static"></div>
 @using (Html.BeginForm("CadUsuarioAprovador", "Aprovacoes", FormMethod.Post, new { @class = "form-horizontal", id = "CadUsuarioAprovadorForm", role = "form" }))
 {

@@ -65,7 +65,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
-
+                
                 OracleDataReader dr = cmd.ExecuteReader();
 
                 List<E140IPVModel> listaItens = new List<E140IPVModel>();

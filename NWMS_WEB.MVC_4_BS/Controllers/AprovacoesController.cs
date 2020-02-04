@@ -699,7 +699,7 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 var N0203REGBusiness = new N0203REGBusiness();
                 var aprovadoSucesso = true;
                 string msgRetorno = "";
-                string msgRetornoPedido = string.Empty;
+                string msgRetornoPedido = "";
                 DebugEmail email = new DebugEmail();
 
                 bool Motivo = N0203REGBusiness.ConsultarOrigem(Convert.ToInt32(codigoRegistro));
@@ -709,7 +709,14 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                     N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), out msgRetornoPedido);
                 }
 
-                msgRetorno = N0203REGBusiness.AprovarRegistrosOcorrencia(long.Parse(codigoRegistro), long.Parse(this.CodigoUsuarioLogado), observacao, int.Parse(operacao), tipoOperacao);
+                if(msgRetornoPedido == "" || msgRetornoPedido == "OK") { 
+                    msgRetorno = N0203REGBusiness.AprovarRegistrosOcorrencia(long.Parse(codigoRegistro), long.Parse(this.CodigoUsuarioLogado), observacao, int.Parse(operacao), tipoOperacao);
+                } 
+                else
+                {
+                    aprovadoSucesso = false;
+                }
+
                 if (msgRetorno.Contains("Operação não permitida, verifique se a ocorrência está com a situação integrado ou faturada.") || msgRetorno.Contains("Operação não permitida, verifique se a ocorrência está com a situação recebida") || msgRetorno.Contains("não está com a situação recebido") || msgRetorno.Contains("Registro de Ocorrência está vinculada a um agrupamento."))
                 {
                     aprovadoSucesso = false;
@@ -719,22 +726,36 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                     if (int.Parse(operacao) == (int)Enums.OperacaoAprovacaoFaturamento.Aprovar && int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Nutriplan)
                     {
                         var descNota = Attributes.KeyValueAttribute.GetFirst("Descricao", Enums.TipoNotaDevolucao.Nutriplan).GetValue<string>();
-                        msgRetorno += "<br></br> Retorno Sapiens: " + msgRetornoSapiens + "<br/>Tipo Nota: " + tipoNota + " - " + descNota + ". Obs Aprovação Faturamento: " + observacao;
+                        if (msgRetornoPedido != "")
+                        {
+                            msgRetorno += "<br></br> Retorno Sapiens: " + msgRetornoSapiens + "<br/>Tipo Nota: " + tipoNota + " - " + descNota + ". Obs Aprovação Faturamento: " + observacao + " <br/>Pedido Indenizado: " + msgRetornoPedido;
+                        }
+                        else 
+                        { 
+                            msgRetorno += "<br></br> Retorno Sapiens: " + msgRetornoSapiens + "<br/>Tipo Nota: " + tipoNota + " - " + descNota + ". Obs Aprovação Faturamento: " + observacao;
+                        }
                     }
 
                     else if (int.Parse(operacao) == (int)Enums.OperacaoAprovacaoFaturamento.Aprovar && int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Cliente)
                     {
                         var descNota = Attributes.KeyValueAttribute.GetFirst("Descricao", Enums.TipoNotaDevolucao.Cliente).GetValue<string>();
-                        msgRetorno += "<br></br> Tipo Nota: " + tipoNota + " - " + descNota + ". Obs Aprovação Faturamento: " + observacao;
+                        if (msgRetornoPedido != "") { 
+                            msgRetorno += "<br></br> Tipo Nota: " + tipoNota + " - " + descNota + ". Obs Aprovação Faturamento: " + observacao + " <br/>Pedido Indenizado: " + msgRetornoPedido;
+                        }
+                        else
+                        {
+                            msgRetorno += "<br></br> Tipo Nota: " + tipoNota + " - " + descNota + ". Obs Aprovação Faturamento: " + observacao;
+                        }
                     }
 
                     if (int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Nutriplan)
                     {
                         if (msgRetornoPedido != "")
                         {
-                            msgRetorno += msgRetorno + "<br/><br/>Retorno Sapiens: " + msgRetornoSapiens + " Pedido Indenizado: " + msgRetornoPedido;
+                            msgRetorno += msgRetorno + "<br/><br/>Retorno Sapiens: " + msgRetornoSapiens + "<br/> Pedido Indenizado: " + msgRetornoPedido;
                         }
-                        else { 
+                        else 
+                        { 
                             msgRetorno += msgRetorno + "<br/><br/>Retorno Sapiens: " + msgRetornoSapiens;
                         }
                     }

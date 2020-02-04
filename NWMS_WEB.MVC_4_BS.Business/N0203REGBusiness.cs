@@ -800,6 +800,19 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
             }
         }
 
+        public int pedidosFaturarIndenizacao()
+        {
+            try
+            {
+                var N0203REGDataAccess = new N0203REGDataAccess();
+                return N0203REGDataAccess.pedidosFaturarIndenizacao();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<RelatorioGraficoOcorrencia> relatorioGraficoOcorrencias(string mes, string ano, string indicador)
         {
             try { 
@@ -955,6 +968,23 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
                 throw ex;
             }
         }
+
+        public List<Ocorrencia> PesquisaProtocolosIndenizados(string campoNumeroRegistro, string campoFilial, string campoEmbarque, string campoPlaca, string campoPeriodoInicial, string campoPeriodoFinal, string campoCliente, string campoSituacao, string campoDataFaturamento, long codigoUsuario)
+        {
+            try
+            {
+                var N0203REGDataAccess = new N0203REGDataAccess();
+                var listaRegistros = new List<Ocorrencia>();
+                listaRegistros = N0203REGDataAccess.pesquisaOcorrencia(campoNumeroRegistro, campoFilial, campoEmbarque, campoPlaca, campoPeriodoInicial, campoPeriodoFinal, campoCliente, campoSituacao, campoDataFaturamento, codigoUsuario, "D", "");
+
+                return listaRegistros;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>

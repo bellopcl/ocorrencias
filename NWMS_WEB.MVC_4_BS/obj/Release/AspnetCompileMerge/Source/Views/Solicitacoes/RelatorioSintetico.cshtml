@@ -52,6 +52,7 @@
             },
             "scrollX": true,
         });
+
         function PesquisaTodosCliente(codigoCliente) {
             $('#progressBar').show();
             $("#gridTableCliente").hide();
@@ -85,6 +86,7 @@
                 $('#ClienteDialog').modal('show');
             });
         }
+
         function SelecionarCliente(codigo, nome) {
             if (valor == 2) {
                 $("#CodigoClienteConferenciaItem").val("");
@@ -168,7 +170,7 @@
             },
             "scrollX": true,
         });
-
+        
         function ValidaCliente() {
             var valorPlaca = $("#CodPlacaDatFatTextBox").val();
             if (valorPlaca == "aaa-2222") {
@@ -292,13 +294,16 @@
         }
 
         function TipoPesquisa(valor) {
+            
             if (valor == 1) {
                 limparCampos2()
                 limparCampos3();
                 if (validarCampos1()) {
                     var codFilial = $("#FilialAneDropDownList option:selected").val();
                     var analiseEmbarque = $("#NumAnaliseEmbarqueTextBox").val();
+                    alert(1);
                     RelatorioSintetico(codFilial, analiseEmbarque, "", "", "", 2, "", "");
+                    
                 }
             } else if (valor == 2) {
                 limparCampos1()
@@ -306,15 +311,18 @@
                 var codPlaca = $("#CodPlacaDatFatTextBox").val().replace("-", "");
                 var dtFat = $("#DataFaturamentoTextBox").val();
                 var codigoCliente = $("#CodigoClienteConferenciaItem").val();
-                
+                alert(2);
                 RelatorioSintetico("", "1", codPlaca, "", "", 10, dtFat, codigoCliente);
+            
             } else if (valor == 6) {
                 limparCampos1()
                 limparCampos3();
                 var codPlaca = $("#CodPlacaDatFatTextBoxTroca").val().replace("-", "");
                 var dtFat = $("#DataFaturamentoTextBoxTroca").val();
                 var codigoCliente = $("#CodClienteConferenciaOcorrencia").val();
+                alert(6);
                 RelatorioSinteticoConferencia("", "", codPlaca, "", "", 10, dtFat, codigoCliente);
+                
             } else if (valor == 3) {
                 limparCampos1();
                 limparCampos2();
@@ -322,6 +330,7 @@
                     var codPlaca = $("#CodPlacaPerTextBox").val().replace("-", "");
                     var datIni = $("#DataInicialTextBox").val();
                     var datFim = $("#DataFinalTextBox").val();
+                    alert(3);
                     RelatorioSintetico("", "", codPlaca, datIni, datFim, 11, "");
                 }
             } else if (valor == 4) {
@@ -653,6 +662,7 @@
     </div>
 </div>
 <div class="modal fade" id="myModal" role="dialog" data-backdrop="static"></div>
+
 <h4>
     <ul class="breadcrumb" style="margin-bottom: 5px;">
         <li><a href="@Url.Content("~/PaginaInicial/Index")">Relatórios</a></li>
@@ -819,6 +829,7 @@
                                     new SelectListItem { Value = "8" , Text = "Coleta"},
                                     new SelectListItem { Value = "9" , Text = "Conferido"},
                                     new SelectListItem { Value = "10" , Text = "Faturado"},
+                                    new SelectListItem { Value = "11" , Text = "Indenizado"},
                                     new SelectListItem { Value = "7" , Text = "Cancelado" } }, new { @class = "form-control input-sm", @id = "campoSituacao" })
                         </div>
                         @Html.ValidationMessageFor(m => m.campoSituacao)
@@ -984,6 +995,7 @@
                                     new SelectListItem { Value = "8" , Text = "Coleta"},
                                     new SelectListItem { Value = "9" , Text = "Conferido"},
                                     new SelectListItem { Value = "10" , Text = "Faturado"},
+                                    new SelectListItem { Value = "11", Text = "Indenizado"},
                                     new SelectListItem { Value = "7" , Text = "Cancelado" } }, new { @class = "form-control input-sm", @id = "campoSituacao" })
                         </div>
                         @Html.ValidationMessageFor(m => m.campoSituacao)
