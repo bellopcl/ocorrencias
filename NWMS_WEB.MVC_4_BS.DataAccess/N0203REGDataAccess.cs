@@ -5437,8 +5437,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     SomaTotalValorLiquido = SomaTotalValorLiquido + itens.ValorLiquido;
                     itens.TotalValorLiquido = SomaTotalValorLiquido;
                     contado++;
+                    lista.Add(itens);
                 }
-                lista.Add(itens);
+                
                 dr.Close();
                 conn.Close();
                 return lista;
