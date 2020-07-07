@@ -314,3 +314,9 @@ C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x64\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x86\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Microsoft.SqlServer.Types.dll

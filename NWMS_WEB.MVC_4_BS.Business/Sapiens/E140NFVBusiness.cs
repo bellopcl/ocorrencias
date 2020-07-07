@@ -33,6 +33,17 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
             }
         }
 
+        public string consultaString(String tabela, String coluna, String where)
+            {
+                try { 
+                    E140NFVDataAccess E140NFVDataAccess = new E140NFVDataAccess();
+                    return E140NFVDataAccess.consultaString(tabela, coluna, where);
+                }
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
+            }
 
         /// <summary>
         /// Pesquisa Situacao das notas 

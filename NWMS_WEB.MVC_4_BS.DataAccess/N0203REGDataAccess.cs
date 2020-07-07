@@ -5259,14 +5259,14 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                                     AND EV.CODDER = IPV.CODDER)
                                 WHERE 1 = 1";
 
-                sql += campoNumeroRegistro != "" ? "AND REG.NUMREG =" + campoNumeroRegistro : "";
-                sql += campoFilial != "" && campoEmbarque != "" ? "AND PFA.CODFIL =" + campoFilial + " AND PFA.NUMANE =" + campoEmbarque : "";
-                sql += campoPlaca != "" ? "AND REG.PLACA ='" + campoPlacaFormatado + "'" : "";
-                sql += campoPeriodoInicial != "" && campoPeriodoFinal != "" ? "AND  TO_DATE(TO_CHAR(REG.DATGER , 'DD-MM-RRRR')) BETWEEN '" + DateTime.Parse(campoPeriodoInicial).ToShortDateString() + "' AND '" + DateTime.Parse(campoPeriodoFinal).ToShortDateString() + "'" : "";
-                sql += campoCliente != "" ? "AND CLI.CODCLI =" + campoCliente : "";
+                sql += campoNumeroRegistro != "" ? " AND REG.NUMREG =" + campoNumeroRegistro : "";
+                sql += campoFilial != "" && campoEmbarque != "" ? " AND PFA.CODFIL =" + campoFilial + " AND PFA.NUMANE =" + campoEmbarque : "";
+                sql += campoPlaca != "" ? " AND REG.PLACA ='" + campoPlacaFormatado + "'" : "";
+                sql += campoPeriodoInicial != "" && campoPeriodoFinal != "" ? " AND  TO_DATE(TO_CHAR(REG.DATGER , 'DD-MM-RRRR')) BETWEEN '" + DateTime.Parse(campoPeriodoInicial).ToShortDateString() + "' AND '" + DateTime.Parse(campoPeriodoFinal).ToShortDateString() + "'" : "";
+                sql += campoCliente != "" ? " AND CLI.CODCLI =" + campoCliente : "";
                 sql += campoSituacao != "0" ? "AND REG.SITREG =" + campoSituacao : "";
                 sql += campoDataFaturamento != "" ? "AND IPV.DATEMI ='" + DateTime.Parse(campoDataFaturamento).ToShortDateString() + "'" : "";
-                sql += @"GROUP BY  REG.NUMREG, NFV.PLAVEI,
+                sql += @" GROUP BY  REG.NUMREG, NFV.PLAVEI,
                                        REG.SITREG,
                                        REG.DATGER,
                                        REG.DATULT,
@@ -5318,7 +5318,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                                        IPV.TNSPRO,
                                        (EV.VLRDZF + EV.VLRPIT + EV.VLRCRT)
                                        ORDER BY IPV.SEQIPV";
-
+                DebugEmail email = new DebugEmail();
                 OracleConnection conn = new OracleConnection(OracleStringConnection);
                 OracleCommand cmd = new OracleCommand(sql, conn);
                 cmd.CommandType = CommandType.Text;
@@ -5328,15 +5328,16 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 
                 List<RelatorioAnalitico> lista = new List<RelatorioAnalitico>();
                 RelatorioAnalitico itens = new RelatorioAnalitico();
+                int contado = 0;
 
                 while (dr.Read())
                 {
                     itens = new RelatorioAnalitico();
-                    itens.CodigoRegistro = Convert.ToInt64(dr["NUMREG"]);
+                     itens.CodigoRegistro = Convert.ToInt64(dr["NUMREG"]);
                     itens.CodTipoAtendimento = dr["CODATD"].ToString();
                     itens.DescTipoAtendimento = dr["DESCATD"].ToString();
                     itens.CodOrigemOcorrencia = dr["CODORI"].ToString();
-                    itens.DescOrigemOcorrencia = dr["DESCORI"].ToString();
+                    itens.DescOrigemOcorrencia =  dr["DESCORI"].ToString();
                     itens.CodCliente = dr["CODCLI"].ToString(); ;
                     itens.NomeCliente = dr["NOMCLI"].ToString();
                     itens.CodMotorista = dr["CODMOT"].ToString();
@@ -5346,7 +5347,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     itens.NomeUsuarioGeracao = dr["NOMCOM"].ToString();
                     itens.UsuarioGeracao = dr["CODUSUGER"].ToString();
                     itens.CodSituacaoRegistro = dr["SITREG"].ToString();
-
+                    
                     switch (itens.CodSituacaoRegistro)
                     {
                         case "1":
@@ -5435,9 +5436,9 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
 
                     SomaTotalValorLiquido = SomaTotalValorLiquido + itens.ValorLiquido;
                     itens.TotalValorLiquido = SomaTotalValorLiquido;
-                    lista.Add(itens);
+                    contado++;
                 }
-
+                lista.Add(itens);
                 dr.Close();
                 conn.Close();
                 return lista;
@@ -5543,9 +5544,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
             cmd.CommandType = CommandType.Text;
             conn.Open();
             OracleDataReader dr = cmd.ExecuteReader();
-
-            DebugEmail email = new DebugEmail();
-            email.Email("dasch", sql);
 
             List<Ocorrencia> lista = new List<Ocorrencia>();
             Ocorrencia itens = new Ocorrencia();

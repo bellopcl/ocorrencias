@@ -1294,7 +1294,6 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Edm.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.OData.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.Client.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.Data.Services.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.DataVisualization.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.WebForms.dll
@@ -1639,3 +1638,10 @@ C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.pdb
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\RdlCompile.compiled
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Release\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x64\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x86\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.SqlServer.Types.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ReportViewer.Common.dll

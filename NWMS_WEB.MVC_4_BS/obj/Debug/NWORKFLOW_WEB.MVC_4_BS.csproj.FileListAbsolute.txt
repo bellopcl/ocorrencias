@@ -1151,3 +1151,4 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AI.WindowsServer.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ApplicationInsights.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache

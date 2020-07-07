@@ -4,13 +4,14 @@
 @{
     ViewBag.Title = "InformacoesProtocolo";
 }
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    
+<link rel="stylesheet" href="~/Content/morris.css">
+<script src="~/Content/jquery.min.js"></script>
+<script src="~/Content/raphael-min.js"></script>
+<script src="~/Content/morris.min.js"></script>
+<script type="text/javascript" src="~/Content/loader.js"></script>
+<script src="~/Content/Chart.min.js"></script>
+<link href='~/Content/Orbitron.css' rel='stylesheet' type='text/css'>
 @{ var nomeIndicador = "Indicador"; }
 
 @section scripts{
@@ -47,6 +48,7 @@
         var arrayMediaPreAprovado = new Array();
         var arrayMediaAprovado = new Array();
         var indicadorGlobal = "";
+        var quantidadePedidosFaturar = 0;
 
         var arrayRepresentante = new Array();
         var arrayExpedicao = new Array();
@@ -84,6 +86,7 @@
         $("#23").hide();
 
         carregarTabelaProtocolosPendentes();
+        carregarPedidosPendentesIndenizado();
         carregarTabelaProtocolosPreAprovados();
         carregarTabelaProtocolosPendentesAprovacao();
         carregarProtocolosForamAprovadosEsperandoFaturamento();
@@ -573,6 +576,17 @@
             });
         }
         /*OK*/
+        function carregarPedidosPendentesIndenizado() {
+            $.getJSON("@Url.Action("pedidosFaturarIndenizacao")", {}, function (data) {
+                if (data.Logado || data.ErroExcecao) {
+                    window.location.href = data.redirectUrl;
+                    return;
+                } else if (data.contador > 0) {
+                    quantidadePedidosFaturar = data.contador;
+                }
+            });
+        }
+
         function carregarTabelaProtocolosPendentes() {
             var valorTotalLiquido = 0.00;
             
@@ -917,18 +931,19 @@
                     }
                 },
                 data: {
-                    labels: ['Aguardando Faturamento (Usu)', 'Pendentes de Pré-Aprovação teste (Usu)'],
+                    labels: ['Aguardando Faturamento (Usu)', 'Pendentes de Pré-Aprovação(Usu)'],
                     legend: false,
                     datasets: [{
                         backgroundColor: [
                           "#73a839",
                           "#396339"
+                          
                         ],
-                        data: [quantidadePendentePreAprovado, quantidadePendentePreAprovacao,]
+                        data: [quantidadePendentePreAprovado, quantidadePendentePreAprovacao]
                     }]
                 }
             });
-
+            carregarPedidosPendentesIndenizado();
             var ctx = document.getElementById("myChartUsuarioAprovador").getContext('2d');
             var myChartAprovador = new Chart(ctx, {
                 type: 'pie',
@@ -943,15 +958,17 @@
                     }
                 },
                 data: {
-                    labels: ['Ocorrências com menos de 30 dias', 'Pendentes de Pré-Aprovação (Ori)', 'Ocorrências com mais de 30 dias'],
+                    labels: ['Ocorrências com menos de 30 dias', 'Pendentes de Pré-Aprovação (Ori)', 'Ocorrências com mais de 30 dias', "Aguardando Faturamento Pedido"],
                     legend: false,
                     datasets: [{
                         backgroundColor: [
                           "#73a839",
                           "#396339",
-                          "#ff0000"
+                          "#ff0000",
+                          "#FFD700"
                         ],
-                        data: [quantidadePendentePreAprovacaoPreAprovador, quantidadePendenteAprovacao, quantidadeAtrasadoDash]
+                        
+                        data: [quantidadePendentePreAprovacaoPreAprovador, quantidadePendenteAprovacao, quantidadeAtrasadoDash, quantidadePedidosFaturar]
                     }]
                 }
             });
@@ -2031,8 +2048,8 @@
                 show: 'true',
                 refresh: true
             });
-        });
-        } else {
+            });
+            } else if(item[0]._model.label == "Ocorrências com mais de 30 dias") {
             $.getJSON("@Url.Action("AprovadosEsperandoFaturamento")", {}, function (data) {
 
             if (data.Logado || data.ErroExcecao) {
@@ -2055,6 +2072,37 @@
                     if (MenorqueTrintaDias == "S") {
                         arrayRow[i] = new Array(CodigoRegistro, descTipoAtendimento, DataFechamento, DataSituacao, DescOrigemOcorrencia, descMotivo, NumeroNotaFiscal, formatarMonetario(parseFloat(valorLiquido), "R$"));
                     }
+                }
+                $('#tableOcorrenciasFaturamento').dataTable().fnAddData(arrayRow);
+                $('#tableOcorrenciasFaturamento').dataTable().fnPageChange('first');
+            }
+            $('#myModalOcorrenciasFaturamento').modal({
+                show: 'true',
+                refresh: true
+            });
+            });
+            }else{
+                $.getJSON("@Url.Action("PesquisaProtocolosIndenizados")", {}, function (data) {
+            if (data.Logado || data.ErroExcecao) {
+                window.location.href = data.redirectUrl;
+                return;
+            }
+            else if (data.ListaProtocolosPendentes.length > 0) {
+                var arrayRow = new Array();
+                $('#tableOcorrenciasFaturamento').dataTable().fnClearTable();
+                for (var i = 0; i < data.ListaProtocolosPendentes.length; i++) {
+                    var CodigoRegistro = data.ListaProtocolosPendentes[i].CodigoRegistro;
+                    var DataFechamento = data.ListaProtocolosPendentes[i].DataHrGeracao.replace("00:00:00", "");
+                    var DataSituacao = data.ListaProtocolosPendentes[i].DataHrGeracao;
+                    var descMotivo = data.ListaProtocolosPendentes[i].DescMotivoDevolucao;
+                    var DescOrigemOcorrencia = data.ListaProtocolosPendentes[i].DescOrigemOcorrencia;
+                    var NumeroNotaFiscal = data.ListaProtocolosPendentes[i].NumeroNota;
+                    var valorLiquido = data.ListaProtocolosPendentes[i].ValorLiquido;
+                    var descTipoAtendimento = data.ListaProtocolosPendentes[i].DescTipoAtendimento;
+                    var MenorqueTrintaDias = data.ListaProtocolosPendentes[i].MenorqueTrintaDias;
+                    
+                        arrayRow[i] = new Array(CodigoRegistro, descTipoAtendimento, DataFechamento, DataSituacao, DescOrigemOcorrencia, descMotivo, NumeroNotaFiscal, formatarMonetario(parseFloat(valorLiquido), "R$"));
+                    
                 }
                 $('#tableOcorrenciasFaturamento').dataTable().fnAddData(arrayRow);
                 $('#tableOcorrenciasFaturamento').dataTable().fnPageChange('first');

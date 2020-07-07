@@ -17,7 +17,6 @@
                     var codigoMotorista = $('#CodMotoristaTextBox').val();
                     var codPlaca = $('#CodPlacaTextBox').val();
                     var tipAtend = $("#TipoAtendimentoDropDownList :selected").val();
-                    PesquisarNotasFiscaisSaida(codigoCliente, codigoMotorista, codPlaca, tipAtend);
                     DesabilitaFase1();
                     HabilitaFase2();
                     setTimeout(function () {
@@ -525,6 +524,7 @@
             $('#progressBar').show();
             $.ajaxSetup({ cache: false });
             $("#gridTableNotasFiscaisSaida").hide();
+            alert("teste");
             $.getJSON("@Url.Action("PesquisarNotasFiscaisSaida")", { codigoCliente: codigoCliente, codigoMotorista: codigoMotorista, codPlaca: codPlaca, tipoAtendimento: tipoAtendimento }, function sucess(data) {
                 if (data.Logado || data.ErroExcecao) {
                     window.location.href = data.redirectUrl;
@@ -757,6 +757,7 @@
         });
         function PesquisarItensNotasFiscaisSaida(empresa, filial, serieNota, numeroNota) {
             $('#progressBar').show();
+            alert('teste2');
             $.ajaxSetup({ cache: false });
             $("#gridTableItensNotasFiscaisSaida").hide();
             $.getJSON("@Url.Action("PesquisarItensNotasFiscaisSaida")", { filial: filial, numeroNota: '' + numeroNota, serieNota: '' + serieNota }, function sucess(data) {

@@ -285,7 +285,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Model
             PreAprovado = 4,
 
             [Attributes.KeyValue("Descricao", "Reprovado")]
-            Reprovado = 5,
+            Reprovado = 1,
 
             [Attributes.KeyValue("Descricao", "Reaprovar")]
             Reaprovar = 6,

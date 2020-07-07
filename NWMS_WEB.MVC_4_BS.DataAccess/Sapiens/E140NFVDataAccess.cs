@@ -77,6 +77,8 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                              "   And A.PLAVEI = " + "'" + codPlaca + "'" +
                              "   And A.CODFIL <> 101                                           " +
                              "   and A.CodCli = C.codCli order by A.DatEmi desc";
+
+                
                 // Transportadora
                 if (codigoMotorista == 0)
                 {
@@ -274,8 +276,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                 throw ex;
             }
         }
-
-
 
         /// <summary>
         /// Pesquisa parametrização dos dados da nota

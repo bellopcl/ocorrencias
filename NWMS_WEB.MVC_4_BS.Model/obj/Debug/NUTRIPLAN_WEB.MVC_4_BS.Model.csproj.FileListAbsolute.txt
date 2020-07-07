@@ -108,4 +108,9 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\DwgSmsServer.Net.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj.CopyComplete
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.csprojAssemblyReference.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\Microsoft.SqlServer.Types.dll

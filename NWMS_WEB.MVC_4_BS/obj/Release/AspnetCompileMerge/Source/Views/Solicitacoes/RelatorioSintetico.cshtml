@@ -301,7 +301,6 @@
                 if (validarCampos1()) {
                     var codFilial = $("#FilialAneDropDownList option:selected").val();
                     var analiseEmbarque = $("#NumAnaliseEmbarqueTextBox").val();
-                    alert(1);
                     RelatorioSintetico(codFilial, analiseEmbarque, "", "", "", 2, "", "");
                     
                 }
@@ -311,7 +310,6 @@
                 var codPlaca = $("#CodPlacaDatFatTextBox").val().replace("-", "");
                 var dtFat = $("#DataFaturamentoTextBox").val();
                 var codigoCliente = $("#CodigoClienteConferenciaItem").val();
-                alert(2);
                 RelatorioSintetico("", "1", codPlaca, "", "", 10, dtFat, codigoCliente);
             
             } else if (valor == 6) {
@@ -320,7 +318,6 @@
                 var codPlaca = $("#CodPlacaDatFatTextBoxTroca").val().replace("-", "");
                 var dtFat = $("#DataFaturamentoTextBoxTroca").val();
                 var codigoCliente = $("#CodClienteConferenciaOcorrencia").val();
-                alert(6);
                 RelatorioSinteticoConferencia("", "", codPlaca, "", "", 10, dtFat, codigoCliente);
                 
             } else if (valor == 3) {
@@ -330,7 +327,6 @@
                     var codPlaca = $("#CodPlacaPerTextBox").val().replace("-", "");
                     var datIni = $("#DataInicialTextBox").val();
                     var datFim = $("#DataFinalTextBox").val();
-                    alert(3);
                     RelatorioSintetico("", "", codPlaca, datIni, datFim, 11, "");
                 }
             } else if (valor == 4) {

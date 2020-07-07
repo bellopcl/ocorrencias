@@ -24,8 +24,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     this.PedidosClient.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
                     var dadosPedido = new pedidosPedidoViaOcorrenciaIn();
 
-                    DebugEmail email = new DebugEmail();
-
                     dadosPedido.codTra = codTra;
 
                     dadosPedido.codTraSpecified = true;
@@ -41,11 +39,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                     var retorno = PedidosClient.PedidoViaOcorrencia("nworkflow.web", "!nfr@t1n", 0, dadosPedido);
 
                     string msg = "Ocorrência: " + ocorrencia.ToString() + " Mensagem Retorno: " + retorno.mensagemRetorno; 
-
-                    if (retorno.erroExecucao == null)
-                    {
-                        email.Email("Webservice Pedido", msg);
-                    }
 
                     mensagemRetorno = retorno.mensagemRetorno;
                     if (mensagemRetorno == "OK") { 

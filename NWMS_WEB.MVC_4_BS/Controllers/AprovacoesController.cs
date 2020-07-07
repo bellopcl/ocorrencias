@@ -700,11 +700,13 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 var aprovadoSucesso = true;
                 string msgRetorno = "";
                 string msgRetornoPedido = "";
-                DebugEmail email = new DebugEmail();
-
+                
                 bool Motivo = N0203REGBusiness.ConsultarOrigem(Convert.ToInt32(codigoRegistro));
-                email.Email("Email ", codigoRegistro);
-                if (Motivo == true)
+
+                DebugEmail email = new DebugEmail();
+                email.Email("Operação", operacao);
+                
+                if (Motivo == true && operacao.Contains("1"))
                 {
                     N0203REGBusiness.PedidosViaOcorrencia(Convert.ToInt32(codigoRegistro), int.Parse(this.CodigoUsuarioLogado), out msgRetornoPedido);
                 }
@@ -726,7 +728,8 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                     if (int.Parse(operacao) == (int)Enums.OperacaoAprovacaoFaturamento.Aprovar && int.Parse(tipoNota) == (int)Enums.TipoNotaDevolucao.Nutriplan)
                     {
                         var descNota = Attributes.KeyValueAttribute.GetFirst("Descricao", Enums.TipoNotaDevolucao.Nutriplan).GetValue<string>();
-                        if (msgRetornoPedido != "")
+
+                        if (msgRetornoPedido != " " && msgRetornoPedido != "")
                         {
                             msgRetorno += "<br></br> Retorno Sapiens: " + msgRetornoSapiens + "<br/>Tipo Nota: " + tipoNota + " - " + descNota + ". Obs Aprovação Faturamento: " + observacao + " <br/>Pedido Indenizado: " + msgRetornoPedido;
                         }

@@ -1144,8 +1144,6 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.Business
         {
             try
             {
-                DebugEmail email = new DebugEmail();
-
                 var N0203REGDataAccess = new N0203REGDataAccess();
 
                 var listaAprovacao = new List<ProtocolosAprovacaoModel>();

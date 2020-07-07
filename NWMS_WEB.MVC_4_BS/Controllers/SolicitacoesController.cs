@@ -19,6 +19,7 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
     public class SolicitacoesController : BaseController
     {
         public string OracleStringConnection = Attributes.KeyValueAttribute.GetFirst("Descricao", Enums.OracleStringConnection.Sapiens).GetValue<string>();
+        
         #region Rotina de Envio de Email
 
         protected void MontarEmailAprovacaoProtocolo(string codProtocolo, string emailDestino, string copiarEmails, Enums.TipoAtendimento tipoAtendimento)
@@ -195,9 +196,6 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 if (N0203REGBusiness.GravarRegistroOcorrenciaPesquisa(N0203REG))
                 {
                     modelo.MensagemRetorno = "Registro salvo com sucesso! Ocorrência número: " + N0203REG.NUMREG.ToString() + ".";
-
-                    DebugEmail email = new DebugEmail();
-                    email.Email("Solicitação controller ", modelo.CodTra.ToString());
 
                     if (modelo.Acao == "Finalizar")
                     {
@@ -902,23 +900,6 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
             }
         }
 
-
-        public string consultaString(String tabela, String coluna, String where)
-        {
-            String sql = "SELECT " + coluna + " AS COLUNA FROM " + tabela + " WHERE " + where + "";
-
-            OracleConnection conn = new OracleConnection(OracleStringConnection);
-            OracleCommand cmd = new OracleCommand(sql, conn);
-            cmd.CommandType = CommandType.Text;
-            conn.Open();
-            OracleDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                return dr["COLUNA"].ToString();
-            }
-            return "VAZIO";
-        }
-
         public JsonResult PesquisarDadosNota(string codigoNota, string tipAte)
         {
 
@@ -934,24 +915,24 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 List<E140NFVModel> listaDadosNota = new List<E140NFVModel>();
                 E140NFVBusiness E140NFVBusiness = new E140NFVBusiness();
                 //VERIFICA PERMISSÃO PARA ABRIR MAIS DE UMA OCORRÊNCIAS
-                if (consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%3%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && (tipAte == "1" || tipAte == "2"))
+                if (E140NFVBusiness.consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%3%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && (tipAte == "1" || tipAte == "2"))
                 {
                     listaDadosNota = E140NFVBusiness.PesquisarDadosNotaParametrizacao(long.Parse(codigoNota), 1, 0);
                     return this.Json(new { listaDadosNota }, JsonRequestBehavior.AllowGet);
                 }
                 //VERIFICA PERMISSÃO PARA ABRIR DUAS OCORRÊNCIAS DE MESMA DATA
-                if (consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%2%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && (tipAte == "1" || tipAte == "2"))
+                if (E140NFVBusiness.consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%2%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && (tipAte == "1" || tipAte == "2"))
                 {
                     //VERIFICA SE É DE MESMA DATA
 
-                    if (consultaString(@"NWMS_PRODUCAO.N0203REG REG
+                    if (E140NFVBusiness.consultaString(@"NWMS_PRODUCAO.N0203REG REG
                                          INNER JOIN NWMS_PRODUCAO.N0203IPV IPV
                                             ON REG.NUMREG = IPV.NUMREG
                                          INNER JOIN SAPIENS.E140NFV NFV
                                             ON NFV.NUMNFV = IPV.NUMNFV", "DISTINCT REG.DATGER",
                                       "IPV.NUMNFV = " + codigoNota + " ") != "VAZIO")
                     {
-                        var equalsDate = consultaString(@"
+                        var equalsDate = E140NFVBusiness.consultaString(@"
                                           NWMS_PRODUCAO.N0203REG REG
                                          INNER JOIN NWMS_PRODUCAO.N0203IPV IPV
                                             ON REG.NUMREG = IPV.NUMREG
@@ -1100,16 +1081,16 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                 string msgRetorno = string.Empty;
                 long? auxLong = null;
                 var codReg = string.IsNullOrEmpty(codProtocolo) ? auxLong : long.Parse(codProtocolo);
-
-                if (consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%3%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && tipAtend == "1")
+                E140NFVBusiness E140NFVBusiness = new E140NFVBusiness();
+                if (E140NFVBusiness.consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%3%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && tipAtend == "1")
                 {
                     return this.Json(new { validaNotas = true, msgRetorno = "" }, JsonRequestBehavior.AllowGet);
                 }
 
 
-                if (consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%2%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && tipAtend == "1")
+                if (E140NFVBusiness.consultaString("NWMS_PRODUCAO.N9999PAR", "OPERACAO", "OPERACAO LIKE '%2%' AND LOGIN = '" + this.LoginUsuario + "'") != "VAZIO" && tipAtend == "1")
                 {
-                    var equalsDate = consultaString(@"
+                    var equalsDate = E140NFVBusiness.consultaString(@"
                                           NWMS_PRODUCAO.N0203REG REG
                                          INNER JOIN NWMS_PRODUCAO.N0203IPV IPV
                                             ON REG.NUMREG = IPV.NUMREG
