@@ -259,24 +259,8 @@ C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\N
 C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
 C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
 C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Compression.Base.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Licensing.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Pdf.Base.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\EntityFramework.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Compression.Base.xml
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Pdf.Base.xml
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\EntityFramework.xml
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
 C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
 C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
 C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll
@@ -314,9 +298,25 @@ C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x64\msvcr120.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x86\msvcr120.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Microsoft.SqlServer.Types.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Compression.Base.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Pdf.Base.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\EntityFramework.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.DataAccess.dll.config
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Compression.Base.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\Syncfusion.Pdf.Base.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\bin\Release\EntityFramework.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csprojAssemblyReference.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.csproj.CopyComplete
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Business\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Business.pdb

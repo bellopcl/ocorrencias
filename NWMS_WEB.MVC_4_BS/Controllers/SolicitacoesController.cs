@@ -54,7 +54,9 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                                             Favor acessar o sistema pelo endereço abaixo para aprovação da mesma.<br/>
                                         </strong><br/>");
             Mensagem.AppendLine(emailRodape);
-
+            String destino = emailDestino + copiarEmails;
+            DebugEmail email = new DebugEmail();
+            email.Email("email destino", destino);
             var Email = new Email();
             Email.EnviarEmail(emailDestino, copiarEmails, Assunto, Mensagem.ToString());
         }

@@ -1152,3 +1152,12 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.ApplicationInsights.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\System.Diagnostics.DiagnosticSource.xml
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\obj\Debug\NWORKFLOW_WEB.MVC_4_BS.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x64\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x86\msvcr120.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.Core.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Microsoft.SqlServer.Types.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Antlr3.Runtime.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.Core.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS\bin\Common.Logging.Core.xml

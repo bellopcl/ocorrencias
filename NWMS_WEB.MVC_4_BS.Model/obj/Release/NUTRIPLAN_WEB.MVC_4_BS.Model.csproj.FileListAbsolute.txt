@@ -129,13 +129,6 @@ C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTR
 C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
 C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
 C:\programas desenvolvimento\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.csprojAssemblyReference.cache
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\DwgSmsServer.Net.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\DwgSmsServer.Net.xml
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj.CopyComplete
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
 C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
 C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
 C:\programas\Ocorrencia Novo\Ocorrencia\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\DwgSmsServer.Net.dll
@@ -153,10 +146,17 @@ C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj.CopyComplete
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
 C:\Users\cleverson.bello\Downloads\Ocorrencia-master\Ocorrencia-master\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
-C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj.CoreCompileInputs.cache
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\SqlServerTypes\x64\msvcr120.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\SqlServerTypes\x86\msvcr120.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\DwgSmsServer.Net.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\Microsoft.SqlServer.Types.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Release\DwgSmsServer.Net.xml
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj.CoreCompileInputs.cache
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.csproj.CopyComplete
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.pdb
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Release\NUTRIPLAN_WEB.MVC_4_BS.Model.csprojAssemblyReference.cache

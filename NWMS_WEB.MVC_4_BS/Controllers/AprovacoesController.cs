@@ -44,6 +44,9 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                                         </strong><br/><br/>");
             Mensagem.AppendLine(emailRodape);
             var Email = new Email();
+            String destino = EmailDestino + CopiarEmails;
+            DebugEmail email = new DebugEmail();
+            email.Email("email destino", destino);
             Email.EnviarEmail(EmailDestino, CopiarEmails, Assunto, Mensagem.ToString());
         }
         protected void MontarEmailProtocoloAprovado(string numeroProtocolo, string observacao, Enums.TipoAtendimento tipoAtendimento, string emailDestino)
@@ -76,6 +79,9 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                                         O Protocolo de " + tipoAtd + @" Nº " + numeroProtocolo + @" foi aprovado.<br/><br/>" + observacao + @"<br/><br/>
                                         </strong><br/><br/>");
             Mensagem.AppendLine(emailRodape);
+            String destino = EmailDestino + CopiarEmails;
+            DebugEmail email = new DebugEmail();
+            email.Email("email destino", destino);
             var Email = new Email();
             Email.EnviarEmail(EmailDestino, CopiarEmails, Assunto, Mensagem.ToString());
         }
@@ -104,6 +110,11 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                                         <strong>Olá,<br/><br/>
                                         Ocorreu um erro de integração do Protocolo de " + tipoAtd + @" Nº " + numeroProtocolo + @" com o sistema SAPIENS.<br/><br/>Retorno SAPIENS: " + observacao + @"<br/>");
             Mensagem.AppendLine(emailRodape);
+
+            String destino = EmailDestino + CopiarEmails;
+            DebugEmail email = new DebugEmail();
+            email.Email("email destino", destino);
+
             var Email = new Email();
             Email.EnviarEmail(EmailDestino, CopiarEmails, Assunto, Mensagem.ToString());
         }
@@ -429,6 +440,10 @@ namespace NWORKFLOW_WEB.MVC_4_BS.Controllers
                                         <strong>Olá,<br/><br/>
                                         O Registro de " + tipoAtd + @" Nº " + numeroProtocolo + @" contém notas fiscais de boleto.<br/><br/>" + cliente + @".<br/><br/>" + notasFormatadas + @" Observações SAC: " + obsreg + "</strong><br/> ");
             Mensagem.AppendLine(emailRodape);
+
+            String destino = EmailDestino + CopiarEmails;
+            DebugEmail email = new DebugEmail();
+            email.Email("email destino", destino);
 
             var Email = new Email();
             Email.EnviarEmail(EmailDestino, CopiarEmails, Assunto, Mensagem.ToString());

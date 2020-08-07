@@ -114,3 +114,4 @@ C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\SqlServerTypes\x64\Sql
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\programas\Ocorrencia\NWMS_WEB.MVC_4_BS.Model\obj\Debug\NUTRIPLAN_WEB.MVC_4_BS.Model.csprojAssemblyReference.cache

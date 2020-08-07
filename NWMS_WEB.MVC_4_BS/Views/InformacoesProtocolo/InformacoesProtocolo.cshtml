@@ -328,6 +328,7 @@
                  { "sWidth": "50%", "sClass": "center", "title": "Origem" },
                  { "sWidth": "05%", "sClass": "left", "title": "Motivo" },
                  { "sWidth": "25%", "sClass": "center", "title": "NF" },
+                 { "sWidth": "05%", "sClass": "center", "title": "Placa" },
                  { "sWidth": "25%", "sClass": "center", "title": "Vlr. Líquid." }],
             "oLanguage": {
                 "sLengthMenu": "Mostrando _MENU_ registros por página",
@@ -412,6 +413,7 @@
                  { "sWidth": "50%", "sClass": "center", "title": "Origem" },
                  { "sWidth": "05%", "sClass": "left", "title": "Motivo" },
                  { "sWidth": "25%", "sClass": "center", "title": "NF" },
+                 { "sWidth": "25%", "sClass": "center", "title": "Placa" },
                  { "sWidth": "25%", "sClass": "center", "title": "Vlr. Líquid." }],
             "oLanguage": {
                 "sLengthMenu": "Mostrando _MENU_ registros por página",
@@ -624,7 +626,7 @@
         function carregarTabelaProtocolosPendentesAprovacao() {
             $.getJSON("@Url.Action("PesquisarProtocolosPendentesAprovacaoDashBoard")", {}, function (data) {
 
-                if (data.Logado || data.ErroExcecao) {
+                if (data.Logado || data.ErroExcecao) {tabelaPendenteAprovacao
                     window.location.href = data.redirectUrl;
                     return;
                 }
@@ -639,9 +641,10 @@
                         var NumeroNotaFiscal = data.ListaProtocolosPendentes[i].NumeroNota;
                         var valorLiquido = data.ListaProtocolosPendentes[i].ValorLiquido;
                         var descTipoAtendimento = data.ListaProtocolosPendentes[i].DescTipoAtendimento;
-                        arrayRow[i] = new Array(CodigoRegistro, descTipoAtendimento, DataFechamento, DescOrigemOcorrencia, descMotivo, NumeroNotaFiscal, formatarMonetario(parseFloat(valorLiquido), "R$"));
+                        var codplaca = data.ListaProtocolosPendentes[i].CodPlaca;
+                        arrayRow[i] = new Array(CodigoRegistro, descTipoAtendimento, DataFechamento, DescOrigemOcorrencia, descMotivo, NumeroNotaFiscal, codplaca, formatarMonetario(parseFloat(valorLiquido), "R$"));
                     }
-                    arrayRow[arrayRow.length] = new Array("", "", "", "", "", "TOTAL:", data.ListaProtocolosPendentes[data.ListaProtocolosPendentes.length - 1].TotalValorLiquidoD);
+                    arrayRow[arrayRow.length] = new Array("", "", "", "", "", "", "TOTAL:", data.ListaProtocolosPendentes[data.ListaProtocolosPendentes.length - 1].TotalValorLiquidoD);
                     quantidadePendenteAprovacao = data.ListaProtocolosPendentes.length;
                     $('#tabelaPendenteAprovacao').dataTable().fnAddData(arrayRow);
                     $('#tabelaPendenteAprovacao').dataTable().fnPageChange('first');
@@ -689,13 +692,14 @@
                         var DescOrigemOcorrencia = data.lista[i].DescOrigemOcorrencia;
                         var NumeroNotaFiscal = data.lista[i].NumeroNota;
                         var valorLiquido = data.lista[i].ValorLiquido;
+                        var CodPlaca = data.lista[i].CodPlaca;
                         var descTipoAtendimento = data.lista[i].DescTipoAtendimento;
-                        arrayRow[i] = new Array(CodigoRegistro, descTipoAtendimento, DataFechamento, DescSituacaoRegistro, DescOrigemOcorrencia, descMotivo, NumeroNotaFiscal, formatarMonetario(parseFloat(valorLiquido), "R$"));
+                        arrayRow[i] = new Array(CodigoRegistro, descTipoAtendimento, DataFechamento, DescSituacaoRegistro, DescOrigemOcorrencia, descMotivo, NumeroNotaFiscal, CodPlaca, formatarMonetario(parseFloat(valorLiquido), "R$"));
 
                     }
                     quantidadeAtrasadoDash = data.quantidadeEmAtraso;
                     quantidadePendentePreAprovacaoPreAprovador = data.quantidadeEmDia;
-                    arrayRow[arrayRow.length] = new Array("", "", "", "", "", "", "TOTAL:", data.lista[data.lista.length - 1].TotalValorLiquidoD);
+                    arrayRow[arrayRow.length] = new Array("", "", "", "", "", "", "", "TOTAL:", data.lista[data.lista.length - 1].TotalValorLiquidoD);
                     $('#tabelaPreAprovadoEsperandoFaturamento').dataTable().fnAddData(arrayRow);
                     $('#tabelaPreAprovadoEsperandoFaturamento').dataTable().fnPageChange('first');
                 }

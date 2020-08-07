@@ -5478,6 +5478,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                                    CLI.CODCLI,
                                    PFA.CODFIL,
                                    PFA.NUMANE,
+                                   REG.PLACA,
                                    CLI.NOMCLI,
                                    ATD.DESCATD,
                                    MDV.DESCMDV,
@@ -5537,7 +5538,8 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                                       ORI.DESCORI,
                                       PFA.CODFIL,
                                       ATD.DESCATD,
-                                      MDV.DESCMDV
+                                      MDV.DESCMDV,
+                                      REG.PLACA
                              ORDER BY REG.DATGER ASC";
 
             OracleConnection conn = new OracleConnection(OracleStringConnection);
@@ -5564,6 +5566,7 @@ namespace NUTRIPLAN_WEB.MVC_4_BS.DataAccess
                 itens.CodSituacaoRegistro = dr["SITREG"].ToString();
                 itens.DescMotivoDevolucao = dr["DESCMDV"].ToString(); //Motivo
                 itens.NumeroNota = dr["NUMNFV"].ToString(); //NF
+                itens.CodPlaca = dr["PLACA"].ToString();
 
                 if (Convert.ToDateTime(itens.DataHrGeracao) < dateForButton)
                 {
